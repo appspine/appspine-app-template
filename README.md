@@ -1,9 +1,9 @@
-# apptara-app-template
+# appspine-app-template
 
-Combined frontend (Next.js + shadcn/ui) + backend (NestJS + Prisma) starting point for new apptara business
+Combined frontend (Next.js + shadcn/ui) + backend (NestJS + Prisma) starting point for new appspine business
 systems. Use GitHub's "Use this template" to create a new business system repo from this one.
 
-See the apptara workspace `CLAUDE.md` and `dev_docs/001-app-framework-plan.md` / `dev_docs/002-app-dev-conventions.md`
+See the appspine workspace `CLAUDE.md` and `dev_docs/001-app-framework-plan.md` / `dev_docs/002-app-dev-conventions.md`
 for the framework plan and conventions this template follows.
 
 ## Status
@@ -15,7 +15,7 @@ This is currently a minimal skeleton:
   removed and all `@auranest/backend-core` references stripped (it boots NestJS + Prisma only).
 
 **Not yet wired**: Auth, RBAC, M2M API Key, Audit Log, Metadata Schema API, MCP Server, Health Check. These will be
-added once the `@apptara/*` shared packages (github.com/antonylu0826/apptara) exist.
+added once the `@appspine/*` shared packages (github.com/appspine/appspine) exist.
 
 ## Quick Start
 
