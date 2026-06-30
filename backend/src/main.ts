@@ -1,3 +1,4 @@
+import { GlobalExceptionFilter } from "@appspine/common";
 import { Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 
@@ -5,6 +6,8 @@ import { AppModule } from "./app.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { bufferLogs: true });
+
+  app.useGlobalFilters(new GlobalExceptionFilter());
 
   app.enableCors({
     origin: process.env.CORS_ORIGINS?.split(",") ?? "*",

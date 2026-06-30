@@ -1,11 +1,24 @@
+import { AuditLogModule } from "@appspine/audit-log";
+import { AuthModule } from "@appspine/auth";
+import { LoggingModule, PrismaModule } from "@appspine/common";
+import { HealthModule } from "@appspine/health-check";
+import { ApiKeysModule } from "@appspine/m2m-api-key";
+import { McpModule } from "@appspine/mcp-server";
+import { MetaModule } from "@appspine/metadata-schema";
+import { RbacModule } from "@appspine/rbac";
 import { Module } from "@nestjs/common";
 
-import { PrismaModule } from "./prisma/prisma.module";
-
-// Auth / RBAC / M2M API Key / Audit Log / Metadata Schema API / MCP Server / Health Check
-// are not wired yet — they will be imported here from @appspine/* packages once those
-// packages exist (see dev_docs/001-app-framework-plan.md, "後續待辦事項").
 @Module({
-  imports: [PrismaModule],
+  imports: [
+    LoggingModule,
+    PrismaModule,
+    AuthModule,
+    RbacModule,
+    ApiKeysModule,
+    AuditLogModule,
+    HealthModule,
+    MetaModule,
+    McpModule,
+  ],
 })
 export class AppModule {}

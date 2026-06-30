@@ -1,7 +1,5 @@
+import { SYSTEM_ADMIN_ROLE, SYSTEM_USER_ROLE } from '@appspine/auth';
 import { Permission, PrismaClient } from '@prisma/client';
-
-const SYSTEM_ADMIN_ROLE = 'ADMIN';
-const SYSTEM_USER_ROLE = 'USER';
 
 const prisma = new PrismaClient();
 

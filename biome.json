@@ -97,10 +97,6 @@
       "complexity": {
         "noImportantStyles": "off"
       }
-    },
-    "domains": {
-      "next": "recommended",
-      "react": "recommended"
     }
   },
   "css": {
@@ -135,6 +131,15 @@
           "style": {
             "useImportType": "off"
           }
+        }
+      }
+    },
+    {
+      "includes": ["frontend/**"],
+      "linter": {
+        "domains": {
+          "next": "recommended",
+          "react": "recommended"
         }
       }
     }
