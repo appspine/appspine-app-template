@@ -1,5 +1,6 @@
-import { Module } from '@nestjs/common';
-import { PrismaModule } from './prisma/prisma.module';
+import { Module } from "@nestjs/common";
+
+import { PrismaModule } from "./prisma/prisma.module";
 
 // Auth / RBAC / M2M API Key / Audit Log / Metadata Schema API / MCP Server / Health Check
 // are not wired yet — they will be imported here from @appspine/* packages once those

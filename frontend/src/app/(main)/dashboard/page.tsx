@@ -11,9 +11,7 @@ export default function Page() {
             <h3 className="text-sm font-medium tracking-tight">Overview</h3>
           </div>
           <div className="text-2xl font-bold">Welcome</div>
-          <p className="text-xs text-muted-foreground mt-1">
-            This is your new blank template.
-          </p>
+          <p className="text-xs text-muted-foreground mt-1">This is your new blank template.</p>
         </div>
       </div>
     </div>

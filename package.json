@@ -2,6 +2,7 @@
   "name": "appspine-app-template",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.4.0",
   "scripts": {
     "dev": "dotenv -e .env -- concurrently -n back,front -c blue,green \"pnpm -C backend dev\" \"pnpm -C frontend dev\"",
     "dev:backend": "pnpm -C backend dev",
@@ -11,7 +12,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.5.1",
     "concurrently": "^9.1.0",
     "dotenv-cli": "^11.0.0",
     "husky": "^9.1.7"
