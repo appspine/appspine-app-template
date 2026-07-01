@@ -26,7 +26,7 @@
     "@appspine/m2m-api-key": "^0.1.2",
     "@appspine/mcp-server": "^0.1.2",
     "@appspine/metadata-schema": "^0.1.2",
-    "@appspine/rbac": "^0.1.2",
+    "@appspine/rbac": "^0.3.0",
     "@nestjs/common": "^11.0.5",
     "@nestjs/core": "^11.0.5",
     "@nestjs/jwt": "^11.0.2",
