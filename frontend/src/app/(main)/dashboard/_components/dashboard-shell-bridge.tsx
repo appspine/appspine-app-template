@@ -24,7 +24,7 @@ import { persistPreference } from "@/lib/preferences/preferences-storage";
 import { getSidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { logout } from "@/server/auth-actions";
 import type { CurrentUser } from "@/server/current-user";
-import { setLocaleAction } from "@/server/locale-action.js";
+import { setLocaleAction } from "@/server/locale-action";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
 import { HeaderBreadcrumbs } from "./sidebar/header-breadcrumbs";

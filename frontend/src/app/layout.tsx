@@ -1,16 +1,17 @@
 import type { ReactNode } from "react";
 
-import { defaultLocale, I18nProvider, locales } from "@appspine/frontend-shell";
+import { I18nProvider } from "@appspine/frontend-shell";
 import type { Metadata } from "next";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_CONFIG } from "@/config/app-config";
-import { allMessages } from "@/i18n/messages.js";
+import { defaultLocale, locales } from "@/i18n/config";
+import { allMessages } from "@/i18n/messages";
 import { fontVars } from "@/lib/fonts/registry";
 import { PREFERENCE_DEFAULTS } from "@/lib/preferences/preferences-config";
 import { ThemeBootScript } from "@/scripts/theme-boot";
-import { getPreference } from "@/server/server-actions.js";
+import { getPreference } from "@/server/server-actions";
 import { PreferencesStoreProvider } from "@/stores/preferences/preferences-provider";
 
 import "./globals.css";
