@@ -1,9 +1,10 @@
 import Link from "next/link";
 
+import { ListPagination, ListSearchForm } from "@appspine/frontend-shell";
+
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { getTranslations } from "@/i18n/server";
 import type { PaginatedResult } from "@/server/api-client";
 import { apiFetch } from "@/server/api-client";
 
@@ -24,6 +25,9 @@ export default async function ApiKeysPage({
 }: {
   searchParams: Promise<{ page?: string; search?: string }>;
 }) {
+  const tApiKeys = await getTranslations("apiKeys");
+  const tCommon = await getTranslations("common");
+
   const { page: pageParam, search = "" } = await searchParams;
   const page = Number(pageParam) || 1;
 
@@ -37,29 +41,33 @@ export default async function ApiKeysPage({
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
+  const paginationInfoText = tApiKeys("pageInfo")
+    .replace("{page}", String(page))
+    .replace("{totalPages}", String(totalPages))
+    .replace("{total}", String(total));
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h1 className="font-bold text-2xl tracking-tight">API Keys</h1>
+        <h1 className="font-bold text-2xl tracking-tight">{tApiKeys("title")}</h1>
         <CreateApiKeyDialog roles={roles} />
       </div>
 
-      <form className="flex gap-2">
-        <Input name="search" placeholder="Search by name" defaultValue={search} className="max-w-sm" />
-        <Button type="submit" variant="outline">
-          Search
-        </Button>
-      </form>
+      <ListSearchForm
+        defaultValue={search}
+        placeholder={tApiKeys("searchPlaceholder")}
+        searchButtonText={tCommon("search")}
+      />
 
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Key</TableHead>
-            <TableHead>Role</TableHead>
-            <TableHead>Scopes</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Last used</TableHead>
+            <TableHead>{tApiKeys("name")}</TableHead>
+            <TableHead>{tApiKeys("key")}</TableHead>
+            <TableHead>{tApiKeys("role")}</TableHead>
+            <TableHead>{tApiKeys("scopes")}</TableHead>
+            <TableHead>{tApiKeys("status")}</TableHead>
+            <TableHead>{tApiKeys("lastUsed")}</TableHead>
             <TableHead className="w-10" />
           </TableRow>
         </TableHeader>
@@ -67,7 +75,7 @@ export default async function ApiKeysPage({
           {apiKeys.length === 0 && (
             <TableRow>
               <TableCell colSpan={7} className="text-center text-muted-foreground">
-                No API keys found.
+                {tApiKeys("noApiKeys")}
               </TableCell>
             </TableRow>
           )}
@@ -87,11 +95,11 @@ export default async function ApiKeysPage({
               </TableCell>
               <TableCell>
                 <Badge variant={apiKey.isActive ? "default" : "outline"}>
-                  {apiKey.isActive ? "Active" : "Inactive"}
+                  {apiKey.isActive ? tApiKeys("active") : tApiKeys("inactive")}
                 </Badge>
               </TableCell>
               <TableCell className="text-muted-foreground text-sm">
-                {apiKey.lastUsedAt ? new Date(apiKey.lastUsedAt).toLocaleString() : "Never"}
+                {apiKey.lastUsedAt ? new Date(apiKey.lastUsedAt).toLocaleString() : tApiKeys("never")}
               </TableCell>
               <TableCell>
                 <ApiKeyRowActions apiKey={apiKey} />
@@ -101,31 +109,16 @@ export default async function ApiKeysPage({
         </TableBody>
       </Table>
 
-      <div className="flex items-center justify-between text-muted-foreground text-sm">
-        <span>
-          Page {page} of {totalPages} ({total} total)
-        </span>
-        <div className="flex gap-2">
-          {page > 1 ? (
-            <Button asChild variant="outline" size="sm">
-              <Link href={buildPageHref(search, page - 1)}>Previous</Link>
-            </Button>
-          ) : (
-            <Button variant="outline" size="sm" disabled>
-              Previous
-            </Button>
-          )}
-          {page < totalPages ? (
-            <Button asChild variant="outline" size="sm">
-              <Link href={buildPageHref(search, page + 1)}>Next</Link>
-            </Button>
-          ) : (
-            <Button variant="outline" size="sm" disabled>
-              Next
-            </Button>
-          )}
-        </div>
-      </div>
+      <ListPagination
+        page={page}
+        totalPages={totalPages}
+        total={total}
+        LinkComponent={Link}
+        buildPageHref={(p: number) => buildPageHref(search, p)}
+        previousText={tCommon("previous")}
+        nextText={tCommon("next")}
+        infoText={paginationInfoText}
+      />
     </div>
   );
 }

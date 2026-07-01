@@ -89,7 +89,12 @@
     "delete": "Delete",
     "deleteApiKeyTitle": "Delete {name}?",
     "deleteWarning": "This cannot be undone.",
-    "deleting": "Deleting..."
+    "deleting": "Deleting...",
+    "createdTitle": "API key created",
+    "createdDescription": "Copy this key now — it won't be shown again. Only the prefix is kept for display afterwards.",
+    "copyToClipboard": "Copy to clipboard",
+    "copied": "Copied",
+    "doneAfterCopy": "I've copied it, done"
   },
   "nav": {
     "overview": "Overview",

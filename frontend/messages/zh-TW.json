@@ -89,7 +89,12 @@
     "delete": "刪除",
     "deleteApiKeyTitle": "刪除 {name}？",
     "deleteWarning": "此動作無法還原。",
-    "deleting": "刪除中..."
+    "deleting": "刪除中...",
+    "createdTitle": "API 金鑰已建立",
+    "createdDescription": "請立即複製此金鑰，之後將不再顯示，僅會保留前綴供顯示。",
+    "copyToClipboard": "複製到剪貼簿",
+    "copied": "已複製",
+    "doneAfterCopy": "已複製，完成"
   },
   "nav": {
     "overview": "概覽",

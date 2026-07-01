@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 
+import { useTranslations } from "@appspine/frontend-shell";
 import { MoreHorizontal } from "lucide-react";
 
 import {
@@ -27,6 +28,8 @@ import { deleteApiKeyAction, setApiKeyActiveAction } from "../actions";
 import type { ApiKeyRow } from "../types";
 
 export function ApiKeyRowActions({ apiKey }: { apiKey: ApiKeyRow }) {
+  const t = useTranslations("apiKeys");
+  const tCommon = useTranslations("common");
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -61,10 +64,10 @@ export function ApiKeyRowActions({ apiKey }: { apiKey: ApiKeyRow }) {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem onSelect={toggleActive} disabled={isPending}>
-            {apiKey.isActive ? "Deactivate" : "Activate"}
+            {apiKey.isActive ? t("deactivate") : t("activate")}
           </DropdownMenuItem>
           <DropdownMenuItem variant="destructive" onSelect={() => setDeleteOpen(true)}>
-            Delete
+            {t("delete")}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -72,14 +75,14 @@ export function ApiKeyRowActions({ apiKey }: { apiKey: ApiKeyRow }) {
       <AlertDialog open={deleteOpen} onOpenChange={setDeleteOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete {apiKey.name}?</AlertDialogTitle>
-            <AlertDialogDescription>This cannot be undone.</AlertDialogDescription>
+            <AlertDialogTitle>{t("deleteApiKeyTitle").replace("{name}", apiKey.name)}</AlertDialogTitle>
+            <AlertDialogDescription>{t("deleteWarning")}</AlertDialogDescription>
           </AlertDialogHeader>
           {error && <FieldError>{error}</FieldError>}
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{tCommon("cancel")}</AlertDialogCancel>
             <AlertDialogAction onClick={handleDelete} disabled={isPending}>
-              {isPending ? "Deleting..." : "Delete"}
+              {isPending ? t("deleting") : t("delete")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
