@@ -11,3 +11,4 @@ build/
 !.env.example
 **/src/generated/
 .DS_Store
+*.log
