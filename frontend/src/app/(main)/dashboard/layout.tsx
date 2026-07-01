@@ -4,15 +4,10 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 import { SIDEBAR_COLLAPSIBLE_VALUES, SIDEBAR_VARIANT_VALUES } from "@/lib/preferences/layout";
-import { getSidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { getCurrentUser } from "@/server/current-user";
 import { getPreference } from "@/server/server-actions";
 
-import { DashboardShell } from "./_components/dashboard-shell";
-import { HeaderBreadcrumbs } from "./_components/sidebar/header-breadcrumbs";
-import { LayoutControls } from "./_components/sidebar/layout-controls";
-import { SearchDialog } from "./_components/sidebar/search-dialog";
-import { ThemeSwitcher } from "./_components/sidebar/theme-switcher";
+import { DashboardShellBridge } from "./_components/dashboard-shell-bridge";
 
 export default async function Layout({ children }: Readonly<{ children: ReactNode }>) {
   // The auth cookie's mere presence was already checked by middleware.ts; this call
@@ -27,30 +22,15 @@ export default async function Layout({ children }: Readonly<{ children: ReactNod
     getPreference("sidebar_variant", SIDEBAR_VARIANT_VALUES, "inset"),
     getPreference("sidebar_collapsible", SIDEBAR_COLLAPSIBLE_VALUES, "icon"),
   ]);
-  const isAdmin = user.roleNames.includes("ADMIN");
-  const navItems = getSidebarItems(isAdmin);
 
   return (
-    <DashboardShell
+    <DashboardShellBridge
       user={user}
-      navItems={navItems}
       defaultOpen={defaultOpen}
-      sidebarVariant={variant}
-      sidebarCollapsible={collapsible}
-      headerContent={
-        <>
-          <HeaderBreadcrumbs />
-          <SearchDialog isAdmin={isAdmin} />
-        </>
-      }
-      headerActions={
-        <>
-          <LayoutControls />
-          <ThemeSwitcher />
-        </>
-      }
+      defaultSidebarVariant={variant}
+      defaultSidebarCollapsible={collapsible}
     >
       {children}
-    </DashboardShell>
+    </DashboardShellBridge>
   );
 }
