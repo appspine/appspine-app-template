@@ -15,8 +15,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { APP_CONFIG } from "@/config/app-config";
-import { rootUser } from "@/data/users";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
+import type { CurrentUser } from "@/server/current-user";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
 import { NavMain } from "./nav-main";
@@ -60,7 +60,7 @@ const _data = {
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ user, ...props }: React.ComponentProps<typeof Sidebar> & { user: CurrentUser }) {
   const { sidebarVariant, sidebarCollapsible, isSynced } = usePreferencesStore(
     useShallow((s) => ({
       sidebarVariant: s.sidebarVariant,
@@ -92,7 +92,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={rootUser} />
+        {/* NavUser still takes the {name,email,avatar} shape from blank_shadcn_app's
+            original mock data — dev_docs/004-task-breakdown.md T-204 redesigns its
+            props (adds onSignOut) when it moves into @appspine/frontend-shell. */}
+        <NavUser user={{ name: user.name ?? user.email, email: user.email, avatar: "" }} />
       </SidebarFooter>
       <SidebarResizer />
     </Sidebar>
