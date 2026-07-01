@@ -1,12 +1,22 @@
 "use client";
 
 import type { ReactNode } from "react";
+import * as React from "react";
 import { startTransition } from "react";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-import { DashboardShell, type NavGroup, type ShellLinkProps, ThemeSwitcher } from "@appspine/frontend-shell";
+import {
+  DashboardShell,
+  type Locale,
+  LocaleSwitcher,
+  type NavGroup,
+  type ShellLinkProps,
+  ThemeSwitcher,
+  useLocale,
+  useTranslations,
+} from "@appspine/frontend-shell";
 import { useShallow } from "zustand/react/shallow";
 
 import { APP_CONFIG } from "@/config/app-config";
@@ -14,6 +24,7 @@ import { persistPreference } from "@/lib/preferences/preferences-storage";
 import { getSidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { logout } from "@/server/auth-actions";
 import type { CurrentUser } from "@/server/current-user";
+import { setLocaleAction } from "@/server/locale-action.js";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
 import { HeaderBreadcrumbs } from "./sidebar/header-breadcrumbs";
@@ -44,6 +55,9 @@ export function DashboardShellBridge({
   children,
 }: DashboardShellBridgeProps) {
   const pathname = usePathname();
+  const router = useRouter();
+  const tNav = useTranslations("nav");
+  const locale = useLocale();
   const { isSynced, sidebarVariant, sidebarCollapsible, themeMode, setThemeMode } = usePreferencesStore(
     useShallow((state) => ({
       isSynced: state.isSynced,
@@ -56,12 +70,43 @@ export function DashboardShellBridge({
 
   const isAdmin = user.roleNames.includes("ADMIN");
   const navItems: readonly NavGroup[] = getSidebarItems(isAdmin);
+
+  const translatedNavItems = React.useMemo(() => {
+    return navItems.map((group) => ({
+      ...group,
+      label: group.label ? tNav(group.label) : undefined,
+      items: group.items.map((item) => {
+        const translatedItem = {
+          ...item,
+          title: tNav(item.title),
+        };
+        if (item.subItems) {
+          return {
+            ...translatedItem,
+            subItems: item.subItems.map((sub) => ({
+              ...sub,
+              title: tNav(sub.title),
+            })),
+          };
+        }
+        return translatedItem;
+      }),
+    }));
+  }, [navItems, tNav]);
+
   const effectiveSidebarVariant = isSynced ? sidebarVariant : defaultSidebarVariant;
   const effectiveSidebarCollapsible = isSynced ? sidebarCollapsible : defaultSidebarCollapsible;
 
   const handleThemeModeChange = (nextThemeMode: "light" | "dark" | "system") => {
     setThemeMode(nextThemeMode);
     void persistPreference("theme_mode", nextThemeMode);
+  };
+
+  const handleLocaleChange = (nextLocale: Locale) => {
+    React.startTransition(async () => {
+      await setLocaleAction(nextLocale);
+      router.refresh();
+    });
   };
 
   const handleSignOut = () => {
@@ -74,7 +119,7 @@ export function DashboardShellBridge({
     <DashboardShell
       appName={APP_CONFIG.name}
       currentPath={pathname}
-      navItems={navItems}
+      navItems={translatedNavItems}
       LinkComponent={AppLink}
       user={{
         name: user.name ?? user.email,
@@ -94,6 +139,7 @@ export function DashboardShellBridge({
       headerActions={
         <>
           <LayoutControls />
+          <LocaleSwitcher currentLocale={locale} onLocaleChange={handleLocaleChange} />
           <ThemeSwitcher themeMode={themeMode} onThemeModeChange={handleThemeModeChange} />
         </>
       }

@@ -45,11 +45,11 @@ export function getSidebarItems(isAdmin: boolean): NavGroup[] {
   const groups: NavGroup[] = [
     {
       id: 1,
-      label: "Overview",
+      label: "overview",
       items: [
         {
           id: "dashboard",
-          title: "Dashboard",
+          title: "dashboard",
           url: "/dashboard",
           icon: LayoutDashboard,
         },
@@ -60,11 +60,11 @@ export function getSidebarItems(isAdmin: boolean): NavGroup[] {
   if (isAdmin) {
     groups.push({
       id: 2,
-      label: "Administration",
+      label: "administration",
       items: [
-        { id: "users", title: "Users", url: "/dashboard/users", icon: Users },
-        { id: "roles", title: "Roles", url: "/dashboard/roles", icon: ShieldCheck },
-        { id: "api-keys", title: "API Keys", url: "/dashboard/api-keys", icon: KeyRound },
+        { id: "users", title: "users", url: "/dashboard/users", icon: Users },
+        { id: "roles", title: "roles", url: "/dashboard/roles", icon: ShieldCheck },
+        { id: "api-keys", title: "apiKeys", url: "/dashboard/api-keys", icon: KeyRound },
       ],
     });
   }
