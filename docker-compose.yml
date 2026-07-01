@@ -6,7 +6,7 @@ services:
       POSTGRES_PASSWORD: changeme
       POSTGRES_DB: app_db
     ports:
-      - "23900:5432"
+      - "${DB_PORT:-23900}:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
     healthcheck:
