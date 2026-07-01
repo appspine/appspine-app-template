@@ -15,7 +15,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { APP_CONFIG } from "@/config/app-config";
-import { getSidebarItems } from "@/navigation/sidebar/sidebar-items";
+import type { NavGroup } from "@/navigation/sidebar/sidebar-items";
 import type { CurrentUser } from "@/server/current-user";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
@@ -60,7 +60,14 @@ const _data = {
   ],
 };
 
-export function AppSidebar({ user, ...props }: React.ComponentProps<typeof Sidebar> & { user: CurrentUser }) {
+export function AppSidebar({
+  user,
+  items,
+  ...props
+}: React.ComponentProps<typeof Sidebar> & {
+  user: CurrentUser;
+  items: readonly NavGroup[];
+}) {
   const { sidebarVariant, sidebarCollapsible, isSynced } = usePreferencesStore(
     useShallow((s) => ({
       sidebarVariant: s.sidebarVariant,
@@ -87,7 +94,7 @@ export function AppSidebar({ user, ...props }: React.ComponentProps<typeof Sideb
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={getSidebarItems(user.roleNames.includes("ADMIN"))} />
+        <NavMain items={items} />
         {/* <NavDocuments items={data.documents} /> */}
         {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>

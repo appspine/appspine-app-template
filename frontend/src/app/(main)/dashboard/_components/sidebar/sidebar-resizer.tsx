@@ -28,7 +28,7 @@ export function SidebarResizer() {
     const savedWidth = localStorage.getItem("sidebar_width");
     if (savedWidth) {
       const parsed = parseInt(savedWidth, 10);
-      if (!isNaN(parsed) && parsed >= MIN_WIDTH && parsed <= MAX_WIDTH) {
+      if (!Number.isNaN(parsed) && parsed >= MIN_WIDTH && parsed <= MAX_WIDTH) {
         setWidth(parsed);
       }
     }
@@ -100,12 +100,12 @@ export function SidebarResizer() {
       tabIndex={0}
       onMouseDown={startResize}
       onKeyDown={handleKeyDown}
-      className="absolute top-0 bottom-0 -right-1 w-2 cursor-col-resize z-50 select-none group/resizer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+      className="group/resizer absolute top-0 -right-1 bottom-0 z-50 w-2 cursor-col-resize select-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
       style={{ touchAction: "none" }}
     >
       {/* Visual drag indicator */}
       <div
-        className={`w-[2px] h-full mx-auto transition-colors duration-200 ${
+        className={`mx-auto h-full w-[2px] transition-colors duration-200 ${
           isDragging ? "bg-primary" : "bg-transparent group-hover/resizer:bg-primary/40"
         }`}
       />
