@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 
+import { useTranslations } from "@appspine/frontend-shell";
 import { MoreHorizontal } from "lucide-react";
 
 import {
@@ -32,6 +33,8 @@ import { deleteRoleAction, updateRoleAction } from "../actions";
 import { PERMISSION_OPTIONS, PERMISSION_POLICIES, type RoleRow } from "../types";
 
 export function RoleRowActions({ role }: { role: RoleRow }) {
+  const t = useTranslations("roles");
+  const tCommon = useTranslations("common");
   const [editOpen, setEditOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -74,9 +77,10 @@ export function RoleRowActions({ role }: { role: RoleRow }) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onSelect={() => setEditOpen(true)}>Edit</DropdownMenuItem>
+          <DropdownMenuItem onSelect={() => setEditOpen(true)}>{t("edit")}</DropdownMenuItem>
           <DropdownMenuItem variant="destructive" disabled={!canDelete} onSelect={() => setDeleteOpen(true)}>
-            Delete{canDelete ? "" : " (in use)"}
+            {t("delete")}
+            {canDelete ? "" : t("cantDeleteInUse")}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -91,11 +95,11 @@ export function RoleRowActions({ role }: { role: RoleRow }) {
         <DialogContent>
           <form action={handleEditSubmit}>
             <DialogHeader>
-              <DialogTitle>Edit {role.name}</DialogTitle>
+              <DialogTitle>{t("editRoleTitle").replace("{name}", role.name)}</DialogTitle>
             </DialogHeader>
             <FieldGroup className="py-4">
               <Field>
-                <FieldLabel htmlFor={`edit-role-display-name-${role.id}`}>Display name</FieldLabel>
+                <FieldLabel htmlFor={`edit-role-display-name-${role.id}`}>{t("displayName")}</FieldLabel>
                 <Input
                   id={`edit-role-display-name-${role.id}`}
                   name="displayName"
@@ -105,7 +109,7 @@ export function RoleRowActions({ role }: { role: RoleRow }) {
                 />
               </Field>
               <Field>
-                <FieldLabel htmlFor={`edit-role-policy-${role.id}`}>Permission policy</FieldLabel>
+                <FieldLabel htmlFor={`edit-role-policy-${role.id}`}>{t("permissionPolicy")}</FieldLabel>
                 <Select name="permissionPolicy" defaultValue={role.permissionPolicy} disabled={isAdmin}>
                   <SelectTrigger id={`edit-role-policy-${role.id}`}>
                     <SelectValue />
@@ -121,9 +125,9 @@ export function RoleRowActions({ role }: { role: RoleRow }) {
               </Field>
               <Field>
                 <FieldLabel>
-                  Permissions
+                  {t("permissions")}
                   {isAdmin && (
-                    <span className="font-normal text-muted-foreground"> (managed automatically for ADMIN)</span>
+                    <span className="font-normal text-muted-foreground">{t("permissionsManagedForAdmin")}</span>
                   )}
                 </FieldLabel>
                 <div className="flex flex-col gap-2">
@@ -144,7 +148,7 @@ export function RoleRowActions({ role }: { role: RoleRow }) {
             </FieldGroup>
             <DialogFooter>
               <Button type="submit" disabled={isPending}>
-                {isPending ? "Saving..." : "Save"}
+                {isPending ? t("saving") : tCommon("save")}
               </Button>
             </DialogFooter>
           </form>
@@ -154,14 +158,14 @@ export function RoleRowActions({ role }: { role: RoleRow }) {
       <AlertDialog open={deleteOpen} onOpenChange={setDeleteOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete {role.displayName}?</AlertDialogTitle>
-            <AlertDialogDescription>This cannot be undone.</AlertDialogDescription>
+            <AlertDialogTitle>{t("deleteRoleTitle").replace("{name}", role.displayName)}</AlertDialogTitle>
+            <AlertDialogDescription>{t("deleteWarning")}</AlertDialogDescription>
           </AlertDialogHeader>
           {error && <FieldError>{error}</FieldError>}
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{tCommon("cancel")}</AlertDialogCancel>
             <AlertDialogAction onClick={handleDelete} disabled={isPending}>
-              {isPending ? "Deleting..." : "Delete"}
+              {isPending ? t("deleting") : t("delete")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

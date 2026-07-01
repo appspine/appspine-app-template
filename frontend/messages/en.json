@@ -59,7 +59,16 @@
     "createDesc": "The name cannot be changed after creation.",
     "displayName": "Display name",
     "permissionPolicy": "Permission policy",
-    "creating": "Creating..."
+    "creating": "Creating...",
+    "edit": "Edit",
+    "editRoleTitle": "Edit {name}",
+    "permissionsManagedForAdmin": " (managed automatically for ADMIN)",
+    "saving": "Saving...",
+    "delete": "Delete",
+    "cantDeleteInUse": " (in use)",
+    "deleteRoleTitle": "Delete {name}?",
+    "deleteWarning": "This cannot be undone.",
+    "deleting": "Deleting..."
   },
   "apiKeys": {
     "title": "API Keys",

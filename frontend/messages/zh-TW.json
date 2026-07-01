@@ -59,7 +59,16 @@
     "createDesc": "角色建立後名稱將無法變更。",
     "displayName": "顯示名稱",
     "permissionPolicy": "權限策略",
-    "creating": "建立中..."
+    "creating": "建立中...",
+    "edit": "編輯",
+    "editRoleTitle": "編輯 {name}",
+    "permissionsManagedForAdmin": "（ADMIN 由系統自動管理）",
+    "saving": "儲存中...",
+    "delete": "刪除",
+    "cantDeleteInUse": "（使用中）",
+    "deleteRoleTitle": "刪除 {name}？",
+    "deleteWarning": "此動作無法還原。",
+    "deleting": "刪除中..."
   },
   "apiKeys": {
     "title": "API 金鑰",

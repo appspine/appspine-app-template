@@ -2,6 +2,8 @@
 
 import { useState, useTransition } from "react";
 
+import { useTranslations } from "@appspine/frontend-shell";
+
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -22,6 +24,7 @@ import { createRoleAction } from "../actions";
 import { PERMISSION_OPTIONS, PERMISSION_POLICIES } from "../types";
 
 export function CreateRoleDialog() {
+  const t = useTranslations("roles");
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -47,17 +50,17 @@ export function CreateRoleDialog() {
       }}
     >
       <DialogTrigger asChild>
-        <Button>New Role</Button>
+        <Button>{t("newRole")}</Button>
       </DialogTrigger>
       <DialogContent>
         <form action={handleSubmit}>
           <DialogHeader>
-            <DialogTitle>Create role</DialogTitle>
-            <DialogDescription>The name cannot be changed after creation.</DialogDescription>
+            <DialogTitle>{t("createRole")}</DialogTitle>
+            <DialogDescription>{t("createDesc")}</DialogDescription>
           </DialogHeader>
           <FieldGroup className="py-4">
             <Field>
-              <FieldLabel htmlFor="new-role-name">Name</FieldLabel>
+              <FieldLabel htmlFor="new-role-name">{t("name")}</FieldLabel>
               <Input
                 id="new-role-name"
                 name="name"
@@ -69,11 +72,11 @@ export function CreateRoleDialog() {
               />
             </Field>
             <Field>
-              <FieldLabel htmlFor="new-role-display-name">Display name</FieldLabel>
+              <FieldLabel htmlFor="new-role-display-name">{t("displayName")}</FieldLabel>
               <Input id="new-role-display-name" name="displayName" type="text" required />
             </Field>
             <Field>
-              <FieldLabel htmlFor="new-role-policy">Permission policy</FieldLabel>
+              <FieldLabel htmlFor="new-role-policy">{t("permissionPolicy")}</FieldLabel>
               <Select name="permissionPolicy" defaultValue="DENY_ALL">
                 <SelectTrigger id="new-role-policy">
                   <SelectValue />
@@ -88,7 +91,7 @@ export function CreateRoleDialog() {
               </Select>
             </Field>
             <Field>
-              <FieldLabel>Permissions</FieldLabel>
+              <FieldLabel>{t("permissions")}</FieldLabel>
               <div className="flex flex-col gap-2">
                 {PERMISSION_OPTIONS.map((permission) => (
                   <Label key={permission} className="flex items-center gap-2 font-normal">
@@ -102,7 +105,7 @@ export function CreateRoleDialog() {
           </FieldGroup>
           <DialogFooter>
             <Button type="submit" disabled={isPending}>
-              {isPending ? "Creating..." : "Create"}
+              {isPending ? t("creating") : t("create")}
             </Button>
           </DialogFooter>
         </form>
