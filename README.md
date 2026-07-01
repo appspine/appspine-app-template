@@ -96,7 +96,8 @@ See `dev_docs/002-app-dev-conventions.md` ("新增 CRUD 模組標準流程") in 
 
 1. Use GitHub's "Use this template" to create your new business system repo.
 2. Change `name` in `backend/package.json` and `frontend/package.json`.
-3. Set `APP_NAME` / `APP_SLUG` in `.env` (used in audit log and MCP server name).
+3. Set `APP_NAME` in `.env` (used as the `appName` on every audit log entry). The MCP server's name comes from
+   `backend/package.json`'s `name` field (step 2), not an env var.
 4. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
    in `backend/prisma/schema/base.prisma`.
 5. Run `pnpm -C backend prisma:migrate` to generate a migration for your new schema.
