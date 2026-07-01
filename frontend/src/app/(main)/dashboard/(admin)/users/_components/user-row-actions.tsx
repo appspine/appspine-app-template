@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 
+import { useTranslations } from "@appspine/frontend-shell";
 import { MoreHorizontal } from "lucide-react";
 
 import {
@@ -30,6 +31,8 @@ import { deleteUserAction, setUserActiveAction, updateUserRolesAction } from "..
 import type { RoleOption, UserRow } from "../types";
 
 export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: RoleOption[]; isSelf: boolean }) {
+  const t = useTranslations("users");
+  const tCommon = useTranslations("common");
   const [rolesOpen, setRolesOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -50,9 +53,13 @@ export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: 
       if (result.error) {
         setError(result.error);
       } else {
-        setRolesOpen(false);
+        setOpen(false);
       }
     });
+  }
+
+  function setOpen(val: boolean) {
+    setRolesOpen(val);
   }
 
   function handleDelete() {
@@ -76,12 +83,13 @@ export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: 
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onSelect={() => setRolesOpen(true)}>Manage roles</DropdownMenuItem>
+          <DropdownMenuItem onSelect={() => setRolesOpen(true)}>{t("manageRoles")}</DropdownMenuItem>
           <DropdownMenuItem onSelect={toggleActive} disabled={isPending}>
-            {user.isActive ? "Deactivate" : "Activate"}
+            {user.isActive ? t("deactivate") : t("activate")}
           </DropdownMenuItem>
           <DropdownMenuItem variant="destructive" disabled={isSelf} onSelect={() => setDeleteOpen(true)}>
-            Delete{isSelf ? " (can't delete yourself)" : ""}
+            {t("delete")}
+            {isSelf ? t("cantDeleteSelf") : ""}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -90,7 +98,7 @@ export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: 
         <DialogContent>
           <form action={handleRolesSubmit}>
             <DialogHeader>
-              <DialogTitle>Roles for {user.email}</DialogTitle>
+              <DialogTitle>{t("rolesForUser").replace("{email}", user.email)}</DialogTitle>
             </DialogHeader>
             <div className="flex flex-col gap-2 py-4">
               {roles.map((role) => (
@@ -103,7 +111,7 @@ export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: 
             </div>
             <DialogFooter>
               <Button type="submit" disabled={isPending}>
-                {isPending ? "Saving..." : "Save"}
+                {isPending ? t("saving") : tCommon("save")}
               </Button>
             </DialogFooter>
           </form>
@@ -113,14 +121,14 @@ export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: 
       <AlertDialog open={deleteOpen} onOpenChange={setDeleteOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete {user.email}?</AlertDialogTitle>
-            <AlertDialogDescription>This cannot be undone.</AlertDialogDescription>
+            <AlertDialogTitle>{t("deleteUserTitle").replace("{email}", user.email)}</AlertDialogTitle>
+            <AlertDialogDescription>{t("deleteWarning")}</AlertDialogDescription>
           </AlertDialogHeader>
           {error && <FieldError>{error}</FieldError>}
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{tCommon("cancel")}</AlertDialogCancel>
             <AlertDialogAction onClick={handleDelete} disabled={isPending}>
-              {isPending ? "Deleting..." : "Delete"}
+              {isPending ? t("deleting") : t("delete")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
