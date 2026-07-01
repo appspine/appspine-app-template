@@ -1,0 +1,107 @@
+name: E2E
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/e2e.yml"
+      - "backend/**"
+      - "frontend/**"
+      - "e2e/**"
+      - ".env.example"
+      - "docker-compose.yml"
+      - "pnpm-lock.yaml"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/e2e.yml"
+      - "backend/**"
+      - "frontend/**"
+      - "e2e/**"
+      - ".env.example"
+      - "docker-compose.yml"
+      - "pnpm-lock.yaml"
+
+jobs:
+  e2e:
+    if: ${{ hashFiles('e2e/package.json') != '' }}
+    runs-on: ubuntu-latest
+    env:
+      SEED_USER_PASSWORD: ${{ format('Admin-{0}!appspine', github.run_id) }}
+      E2E_USER_EMAIL: ${{ format('e2e-user-{0}@example.com', github.run_id) }}
+      E2E_USER_PASSWORD: ${{ format('User-{0}!appspine', github.run_id) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.4.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install E2E dependencies
+        run: pnpm install --dir e2e --frozen-lockfile --ignore-workspace
+
+      - name: Start database
+        run: docker compose up -d db
+
+      - name: Prepare database
+        shell: bash
+        run: |
+          set -a
+          source .env
+          set +a
+          pnpm -C backend prisma:generate
+          pnpm -C backend prisma:deploy
+          pnpm -C backend prisma:seed
+
+      - name: Install Playwright browsers
+        run: pnpm --dir e2e exec playwright install --with-deps chromium
+
+      - name: Start application
+        shell: bash
+        run: |
+          set -a
+          source .env
+          set +a
+          export E2E_API_URL="http://127.0.0.1:${BACKEND_PORT}"
+          export E2E_BASE_URL="http://localhost:${FRONTEND_PORT}"
+          nohup pnpm -C backend dev > backend-dev.log 2>&1 &
+          NEXT_PUBLIC_API_URL="$E2E_API_URL" nohup pnpm -C frontend dev > frontend-dev.log 2>&1 &
+          for i in {1..60}; do
+            if curl -fsS "$E2E_API_URL/health" >/dev/null && curl -fsS "$E2E_BASE_URL/login" >/dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Application did not become ready in time." >&2
+          exit 1
+
+      - name: Run E2E suite
+        shell: bash
+        run: |
+          set -a
+          source .env
+          set +a
+          export E2E_API_URL="http://127.0.0.1:${BACKEND_PORT}"
+          export E2E_BASE_URL="http://localhost:${FRONTEND_PORT}"
+          export E2E_ADMIN_EMAIL="${SEED_USER_EMAIL}"
+          export E2E_ADMIN_PASSWORD="${SEED_USER_PASSWORD}"
+          pnpm --dir e2e test
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            e2e/playwright-report
+            e2e/test-results
+            backend-dev.log
+            frontend-dev.log

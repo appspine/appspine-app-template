@@ -2,6 +2,9 @@ import { SYSTEM_ADMIN_ROLE, SYSTEM_USER_ROLE } from "@appspine/auth";
 import { Permission, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
+const bcrypt = require("bcrypt") as {
+  hash(value: string, rounds: number): Promise<string>;
+};
 
 // USER role has no default permissions — add module-specific grants when forking.
 const USER_DEFAULT_PERMISSIONS: Permission[] = [];
@@ -29,16 +32,19 @@ async function main() {
 
   const email = process.env.SEED_USER_EMAIL;
   const name = process.env.SEED_USER_NAME;
+  const password = process.env.SEED_USER_PASSWORD;
 
   if (!email) {
     console.log("SEED_USER_EMAIL not set — skipping user seed.");
     return;
   }
 
+  const passwordHash = password ? await bcrypt.hash(password, 12) : null;
+
   const user = await prisma.user.upsert({
     where: { email },
-    update: {},
-    create: { email, name },
+    update: passwordHash ? { name, password: passwordHash } : { name },
+    create: { email, name, password: passwordHash },
   });
   await prisma.userRole.upsert({
     where: { userId_roleId: { userId: user.id, roleId: adminRole.id } },
@@ -47,6 +53,9 @@ async function main() {
   });
 
   console.log(`Seed user ready: ${email} (ADMIN)`);
+  if (passwordHash) {
+    console.log(`Seed user password ready for ${email}`);
+  }
 }
 
 main()

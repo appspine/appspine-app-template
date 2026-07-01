@@ -1,0 +1,17 @@
+{
+  "name": "@app/e2e",
+  "private": true,
+  "scripts": {
+    "test": "playwright test --config ./playwright.config.ts",
+    "test:headed": "playwright test --config ./playwright.config.ts --headed",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "check": "biome check ."
+  },
+  "devDependencies": {
+    "@appspine/e2e-kit": "file:../../appspine/packages/e2e-kit",
+    "@biomejs/biome": "^2.5.1",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.20.0",
+    "typescript": "^5.9.3"
+  }
+}
