@@ -4,7 +4,7 @@ Combined frontend (Next.js + shadcn/ui) + backend (NestJS + Prisma) starting poi
 systems. Use GitHub's "Use this template" to create a new business system repo from this one.
 
 See the appspine workspace `CLAUDE.md` and `dev_docs/001-app-framework-plan.md` / `dev_docs/002-app-dev-conventions.md`
-for the framework plan and conventions this template follows.
+for the framework plan and conventions this template follows. For agent/AI-assisted development, see [docs/agent-guide.md](docs/agent-guide.md).
 
 ## What's included
 
@@ -95,10 +95,13 @@ See `dev_docs/002-app-dev-conventions.md` ("新增 CRUD 模組標準流程") in 
 ## Forking this template
 
 1. Use GitHub's "Use this template" to create your new business system repo.
-2. Change `name` in `backend/package.json` and `frontend/package.json`.
-3. Set `APP_NAME` in `.env` (used as the `appName` on every audit log entry). The MCP server's name comes from
-   `backend/package.json`'s `name` field (step 2), not an env var.
-4. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
+2. Initialize the application using the scaffold script:
+   ```bash
+   node scripts/scaffold-init.mjs --name <your-app-name> --display-name "<Your App Display Name>"
+   ```
+   This automatically updates the application name, environment configuration, headers, and metadata configs.
+3. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
    in `backend/prisma/schema/base.prisma`.
-5. Run `pnpm -C backend prisma:migrate` to generate a migration for your new schema.
-6. Run `pnpm -C backend schema:docs` to regenerate `docs/data-dictionary.md`.
+4. Run `pnpm -C backend prisma:migrate` to generate a migration for your new schema.
+5. Run `pnpm -C backend schema:docs` to regenerate `docs/data-dictionary.md`.
+6. Fill in the "App Positioning" description inside `docs/agent-guide.md` to describe the business domain.
