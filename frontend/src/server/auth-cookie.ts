@@ -1,5 +1,8 @@
-"use server";
-
+// Server-only (uses next/headers) but deliberately NOT a "use server" file: Next.js
+// only allows async function exports from "use server" modules, and AUTH_COOKIE_NAME
+// below is a const. These functions are only ever called from other server-only
+// modules (api-client.ts, auth-actions.ts), never imported directly into a
+// "use client" component, so no directive is needed here.
 import { cookies } from "next/headers";
 
 // Keep in sync with the backend's JWT_EXPIRES_IN default (@appspine/auth), so the
