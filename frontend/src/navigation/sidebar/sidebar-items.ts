@@ -1,4 +1,4 @@
-import { LayoutDashboard, type LucideIcon } from "lucide-react";
+import { KeyRound, LayoutDashboard, type LucideIcon, ShieldCheck, Users } from "lucide-react";
 
 export type NavBadge = "new" | "soon";
 
@@ -38,17 +38,36 @@ export interface NavGroup {
   items: NavMainItem[];
 }
 
-export const sidebarItems: NavGroup[] = [
-  {
-    id: 1,
-    label: "Overview",
-    items: [
-      {
-        id: "dashboard",
-        title: "Dashboard",
-        url: "/dashboard",
-        icon: LayoutDashboard,
-      },
-    ],
-  },
-];
+// Administration items are ADMIN-only — appspine-app-template/frontend/src/app/(main)/dashboard/(admin)/layout.tsx
+// already blocks direct navigation, but hiding the entries too avoids showing
+// non-admins links they can't use.
+export function getSidebarItems(isAdmin: boolean): NavGroup[] {
+  const groups: NavGroup[] = [
+    {
+      id: 1,
+      label: "Overview",
+      items: [
+        {
+          id: "dashboard",
+          title: "Dashboard",
+          url: "/dashboard",
+          icon: LayoutDashboard,
+        },
+      ],
+    },
+  ];
+
+  if (isAdmin) {
+    groups.push({
+      id: 2,
+      label: "Administration",
+      items: [
+        { id: "users", title: "Users", url: "/dashboard/users", icon: Users },
+        { id: "roles", title: "Roles", url: "/dashboard/roles", icon: ShieldCheck },
+        { id: "api-keys", title: "API Keys", url: "/dashboard/api-keys", icon: KeyRound },
+      ],
+    });
+  }
+
+  return groups;
+}

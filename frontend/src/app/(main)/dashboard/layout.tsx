@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { getCurrentUser } from "@/server/current-user";
 import { getPreference } from "@/server/server-actions";
 
+import { HeaderBreadcrumbs } from "./_components/sidebar/header-breadcrumbs";
 import { LayoutControls } from "./_components/sidebar/layout-controls";
 import { SearchDialog } from "./_components/sidebar/search-dialog";
 import { ThemeSwitcher } from "./_components/sidebar/theme-switcher";
@@ -29,6 +30,7 @@ export default async function Layout({ children }: Readonly<{ children: ReactNod
     getPreference("sidebar_variant", SIDEBAR_VARIANT_VALUES, "inset"),
     getPreference("sidebar_collapsible", SIDEBAR_COLLAPSIBLE_VALUES, "icon"),
   ]);
+  const isAdmin = user.roleNames.includes("ADMIN");
 
   return (
     <SidebarProvider
@@ -64,7 +66,8 @@ export default async function Layout({ children }: Readonly<{ children: ReactNod
                 orientation="vertical"
                 className="mx-2 data-[orientation=vertical]:h-4 data-[orientation=vertical]:self-center"
               />
-              <SearchDialog />
+              <HeaderBreadcrumbs />
+              <SearchDialog isAdmin={isAdmin} />
             </div>
             <div className="flex items-center gap-2">
               <LayoutControls />
