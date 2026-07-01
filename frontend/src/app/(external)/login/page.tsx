@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 
+import { useTranslations } from "@appspine/frontend-shell";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -20,6 +21,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
+  const t = useTranslations("auth");
   const [isPending, startTransition] = useTransition();
   const [formError, setFormError] = useState<string | null>(null);
 
@@ -42,29 +44,37 @@ export default function LoginPage() {
     });
   }
 
+  const emailError = errors.email;
+  const passwordError = errors.password
+    ? {
+        ...errors.password,
+        message: t("passwordRequired"),
+      }
+    : undefined;
+
   return (
     <div className="flex min-h-dvh items-center justify-center bg-background px-4">
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
-          <CardTitle>Sign in</CardTitle>
-          <CardDescription>Enter your email and password to continue.</CardDescription>
+          <CardTitle>{t("signIn")}</CardTitle>
+          <CardDescription>{t("signInDesc")}</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)}>
             <FieldGroup>
               <Field data-invalid={!!errors.email}>
-                <FieldLabel htmlFor="email">Email</FieldLabel>
+                <FieldLabel htmlFor="email">{t("email")}</FieldLabel>
                 <Input id="email" type="email" autoComplete="email" {...register("email")} />
-                <FieldError errors={[errors.email]} />
+                <FieldError errors={[emailError]} />
               </Field>
               <Field data-invalid={!!errors.password}>
-                <FieldLabel htmlFor="password">Password</FieldLabel>
+                <FieldLabel htmlFor="password">{t("password")}</FieldLabel>
                 <Input id="password" type="password" autoComplete="current-password" {...register("password")} />
-                <FieldError errors={[errors.password]} />
+                <FieldError errors={[passwordError]} />
               </Field>
               {formError && <FieldError>{formError}</FieldError>}
               <Button type="submit" className="w-full" disabled={isPending}>
-                {isPending ? "Signing in..." : "Sign in"}
+                {isPending ? t("signingIn") : t("signIn")}
               </Button>
             </FieldGroup>
           </form>
