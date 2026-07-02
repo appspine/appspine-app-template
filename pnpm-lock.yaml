@@ -106,8 +106,8 @@ importers:
   frontend:
     dependencies:
       '@appspine/frontend-shell':
-        specifier: file:../../appspine/packages/frontend-shell
-        version: file:../appspine/packages/frontend-shell(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+        specifier: ^0.1.2
+        version: 0.1.2(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@base-ui/react':
         specifier: ^1.6.0
         version: 1.6.0(@date-fns/tz@1.5.0)(@types/react@19.2.17)(date-fns@4.4.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -311,8 +311,8 @@ packages:
       express: ^5.0.0
       zod: ^4.4.3
 
-  '@appspine/frontend-shell@file:../appspine/packages/frontend-shell':
-    resolution: {directory: ../appspine/packages/frontend-shell, type: directory}
+  '@appspine/frontend-shell@0.1.2':
+    resolution: {integrity: sha512-hr0P4d5ndlEgmtsTV30WifyTvgkPbkAq9tl3BhU3vkS8QmegUrxbg0KGLJ3v70BH5lLRRuJ9xjR01mgvcfYGsQ==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.1.2/a0e957f81d780e1d489427b646915ee0dd74ea92}
     peerDependencies:
       class-variance-authority: ^0.7.1
       clsx: ^2.1.1
@@ -4875,7 +4875,7 @@ snapshots:
       - pino-http
       - rxjs
 
-  '@appspine/frontend-shell@file:../appspine/packages/frontend-shell(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
+  '@appspine/frontend-shell@0.1.2(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1
