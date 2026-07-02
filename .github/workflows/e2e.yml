@@ -72,9 +72,11 @@ jobs:
       - name: Prepare database
         shell: bash
         run: |
+          ci_seed_password="$SEED_USER_PASSWORD"
           set -a
           source .env
           set +a
+          export SEED_USER_PASSWORD="$ci_seed_password"
           pnpm -C backend prisma:generate
           pnpm -C backend prisma:deploy
           pnpm -C backend prisma:seed
@@ -104,13 +106,14 @@ jobs:
       - name: Run E2E suite
         shell: bash
         run: |
+          ci_seed_password="$SEED_USER_PASSWORD"
           set -a
           source .env
           set +a
           export E2E_API_URL="http://127.0.0.1:${BACKEND_PORT}"
           export E2E_BASE_URL="http://localhost:${FRONTEND_PORT}"
           export E2E_ADMIN_EMAIL="${SEED_USER_EMAIL}"
-          export E2E_ADMIN_PASSWORD="${SEED_USER_PASSWORD}"
+          export E2E_ADMIN_PASSWORD="$ci_seed_password"
           pnpm --dir e2e test
 
       - name: Upload Playwright report
