@@ -37,6 +37,7 @@ jobs:
     if: needs.detect.outputs.has_e2e == 'true'
     runs-on: ubuntu-latest
     env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SEED_USER_PASSWORD: ${{ format('Admin-{0}!appspine', github.run_id) }}
       E2E_USER_EMAIL: ${{ format('e2e-user-{0}@example.com', github.run_id) }}
       E2E_USER_PASSWORD: ${{ format('User-{0}!appspine', github.run_id) }}
