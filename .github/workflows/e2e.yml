@@ -48,6 +48,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Configure environment
+        run: cp .env.example .env
+
       - uses: pnpm/action-setup@v4
         with:
           version: 11.4.0
