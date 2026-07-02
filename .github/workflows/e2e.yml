@@ -9,6 +9,7 @@ on:
       - "e2e/**"
       - ".env.example"
       - ".npmrc"
+      - "pnpm-workspace.yaml"
       - "docker-compose.yml"
       - "pnpm-lock.yaml"
   push:
@@ -21,6 +22,7 @@ on:
       - "e2e/**"
       - ".env.example"
       - ".npmrc"
+      - "pnpm-workspace.yaml"
       - "docker-compose.yml"
       - "pnpm-lock.yaml"
 
