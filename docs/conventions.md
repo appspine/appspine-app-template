@@ -43,6 +43,19 @@ docker-compose.yml
 
 ## Comments & Documentation
 
+## Enum / i18n
+
+- Frontend enum option lists must come from `GET /metadata/schema`, not from hardcoded mirror arrays such as
+  `const OPTIONS = [...]`.
+- Enum translation keys live in the top-level `enums` namespace of each locale file, using the fixed dotted format
+  `enums.<EnumName>.<VALUE>` (for example `enums.PermissionPolicy.DENY_ALL`).
+- Add translations for every Prisma enum value, even if the enum is not rendered in the UI yet. Schema-first coverage
+  prevents future drift.
+- Enum translation drift must fail loudly before commit: if a Prisma enum value is added, removed, or renamed, update the
+  `enums` keys in every locale file in the same change.
+- M2M API Key `resource:action` scopes are not part of this enum translation mechanism. They are derived scopes, not raw
+  Prisma enum values.
+
 - All code comments (`//`, `/* */`, JSDoc, Prisma `///`) in English; write one only when the WHY
   isn't obvious (a hidden constraint, a workaround, counter-intuitive behavior) — never restate the
   WHAT, good naming already does that
@@ -146,6 +159,11 @@ Every API error returns this shape:
   plan in the appspine workspace).
 
 ## Standard Flow for Adding a New CRUD Module
+
+- Extra reminder for step 1: when a schema change adds or edits a Prisma enum, the work is not done at migration time.
+  Plan the matching `/metadata/schema` consumer updates and the `enums.<EnumName>.<VALUE>` translations in the same task.
+- Extra reminder for step 5: enum work is not just page-copy i18n. If step 1 changed a Prisma enum, update the `enums`
+  namespace and make sure the enum i18n pre-commit check passes.
 
 1. **Backend – Schema**: add the model/enum under `backend/prisma/schema/`, with `///` doc comments;
    stop the dev server, then run `prisma generate` / `prisma migrate dev`.
