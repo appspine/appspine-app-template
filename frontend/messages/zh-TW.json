@@ -107,6 +107,21 @@
     "copied": "已複製",
     "doneAfterCopy": "已複製，完成"
   },
+  "enums": {
+    "PermissionPolicy.DENY_ALL": "\u5168\u90e8\u62d2\u7d55",
+    "PermissionPolicy.READ_ALL": "\u5168\u90e8\u53ef\u8b80",
+    "PermissionPolicy.ALLOW_ALL": "\u5168\u90e8\u5141\u8a31",
+    "Permission.USERS_READ": "\u8b80\u53d6\u4f7f\u7528\u8005",
+    "Permission.USERS_CREATE": "\u5efa\u7acb\u4f7f\u7528\u8005",
+    "Permission.USERS_UPDATE": "\u66f4\u65b0\u4f7f\u7528\u8005",
+    "Permission.USERS_DELETE": "\u522a\u9664\u4f7f\u7528\u8005",
+    "Permission.API_KEYS_READ": "\u8b80\u53d6 API \u91d1\u9470",
+    "Permission.API_KEYS_CREATE": "\u5efa\u7acb API \u91d1\u9470",
+    "Permission.API_KEYS_DELETE": "\u522a\u9664 API \u91d1\u9470",
+    "AuditAction.CREATE": "\u5efa\u7acb",
+    "AuditAction.UPDATE": "\u66f4\u65b0",
+    "AuditAction.DELETE": "\u522a\u9664"
+  },
   "nav": {
     "overview": "概覽",
     "dashboard": "控制台",

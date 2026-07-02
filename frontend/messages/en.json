@@ -107,6 +107,21 @@
     "copied": "Copied",
     "doneAfterCopy": "I've copied it, done"
   },
+  "enums": {
+    "PermissionPolicy.DENY_ALL": "Deny all",
+    "PermissionPolicy.READ_ALL": "Read all",
+    "PermissionPolicy.ALLOW_ALL": "Allow all",
+    "Permission.USERS_READ": "Read users",
+    "Permission.USERS_CREATE": "Create users",
+    "Permission.USERS_UPDATE": "Update users",
+    "Permission.USERS_DELETE": "Delete users",
+    "Permission.API_KEYS_READ": "Read API keys",
+    "Permission.API_KEYS_CREATE": "Create API keys",
+    "Permission.API_KEYS_DELETE": "Delete API keys",
+    "AuditAction.CREATE": "Create",
+    "AuditAction.UPDATE": "Update",
+    "AuditAction.DELETE": "Delete"
+  },
   "nav": {
     "overview": "Overview",
     "dashboard": "Dashboard",
