@@ -23,8 +23,18 @@ on:
       - "pnpm-lock.yaml"
 
 jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      has_e2e: ${{ steps.check.outputs.has_e2e }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: check
+        run: echo "has_e2e=$([ -f e2e/package.json ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
   e2e:
-    if: ${{ hashFiles('e2e/package.json') != '' }}
+    needs: detect
+    if: needs.detect.outputs.has_e2e == 'true'
     runs-on: ubuntu-latest
     env:
       SEED_USER_PASSWORD: ${{ format('Admin-{0}!appspine', github.run_id) }}

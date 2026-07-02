@@ -84,8 +84,9 @@ Every API error returns this shape:
   relation `_count`), resolve that field's `orderBy` shape locally rather than bypassing the shared
   allow-list/direction-mapping logic for the fields it can already handle.
 - **RESTful routes**: standard resources expose 5 endpoints (`GET /` list, `GET /:id`, `POST /`,
-  `PATCH /:id`, `DELETE /:id`), matching the 5 MCP tools (`list_*`/`get_*`/`create_*`/`update_*`/
-  `delete_*`) NestJS auto-generates per model — keep REST and MCP CRUD naming aligned.
+  `PATCH /:id`, `DELETE /:id`). If a module also exposes an MCP tool, name it to match
+  (`list_*`/`get_*`/`create_*`/`update_*`/`delete_*`) — **the framework does not auto-generate these
+  tools**; the app registers them itself via `@McpTool()` (see step 3 of the CRUD module flow below).
 - **No global `/api` prefix** — routes mount directly at root (`/users`, `/api-keys`, `/mcp`,
   `/metadata/schema`).
 
@@ -132,15 +133,23 @@ Every API error returns this shape:
 2. **Backend – Module**: build in order — `dto` (Zod schema) → `service`
    (`findAll`/`findOne`/`create`/`update`/`remove`) → `controller` (with guards) → `module`,
    registered in `app.module.ts`.
-3. **Frontend – API**: a `server/<entity>-api.ts`-style module exporting types and CRUD functions.
-4. **Frontend – i18n**: add translation keys alongside any new UI text.
-5. **Frontend – Sidebar**: add the nav item and its breadcrumb mapping.
-6. **Frontend – Pages**: list / new / edit pages — a standalone page when there are more than ~8
+3. **Backend – MCP tools (optional)**: if this module should be callable by AI agents or M2M
+   clients, add `@McpTool({ name, description, inputSchema, requiredScopes })` (from
+   `@appspine/mcp-server`) to the service methods you want to expose, then have the module implement
+   `OnModuleInit`, inject `McpToolRegistry`, and call `registerMcpToolsFromInstance(this, registry)`
+   to register them. **The framework does not auto-generate these tools** — `list_*`/`get_*`/
+   `create_*`/`update_*`/`delete_*` is just a suggested naming convention to mirror REST; which of
+   the 5 (if any) to expose, the tool names, and `requiredScopes` (`resource:action` format, matching
+   the M2M API Key scope design) are entirely up to the app to write by hand.
+4. **Frontend – API**: a `server/<entity>-api.ts`-style module exporting types and CRUD functions.
+5. **Frontend – i18n**: add translation keys alongside any new UI text.
+6. **Frontend – Sidebar**: add the nav item and its breadcrumb mapping.
+7. **Frontend – Pages**: list / new / edit pages — a standalone page when there are more than ~8
    fields, a Dialog when there are fewer.
-7. **TypeScript check**: `tsc --noEmit` must pass on both `frontend/` and `backend/`.
-8. **Browser verification**: golden path (create/list/edit/delete) + edge cases (empty state,
+8. **TypeScript check**: `tsc --noEmit` must pass on both `frontend/` and `backend/`.
+9. **Browser verification**: golden path (create/list/edit/delete) + edge cases (empty state,
    validation errors) + regression check on nearby features.
-9. **Code review**: run `/code-review`, focusing on auth guards, IDOR, N+1 queries, and sensitive
-   field leaks.
-10. Fix review findings, re-run typecheck.
-11. **Commit & push** per the Git conventions above.
+10. **Code review**: run `/code-review`, focusing on auth guards, IDOR, N+1 queries, and sensitive
+    field leaks.
+11. Fix review findings, re-run typecheck.
+12. **Commit & push** per the Git conventions above.

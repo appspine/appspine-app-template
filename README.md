@@ -25,6 +25,9 @@ for the framework plan and conventions this template follows. For agent/AI-assis
 
 - **Node.js** 22+ and **pnpm** 11+
 - **Docker** (for the local Postgres)
+- **GitHub Packages access** — a GitHub Personal Access Token (classic) with the `read:packages` scope and
+  membership in the `appspine` org. The `@appspine/*` packages this template depends on are private packages
+  published to `npm.pkg.github.com`; see step 4 below.
 
 ### 2. Start the local database
 
@@ -43,13 +46,23 @@ cp .env.example .env
 For local development the defaults work out of the box. Change `JWT_SECRET` before deploying to any shared
 environment.
 
-### 4. Install dependencies
+### 4. Authenticate to GitHub Packages
+
+`.npmrc` reads the registry token from the `GITHUB_TOKEN` environment variable. Export it before installing:
+
+```bash
+export GITHUB_TOKEN=<your PAT with read:packages scope>
+```
+
+Add this to your shell profile so it persists across sessions.
+
+### 5. Install dependencies
 
 ```bash
 pnpm install
 ```
 
-### 5. First-time database setup
+### 6. First-time database setup
 
 ```bash
 pnpm -C backend prisma:migrate   # applies the committed migration
@@ -61,7 +74,7 @@ pnpm -C backend prisma:seed      # creates ADMIN + USER system roles and a seed 
 > `POST /auth/register`, then promote it to ADMIN by assigning the ADMIN role in the database (e.g. via
 > `prisma:studio`).
 
-### 6. Start the dev servers
+### 7. Start the dev servers
 
 ```bash
 pnpm dev
@@ -74,7 +87,7 @@ This runs both servers concurrently with hot-reload:
 | Backend (NestJS) | http://localhost:3900 |
 | Frontend (Next.js) | http://localhost:3901 |
 
-### 7. Verify
+### 8. Verify
 
 ```bash
 curl http://localhost:3900/health
