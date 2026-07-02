@@ -17,6 +17,7 @@
     "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]
   },
   "dependencies": {
+    "@appspine/metadata-schema": "^0.2.0",
     "@appspine/frontend-shell": "^0.1.2",
     "@base-ui/react": "^1.6.0",
     "@dnd-kit/core": "^6.3.1",

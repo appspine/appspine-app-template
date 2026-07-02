@@ -23,7 +23,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { createRoleAction } from "../actions";
 import { PERMISSION_OPTIONS, PERMISSION_POLICIES } from "../types";
 
-export function CreateRoleDialog() {
+export function CreateRoleDialog({
+  policyOptions: _policyOptions,
+  permissionOptions: _permissionOptions,
+}: {
+  policyOptions: readonly string[];
+  permissionOptions: readonly string[];
+}) {
   const t = useTranslations("roles");
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();

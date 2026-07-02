@@ -32,7 +32,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { deleteRoleAction, updateRoleAction } from "../actions";
 import { PERMISSION_OPTIONS, PERMISSION_POLICIES, type RoleRow } from "../types";
 
-export function RoleRowActions({ role }: { role: RoleRow }) {
+export function RoleRowActions({
+  role,
+  policyOptions: _policyOptions,
+  permissionOptions: _permissionOptions,
+}: {
+  role: RoleRow;
+  policyOptions: readonly string[];
+  permissionOptions: readonly string[];
+}) {
   const t = useTranslations("roles");
   const tCommon = useTranslations("common");
   const [editOpen, setEditOpen] = useState(false);

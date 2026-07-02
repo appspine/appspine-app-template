@@ -1,10 +1,12 @@
 import Link from "next/link";
 
 import { ListPagination, ListSearchForm, SortableColumnHeader } from "@appspine/frontend-shell";
+import type { SchemaMeta } from "@appspine/metadata-schema";
 
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { getTranslations } from "@/i18n/server";
+import { enumLabel } from "@/lib/i18n/enum-label";
 import type { PaginatedResult } from "@/server/api-client";
 import { apiFetch } from "@/server/api-client";
 import { buildListHref, buildSortHref, formatPageInfo, parseSortOrder } from "@/server/list-url";
@@ -24,6 +26,7 @@ export default async function RolesPage({
 }) {
   const t = await getTranslations("roles");
   const tCommon = await getTranslations("common");
+  const tEnum = await getTranslations("enums");
 
   const { page: pageParam, search = "", sortField, sortOrder: sortOrderParam } = await searchParams;
   const page = Number(pageParam) || 1;
@@ -35,7 +38,18 @@ export default async function RolesPage({
   if (sortOrder) query.set("sortOrder", sortOrder);
 
   const { data: roles, total } = await apiFetch<PaginatedResult<RoleRow>>(`/roles?${query}`);
+  const meta = await apiFetch<SchemaMeta>("/metadata/schema");
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const permissionPolicyOptions = meta.enums
+    .find((enumMeta) => enumMeta.name === "PermissionPolicy")
+    ?.values.map((value) => value.name);
+  const permissionOptions = meta.enums
+    .find((enumMeta) => enumMeta.name === "Permission")
+    ?.values.map((value) => value.name);
+
+  if (!permissionPolicyOptions || !permissionOptions) {
+    throw new Error("Missing PermissionPolicy or Permission enum metadata from /metadata/schema");
+  }
 
   const paginationInfoText = formatPageInfo(t("pageInfo"), { page, totalPages, total });
 
@@ -43,7 +57,7 @@ export default async function RolesPage({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="font-bold text-2xl tracking-tight">{t("title")}</h1>
-        <CreateRoleDialog />
+        <CreateRoleDialog policyOptions={permissionPolicyOptions} permissionOptions={permissionOptions} />
       </div>
 
       <ListSearchForm defaultValue={search} placeholder={t("searchPlaceholder")} searchButtonText={tCommon("search")} />
@@ -108,12 +122,12 @@ export default async function RolesPage({
                   </div>
                   <div className="text-muted-foreground text-xs">{role.name}</div>
                 </TableCell>
-                <TableCell>{role.permissionPolicy}</TableCell>
+                <TableCell>{enumLabel(tEnum, "PermissionPolicy", role.permissionPolicy)}</TableCell>
                 <TableCell>
                   <div className="flex flex-wrap gap-1">
                     {role.permissions.map((permission) => (
                       <Badge key={permission} variant="secondary">
-                        {permission}
+                        {enumLabel(tEnum, "Permission", permission)}
                       </Badge>
                     ))}
                   </div>
@@ -121,7 +135,11 @@ export default async function RolesPage({
                 <TableCell>{role.userCount}</TableCell>
                 <TableCell>{role.apiKeyCount}</TableCell>
                 <TableCell>
-                  <RoleRowActions role={role} />
+                  <RoleRowActions
+                    role={role}
+                    policyOptions={permissionPolicyOptions}
+                    permissionOptions={permissionOptions}
+                  />
                 </TableCell>
               </TableRow>
             ))}
