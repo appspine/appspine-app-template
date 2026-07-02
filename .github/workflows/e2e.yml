@@ -110,6 +110,7 @@ jobs:
           set -a
           source .env
           set +a
+          export SEED_USER_PASSWORD="$ci_seed_password"
           export E2E_API_URL="http://127.0.0.1:${BACKEND_PORT}"
           export E2E_BASE_URL="http://localhost:${FRONTEND_PORT}"
           export E2E_ADMIN_EMAIL="${SEED_USER_EMAIL}"
