@@ -19,18 +19,19 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { enumLabel } from "@/lib/i18n/enum-label";
 
 import { createRoleAction } from "../actions";
-import { PERMISSION_OPTIONS, PERMISSION_POLICIES } from "../types";
 
 export function CreateRoleDialog({
-  policyOptions: _policyOptions,
-  permissionOptions: _permissionOptions,
+  policyOptions,
+  permissionOptions,
 }: {
   policyOptions: readonly string[];
   permissionOptions: readonly string[];
 }) {
   const t = useTranslations("roles");
+  const tEnum = useTranslations("enums");
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -88,9 +89,9 @@ export function CreateRoleDialog({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {PERMISSION_POLICIES.map((policy) => (
+                  {policyOptions.map((policy) => (
                     <SelectItem key={policy} value={policy}>
-                      {policy}
+                      {enumLabel(tEnum, "PermissionPolicy", policy)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -99,10 +100,10 @@ export function CreateRoleDialog({
             <Field>
               <FieldLabel>{t("permissions")}</FieldLabel>
               <div className="flex flex-col gap-2">
-                {PERMISSION_OPTIONS.map((permission) => (
+                {permissionOptions.map((permission) => (
                   <Label key={permission} className="flex items-center gap-2 font-normal">
                     <Checkbox name="permissions" value={permission} />
-                    {permission}
+                    {enumLabel(tEnum, "Permission", permission)}
                   </Label>
                 ))}
               </div>

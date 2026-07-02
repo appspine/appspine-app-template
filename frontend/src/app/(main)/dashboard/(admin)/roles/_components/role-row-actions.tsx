@@ -28,14 +28,15 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { enumLabel } from "@/lib/i18n/enum-label";
 
 import { deleteRoleAction, updateRoleAction } from "../actions";
-import { PERMISSION_OPTIONS, PERMISSION_POLICIES, type RoleRow } from "../types";
+import type { RoleRow } from "../types";
 
 export function RoleRowActions({
   role,
-  policyOptions: _policyOptions,
-  permissionOptions: _permissionOptions,
+  policyOptions,
+  permissionOptions,
 }: {
   role: RoleRow;
   policyOptions: readonly string[];
@@ -43,6 +44,7 @@ export function RoleRowActions({
 }) {
   const t = useTranslations("roles");
   const tCommon = useTranslations("common");
+  const tEnum = useTranslations("enums");
   const [editOpen, setEditOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -123,9 +125,9 @@ export function RoleRowActions({
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {PERMISSION_POLICIES.map((policy) => (
+                    {policyOptions.map((policy) => (
                       <SelectItem key={policy} value={policy}>
-                        {policy}
+                        {enumLabel(tEnum, "PermissionPolicy", policy)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -139,7 +141,7 @@ export function RoleRowActions({
                   )}
                 </FieldLabel>
                 <div className="flex flex-col gap-2">
-                  {PERMISSION_OPTIONS.map((permission) => (
+                  {permissionOptions.map((permission) => (
                     <Label key={permission} className="flex items-center gap-2 font-normal">
                       <Checkbox
                         name="permissions"
@@ -147,7 +149,7 @@ export function RoleRowActions({
                         disabled={isAdmin}
                         defaultChecked={role.permissions.includes(permission)}
                       />
-                      {permission}
+                      {enumLabel(tEnum, "Permission", permission)}
                     </Label>
                   ))}
                 </div>
