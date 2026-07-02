@@ -114,7 +114,8 @@ Every API error returns this shape:
 - Before building a form/UI control, check for an existing shadcn/ui primitive
   (`frontend/src/components/ui/`) first — never reach for a raw native HTML control
   (`<input type="date">`, `<select>`, `<input type="checkbox">`, etc.) when a shadcn equivalent
-  exists.
+  exists. These primitives come with correct ARIA/keyboard behavior baked in; native controls are
+  an easy way to end up with an inaccessible UI.
 - Use shadcn's `Select` as-is for both static option lists (hardcoded constants, e.g. gender, tier)
   and dynamically-loaded ones (e.g. an API-backed role/user list) — no extra wrapper component is
   needed on top of it.
@@ -125,6 +126,24 @@ Every API error returns this shape:
     once — no effect needed.
   - Dialog fed by a prop already in memory: call `reset()` inside `onOpenChange`.
   - Dialog that fetches on open: guard with an `initialized` state to avoid a re-fetch race.
+- **Theming**: controlled via `data-*` attributes on `<html>` — `data-theme-mode` (light/dark),
+  `data-theme-preset` (one of `brutalist`/`soft-pop`/`tangerine`), `data-font` (8 font options). The
+  actual color/font definitions live in `frontend/src/app/globals.css`. Chart colors use the
+  `--chart-1` through `--chart-5` CSS variables (also defined there) — don't hardcode chart colors
+  in a component.
+- **Icons**: use `lucide-react` for general UI icons (the shadcn/ui default). Use `simple-icons`
+  (via `components/simple-icon.tsx`) only for brand/product logos — never for generic UI icons.
+- **Custom component placement & when to extract**: reusable non-shadcn components live under
+  `frontend/src/components/` (flat — no need for further subfolders). Extract a piece of markup
+  into its own component once it's reused in ≥2 places or a single page's markup exceeds roughly 50
+  lines; otherwise keep it inline in the page file. Don't extract preemptively for "might be reused
+  later."
+- **Promoting a component into `@appspine/frontend-shell`**: only promote a component into the
+  shared package when it meets both (a) it's genuinely framework-level (auth/nav/theme chrome, not
+  business-domain UI) and (b) it carries no app-specific business logic or copy. When unsure, keep
+  it local — promoting too early saddles a component only one app ever needed with ongoing
+  published-package versioning overhead (same caution as `dev_docs/003`'s shared-package reuse
+  plan in the appspine workspace).
 
 ## Standard Flow for Adding a New CRUD Module
 
