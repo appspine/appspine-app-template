@@ -19,6 +19,23 @@ for the framework plan and conventions this template follows. For agent/AI-assis
   - Metadata Schema API: `GET /metadata/schema` (DMMF-derived, M2M API Key `metadata:read` scope)
   - MCP Server: `POST /mcp` (Streamable HTTP, M2M API Key auth, app registers its own tools via `@McpTool`)
 
+## API
+
+<!-- TODO(scaffold): Document this app's own REST API surface here as you build it out — one table per
+     domain area, grouped the way `docs/conventions.md`'s CRUD flow groups modules. Note any guard
+     requirements that differ from the standard `JwtOrApiKeyGuard` + `PermissionGuard` (+ `ScopeGuard`
+     for API-key callers) chain. See the wiki app's README (github.com/appspine/wiki) for a worked
+     example of this section once it's filled in. -->
+
+## MCP tools
+
+<!-- TODO(scaffold): If this app registers custom `@McpTool`s (see docs/conventions.md's "Standard Flow
+     for Adding a New CRUD Module", step 3), document them here as a table: tool name | required scope |
+     purpose. Note the fail-closed behavior for write tools (calling API key must have a bound
+     `actingUserId`) and that MCP tool-execution errors surface as `isError:true` in the JSON-RPC result,
+     not as an HTTP error status — this trips people up when they test with curl expecting a 403.
+     Delete this section entirely if the app exposes no tools beyond the framework's built-ins. -->
+
 ## Quick Start
 
 ### 1. Prerequisites
@@ -107,14 +124,47 @@ See [docs/conventions.md](docs/conventions.md#standard-flow-for-adding-a-new-cru
 
 ## Forking this template
 
+### Day 0 — initial setup
+
 1. Use GitHub's "Use this template" to create your new business system repo.
 2. Initialize the application using the scaffold script:
    ```bash
    node scripts/scaffold-init.mjs --name <your-app-name> --display-name "<Your App Display Name>"
    ```
    This automatically updates the application name, environment configuration, headers, and metadata configs.
+   Pass app-specific ports during scaffold if this app will run alongside other local apps:
+   ```bash
+   node scripts/scaffold-init.mjs --name wiki --display-name "Wiki" --db-port 23910 --backend-port 3910 --frontend-port 3911
+   ```
+   The port flags update `.env.example`, `DATABASE_URL`, CORS, `NEXT_PUBLIC_API_URL`, and the frontend dev script together.
+   **They do not touch this README's prose** — scaffold-init only rewrites the `# appspine-app-template`
+   title (`README.md`/`CLAUDE.md`/`AGENTS.md`), so if you passed custom ports, the "Postgres will be
+   available at `localhost:23900`" line below is now wrong until you fix it by hand (see the checklist below).
 3. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
    in `backend/prisma/schema/base.prisma`.
 4. Run `pnpm -C backend prisma:migrate` to generate a migration for your new schema.
-5. Run `pnpm -C backend schema:docs` to regenerate `docs/data-dictionary.md`.
-6. Fill in the "App Positioning" description inside `docs/agent-guide.md` to describe the business domain.
+
+### Before you ship — documentation checklist
+
+This template's own docs are all placeholders (`README.md` still reads like a template, `docs/agent-guide.md`
+has a literal `App Positioning` TODO). None of this is regenerated automatically as you build — go through
+this list once your domain model and API surface have stabilized, and again before each major feature adds
+new endpoints/tools:
+
+- [ ] **`README.md`** — replace the generic "What's included" framing with what your app actually does
+  (a couple of sentences on the domain, a bullet list of core entities). Fill in the `## API` and
+  `## MCP tools` placeholder sections added above with real endpoint/tool tables — delete `## MCP tools`
+  entirely if you never call `@McpTool`. Re-check every hardcoded port/URL in `## Quick Start` against
+  your actual `scaffold-init` flags (see the Day 0 note above — these do **not** update themselves).
+- [ ] **`docs/agent-guide.md`** — fill in the `## App Positioning` section (business domain, core modules).
+  This is what an agent reads first when picking up work in your fork; a TODO there means every session
+  starts context-blind.
+- [ ] **`docs/data-dictionary.md`** — regenerate with `pnpm -C backend schema:docs` after every schema
+  change, not just once at fork time. It's auto-generated but not auto-*run*.
+- [ ] **This "Forking this template" section** — once your app is a live business system rather than
+  something meant to be re-forked, either delete this whole section or repoint step 2's example command
+  at your own app's conventions. Leaving generic scaffold instructions in a production app's README reads
+  as unmaintained.
+
+See the `wiki` app (github.com/appspine/wiki) for a forked repo that's been through this checklist —
+its README/agent-guide/data-dictionary are a reference example of the "done" state.

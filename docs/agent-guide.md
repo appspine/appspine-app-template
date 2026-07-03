@@ -30,6 +30,8 @@ conventions — plus the standard flow for adding a new CRUD module — live in
 ## App Positioning
 
 <!-- TODO(scaffold): Fill in this app's positioning after running scaffold-init.
-     Describe the business domain and the core modules this system owns. -->
+     Describe the business domain and the core modules this system owns.
+     This is one item on a larger list — see README.md's "Before you ship — documentation checklist"
+     under "Forking this template" for the rest (API/MCP tools tables, data-dictionary regen, etc). -->
 
 ---
