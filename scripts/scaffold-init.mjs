@@ -143,25 +143,25 @@ function applyReplacements(ctx) {
   // 4. frontend/src/config/app-config.ts
   replaceInFile(path.join(REPO_ROOT, 'frontend', 'src', 'config', 'app-config.ts'), [
     {
-      pattern: /name: "Studio Admin"/,
+      pattern: /name: "Appspine App Template"/,
       replacement: `name: "${displayName}"`,
       expectedCount: 1,
       description: 'APP_CONFIG name',
     },
     {
-      pattern: /copyright: `© \${currentYear}, Studio Admin\.`/,
+      pattern: /copyright: `© \${currentYear}, Appspine App Template\.`/,
       replacement: `copyright: \`© \${currentYear}, ${displayName}.\``,
       expectedCount: 1,
       description: 'APP_CONFIG copyright',
     },
     {
-      pattern: /title: "Studio Admin - Modern Next.js Dashboard Starter Template"/,
+      pattern: /title: "Appspine App Template"/,
       replacement: `title: "${displayName}"`,
       expectedCount: 1,
       description: 'APP_CONFIG meta title',
     },
     {
-      pattern: /description:\s*\n?\s*"Studio Admin is a modern, open-source dashboard starter template built with Next\.js 16, Tailwind CSS v4, and shadcn\/ui\. Perfect for SaaS apps, admin panels, and internal tools—fully customizable and production-ready\."/,
+      pattern: /description:\s*\n?\s*"Appspine App Template is a fully customizable starter for business systems built with Next\.js 16, Tailwind CSS v4, and shadcn\/ui\."/,
       replacement: `description:\n      "${description}"`,
       expectedCount: 1,
       description: 'APP_CONFIG meta description',
