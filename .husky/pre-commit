@@ -1,4 +1,5 @@
 pnpm -C backend run check:enum-i18n
+pnpm typecheck
 cd frontend
 npm run generate:presets
 git add src/lib/preferences/theme.ts
