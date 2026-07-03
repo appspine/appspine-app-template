@@ -51,9 +51,6 @@ export default async function UsersPage({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="font-bold text-2xl tracking-tight">{tUsers("title")}</h1>
-        {/* AUTH_MODE=oidc: identity is owned by the external IdP, so local account
-            creation is hidden here (dev_docs 001 "身份/權限細節"). Role assignment
-            below stays visible in both modes. */}
         {showLocalAuthUi && <CreateUserDialog roles={roles} />}
       </div>
 
@@ -89,13 +86,14 @@ export default async function UsersPage({
               </TableHead>
               <TableHead>{tUsers("roles")}</TableHead>
               <TableHead>{tUsers("status")}</TableHead>
+              <TableHead>{tUsers("serviceAccount")}</TableHead>
               <TableHead className="w-10" />
             </TableRow>
           </TableHeader>
           <TableBody>
             {users.length === 0 && (
               <TableRow>
-                <TableCell colSpan={5} className="text-center text-muted-foreground">
+                <TableCell colSpan={6} className="text-center text-muted-foreground">
                   {tUsers("noUsers")}
                 </TableCell>
               </TableRow>
@@ -103,7 +101,7 @@ export default async function UsersPage({
             {users.map((user) => (
               <TableRow key={user.id}>
                 <TableCell>{user.email}</TableCell>
-                <TableCell>{user.name ?? "—"}</TableCell>
+                <TableCell>{user.name ?? "-"}</TableCell>
                 <TableCell>
                   <div className="flex flex-wrap gap-1">
                     {user.roles.map((role) => (
@@ -117,6 +115,9 @@ export default async function UsersPage({
                   <Badge variant={user.isActive ? "default" : "outline"}>
                     {user.isActive ? tUsers("active") : tUsers("inactive")}
                   </Badge>
+                </TableCell>
+                <TableCell>
+                  {user.isServiceAccount && <Badge variant="secondary">{tUsers("serviceAccount")}</Badge>}
                 </TableCell>
                 <TableCell>
                   <UserRowActions user={user} roles={roles} isSelf={user.id === currentUser?.sub} />

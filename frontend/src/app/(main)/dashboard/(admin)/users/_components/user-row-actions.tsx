@@ -27,7 +27,7 @@ import {
 import { FieldError } from "@/components/ui/field";
 import { Label } from "@/components/ui/label";
 
-import { deleteUserAction, setUserActiveAction, updateUserRolesAction } from "../actions";
+import { deleteUserAction, setUserActiveAction, setUserServiceAccountAction, updateUserRolesAction } from "../actions";
 import type { RoleOption, UserRow } from "../types";
 
 export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: RoleOption[]; isSelf: boolean }) {
@@ -42,6 +42,14 @@ export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: 
     setError(null);
     startTransition(async () => {
       const result = await setUserActiveAction(user.id, !user.isActive);
+      if (result.error) setError(result.error);
+    });
+  }
+
+  function toggleServiceAccount() {
+    setError(null);
+    startTransition(async () => {
+      const result = await setUserServiceAccountAction(user.id, !user.isServiceAccount);
       if (result.error) setError(result.error);
     });
   }
@@ -86,6 +94,9 @@ export function UserRowActions({ user, roles, isSelf }: { user: UserRow; roles: 
           <DropdownMenuItem onSelect={() => setRolesOpen(true)}>{t("manageRoles")}</DropdownMenuItem>
           <DropdownMenuItem onSelect={toggleActive} disabled={isPending}>
             {user.isActive ? t("deactivate") : t("activate")}
+          </DropdownMenuItem>
+          <DropdownMenuItem onSelect={toggleServiceAccount} disabled={isPending}>
+            {user.isServiceAccount ? t("unmarkServiceAccount") : t("markServiceAccount")}
           </DropdownMenuItem>
           <DropdownMenuItem variant="destructive" disabled={isSelf} onSelect={() => setDeleteOpen(true)}>
             {t("delete")}

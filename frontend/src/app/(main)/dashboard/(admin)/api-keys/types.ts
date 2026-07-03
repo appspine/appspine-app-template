@@ -13,6 +13,7 @@ export interface ApiKeyRow {
   name: string;
   prefix: string;
   roleId: string;
+  actingUserId: string | null;
   role: RoleRef;
   scopes: string[];
   rateLimit: number | null;
@@ -41,6 +42,12 @@ export interface RoleOption {
   id: string;
   name: string;
   displayName: string;
+}
+
+export interface ServiceAccountOption {
+  id: string;
+  email: string;
+  name: string | null;
 }
 
 // No scope catalog endpoint exists yet (the M2M scope format is

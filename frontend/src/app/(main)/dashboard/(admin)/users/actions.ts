@@ -17,11 +17,25 @@ export async function createUserAction(formData: FormData): Promise<ActionResult
         email: formData.get("email"),
         password: formData.get("password"),
         name: formData.get("name") || undefined,
+        isServiceAccount: formData.get("isServiceAccount") === "on",
         roleIds: roleIds.length > 0 ? roleIds : undefined,
       }),
     });
   } catch (err) {
     return { error: err instanceof ApiError ? err.message : "Failed to create user" };
+  }
+  revalidatePath("/dashboard/users");
+  return {};
+}
+
+export async function setUserServiceAccountAction(id: string, isServiceAccount: boolean): Promise<ActionResult> {
+  try {
+    await apiFetch(`/users/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ isServiceAccount }),
+    });
+  } catch (err) {
+    return { error: err instanceof ApiError ? err.message : "Failed to update user" };
   }
   revalidatePath("/dashboard/users");
   return {};

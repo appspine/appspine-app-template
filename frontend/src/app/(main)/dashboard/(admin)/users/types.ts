@@ -12,6 +12,7 @@ export interface UserRow {
   email: string;
   name: string | null;
   isActive: boolean;
+  isServiceAccount: boolean;
   createdAt: string;
   roles: RoleRef[];
 }
