@@ -4,7 +4,13 @@ import { getAuthToken } from "./auth-cookie";
 // so apiFetch must only be called from Server Components / Server Actions / Route
 // Handlers — never imported into a "use client" module.
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3900";
+function readRequiredEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) throw new Error(`Missing required environment variable: ${name}`);
+  return value;
+}
+
+const API_BASE_URL = readRequiredEnv("NEXT_PUBLIC_API_URL");
 
 // Mirrors the JSON shape written by @appspine/common's GlobalExceptionFilter
 // (packages/common/src/filters/exception.filter.ts).

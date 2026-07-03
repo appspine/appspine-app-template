@@ -4,7 +4,13 @@ import { redirect } from "next/navigation";
 
 import { clearAuthCookie, setAuthCookie } from "./auth-cookie";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3900";
+function readRequiredEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) throw new Error(`Missing required environment variable: ${name}`);
+  return value;
+}
+
+const API_BASE_URL = readRequiredEnv("NEXT_PUBLIC_API_URL");
 
 export interface LoginResult {
   error?: string;
