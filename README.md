@@ -127,19 +127,21 @@ See [docs/conventions.md](docs/conventions.md#standard-flow-for-adding-a-new-cru
 ### Day 0 — initial setup
 
 1. Use GitHub's "Use this template" to create your new business system repo.
-2. Initialize the application using the scaffold script:
+2. **Always pass `--db-port`/`--backend-port`/`--frontend-port`.** Every fork defaults to the same
+   23900/3900/3901 this template itself uses — skip the flags and your app silently collides with the
+   template checkout (or any other fork that also skipped them) the moment both try to run locally. Check
+   the workspace's `docs/agent-guide.md` "Local Dev Ports" table for ports already claimed by other apps,
+   pick an unused block, and add a row for your app in the same commit:
    ```bash
-   node scripts/scaffold-init.mjs --name <your-app-name> --display-name "<Your App Display Name>"
+   node scripts/scaffold-init.mjs --name <your-app-name> --display-name "<Your App Display Name>" \
+     --db-port <unused-2xxxx> --backend-port <unused-3xxx> --frontend-port <unused-3xxx+1>
    ```
-   This automatically updates the application name, environment configuration, headers, and metadata configs.
-   Pass app-specific ports during scaffold if this app will run alongside other local apps:
-   ```bash
-   node scripts/scaffold-init.mjs --name wiki --display-name "Wiki" --db-port 23910 --backend-port 3910 --frontend-port 3911
-   ```
-   The port flags update `.env.example`, `DATABASE_URL`, CORS, `NEXT_PUBLIC_API_URL`, and the frontend dev script together.
-   **They do not touch this README's prose** — scaffold-init only rewrites the `# appspine-app-template`
-   title (`README.md`/`CLAUDE.md`/`AGENTS.md`), so if you passed custom ports, the "Postgres will be
-   available at `localhost:23900`" line below is now wrong until you fix it by hand (see the checklist below).
+   This also updates the application name, environment configuration, headers, and metadata configs.
+   The port flags update `.env.example`, `DATABASE_URL`, CORS, `NEXT_PUBLIC_API_URL`, and the frontend dev
+   script together. **They do not touch this README's prose** — scaffold-init only rewrites the
+   `# appspine-app-template` title (`README.md`/`CLAUDE.md`/`AGENTS.md`), so the "Postgres will be
+   available at `localhost:23900`" line below (and the two other port mentions further down) are now wrong
+   until you fix them by hand (see the checklist below).
 3. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
    in `backend/prisma/schema/base.prisma`.
 4. Run `pnpm -C backend prisma:migrate` to generate a migration for your new schema.
@@ -161,6 +163,10 @@ new endpoints/tools:
   starts context-blind.
 - [ ] **`docs/data-dictionary.md`** — regenerate with `pnpm -C backend schema:docs` after every schema
   change, not just once at fork time. It's auto-generated but not auto-*run*.
+- [ ] **Workspace `docs/agent-guide.md` "Local Dev Ports" table** — if you changed any port after the
+  initial fork (a later collision, a new local app needing the block you picked), update your app's row
+  there too, not just your own `.env`/`.env.example`/`README.md`. This table is the only cross-app source
+  of truth — if it's stale, the next fork picks a port you're already using.
 - [ ] **This "Forking this template" section** — once your app is a live business system rather than
   something meant to be re-forked, either delete this whole section or repoint step 2's example command
   at your own app's conventions. Leaving generic scaffold instructions in a production app's README reads
