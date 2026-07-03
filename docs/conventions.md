@@ -43,6 +43,15 @@ docker-compose.yml
 
 ## Comments & Documentation
 
+- All code comments (`//`, `/* */`, JSDoc, Prisma `///`) in English; write one only when the WHY
+  isn't obvious (a hidden constraint, a workaround, counter-intuitive behavior) — never restate the
+  WHAT, good naming already does that
+- All docs and commit messages in English
+- **Prisma `///` doc comments are required** on every model and enum — they're the source of truth
+  for the Metadata Schema API (`GET /metadata/schema`) and `docs/data-dictionary.md`, which is how
+  AI agents and future developers understand the schema without reading migrations
+- `docs/data-dictionary.md` is auto-generated via `pnpm -C backend schema:docs` — never edit by hand
+
 ## Enum / i18n
 
 - Frontend enum option lists must come from `GET /metadata/schema`, not from hardcoded mirror arrays such as
@@ -55,15 +64,6 @@ docker-compose.yml
   `enums` keys in every locale file in the same change.
 - M2M API Key `resource:action` scopes are not part of this enum translation mechanism. They are derived scopes, not raw
   Prisma enum values.
-
-- All code comments (`//`, `/* */`, JSDoc, Prisma `///`) in English; write one only when the WHY
-  isn't obvious (a hidden constraint, a workaround, counter-intuitive behavior) — never restate the
-  WHAT, good naming already does that
-- All docs and commit messages in English
-- **Prisma `///` doc comments are required** on every model and enum — they're the source of truth
-  for the Metadata Schema API (`GET /metadata/schema`) and `docs/data-dictionary.md`, which is how
-  AI agents and future developers understand the schema without reading migrations
-- `docs/data-dictionary.md` is auto-generated via `pnpm -C backend schema:docs` — never edit by hand
 
 ## Error Response Format
 
