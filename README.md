@@ -103,7 +103,7 @@ pnpm dev
 
 ## Adding a new CRUD module
 
-See `dev_docs/002-app-dev-conventions.md` ("新增 CRUD 模組標準流程") in the appspine workspace.
+See [docs/conventions.md](docs/conventions.md#standard-flow-for-adding-a-new-crud-module) for the standard CRUD module flow.
 
 ## Forking this template
 
