@@ -2,6 +2,9 @@ packages:
   - "backend"
   - "frontend"
 
+overrides:
+  '@appspine/common': 0.2.0
+
 # @appspine/* are private packages published by this same org, not public npm -
 # the supply-chain risk minimumReleaseAge guards against (freshly-published
 # malicious packages) doesn't apply here, and the pnpm 11 default (24h) blocks

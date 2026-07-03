@@ -129,7 +129,9 @@
     "Permission.API_KEYS_DELETE": "Delete API keys",
     "AuditAction.CREATE": "Create",
     "AuditAction.UPDATE": "Update",
-    "AuditAction.DELETE": "Delete"
+    "AuditAction.DELETE": "Delete",
+    "AuditAction.RESTORE": "Restore",
+    "AuditAction.MOVE": "Move"
   },
   "nav": {
     "overview": "Overview",

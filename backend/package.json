@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "dotenv -e ../.env -- nest start --watch",
     "build": "nest build",
-    "start": "dotenv -e ../.env -- node dist/main",
+    "start": "dotenv -e ../.env -- node dist/src/main",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "check": "biome check src",
     "prisma:generate": "dotenv -e ../.env -- prisma generate --schema prisma/schema",
@@ -20,12 +20,12 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
-    "@appspine/audit-log": "^0.2.0",
+    "@appspine/audit-log": "^0.3.0",
     "@appspine/auth": "^1.0.0",
-    "@appspine/common": "^0.1.0",
+    "@appspine/common": "^0.2.0",
     "@appspine/health-check": "^0.1.0",
     "@appspine/m2m-api-key": "^1.0.0",
-    "@appspine/mcp-server": "^0.1.4",
+    "@appspine/mcp-server": "^0.2.0",
     "@appspine/metadata-schema": "^0.2.1",
     "@appspine/rbac": "^1.0.0",
     "@nestjs/common": "^11.0.5",

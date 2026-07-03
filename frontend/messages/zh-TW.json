@@ -129,7 +129,9 @@
     "Permission.API_KEYS_DELETE": "\u522a\u9664 API \u91d1\u9470",
     "AuditAction.CREATE": "\u5efa\u7acb",
     "AuditAction.UPDATE": "\u66f4\u65b0",
-    "AuditAction.DELETE": "\u522a\u9664"
+    "AuditAction.DELETE": "\u522a\u9664",
+    "AuditAction.RESTORE": "\u9084\u539f",
+    "AuditAction.MOVE": "\u79fb\u52d5"
   },
   "nav": {
     "overview": "概覽",
