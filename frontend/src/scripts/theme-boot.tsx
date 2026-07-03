@@ -6,6 +6,8 @@
  * Runs early in <head> to apply the correct data attributes before hydration,
  * preventing layout or theme flicker and keeping RootLayout fully static.
  */
+import Script from "next/script";
+
 import { PREFERENCE_DEFAULTS, PREFERENCE_PERSISTENCE } from "@/lib/preferences/preferences-config";
 
 export function ThemeBootScript() {
@@ -108,6 +110,11 @@ export function ThemeBootScript() {
     })();
   `;
 
+  // next/script's beforeInteractive strategy (not a raw <script> tag) injects this into the
+  // initial HTML and guarantees it runs before hydration, without React's client reconciler
+  // trying to diff a <script> element as part of the component tree (which throws a
+  // "script tag while rendering" dev warning for a plain <script>, and — worse — a <template>
+  // tag as that warning suggests would never execute at all, defeating the whole point).
   /* biome-ignore lint/security/noDangerouslySetInnerHtml: required for pre-hydration boot script */
-  return <script dangerouslySetInnerHTML={{ __html: code }} />;
+  return <Script id="theme-boot" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: code }} />;
 }
