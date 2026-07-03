@@ -71,6 +71,12 @@ export function CreateUserDialog({ roles }: { roles: RoleOption[] }) {
               <Input id="new-user-name" name="name" type="text" />
             </Field>
             <Field>
+              <Label className="flex items-center gap-2 font-normal">
+                <Checkbox name="isServiceAccount" />
+                {t("isServiceAccount")}
+              </Label>
+            </Field>
+            <Field>
               <FieldLabel>{t("roles")}</FieldLabel>
               <div className="flex flex-col gap-2">
                 {roles.map((role) => (

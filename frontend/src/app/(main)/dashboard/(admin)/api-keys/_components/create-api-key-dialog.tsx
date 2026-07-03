@@ -22,11 +22,17 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 import { createApiKeyAction } from "../actions";
-import type { CreateApiKeyResponse, RoleOption } from "../types";
+import type { CreateApiKeyResponse, RoleOption, ServiceAccountOption } from "../types";
 import { SCOPE_ACTIONS, SCOPE_RESOURCES } from "../types";
 import { CreatedApiKeyReveal } from "./created-api-key-reveal";
 
-export function CreateApiKeyDialog({ roles }: { roles: RoleOption[] }) {
+export function CreateApiKeyDialog({
+  roles,
+  serviceAccounts,
+}: {
+  roles: RoleOption[];
+  serviceAccounts: ServiceAccountOption[];
+}) {
   const t = useTranslations("apiKeys");
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -107,6 +113,22 @@ export function CreateApiKeyDialog({ roles }: { roles: RoleOption[] }) {
               <Field>
                 <FieldLabel htmlFor="new-key-rate-limit">{t("rateLimit")}</FieldLabel>
                 <Input id="new-key-rate-limit" name="rateLimit" type="number" min={1} max={600} />
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="new-key-acting-user">{t("actingUserOptional")}</FieldLabel>
+                <Select name="actingUserId" defaultValue="__none">
+                  <SelectTrigger id="new-key-acting-user">
+                    <SelectValue placeholder={t("actingUserNone")} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="__none">{t("actingUserNone")}</SelectItem>
+                    {serviceAccounts.map((account) => (
+                      <SelectItem key={account.id} value={account.id}>
+                        {account.email}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </Field>
               <Field>
                 <FieldLabel htmlFor="new-key-expires-at">{t("expiresAt")}</FieldLabel>

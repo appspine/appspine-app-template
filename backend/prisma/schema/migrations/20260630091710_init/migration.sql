@@ -14,6 +14,7 @@ CREATE TABLE "api_keys" (
     "prefix" TEXT NOT NULL,
     "hashed_key" TEXT NOT NULL,
     "role_id" TEXT NOT NULL,
+    "acting_user_id" TEXT,
     "scopes" TEXT[],
     "rate_limit" INTEGER,
     "is_active" BOOLEAN NOT NULL DEFAULT true,
@@ -37,6 +38,7 @@ CREATE TABLE "audit_logs" (
     "app_name" TEXT NOT NULL,
     "is_ai_operation" BOOLEAN NOT NULL DEFAULT false,
     "mcp_tool" TEXT,
+    "acting_api_key_id" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "audit_logs_pkey" PRIMARY KEY ("id")
@@ -80,6 +82,7 @@ CREATE TABLE "users" (
     "password" TEXT,
     "name" TEXT,
     "is_active" BOOLEAN NOT NULL DEFAULT true,
+    "is_service_account" BOOLEAN NOT NULL DEFAULT false,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3) NOT NULL,
 
@@ -100,6 +103,9 @@ CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- AddForeignKey
 ALTER TABLE "api_keys" ADD CONSTRAINT "api_keys_role_id_fkey" FOREIGN KEY ("role_id") REFERENCES "roles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "api_keys" ADD CONSTRAINT "api_keys_acting_user_id_fkey" FOREIGN KEY ("acting_user_id") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "role_permissions" ADD CONSTRAINT "role_permissions_role_id_fkey" FOREIGN KEY ("role_id") REFERENCES "roles"("id") ON DELETE CASCADE ON UPDATE CASCADE;

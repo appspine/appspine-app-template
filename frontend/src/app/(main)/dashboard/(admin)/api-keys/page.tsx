@@ -11,7 +11,7 @@ import { buildListHref, buildSortHref, formatPageInfo, parseSortOrder } from "@/
 
 import { ApiKeyRowActions } from "./_components/api-key-row-actions";
 import { CreateApiKeyDialog } from "./_components/create-api-key-dialog";
-import type { ApiKeyRow, RoleOption } from "./types";
+import type { ApiKeyRow, RoleOption, ServiceAccountOption } from "./types";
 
 const PAGE_SIZE = 20;
 
@@ -34,10 +34,14 @@ export default async function ApiKeysPage({
   if (sortField) query.set("sortField", sortField);
   if (sortOrder) query.set("sortOrder", sortOrder);
 
-  const [{ data: apiKeys, total }, roles] = await Promise.all([
+  const [{ data: apiKeys, total }, roles, { data: users }] = await Promise.all([
     apiFetch<PaginatedResult<ApiKeyRow>>(`/api-keys?${query}`),
     apiFetch<RoleOption[]>("/roles/options"),
+    apiFetch<PaginatedResult<ServiceAccountOption & { isServiceAccount: boolean }>>("/users?limit=100"),
   ]);
+  const serviceAccounts: ServiceAccountOption[] = users
+    .filter((user) => user.isServiceAccount)
+    .map(({ id, email, name }) => ({ id, email, name }));
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
@@ -47,7 +51,7 @@ export default async function ApiKeysPage({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="font-bold text-2xl tracking-tight">{tApiKeys("title")}</h1>
-        <CreateApiKeyDialog roles={roles} />
+        <CreateApiKeyDialog roles={roles} serviceAccounts={serviceAccounts} />
       </div>
 
       <ListSearchForm
@@ -72,6 +76,7 @@ export default async function ApiKeysPage({
               </TableHead>
               <TableHead>{tApiKeys("key")}</TableHead>
               <TableHead>{tApiKeys("role")}</TableHead>
+              <TableHead>{tApiKeys("actingUser")}</TableHead>
               <TableHead>{tApiKeys("scopes")}</TableHead>
               <TableHead>{tApiKeys("status")}</TableHead>
               <TableHead>
@@ -90,7 +95,7 @@ export default async function ApiKeysPage({
           <TableBody>
             {apiKeys.length === 0 && (
               <TableRow>
-                <TableCell colSpan={7} className="text-center text-muted-foreground">
+                <TableCell colSpan={8} className="text-center text-muted-foreground">
                   {tApiKeys("noApiKeys")}
                 </TableCell>
               </TableRow>
@@ -98,8 +103,12 @@ export default async function ApiKeysPage({
             {apiKeys.map((apiKey) => (
               <TableRow key={apiKey.id}>
                 <TableCell>{apiKey.name}</TableCell>
-                <TableCell className="font-mono text-muted-foreground text-xs">{apiKey.prefix}…</TableCell>
+                <TableCell className="font-mono text-muted-foreground text-xs">{apiKey.prefix}</TableCell>
                 <TableCell>{apiKey.role.displayName}</TableCell>
+                <TableCell>
+                  {serviceAccounts.find((account) => account.id === apiKey.actingUserId)?.email ??
+                    tApiKeys("actingUserNone")}
+                </TableCell>
                 <TableCell>
                   <div className="flex flex-wrap gap-1">
                     {apiKey.scopes.map((scope) => (
@@ -118,7 +127,7 @@ export default async function ApiKeysPage({
                   {apiKey.lastUsedAt ? new Date(apiKey.lastUsedAt).toLocaleString() : tApiKeys("never")}
                 </TableCell>
                 <TableCell>
-                  <ApiKeyRowActions apiKey={apiKey} />
+                  <ApiKeyRowActions apiKey={apiKey} serviceAccounts={serviceAccounts} />
                 </TableCell>
               </TableRow>
             ))}

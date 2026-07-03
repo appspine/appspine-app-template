@@ -17,6 +17,8 @@ export interface CreateApiKeyResult extends ActionResult {
 export async function createApiKeyAction(formData: FormData): Promise<CreateApiKeyResult> {
   const rateLimitRaw = formData.get("rateLimit");
   const expiresAtRaw = formData.get("expiresAt");
+  const actingUserIdRaw = formData.get("actingUserId");
+  const actingUserId = actingUserIdRaw && actingUserIdRaw !== "__none" ? String(actingUserIdRaw) : undefined;
 
   try {
     const created = await apiFetch<CreateApiKeyResponse>("/api-keys", {
@@ -25,6 +27,7 @@ export async function createApiKeyAction(formData: FormData): Promise<CreateApiK
         name: formData.get("name"),
         roleId: formData.get("roleId"),
         scopes: formData.getAll("scopes").map(String),
+        actingUserId,
         rateLimit: rateLimitRaw ? Number(rateLimitRaw) : undefined,
         expiresAt: expiresAtRaw ? new Date(String(expiresAtRaw)).toISOString() : undefined,
       }),
@@ -34,6 +37,19 @@ export async function createApiKeyAction(formData: FormData): Promise<CreateApiK
   } catch (err) {
     return { error: err instanceof ApiError ? err.message : "Failed to create API key" };
   }
+}
+
+export async function updateApiKeyActingUserAction(id: string, actingUserId: string | null): Promise<ActionResult> {
+  try {
+    await apiFetch(`/api-keys/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ actingUserId }),
+    });
+  } catch (err) {
+    return { error: err instanceof ApiError ? err.message : "Failed to update acting user" };
+  }
+  revalidatePath("/dashboard/api-keys");
+  return {};
 }
 
 export async function setApiKeyActiveAction(id: string, isActive: boolean): Promise<ActionResult> {
