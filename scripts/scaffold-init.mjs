@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Automatically initializes a new business system forked from appspine-app-template.
-// Usage: node scripts/scaffold-init.mjs --name <kebab-case> --display-name "<Display Name>" [--description "<Description>"] [--dry-run]
+// Usage: node scripts/scaffold-init.mjs --name <kebab-case> --display-name "<Display Name>" [--description "<Description>"] [--db-port <port>] [--backend-port <port>] [--frontend-port <port>] [--dry-run]
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -23,6 +23,9 @@ Required:
 
 Optional:
   --description       A one-sentence description of the app. Falls back to display-name.
+  --db-port           Host port for Postgres. Defaults to 23900.
+  --backend-port      Host port for the Nest backend. Defaults to 3900.
+  --frontend-port     Host port for the Next.js frontend. Defaults to 3901.
   --dry-run           Verify all rules and output replacement plan without writing files
 `);
 }
@@ -32,6 +35,9 @@ function parseArgs(argv) {
     name: null,
     displayName: null,
     description: null,
+    dbPort: '23900',
+    backendPort: '3900',
+    frontendPort: '3901',
     dryRun: false,
   };
 
@@ -46,6 +52,15 @@ function parseArgs(argv) {
         break;
       case '--description':
         args.description = argv[++i];
+        break;
+      case '--db-port':
+        args.dbPort = argv[++i];
+        break;
+      case '--backend-port':
+        args.backendPort = argv[++i];
+        break;
+      case '--frontend-port':
+        args.frontendPort = argv[++i];
         break;
       case '--dry-run':
         args.dryRun = true;
@@ -69,6 +84,27 @@ function validateName(name) {
       `Invalid name "${name}" — must match kebab-case /^[a-z0-9]+(-[a-z0-9]+)*$/ ` +
         `(e.g., "hr-portal", "document-collaboration")`,
     );
+  }
+}
+
+function validatePort(value, flagName) {
+  if (!/^\d+$/.test(value)) {
+    fail(`${flagName} must be a numeric TCP port.`);
+  }
+  const port = Number(value);
+  if (port < 1 || port > 65535) {
+    fail(`${flagName} must be between 1 and 65535.`);
+  }
+}
+
+function validatePorts(args) {
+  validatePort(args.dbPort, '--db-port');
+  validatePort(args.backendPort, '--backend-port');
+  validatePort(args.frontendPort, '--frontend-port');
+
+  const ports = [args.dbPort, args.backendPort, args.frontendPort];
+  if (new Set(ports).size !== ports.length) {
+    fail('--db-port, --backend-port, and --frontend-port must be distinct.');
   }
 }
 
@@ -108,7 +144,7 @@ function replaceInFile(filePath, rules, dryRun = false) {
 }
 
 function applyReplacements(ctx) {
-  const { name, displayName, description, dryRun } = ctx;
+  const { name, displayName, description, dbPort, backendPort, frontendPort, dryRun } = ctx;
 
   // 1. frontend/package.json
   replaceInFile(path.join(REPO_ROOT, 'frontend', 'package.json'), [
@@ -138,6 +174,48 @@ function applyReplacements(ctx) {
       expectedCount: 1,
       description: 'APP_NAME env key',
     },
+    {
+      pattern: /^DB_PORT=.+$/m,
+      replacement: `DB_PORT=${dbPort}`,
+      expectedCount: 1,
+      description: 'DB_PORT env key',
+    },
+    {
+      pattern: /^DATABASE_URL=postgresql:\/\/postgres:changeme@localhost:\d+\/app_db$/m,
+      replacement: `DATABASE_URL=postgresql://postgres:changeme@localhost:${dbPort}/app_db`,
+      expectedCount: 1,
+      description: 'DATABASE_URL env key',
+    },
+    {
+      pattern: /^CORS_ORIGINS=http:\/\/localhost:\d+$/m,
+      replacement: `CORS_ORIGINS=http://localhost:${frontendPort}`,
+      expectedCount: 1,
+      description: 'CORS_ORIGINS env key',
+    },
+    {
+      pattern: /^PORT=.+$/m,
+      replacement: `PORT=${backendPort}`,
+      expectedCount: 1,
+      description: 'PORT env key',
+    },
+    {
+      pattern: /^BACKEND_PORT=.+$/m,
+      replacement: `BACKEND_PORT=${backendPort}`,
+      expectedCount: 1,
+      description: 'BACKEND_PORT env key',
+    },
+    {
+      pattern: /^FRONTEND_PORT=.+$/m,
+      replacement: `FRONTEND_PORT=${frontendPort}`,
+      expectedCount: 1,
+      description: 'FRONTEND_PORT env key',
+    },
+    {
+      pattern: /^NEXT_PUBLIC_API_URL=http:\/\/localhost:\d+$/m,
+      replacement: `NEXT_PUBLIC_API_URL=http://localhost:${backendPort}`,
+      expectedCount: 1,
+      description: 'NEXT_PUBLIC_API_URL env key',
+    },
   ], dryRun);
 
   // 4. frontend/src/config/app-config.ts
@@ -165,6 +243,16 @@ function applyReplacements(ctx) {
       replacement: `description:\n      "${description}"`,
       expectedCount: 1,
       description: 'APP_CONFIG meta description',
+    },
+  ], dryRun);
+
+  // 4b. frontend/package.json dev port
+  replaceInFile(path.join(REPO_ROOT, 'frontend', 'package.json'), [
+    {
+      pattern: /"dev": "next dev -p \d+"/,
+      replacement: `"dev": "next dev -p ${frontendPort}"`,
+      expectedCount: 1,
+      description: 'frontend dev server port',
     },
   ], dryRun);
 
@@ -224,7 +312,7 @@ function printChecklist(ctx) {
   console.log('  4. Regenerate the data dictionary documentation:');
   console.log('     pnpm -C backend schema:docs');
   console.log('  5. Fill in the "App Positioning" description inside "docs/agent-guide.md" (business domain, core module overview).');
-  console.log('  6. Copy .env.example to .env and configure database parameters and JWT secrets.');
+  console.log('  6. Copy .env.example to .env and configure database parameters, ports, and JWT secrets.');
 }
 
 function main() {
@@ -236,17 +324,24 @@ function main() {
   }
 
   validateName(args.name);
+  validatePorts(args);
 
   const ctx = {
     name: args.name,
     displayName: args.displayName,
     description: args.description ?? args.displayName,
+    dbPort: args.dbPort,
+    backendPort: args.backendPort,
+    frontendPort: args.frontendPort,
     dryRun: args.dryRun,
   };
 
   console.log(`[${args.dryRun ? 'dry-run' : 'scaffold'}] Initializing "${ctx.name}"...`);
   console.log(`  Display Name: ${ctx.displayName}`);
   console.log(`  Description: ${ctx.description}`);
+  console.log(`  DB Port: ${ctx.dbPort}`);
+  console.log(`  Backend Port: ${ctx.backendPort}`);
+  console.log(`  Frontend Port: ${ctx.frontendPort}`);
   console.log('');
 
   applyReplacements(ctx);
