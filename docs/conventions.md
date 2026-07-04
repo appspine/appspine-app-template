@@ -166,7 +166,11 @@ Every API error returns this shape:
   namespace and make sure the enum i18n pre-commit check passes.
 
 1. **Backend – Schema**: add the model/enum under `backend/prisma/schema/`, with `///` doc comments;
-   stop the dev server, then run `prisma generate` / `prisma migrate dev`.
+   stop the dev server, then run `prisma generate` / `prisma migrate dev`. To name the migration
+   non-interactively, pass the flag directly after the script name —
+   `pnpm -C backend prisma:migrate --name add-my-models`. Do **not** insert `--` before `--name`:
+   pnpm forwards the `--` literally to Prisma, which then ignores the flag and falls back to an
+   interactive name prompt (deadlocks agent/CI runs).
 2. **Backend – Module**: build in order — `dto` (Zod schema) → `service`
    (`findAll`/`findOne`/`create`/`update`/`remove`) → `controller` (with guards) → `module`,
    registered in `app.module.ts`.

@@ -6,7 +6,11 @@ const bcrypt = require("bcrypt") as {
   hash(value: string, rounds: number): Promise<string>;
 };
 
-// USER role has no default permissions — add module-specific grants when forking.
+// FORK REQUIREMENT: the USER role starts with ZERO permissions. Until you add your
+// app's module grants here (e.g. [Permission.MY_MODULE_READ, ...]), every freshly
+// registered user gets 403 on all PermissionGuard-protected endpoints — the app is
+// unusable for non-admins. Fill this in together with your first Permission enum
+// values (README "Forking this template" checklist).
 const USER_DEFAULT_PERMISSIONS: Permission[] = [];
 
 async function main() {

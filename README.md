@@ -73,6 +73,11 @@ export GITHUB_TOKEN=<your PAT with read:packages scope>
 
 Add this to your shell profile so it persists across sessions.
 
+> **If `pnpm install` still returns `403 Forbidden`**: some environments don't expand `${GITHUB_TOKEN}`
+> from a committed project `.npmrc`. Set the token in pnpm's own config instead:
+> `pnpm config set "//npm.pkg.github.com/:_authToken" <PAT>`. A `preinstall` check
+> (`scripts/check-registry-auth.mjs`) fails fast with these instructions when neither is configured.
+
 ### 5. Install dependencies
 
 ```bash
@@ -86,10 +91,10 @@ pnpm -C backend prisma:migrate   # applies the committed migration
 pnpm -C backend prisma:seed      # creates ADMIN + USER system roles and a seed admin account
 ```
 
-> **Note**: the seeded admin account (`SEED_USER_EMAIL` in `.env`) is created without a password — it's intended
-> for OIDC mode where the IdP handles authentication. In `AUTH_MODE=local`, create your first real account via
-> `POST /auth/register`, then promote it to ADMIN by assigning the ADMIN role in the database (e.g. via
-> `prisma:studio`).
+> **Note**: with the `.env.example` defaults the seeded admin (`SEED_USER_EMAIL`) gets the dev-only
+> `SEED_USER_PASSWORD`, so `AUTH_MODE=local` has a working ADMIN login immediately — change that password for
+> any shared environment. For `AUTH_MODE=oidc`, clear `SEED_USER_PASSWORD`: the IdP handles authentication and
+> the password-less seed user is only matched locally by email for RBAC grants.
 
 ### 7. Start the dev servers
 
@@ -137,14 +142,21 @@ See [docs/conventions.md](docs/conventions.md#standard-flow-for-adding-a-new-cru
      --db-port <unused-2xxxx> --backend-port <unused-3xxx> --frontend-port <unused-3xxx+1>
    ```
    This also updates the application name, environment configuration, headers, and metadata configs.
-   The port flags update `.env.example`, `DATABASE_URL`, CORS, `NEXT_PUBLIC_API_URL`, and the frontend dev
-   script together. **They do not touch this README's prose** — scaffold-init only rewrites the
-   `# appspine-app-template` title (`README.md`/`CLAUDE.md`/`AGENTS.md`), so the "Postgres will be
-   available at `localhost:23900`" line below (and the two other port mentions further down) are now wrong
-   until you fix them by hand (see the checklist below).
-3. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
+   The port flags update `.env.example`, `DATABASE_URL`, CORS, `NEXT_PUBLIC_API_URL`, the frontend dev
+   script, and this README's Quick Start port mentions together (Postgres line, dev-server table, health
+   check curl). If you ever change ports again *after* scaffold-init, those README mentions go back to
+   being manual fix-ups.
+3. In the new repo's GitHub settings, add a `PACKAGES_READ_TOKEN` Actions secret (a PAT with
+   `read:packages` scope) — the E2E workflow authenticates to GitHub Packages with it, and the very first
+   PR's CI fails without it.
+4. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
    in `backend/prisma/schema/base.prisma`.
-4. Run `pnpm -C backend prisma:migrate` to generate a migration for your new schema.
+5. Fill in `USER_DEFAULT_PERMISSIONS` in `backend/prisma/seed.ts` with the grants a normal user needs
+   (then re-run `prisma:seed`). Until you do, a freshly registered user gets 403 on every
+   permission-guarded endpoint — the app works for the seeded ADMIN only.
+6. Run `pnpm -C backend prisma:migrate --name init-domain-models` to generate a migration for your new
+   schema (pass `--name` directly after the script name — inserting `--` first makes Prisma fall back to
+   an interactive prompt).
 
 ### Before you ship — documentation checklist
 
@@ -156,8 +168,8 @@ new endpoints/tools:
 - [ ] **`README.md`** — replace the generic "What's included" framing with what your app actually does
   (a couple of sentences on the domain, a bullet list of core entities). Fill in the `## API` and
   `## MCP tools` placeholder sections added above with real endpoint/tool tables — delete `## MCP tools`
-  entirely if you never call `@McpTool`. Re-check every hardcoded port/URL in `## Quick Start` against
-  your actual `scaffold-init` flags (see the Day 0 note above — these do **not** update themselves).
+  entirely if you never call `@McpTool`. Verify the port/URL mentions in `## Quick Start` — scaffold-init
+  rewrites them at fork time, but any port change made by hand afterwards is yours to propagate.
 - [ ] **`docs/agent-guide.md`** — fill in the `## App Positioning` section (business domain, core modules).
   This is what an agent reads first when picking up work in your fork; a TODO there means every session
   starts context-blind.
