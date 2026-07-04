@@ -25,5 +25,7 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|api).*)"],
+  // `api(?:/|$)` (not bare `api`) so only the /api route-handler namespace is
+  // excluded — a future page route like /api-docs must still hit the auth gate.
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|api(?:/|$)).*)"],
 };

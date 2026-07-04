@@ -96,25 +96,25 @@ export function DateTimePicker({ name, placeholder = "Select date & time", value
     <div className="relative w-full max-w-sm">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button variant="outline" className="w-full justify-start text-left font-normal h-8">
+          <Button variant="outline" className="h-8 w-full justify-start text-left font-normal">
             <CalendarIcon className="mr-2 h-4 w-4 text-muted-foreground" />
             <span className="flex-1">{buttonLabel}</span>
             {date && (
               <button
                 type="button"
                 onClick={handleClear}
-                className="ml-2 hover:bg-muted p-0.5 rounded-full cursor-pointer inline-flex items-center justify-center border-0 bg-transparent"
+                className="ml-2 inline-flex cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0.5 hover:bg-muted"
               >
                 <X className="h-3.5 w-3.5 text-muted-foreground" />
               </button>
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0 flex flex-col" align="start">
+        <PopoverContent className="flex w-auto flex-col p-0" align="start">
           <Calendar mode="single" selected={date} onSelect={handleDateSelect} />
-          <div className="flex items-center gap-2 border-t p-3 border-border">
-            <span className="text-xs text-muted-foreground">Time:</span>
-            <div className="flex items-center gap-1 flex-1">
+          <div className="flex items-center gap-2 border-border border-t p-3">
+            <span className="text-muted-foreground text-xs">Time:</span>
+            <div className="flex flex-1 items-center gap-1">
               <Select value={hours.toString()} onValueChange={handleHourChange}>
                 <SelectTrigger size="sm" className="h-7 w-[70px]">
                   <SelectValue placeholder="HH" />
@@ -127,7 +127,7 @@ export function DateTimePicker({ name, placeholder = "Select date & time", value
                   ))}
                 </SelectContent>
               </Select>
-              <span className="text-xs text-muted-foreground">:</span>
+              <span className="text-muted-foreground text-xs">:</span>
               <Select value={minutes.toString()} onValueChange={handleMinuteChange}>
                 <SelectTrigger size="sm" className="h-7 w-[70px]">
                   <SelectValue placeholder="MM" />
