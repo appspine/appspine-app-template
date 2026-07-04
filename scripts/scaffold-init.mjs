@@ -249,20 +249,45 @@ function applyReplacements(ctx) {
   // 4b. frontend/package.json dev port
   replaceInFile(path.join(REPO_ROOT, 'frontend', 'package.json'), [
     {
-      pattern: /"dev": "next dev -p \d+"/,
-      replacement: `"dev": "next dev -p ${frontendPort}"`,
+      pattern: /"dev": "dotenv -e \.\.\/\.env -- next dev -p \d+"/,
+      replacement: `"dev": "dotenv -e ../.env -- next dev -p ${frontendPort}"`,
       expectedCount: 1,
       description: 'frontend dev server port',
     },
   ], dryRun);
 
-  // 5. README.md (template root README)
+  // 5. README.md (template root README) — title plus every hardcoded port/URL in the prose,
+  // so Quick Start stays correct without the manual fix-ups the fork checklist used to require.
   replaceInFile(path.join(REPO_ROOT, 'README.md'), [
     {
       pattern: /^# appspine-app-template$/m,
       replacement: `# ${name}`,
       expectedCount: 1,
       description: 'README title',
+    },
+    {
+      pattern: /Postgres will be available at `localhost:\d+`/,
+      replacement: `Postgres will be available at \`localhost:${dbPort}\``,
+      expectedCount: 1,
+      description: 'README Quick Start Postgres port',
+    },
+    {
+      pattern: /\| Backend \(NestJS\) \| http:\/\/localhost:\d+ \|/,
+      replacement: `| Backend (NestJS) | http://localhost:${backendPort} |`,
+      expectedCount: 1,
+      description: 'README dev server table backend URL',
+    },
+    {
+      pattern: /\| Frontend \(Next\.js\) \| http:\/\/localhost:\d+ \|/,
+      replacement: `| Frontend (Next.js) | http://localhost:${frontendPort} |`,
+      expectedCount: 1,
+      description: 'README dev server table frontend URL',
+    },
+    {
+      pattern: /curl http:\/\/localhost:\d+\/health/,
+      replacement: `curl http://localhost:${backendPort}/health`,
+      expectedCount: 1,
+      description: 'README health check curl URL',
     },
   ], dryRun);
 
@@ -307,12 +332,18 @@ function printChecklist(ctx) {
   console.log('\nNext Manual Steps:');
   console.log('  1. Add your business models in "backend/prisma/schema/".');
   console.log('  2. Define the matching "Permission" enum values in "backend/prisma/schema/base.prisma".');
-  console.log('  3. Run backend prisma migration to apply changes to database:');
-  console.log('     pnpm -C backend prisma:migrate');
-  console.log('  4. Regenerate the data dictionary documentation:');
+  console.log('  3. Fill in USER_DEFAULT_PERMISSIONS in "backend/prisma/seed.ts" — until you do,');
+  console.log('     freshly registered users get 403 on every permission-guarded endpoint.');
+  console.log('  4. Run backend prisma migration to apply changes to database:');
+  console.log('     pnpm -C backend prisma:migrate --name init-domain-models');
+  console.log('  5. Regenerate the data dictionary documentation:');
   console.log('     pnpm -C backend schema:docs');
-  console.log('  5. Fill in the "App Positioning" description inside "docs/agent-guide.md" (business domain, core module overview).');
-  console.log('  6. Copy .env.example to .env and configure database parameters, ports, and JWT secrets.');
+  console.log('  6. Fill in the "App Positioning" description inside "docs/agent-guide.md" (business domain, core module overview).');
+  console.log('  7. Copy .env.example to .env and configure database parameters, ports, and JWT secrets.');
+  console.log('  8. Add a PACKAGES_READ_TOKEN Actions secret (PAT with read:packages) to the new GitHub repo,');
+  console.log('     or the E2E workflow fails on its first run.');
+  console.log('  9. Register the ports in the appspine workspace docs/agent-guide.md "Local Dev Ports" table:');
+  console.log(`     | \`${ctx.name}\` | ${ctx.dbPort} | ${ctx.backendPort} | ${ctx.frontendPort} |`);
 }
 
 function main() {
