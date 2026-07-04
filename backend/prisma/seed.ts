@@ -14,6 +14,16 @@ const bcrypt = require("bcrypt") as {
 const USER_DEFAULT_PERMISSIONS: Permission[] = [];
 
 async function main() {
+  // Mirrors main.ts's JWT_SECRET production guard: the committed .env.example
+  // default is publicly known, and seeding it would hand out a working ADMIN
+  // login (worse than a forgeable token — no crypto needed, just a login form).
+  // Checked before any DB writes so a production seed run stops cold.
+  if (process.env.NODE_ENV === "production" && process.env.SEED_USER_PASSWORD === "Admin-dev-only!") {
+    throw new Error(
+      "SEED_USER_PASSWORD is still the template's published dev default — refusing to seed an ADMIN account with it in production.",
+    );
+  }
+
   const adminRole = await prisma.role.upsert({
     where: { name: SYSTEM_ADMIN_ROLE },
     update: { displayName: "Administrator", isSystem: true },

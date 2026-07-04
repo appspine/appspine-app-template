@@ -339,7 +339,8 @@ function printChecklist(ctx) {
   console.log('  5. Regenerate the data dictionary documentation:');
   console.log('     pnpm -C backend schema:docs');
   console.log('  6. Fill in the "App Positioning" description inside "docs/agent-guide.md" (business domain, core module overview).');
-  console.log('  7. Copy .env.example to .env and configure database parameters, ports, and JWT secrets.');
+  console.log('  7. Copy .env.example to .env and configure database parameters, ports, JWT_SECRET, and');
+  console.log('     SEED_USER_PASSWORD (the committed default is dev-only and publicly known).');
   console.log('  8. Add a PACKAGES_READ_TOKEN Actions secret (PAT with read:packages) to the new GitHub repo,');
   console.log('     or the E2E workflow fails on its first run.');
   console.log('  9. Register the ports in the appspine workspace docs/agent-guide.md "Local Dev Ports" table:');
