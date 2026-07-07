@@ -109,8 +109,8 @@ importers:
   frontend:
     dependencies:
       '@appspine/frontend-shell':
-        specifier: ^0.1.2
-        version: 0.1.2(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+        specifier: ^0.2.2
+        version: 0.2.2(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/metadata-schema':
         specifier: ^0.2.0
         version: 0.2.0(@appspine/audit-log@0.3.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/jwt@11.0.2(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)))(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
@@ -304,8 +304,8 @@ packages:
       express: ^5.0.0
       zod: ^4.4.3
 
-  '@appspine/frontend-shell@0.1.2':
-    resolution: {integrity: sha512-hr0P4d5ndlEgmtsTV30WifyTvgkPbkAq9tl3BhU3vkS8QmegUrxbg0KGLJ3v70BH5lLRRuJ9xjR01mgvcfYGsQ==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.1.2/a0e957f81d780e1d489427b646915ee0dd74ea92}
+  '@appspine/frontend-shell@0.2.2':
+    resolution: {integrity: sha512-xd4biiON1amutd8bXKzT3I6jAfuNkK2Su5uRISFUtB4mNb+mxmEu0h0wsOo3IvZG4xQumv0mpvwbwnb/P7bHEg==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.2.2/6c2416e4cd938aa5ed728df5f9d9fb1d7ee79b59}
     peerDependencies:
       class-variance-authority: ^0.7.1
       clsx: ^2.1.1
@@ -4831,7 +4831,7 @@ snapshots:
       - pino-http
       - rxjs
 
-  '@appspine/frontend-shell@0.1.2(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
+  '@appspine/frontend-shell@0.2.2(class-variance-authority@0.7.1)(clsx@2.1.1)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1
