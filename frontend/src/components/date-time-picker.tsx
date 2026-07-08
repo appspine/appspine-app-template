@@ -96,20 +96,20 @@ export function DateTimePicker({ name, placeholder = "Select date & time", value
     <div className="relative w-full max-w-sm">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button variant="outline" className="h-8 w-full justify-start text-left font-normal">
+          <Button variant="outline" className="h-8 w-full justify-start pr-8 text-left font-normal">
             <CalendarIcon className="mr-2 h-4 w-4 text-muted-foreground" />
-            <span className="flex-1">{buttonLabel}</span>
-            {date && (
-              <button
-                type="button"
-                onClick={handleClear}
-                className="ml-2 inline-flex cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0.5 hover:bg-muted"
-              >
-                <X className="h-3.5 w-3.5 text-muted-foreground" />
-              </button>
-            )}
+            <span className="flex-1 truncate">{buttonLabel}</span>
           </Button>
         </PopoverTrigger>
+        {date && (
+          <button
+            type="button"
+            onClick={handleClear}
+            className="absolute top-1/2 right-2 inline-flex -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0.5 hover:bg-muted"
+          >
+            <X className="h-3.5 w-3.5 text-muted-foreground" />
+          </button>
+        )}
         <PopoverContent className="flex w-auto flex-col p-0" align="start">
           <Calendar mode="single" selected={date} onSelect={handleDateSelect} />
           <div className="flex items-center gap-2 border-border border-t p-3">
