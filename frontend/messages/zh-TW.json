@@ -7,7 +7,9 @@
     "create": "建立",
     "cancel": "取消",
     "save": "儲存",
-    "delete": "刪除"
+    "delete": "刪除",
+    "account": "帳號",
+    "logOut": "登出"
   },
   "auth": {
     "signIn": "登入",

@@ -57,6 +57,7 @@ export function DashboardShellBridge({
   const pathname = usePathname();
   const router = useRouter();
   const tNav = useTranslations("nav");
+  const tCommon = useTranslations("common");
   const locale = useLocale();
   const { isSynced, sidebarVariant, sidebarCollapsible, themeMode, setThemeMode } = usePreferencesStore(
     useShallow((state) => ({
@@ -127,6 +128,8 @@ export function DashboardShellBridge({
         avatar: null,
       }}
       onSignOut={handleSignOut}
+      accountLabel={tCommon("account")}
+      signOutLabel={tCommon("logOut")}
       defaultOpen={defaultOpen}
       sidebarVariant={effectiveSidebarVariant}
       sidebarCollapsible={effectiveSidebarCollapsible}

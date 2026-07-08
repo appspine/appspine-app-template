@@ -7,7 +7,9 @@
     "create": "Create",
     "cancel": "Cancel",
     "save": "Save",
-    "delete": "Delete"
+    "delete": "Delete",
+    "account": "Account",
+    "logOut": "Log out"
   },
   "auth": {
     "signIn": "Sign in",
