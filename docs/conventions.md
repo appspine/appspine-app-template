@@ -146,6 +146,14 @@ Every API error returns this shape:
   in a component.
 - **Icons**: use `lucide-react` for general UI icons (the shadcn/ui default). Use `simple-icons`
   (via `components/simple-icon.tsx`) only for brand/product logos — never for generic UI icons.
+- **Check `@appspine/frontend-shell` before writing a local component**: its `src/index.ts` is a
+  single flat export list — the complete index of every shared component that already exists. If
+  you're about to build something another app would plausibly also need (a date/time picker, a
+  list search/pagination pattern, an app-shell-level piece), scan that list first and use what's
+  there instead of writing a local version "for now." `DateTimePicker`/`DateRangePicker` diverged
+  into five different per-repo copies — with the same bug needing five separate fixes — before
+  being collapsed into `frontend-shell` (see `dev_docs/019-shared-date-picker-package-plan.md` in
+  the appspine monorepo) precisely because nobody checked first.
 - **Custom component placement & when to extract**: reusable non-shadcn components live under
   `frontend/src/components/` (flat — no need for further subfolders). Extract a piece of markup
   into its own component once it's reused in ≥2 places or a single page's markup exceeds roughly 50
