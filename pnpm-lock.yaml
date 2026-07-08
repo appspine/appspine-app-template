@@ -109,8 +109,8 @@ importers:
   frontend:
     dependencies:
       '@appspine/frontend-shell':
-        specifier: ^0.4.0
-        version: 0.4.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+        specifier: ^0.4.1
+        version: 0.4.1(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/metadata-schema':
         specifier: ^0.2.0
         version: 0.2.0(@appspine/audit-log@0.3.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/jwt@11.0.2(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)))(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
@@ -304,8 +304,8 @@ packages:
       express: ^5.0.0
       zod: ^4.4.3
 
-  '@appspine/frontend-shell@0.4.0':
-    resolution: {integrity: sha512-asc14EpOET1UPZcLSDe0Ichm6vKXLMSgdhzGD0HxUOUllVBYI/R8IeOuxtSkN6tCWOB1jIM1rJvnfvLCO7Y0yg==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.4.0/1f8dc43fc836ed0ae875c64a70058ac69d0e0776}
+  '@appspine/frontend-shell@0.4.1':
+    resolution: {integrity: sha512-BurD6atl6S5F//3WzVLy19xfheysVQtoDlLm7SnnPVm+zkPEiSDOE61FIjS+gN/uoY7GXQMLanXxuMTQ7QXhpw==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.4.1/eda99d2b6aaf0f43162f40f5c577bc55df7503eb}
     peerDependencies:
       class-variance-authority: ^0.7.1
       clsx: ^2.1.1
@@ -4834,7 +4834,7 @@ snapshots:
       - pino-http
       - rxjs
 
-  '@appspine/frontend-shell@0.4.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
+  '@appspine/frontend-shell@0.4.1(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1

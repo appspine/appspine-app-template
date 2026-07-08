@@ -48,15 +48,26 @@ export default async function RolesPage({
 
   const paginationInfoText = formatPageInfo(t("pageInfo"), { page, totalPages, total });
 
+  // CreateRoleDialog is a Client Component, so it can't receive a raw render
+  // function like `enumLabel` across the Server/Client boundary — resolve
+  // the labels here into plain, serializable { value, label } data instead.
+  const policyOptionsWithLabels = permissionPolicyOptions.map((value) => ({
+    value,
+    label: enumLabel(tEnum, "PermissionPolicy", value),
+  }));
+  const permissionOptionsWithLabels = permissionOptions.map((value) => ({
+    value,
+    label: enumLabel(tEnum, "Permission", value),
+  }));
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="font-bold text-2xl tracking-tight">{t("title")}</h1>
         <CreateRoleDialog
-          policyOptions={permissionPolicyOptions}
-          permissionOptions={permissionOptions}
+          policyOptions={policyOptionsWithLabels}
+          permissionOptions={permissionOptionsWithLabels}
           createRoleAction={createRoleAction}
-          renderEnumLabel={(kind, value) => enumLabel(tEnum, kind, value)}
         />
       </div>
 
