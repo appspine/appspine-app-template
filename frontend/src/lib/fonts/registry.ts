@@ -20,20 +20,27 @@ import {
 
 import { GeistPixelSquare } from "geist/font/pixel";
 
+// Only the default font (see PREFERENCE_DEFAULTS.font) is preloaded. The rest are
+// still usable the moment a user switches to them (font-display: swap), but skipping
+// preload keeps Next.js from link-preloading 15+ font files that never get used on
+// a given page, which was spamming the browser console with unused-preload warnings.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  preload: false,
 });
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
   variable: "--font-noto-sans",
+  preload: false,
 });
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-roboto",
+  preload: false,
 });
 
 const geist = Geist({
@@ -44,67 +51,80 @@ const geist = Geist({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  preload: false,
 });
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  preload: false,
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
+  preload: false,
 });
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   variable: "--font-nunito-sans",
+  preload: false,
 });
 
 const figtree = Figtree({
   subsets: ["latin"],
   variable: "--font-figtree",
+  preload: false,
 });
 
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
+  preload: false,
 });
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
   variable: "--font-public-sans",
+  preload: false,
 });
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  preload: false,
 });
 
 const notoSerif = Noto_Serif({
   subsets: ["latin"],
   variable: "--font-noto-serif",
+  preload: false,
 });
 
 const robotoSlab = Roboto_Slab({
   subsets: ["latin"],
   variable: "--font-roboto-slab",
+  preload: false,
 });
 
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-merriweather",
+  preload: false,
 });
 
 const lora = Lora({
   subsets: ["latin"],
   variable: "--font-lora",
+  preload: false,
 });
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
+  preload: false,
 });
 
 export const fontRegistry = {
