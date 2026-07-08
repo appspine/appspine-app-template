@@ -2,9 +2,8 @@
 
 import { useState, useTransition } from "react";
 
-import { useTranslations } from "@appspine/frontend-shell";
+import { DateTimePicker, useTranslations } from "@appspine/frontend-shell";
 
-import { DateTimePicker } from "@/components/date-time-picker";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
