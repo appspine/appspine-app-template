@@ -23,7 +23,7 @@
     "@appspine/audit-log": "^0.3.0",
     "@appspine/auth": "^1.1.1",
     "@appspine/common": "^0.2.0",
-    "@appspine/health-check": "^0.1.0",
+    "@appspine/health-check": "^0.1.2",
     "@appspine/m2m-api-key": "^1.0.3",
     "@appspine/mcp-server": "^0.2.4",
     "@appspine/metadata-schema": "^0.2.4",
