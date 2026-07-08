@@ -121,6 +121,14 @@ Every API error returns this shape:
   `/code-review` + manual browser verification. Add unit tests only for genuinely complex business
   logic (non-obvious calculations, state machines, permission logic) — there's no mandated overall
   coverage number.
+- **Seeding data in an E2E spec by calling the backend directly** (bypassing UI forms for setup):
+  hit the backend origin, not a frontend-relative path — most apps' frontend API clients are
+  server-only (Server Actions/Route Handlers reading the httpOnly auth cookie via `next/headers`),
+  so there is no browser-exposed REST proxy to call at all, and per "No global `/api` prefix"
+  above the real routes mount at root anyway. Authenticate by reading the `auth_token` cookie from
+  `adminContext.cookies()` and sending its value as `Authorization: Bearer <value>` — that cookie's
+  value is the same JWT the backend's `JwtStrategy` expects as a Bearer header (it does not accept
+  the cookie itself).
 
 ## Frontend Component Conventions
 
