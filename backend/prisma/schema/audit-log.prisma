@@ -20,6 +20,7 @@ model AuditLog {
   @@map("audit_logs")
 }
 
+/// The kind of data-modification action recorded against an AuditLog entity.
 enum AuditAction {
   CREATE
   UPDATE

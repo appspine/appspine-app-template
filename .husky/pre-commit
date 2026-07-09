@@ -1,4 +1,5 @@
 pnpm -C backend run check:enum-i18n
+pnpm -C backend run check:schema-docs
 pnpm typecheck
 cd frontend
 npm run generate:presets
