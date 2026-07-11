@@ -41,6 +41,25 @@ docker-compose.yml
   into another system's database
 - Use the default Prisma Client output path — never set a custom `output`
 
+## Third-Party Credential Storage
+
+If a module needs to store a credential for calling *another* system (an API key, an OAuth
+token, an LLM provider key — not this app's own M2M API Keys, which are hashed one-way for
+verification and never need to be read back): only the operational UX is borrowed from the M2M
+API Key convention, the storage mechanism itself is different because a third-party credential
+must be recoverable to actually use it, while an M2M key never is.
+
+- **Application-layer encryption**: encrypt the credential at rest with a master key before
+  storing it — never store it in plaintext. The master key comes from an env var at deploy time;
+  don't introduce a KMS or other new infrastructure unless there's a concrete need for it.
+- **Plaintext shown once**: same UX as M2M API Keys — show the plaintext value only at creation
+  time, mask it afterward (e.g. last few characters).
+- **Rotation**: support the old and new value coexisting for a period, to allow zero-downtime
+  rotation — same as M2M API Keys.
+- **Master-key rotation** (re-encrypting every stored credential) is a rare, high-risk
+  operational task, not a self-service feature — document it as a runbook, run it only when
+  actually needed.
+
 ## Comments & Documentation
 
 - All code comments (`//`, `/* */`, JSDoc, Prisma `///`) in English; write one only when the WHY
@@ -87,6 +106,12 @@ Every API error returns this shape:
 - **Guard chain order**: `JwtOrApiKeyGuard` (API Key takes priority, falls back to JWT) →
   `AdminGuard` or `PermissionGuard` (pick one per endpoint) → `ScopeGuard` (constrains API-key
   callers only; JWT users are unaffected).
+  - **Scope action read/write classification**: for `resource:action` scopes, `action` values
+    `read`/`list`/`get` are treated as read-only; every other action (`write`/`create`/`update`/
+    `delete`) is treated as a write. If a tool declares multiple scopes mixing read and write
+    actions, it's classified as a write if *any* of them is a write. `@appspine/mcp-server`
+    derives the MCP `readOnlyHint` tool annotation from this rule automatically at `tools/list`
+    time — you don't set it by hand, just declare `requiredScopes` correctly.
 - **RBAC model**: `roleNames: string[]`, `permissionPolicy: DENY_ALL | READ_ALL | ALLOW_ALL`
   (coarse-grained), `permissions: Permission[]` (fine-grained, via `RolePermission`).
   `PermissionGuard` uses OR logic: ADMIN role always passes → `ALLOW_ALL` passes → `READ_ALL` and
@@ -98,8 +123,14 @@ Every API error returns this shape:
   allow-list/direction-mapping logic for the fields it can already handle.
 - **RESTful routes**: standard resources expose 5 endpoints (`GET /` list, `GET /:id`, `POST /`,
   `PATCH /:id`, `DELETE /:id`). If a module also exposes an MCP tool, name it to match
-  (`list_*`/`get_*`/`create_*`/`update_*`/`delete_*`) — **the framework does not auto-generate these
-  tools**; the app registers them itself via `@McpTool()` (see step 3 of the CRUD module flow below).
+  (`list_*`/`get_*`/`create_*`/`update_*`/`delete_*`), **prefixed with this app's cross-app tool
+  prefix** (the `MCP_TOOL_PREFIX` env var, e.g. `wiki_list_pages`) — this lets external callers
+  (n8n, AI agents) tell which app a tool belongs to from a flattened cross-app tool list.
+  `@appspine/mcp-server` dual-registers under both the bare and prefixed name and checks the
+  prefix format at registration time; forks off this template start with `MCP_TOOL_PREFIX`
+  already set, so there's no transition window to manage for a new app. **The framework does not
+  auto-generate these tools**; the app registers them itself via `@McpTool()` (see step 3 of the
+  CRUD module flow below).
 - **No global `/api` prefix** — routes mount directly at root (`/users`, `/api-keys`, `/mcp`,
   `/metadata/schema`).
 
@@ -194,10 +225,12 @@ Every API error returns this shape:
    clients, add `@McpTool({ name, description, inputSchema, requiredScopes })` (from
    `@appspine/mcp-server`) to the service methods you want to expose, then have the module implement
    `OnModuleInit`, inject `McpToolRegistry`, and call `registerMcpToolsFromInstance(this, registry)`
-   to register them. **The framework does not auto-generate these tools** — `list_*`/`get_*`/
-   `create_*`/`update_*`/`delete_*` is just a suggested naming convention to mirror REST; which of
-   the 5 (if any) to expose, the tool names, and `requiredScopes` (`resource:action` format, matching
-   the M2M API Key scope design) are entirely up to the app to write by hand.
+   to register them. **The framework does not auto-generate these tools** — `<prefix>_list_*`/
+   `<prefix>_get_*`/`<prefix>_create_*`/`<prefix>_update_*`/`<prefix>_delete_*` (cross-app prefix
+   from `MCP_TOOL_PREFIX`, see "API Design" above) is just a suggested naming convention to mirror
+   REST; which of the 5 (if any) to expose, the tool names, and `requiredScopes` (`resource:action`
+   format, matching the M2M API Key scope design and the read/write classification rule above) are
+   entirely up to the app to write by hand.
 4. **Frontend – API**: a `server/<entity>-api.ts`-style module exporting types and CRUD functions.
 5. **Frontend – i18n**: add translation keys alongside any new UI text.
 6. **Frontend – Sidebar**: add the nav item and its breadcrumb mapping.
