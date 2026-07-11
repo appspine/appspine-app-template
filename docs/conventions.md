@@ -60,6 +60,27 @@ must be recoverable to actually use it, while an M2M key never is.
   operational task, not a self-service feature — document it as a runbook, run it only when
   actually needed.
 
+## Discovery Service Catalog Push
+
+Source: `dev_docs/023-external-interconnect-agent-team-plan.md` §2.1 (workspace root), T-9700.
+To let external integrators (n8n, AI agents) find this app through the 023 discovery service,
+set three env vars in `.env`/`.env.example` — `@appspine/mcp-server`'s `DiscoveryPushService`
+pushes the catalog automatically on boot, no other code needed:
+
+- `DISCOVERY_PUSH_URL`: the discovery service's base URL.
+- `DISCOVERY_PUSH_TOKEN`: a per-app push token, minted once by a discovery-service admin via
+  `POST /discovery/apps` (shown in plaintext only at registration time). **Only put the real
+  value in your local, gitignored `.env` — leave `.env.example` blank.**
+- `PUBLIC_BASE_URL`: this app's own externally-reachable base URL. `mcpEndpointUrl` and
+  `metadataEndpointUrl` are derived from it as `<PUBLIC_BASE_URL>/mcp` and
+  `<PUBLIC_BASE_URL>/metadata/schema`.
+
+Leaving any of the three unset disables the push entirely (opt-in, no effect on existing
+behavior). A failed push only logs a warning — the discovery catalog is a convenience
+directory, not something this app's own requests should ever depend on. The push runs once, at
+`OnApplicationBootstrap` — not on a schedule, since a deploy already restarts the process,
+which is the cadence 023 §2.1 calls for.
+
 ## Comments & Documentation
 
 - All code comments (`//`, `/* */`, JSDoc, Prisma `///`) in English; write one only when the WHY
