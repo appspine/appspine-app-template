@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import type { ApiKeyRoleOption, ApiKeyRow, ServiceAccountOption } from "@appspine/frontend-shell";
 import { ApiKeysTable, CreateApiKeyDialog, ListPagination, ListSearchForm } from "@appspine/frontend-shell";
+import type { SchemaMeta } from "@appspine/metadata-schema";
 
 import { getTranslations } from "@/i18n/server";
 import type { PaginatedResult } from "@/server/api-client";
@@ -29,14 +30,16 @@ export default async function ApiKeysPage({
   if (sortField) query.set("sortField", sortField);
   if (sortOrder) query.set("sortOrder", sortOrder);
 
-  const [{ data: apiKeys, total }, roles, { data: users }] = await Promise.all([
+  const [{ data: apiKeys, total }, roles, { data: users }, meta] = await Promise.all([
     apiFetch<PaginatedResult<ApiKeyRow>>(`/api-keys?${query}`),
     apiFetch<ApiKeyRoleOption[]>("/roles/options"),
     apiFetch<PaginatedResult<ServiceAccountOption & { isServiceAccount: boolean }>>("/users?limit=100"),
+    apiFetch<SchemaMeta>("/metadata/schema"),
   ]);
   const serviceAccounts: ServiceAccountOption[] = users
     .filter((user) => user.isServiceAccount)
     .map(({ id, email, name }) => ({ id, email, name }));
+  const scopeOptions = meta.availableScopes.map((scope) => ({ value: scope, label: scope }));
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
@@ -46,7 +49,12 @@ export default async function ApiKeysPage({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="font-bold text-2xl tracking-tight">{tApiKeys("title")}</h1>
-        <CreateApiKeyDialog roles={roles} serviceAccounts={serviceAccounts} createApiKeyAction={createApiKeyAction} />
+        <CreateApiKeyDialog
+          roles={roles}
+          serviceAccounts={serviceAccounts}
+          scopeOptions={scopeOptions}
+          createApiKeyAction={createApiKeyAction}
+        />
       </div>
 
       <ListSearchForm
