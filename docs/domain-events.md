@@ -152,6 +152,9 @@ examples.
   (`WikiPage.visibility_changed`), one code-registered `webhook.post` handler backed by a single
   env-configured URL/secret, no admin UI or subscription model. Closer to what a first adoption
   in a new app is likely to look like.
+- `apps/calendar`, `apps/chat`, `apps/drive`, and `apps/project` — additional minimal vertical
+  slices that record one meaningful status/lifecycle transition per app and deliver it through
+  the same env-configured `webhook.post` handler pattern.
 
 Both are real, running code — reading their `backend/src/domain-events/` directories is often
 faster than re-deriving the pattern from this doc alone.
