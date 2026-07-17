@@ -8,6 +8,8 @@ import { MetaModule } from "@appspine/metadata-schema";
 import { RbacModule } from "@appspine/rbac";
 import { Module } from "@nestjs/common";
 
+import { DomainEventsModule } from "./domain-events/domain-events.module";
+
 @Module({
   imports: [
     LoggingModule,
@@ -19,6 +21,7 @@ import { Module } from "@nestjs/common";
     HealthModule,
     MetaModule,
     McpModule,
+    DomainEventsModule,
   ],
 })
 export class AppModule {}

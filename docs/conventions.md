@@ -81,6 +81,29 @@ directory, not something this app's own requests should ever depend on. The push
 `OnApplicationBootstrap` — not on a schedule, since a deploy already restarts the process,
 which is the cadence 023 §2.1 calls for.
 
+## Domain Events
+
+Source: `dev_docs/026-domain-events-approve-plan.md` + `dev_docs/future_plans/Z20-domain-events-outbox.md`
+(workspace root). `@appspine/domain-events` is already wired into this template
+(`backend/src/domain-events/domain-events.module.ts`, imported into `AppModule`) but the handler
+registry starts empty — see [domain-events.md](domain-events.md) for a full walkthrough of adding
+your first event. It's an **opt-in pattern**, not something every module needs:
+
+- Use it only for **derived** side effects (webhooks, cross-system notifications, future workflow
+  signals) that must be reliably delivered (retry/dead-letter) but don't need to block the
+  request. Keep anything that must be strictly synchronous with the write — version locks, other
+  writes that must succeed or fail together — in the same transaction, not behind an event.
+- `DomainEventsService.record(tx, input)` must be called inside the **same transaction** as the
+  business write it describes — that's the one rule that isn't negotiable.
+- Handlers run at-least-once; **key any external side effect off the event's id** so re-running a
+  handler after a retry or stale-lock reclaim is safe.
+- Event type constants are `as const` objects, never free-form strings — a typo silently breaks a
+  subscription match.
+- The package ships no `.prisma` file; `backend/prisma/schema/domain-events.prisma` is this app's
+  own copy of the documented pattern, checked against actual drift via
+  `pnpm -C backend check:domain-events-schema-drift` (wired into `.husky/pre-commit`, same
+  approach as `check:schema-docs`).
+
 ## Comments & Documentation
 
 - All code comments (`//`, `/* */`, JSDoc, Prisma `///`) in English; write one only when the WHY

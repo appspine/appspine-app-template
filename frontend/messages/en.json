@@ -135,7 +135,15 @@
     "AuditAction.UPDATE": "Update",
     "AuditAction.DELETE": "Delete",
     "AuditAction.RESTORE": "Restore",
-    "AuditAction.MOVE": "Move"
+    "AuditAction.MOVE": "Move",
+    "DomainEventOperation.CREATE": "Create",
+    "DomainEventOperation.UPDATE": "Update",
+    "DomainEventOperation.DELETE": "Delete",
+    "DomainEventDeliveryStatus.PENDING": "Pending",
+    "DomainEventDeliveryStatus.PROCESSING": "Processing",
+    "DomainEventDeliveryStatus.PROCESSED": "Processed",
+    "DomainEventDeliveryStatus.DEAD_LETTER": "Dead letter",
+    "DomainEventDeliveryStatus.IGNORED": "Ignored"
   },
   "nav": {
     "overview": "Overview",

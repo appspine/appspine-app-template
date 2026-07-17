@@ -20,6 +20,7 @@ The backend comes pre-integrated with several `@appspine/*` packages located in 
 - **Health Check (`@appspine/health-check`)**: Exposes system health checks at `GET /health` with DB connection pinging.
 - **Metadata Schema (`@appspine/metadata-schema`)**: Generates model-driven schema descriptions from Prisma DMMF, exposed at `GET /metadata/schema`.
 - **MCP Server (`@appspine/mcp-server`)**: Runs a Model Context Protocol endpoint at `POST /mcp` that allows the system to register and expose customized AI tools to agents.
+- **Domain Events (`@appspine/domain-events`)**: A transaction-bound outbox for derived side effects (webhooks, cross-system notifications, future workflow signals) — business write and event commit together, a background dispatcher delivers with retry/dead-letter. Already wired (`backend/src/domain-events/domain-events.module.ts`) but the handler registry starts empty; see [domain-events.md](domain-events.md) for how to record your first event.
 
 ## Development Conventions
 

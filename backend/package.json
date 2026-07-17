@@ -15,6 +15,7 @@
     "prisma:studio": "dotenv -e ../.env -- prisma studio --schema prisma/schema",
     "check:enum-i18n": "dotenv -e ../.env -- ts-node scripts/check-enum-i18n.ts",
     "check:schema-docs": "dotenv -e ../.env -- ts-node scripts/check-schema-docs.ts",
+    "check:domain-events-schema-drift": "dotenv -e ../.env -- ts-node scripts/check-domain-events-schema-drift.ts",
     "schema:docs": "dotenv -e ../.env -- ts-node scripts/gen-data-dictionary.ts"
   },
   "prisma": {
@@ -24,6 +25,7 @@
     "@appspine/audit-log": "^0.4.0",
     "@appspine/auth": "^2.0.0",
     "@appspine/common": "^0.2.0",
+    "@appspine/domain-events": "^0.1.1",
     "@appspine/health-check": "^0.1.2",
     "@appspine/m2m-api-key": "^2.1.1",
     "@appspine/mcp-server": "^0.5.1",

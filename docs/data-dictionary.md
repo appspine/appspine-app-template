@@ -1,6 +1,6 @@
 # Data Dictionary
 
-> Auto-generated from Prisma schema on 2026-06-30.
+> Auto-generated from Prisma schema on 2026-07-17.
 > Do not edit manually — run your app's schema:docs script to regenerate.
 
 ---
@@ -9,11 +9,15 @@
 
 ### AuditAction
 
+> The kind of data-modification action recorded against an AuditLog entity.
+
 | Value | Description |
 |-------|-------------|
 | `CREATE` |  |
 | `UPDATE` |  |
 | `DELETE` |  |
+| `RESTORE` |  |
+| `MOVE` |  |
 
 ### Permission
 
@@ -28,6 +32,28 @@
 | `API_KEYS_READ` |  |
 | `API_KEYS_CREATE` |  |
 | `API_KEYS_DELETE` |  |
+
+### DomainEventOperation
+
+> Technical operation kind for a DomainEvent.
+
+| Value | Description |
+|-------|-------------|
+| `CREATE` |  |
+| `UPDATE` |  |
+| `DELETE` |  |
+
+### DomainEventDeliveryStatus
+
+> Processing state of one domain event delivery.
+
+| Value | Description |
+|-------|-------------|
+| `PENDING` |  |
+| `PROCESSING` |  |
+| `PROCESSED` |  |
+| `DEAD_LETTER` |  |
+| `IGNORED` |  |
 
 ### PermissionPolicy
 
@@ -54,6 +80,7 @@
 | `prefix` | String | ✓ |  | First chars of the raw key, shown in lists for identification (e.g. "an_live_a1b2c3d4"). |
 | `hashedKey` | String | ✓ | ✓ | SHA-256 hash of the raw key. The raw key is never persisted. |
 | `roleId` | String | ✓ |  | Role this key authenticates as; FK to roles table. |
+| `actingUserId` | String |  |  | User this key acts as for identity-bound writes (createdById, ownership checks). Must be a dedicated service-account user, never a real employee's personal account — see policy note below. Null = no bound identity; endpoints requiring a real user must reject such calls. onDelete: Restrict — deleting a bound user is blocked; unbind or deactivate the key first. (In practice Users are never hard-deleted in this framework, only soft-disabled via `isActive`; Restrict is defense-in-depth, not the primary safeguard — see the isActive check in the guard.) |
 | `scopes` | String[] | ✓ |  | Module-level scopes, e.g. ["users:read","users:*"]. "*" = all scopes. Empty = deny all. |
 | `rateLimit` | Int |  |  | Requests per minute. null = system default (60). |
 | `isActive` | Boolean | ✓ |  | Whether this key can be used. Set false to revoke without deleting. |
@@ -80,6 +107,52 @@
 | `appName` | String | ✓ |  |  |
 | `isAiOperation` | Boolean | ✓ |  | True when the operation was initiated by an AI agent via MCP. |
 | `mcpTool` | String |  |  | MCP tool name that triggered this log entry. Null for human operations. |
+| `actingApiKeyId` | String |  |  | Id of the API key that performed this action, when the actor was an API key acting as a bound user. Snapshot string, no FK. Null for direct human actions. |
+| `workflowId` | String |  |  | Caller-supplied correlation id from the X-Appspine-Workflow-Id request header (dev_docs 002/023 §2.5). Untrusted, debugging/cross-app-workflow-tracing use only -- never used for authorization or attribution decisions. Null when the caller didn't send the header. |
+| `createdAt` | DateTime | ✓ |  |  |
+
+### DomainEvent
+
+> Immutable business fact log for transaction-bound domain events. INSERT-only; all processing state lives on DomainEventDelivery.
+
+**DB table:** `domain_events`
+
+| Field | Type | Required | Unique | Description |
+|-------|------|----------|--------|-------------|
+| `id` | String | ✓ | ✓ |  |
+| `seq` | BigInt | ✓ | ✓ | Monotonic dispatch order; cuid is unsortable and createdAt can collide. |
+| `aggregateType` | String | ✓ |  | Business object type, e.g. "Invoice". |
+| `aggregateId` | String | ✓ |  |  |
+| `eventType` | String | ✓ |  | Semantic event type, e.g. "invoice.approved". Define as an `as const` object per app — see docs/domain-events.md. |
+| `operation` | DomainEventOperation | ✓ |  |  |
+| `schemaVersion` | Int | ✓ |  | Payload shape version for before/after snapshots. |
+| `actorUserId` | String |  |  |  |
+| `correlationId` | String |  |  | Request-level correlation id. |
+| `workflowId` | String |  |  | Workflow-level correlation id using the X-Appspine-Workflow-Id convention. |
+| `before` | Json |  |  |  |
+| `after` | Json |  |  |  |
+| `changedFields` | String[] | ✓ |  |  |
+| `metadata` | Json |  |  | Free-form handler context, including audit metadata. |
+| `createdAt` | DateTime | ✓ |  |  |
+
+### DomainEventDelivery
+
+> Per-handler processing state for one DomainEvent.
+
+**DB table:** `domain_event_deliveries`
+
+| Field | Type | Required | Unique | Description |
+|-------|------|----------|--------|-------------|
+| `id` | String | ✓ | ✓ |  |
+| `eventId` | String | ✓ |  |  |
+| `handlerKey` | String | ✓ |  | Stable handler identity, e.g. "webhook.post" or "webhook.post:<subscriptionId>". |
+| `status` | DomainEventDeliveryStatus | ✓ |  |  |
+| `attempts` | Int | ✓ |  |  |
+| `nextAttemptAt` | DateTime |  |  |  |
+| `lockedAt` | DateTime |  |  |  |
+| `lockedBy` | String |  |  |  |
+| `lastError` | String |  |  |  |
+| `processedAt` | DateTime |  |  |  |
 | `createdAt` | DateTime | ✓ |  |  |
 
 ### Role
@@ -135,5 +208,6 @@
 | `password` | String |  |  |  |
 | `name` | String |  |  | Display name shown in UI; optional. |
 | `isActive` | Boolean | ✓ |  | Soft-disable without deleting — preserves audit history. |
+| `isServiceAccount` | Boolean | ✓ |  | Marks a dedicated machine/integration account (not a real person's login). Only service accounts may be bound as an API key's acting user — see the actingUserId policy on ApiKey. @internal |
 | `createdAt` | DateTime | ✓ |  |  |
 | `updatedAt` | DateTime | ✓ |  |  |
