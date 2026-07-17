@@ -21,7 +21,7 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
-    "@appspine/audit-log": "^0.5.0",
+    "@appspine/audit-log": "^0.4.0",
     "@appspine/auth": "^2.0.0",
     "@appspine/common": "^0.2.0",
     "@appspine/health-check": "^0.1.2",

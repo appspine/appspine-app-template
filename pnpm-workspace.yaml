@@ -4,6 +4,12 @@ packages:
 
 overrides:
   '@appspine/common': 0.2.0
+  # audit-log 0.5.0 / mcp-server 0.6.0 on the registry were published from the
+  # rolled-back 024 chat+n8n line (orphan commit, source not on main) and sit
+  # outside the framework packages' ^0.4.0 peer range - keep resolution on the
+  # main-line release until appspine publishes a real successor (see dev_docs
+  # Z21 §8).
+  '@appspine/audit-log': 0.4.0
 
 # @appspine/* are private packages published by this same org, not public npm -
 # the supply-chain risk minimumReleaseAge guards against (freshly-published
