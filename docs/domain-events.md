@@ -81,7 +81,9 @@ it), and (b) must not be silently lost if it fails once (needs retry/dead-letter
 
 3. **Register a handler.** A handler is just `{ key: string; handle(input): Promise<void> }`.
    `key` must be globally unique (not just unique per event type — deliveries store only the
-   key, not the event type, so `resolve()` needs it to be unambiguous):
+   key, not the event type, so `resolve()` needs it to be unambiguous) and must not contain `:`
+   — the registry rejects such keys at registration, because `:` is reserved for data-driven
+   delivery keys like `webhook.post:<subscriptionId>` resolved via `registerPrefix()`:
 
    ```ts
    @Injectable()
@@ -139,8 +141,9 @@ schema edit that breaks the contract fails loudly at commit time instead of at r
 
 `@appspine/domain-events/testing` exports mock builders (`createMockDomainEventTx`,
 `createMockDeliveryRow`, `createMockDispatcherPrisma`) so you can exercise `record()` and the
-dispatcher's `tick()` without a real database. See the package's own test suite for usage
-examples.
+dispatcher's `tick()` without a real database. The published package ships compiled output only —
+for usage examples see its test suite in the `appspine` workspace repo
+(`packages/domain-events/src/*.spec.ts`).
 
 ## Reference implementations
 
@@ -156,5 +159,5 @@ examples.
   slices that record one meaningful status/lifecycle transition per app and deliver it through
   the same env-configured `webhook.post` handler pattern.
 
-Both are real, running code — reading their `backend/src/domain-events/` directories is often
-faster than re-deriving the pattern from this doc alone.
+All of these are real, running code — reading their `backend/src/domain-events/` directories is
+often faster than re-deriving the pattern from this doc alone.
