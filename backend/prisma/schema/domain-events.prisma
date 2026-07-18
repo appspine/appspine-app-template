@@ -58,6 +58,7 @@ model DomainEventDelivery {
 
   @@unique([eventId, handlerKey])
   @@index([status, nextAttemptAt])
+  @@index([handlerKey, createdAt])
   @@map("domain_event_deliveries")
 }
 

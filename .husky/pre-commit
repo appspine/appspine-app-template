@@ -1,6 +1,7 @@
 pnpm -C backend run check:enum-i18n
 pnpm -C backend run check:schema-docs
 pnpm -C backend run check:domain-events-schema-drift
+pnpm -C backend run check:domain-events-subscribers
 pnpm typecheck
 cd frontend
 npm run generate:presets

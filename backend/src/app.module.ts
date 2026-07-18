@@ -1,6 +1,7 @@
 import { AuditLogModule } from "@appspine/audit-log";
 import { AuthModule } from "@appspine/auth";
 import { LoggingModule, PrismaModule } from "@appspine/common";
+import { DomainEventsAdminModule } from "@appspine/domain-events/admin";
 import { HealthModule } from "@appspine/health-check";
 import { ApiKeysModule } from "@appspine/m2m-api-key";
 import { McpModule } from "@appspine/mcp-server";
@@ -22,6 +23,7 @@ import { DomainEventsModule } from "./domain-events/domain-events.module";
     MetaModule,
     McpModule,
     DomainEventsModule,
+    DomainEventsAdminModule.forRoot(DomainEventsModule),
   ],
 })
 export class AppModule {}

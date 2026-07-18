@@ -83,11 +83,13 @@ which is the cadence 023 §2.1 calls for.
 
 ## Domain Events
 
-Source: `dev_docs/026-domain-events-approve-plan.md` + `dev_docs/future_plans/Z20-domain-events-outbox.md`
-(workspace root). `@appspine/domain-events` is already wired into this template
-(`backend/src/domain-events/domain-events.module.ts`, imported into `AppModule`) but the handler
-registry starts empty — see [domain-events.md](domain-events.md) for a full walkthrough of adding
-your first event. It's an **opt-in pattern**, not something every module needs:
+Source: `dev_docs/026-domain-events-approve-plan.md`, `dev_docs/028-domain-events-standardization-plan.md`,
+and `dev_docs/future_plans/Z20-domain-events-outbox.md` (workspace root). `@appspine/domain-events`
+is already wired into this template (`backend/src/domain-events/domain-events.module.ts`, imported
+into `AppModule`, plus `DomainEventsAdminModule.forRoot(DomainEventsModule)` exposing
+`GET /domain-events/catalog` and the rest of the admin API) but the handler registry starts empty
+— see [domain-events.md](domain-events.md) for a full walkthrough of adding your first event. It's
+an **opt-in pattern**, not something every module needs:
 
 - Use it only for **derived** side effects (webhooks, cross-system notifications, future workflow
   signals) that must be reliably delivered (retry/dead-letter) but don't need to block the
@@ -99,6 +101,20 @@ your first event. It's an **opt-in pattern**, not something every module needs:
   handler after a retry or stale-lock reclaim is safe.
 - Event type constants are `as const` objects, never free-form strings — a typo silently breaks a
   subscription match.
+- **File layout**: event constants in `backend/src/domain-events/events.ts`, one handler class per
+  `backend/src/domain-events/handlers/<name>.handler.ts`, and `domain-events.module.ts` is the only
+  file allowed to call `registerDomainEventSubscribers()`/`registry.on()`/`registerPrefix()`/
+  `registerHandlerKeyContributor()`.
+- **Handlers are decorated**: `@Injectable() @DomainEventSubscriber({ key, eventType, description })`
+  on the class, registered via `registerDomainEventSubscribers([handler, ...], registry)` in the
+  module's `DomainEventRegistry` factory. `description` is required (empty string throws at boot)
+  and shows up in the admin catalog view. The one exception is admin-configured routing (e.g.
+  approve's webhook-subscription table) resolved via `registerPrefix()` — that handler is
+  deliberately left undecorated, marked with `// @domain-events-undecorated: <reason>` at the top
+  of the file. See `dev_docs/future_plans/Z20-domain-events-outbox.md` §8.
+- **`check:domain-events-subscribers`** (`backend/scripts/`, wired into `.husky/pre-commit`):
+  grep-level check that no file besides `domain-events.module.ts` calls `registry.on(` directly,
+  and every `handlers/*.handler.ts` has either the decorator or the exemption marker.
 - The package ships no `.prisma` file; `backend/prisma/schema/domain-events.prisma` is this app's
   own copy of the documented pattern, checked against actual drift via
   `pnpm -C backend check:domain-events-schema-drift` (wired into `.husky/pre-commit`, same

@@ -1,6 +1,6 @@
 # Data Dictionary
 
-> Auto-generated from Prisma schema on 2026-07-17.
+> Auto-generated from Prisma schema on 2026-07-18.
 > Do not edit manually — run your app's schema:docs script to regenerate.
 
 ---
