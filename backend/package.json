@@ -26,7 +26,7 @@
     "@appspine/audit-log": "^0.4.0",
     "@appspine/auth": "^2.0.0",
     "@appspine/common": "^0.2.0",
-    "@appspine/domain-events": "^0.2.2",
+    "@appspine/domain-events": "^0.2.3",
     "@appspine/health-check": "^0.1.2",
     "@appspine/m2m-api-key": "^2.1.1",
     "@appspine/mcp-server": "^0.5.1",
