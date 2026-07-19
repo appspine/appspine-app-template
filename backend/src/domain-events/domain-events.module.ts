@@ -9,9 +9,9 @@ import {
 import { Module } from "@nestjs/common";
 
 // This module wires @appspine/domain-events' core (registry + dispatcher) into the app but
-// registers no handlers — there are no business events yet. See docs/domain-events.md for how
+// registers no handlers because there are no business events yet. See docs/domain-events.md for how
 // to define your first event type, call DomainEventsService.record() inside a transaction, and
-// register a handler with registry.on(eventType, handler).
+// register handlers centrally with registerDomainEventSubscribers().
 @Module({
   providers: [
     {
