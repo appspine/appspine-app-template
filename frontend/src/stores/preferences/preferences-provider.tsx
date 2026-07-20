@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 
+import { applyThemeMode, subscribeToSystemTheme } from "@appspine/frontend-shell";
 import { type StoreApi, useStore } from "zustand";
 
 import { type FontKey, fontRegistry } from "@/lib/fonts/registry";
@@ -12,7 +13,6 @@ import {
   SIDEBAR_VARIANT_VALUES,
 } from "@/lib/preferences/layout";
 import { THEME_MODE_VALUES, THEME_PRESET_VALUES } from "@/lib/preferences/theme";
-import { applyThemeMode, subscribeToSystemTheme } from "@/lib/preferences/theme-utils";
 
 import { createPreferencesStore, type PreferencesState } from "./preferences-store";
 

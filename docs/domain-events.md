@@ -87,7 +87,12 @@ it), and (b) must not be silently lost if it fails once (needs retry/dead-letter
    data-driven delivery keys like `webhook.post:<subscriptionId>` resolved via `registerPrefix()`
    (see "Code-registered vs. data-driven" below):
 
-   ```ts
+   import {
+     DomainEventSubscriber,
+     type DomainEventHandler,
+     type DomainEventRecord,
+     postDomainEventWebhook,
+   } from "@appspine/domain-events";
    // backend/src/domain-events/handlers/invoice-webhook.handler.ts
    import { DomainEventSubscriber, type DomainEventHandler, type DomainEventRecord } from "@appspine/domain-events";
    import { InvoiceEvents } from "../events";
@@ -101,8 +106,12 @@ it), and (b) must not be silently lost if it fails once (needs retry/dead-letter
    export class InvoiceWebhookHandler implements DomainEventHandler {
      readonly key = "invoice-webhook";
      async handle({ event }: { event: DomainEventRecord }) {
-       // POST it somewhere, write it somewhere else, etc. Must be safe to run more than once —
-       // see "Handler idempotency" below.
+       await postDomainEventWebhook({
+         event,
+         url: process.env.INVOICE_WEBHOOK_URL!,
+         secret: process.env.INVOICE_WEBHOOK_SECRET!,
+       });
+     }
      }
    }
    ```
@@ -193,6 +202,9 @@ The dispatcher is **at-least-once**, not exactly-once: a stale lock reclaim or a
 transient failure can call the same handler for the same delivery more than once. Handlers must
 be safe to re-run — key any external side effect (a webhook POST, a row you upsert) off the
 event's `id`, the same way `apps/approve`'s `audit-record` handler upserts on `sourceEventId`.
+
+For simple outbound POST webhooks, call `postDomainEventWebhook()` from `@appspine/domain-events`
+instead of copying redaction, HMAC signing, timeout, and response-draining helpers into the app.
 
 ## Schema: documented pattern, not an injected fragment
 

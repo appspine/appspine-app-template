@@ -99,6 +99,9 @@ an **opt-in pattern**, not something every module needs:
   business write it describes — that's the one rule that isn't negotiable.
 - Handlers run at-least-once; **key any external side effect off the event's id** so re-running a
   handler after a retry or stale-lock reclaim is safe.
+- Simple outbound POST webhooks should call `postDomainEventWebhook()` from
+  `@appspine/domain-events`; do not duplicate redaction, HMAC signing, timeout, or response-drain
+  helpers in app code.
 - Event type constants are `as const` objects, never free-form strings — a typo silently breaks a
   subscription match.
 - **File layout**: event constants in `backend/src/domain-events/events.ts`, one handler class per
@@ -119,6 +122,13 @@ an **opt-in pattern**, not something every module needs:
   own copy of the documented pattern, checked against actual drift via
   `pnpm -C backend check:domain-events-schema-drift` (wired into `.husky/pre-commit`, same
   approach as `check:schema-docs`).
+
+## Audit Metadata
+
+- REST controllers that pass caller context into audited service writes should import
+  `buildAuditMeta` and `AuditMeta` from `@appspine/audit-log`.
+- Do not add a local `backend/src/audit-meta.ts`; the shared helper already supports both JWT and
+  API-key callers without coupling app code to package-internal auth types.
 
 ## Comments & Documentation
 

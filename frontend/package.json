@@ -19,8 +19,8 @@
     ]
   },
   "dependencies": {
-    "@appspine/frontend-shell": "^0.5.3",
-    "@appspine/metadata-schema": "^0.2.6",
+    "@appspine/frontend-shell": "^0.6.0",
+    "@appspine/metadata-schema": "^0.2.9",
     "@base-ui/react": "^1.6.0",
     "@hookform/resolvers": "^5.4.0",
     "@shadcn/react": "^0.1.0",
