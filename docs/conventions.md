@@ -38,8 +38,14 @@ docker-compose.yml
 - **Table names**: snake_case plural, via `@@map("users")`
 - **Fields**: camelCase, via `@map("snake_case")`
 - No cross-app foreign keys — business systems talk to each other via events/APIs, never a direct FK
-  into another system's database
+  into another system's database. This applies to master-data apps (e.g. `apps/org`) too: reference
+  them by stable id and store a display snapshot, don't FK into their database.
 - Use the default Prisma Client output path — never set a custom `output`
+- **`User.employeeNumber`**: cross-app link key to `apps/org`'s canonical person record (see
+  `dev_docs/app-org/032-org-app-plan.md` in the appspine workspace repo, if you have access to it).
+  Nullable — most apps won't populate or use it unless they need org context (department, manager
+  chain, delegation). Don't remove it even if unused; don't build local duplicates of org data
+  (department trees, manager fields, etc.) — call `apps/org`'s API instead.
 
 ## Third-Party Credential Storage
 
