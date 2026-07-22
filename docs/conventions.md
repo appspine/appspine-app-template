@@ -38,49 +38,51 @@ docker-compose.yml
 - **Table names**: snake_case plural, via `@@map("users")`
 - **Fields**: camelCase, via `@map("snake_case")`
 - No cross-app foreign keys — business systems talk to each other via events/APIs, never a direct FK
-  into another system's database. This applies to master-data apps (e.g. `apps/org`) too: reference
+  into another system's database. This applies to `apps/master-data` too: reference
   them by stable id and store a display snapshot, don't FK into their database.
 - Use the default Prisma Client output path — never set a custom `output`
-- **`User.employeeNumber`**: cross-app link key to `apps/org`'s canonical person record. Nullable —
+- **`User.employeeNumber`**: cross-app link key to `apps/master-data`'s canonical person record. Nullable —
   most apps won't populate or use it unless they need org context (department, manager chain,
-  delegation). Don't remove it even if unused. See "Consuming apps/org" below for how to actually use it.
+  delegation). Don't remove it even if unused. See "Consuming apps/master-data" below for how to actually use it.
 
-## Consuming apps/org (Enterprise Master Data)
+## Consuming apps/master-data
 
-`apps/org` owns the canonical "who works where, who reports to whom" data — organization units,
-employee profiles, delegations. If your app needs any of that (department, manager chain, proxy
-delegation), don't build a local copy of it (that's exactly the duplication `apps/org` exists to
-replace — `apps/approve` had reinvented a shrunken version of this before `apps/org` existed, and had
-to be retrofitted afterward). Call `apps/org`'s API instead. This section is the generic pattern; for
-`apps/org`'s current concrete API surface (paths, scopes, MCP tools), read its own `README.md`
-(`github.com/appspine/org`) — it's kept up to date there, not duplicated here.
+`apps/master-data` owns the canonical "who works where, who reports to whom" data — organization
+units, employee profiles, delegations. If your app needs any of that (department, manager chain,
+proxy delegation), consume master-data through one of the two supported patterns below. Do not
+rebuild org tables locally as a writable source of truth.
 
-- **Link key, not a DB relation**: `apps/org` identifies people by a unique `employeeNumber`. Your
+- **Link key, not a DB relation**: `apps/master-data` identifies people by a unique `employeeNumber`. Your
   app's local `User` model already has an `employeeNumber` column (see above) — populate it for any
-  account that needs org context, then look `apps/org` up by that value. Never a cross-DB foreign key
+  account that needs org context, then look `apps/master-data` up by that value. Never a cross-DB foreign key
   (see "No cross-app foreign keys" above).
-- **Auth is a scoped M2M API Key, never a JWT/human login**: your backend calls `apps/org` as a
-  service, not as an impersonated admin. Create a dedicated M2M API Key in `apps/org` with only the
+- **Auth is a scoped M2M API Key, never a JWT/human login**: your backend calls `apps/master-data` as a
+  service, not as an impersonated admin. Create a dedicated M2M API Key in `apps/master-data` with only the
   read (or write, for delegation management) scopes you actually need, store it in your own `.env`
   (e.g. `ORG_APP_BASE_URL`/`ORG_APP_API_KEY`), and send it via the `x-api-key` header. Logging in with
-  `apps/org`'s admin credentials from your app's runtime code is a real security regression that's
+  `apps/master-data`'s admin credentials from your app's runtime code is a real security regression that's
   already been made and fixed once — don't reintroduce it.
-- **`apps/org` returns facts, not decisions — the selection logic is yours**: the org-chain endpoint
-  (an employee's ancestor org-unit chain) returns the *raw* chain — each unit's level and head, head
+- **`apps/master-data` returns facts, not decisions — the selection logic is yours**: the org-chain endpoint
+  (an employee's ancestor org-unit chain) returns the raw chain — each unit's level and head, head
   possibly `null` — and deliberately does not pick a "manager" for you. Which ancestor level counts as
   an escalation checkpoint, how you handle a headless unit, self-approval, or a resolved person with no
   local account in your own app — that's your app's own business rule, reconstructed on your side. This
   design was arrived at after real bugs from baking selection logic into the wrong layer; don't move it
-  back into `apps/org` or copy someone else's selection logic assuming it fits your rules too.
-- **Snapshot org context at decision time**: once your app makes a decision based on `apps/org` data
+  back into `apps/master-data` or copy someone else's selection logic assuming it fits your rules too.
+- **Snapshot org context at decision time**: once your app makes a decision based on `apps/master-data` data
   (e.g. computing an approval route), store a display snapshot (name, org unit name) alongside the
   stable id on your own records. A later org rename or reorg shouldn't rewrite what a past decision was
   based on.
+- **Use Sync/Cache mirrors for browsing and filters**: if your app needs fast local reads for org
+  browsing, dropdowns, or filters, define local `*Mirror` tables and consume
+  `@appspine/master-data-client`. Mirror tables are read-only caches maintained by webhooks plus
+  reconciliation; they have `sourceId`, `seq`, `syncedAt`, display fields, and hard-delete semantics.
+  They do not replace snapshots on historical business records.
 - **Two different failure modes for two different situations — don't default to one everywhere**:
   - A read that's incidental to just *viewing* your own data (e.g. "list my delegations") should
-    degrade gracefully — no `employeeNumber` bound yet, or `apps/org` briefly unreachable, means "no
-    result", not a hard error. Nobody should see a broken page just because they haven't been linked
-    into `apps/org` yet.
+    degrade gracefully — no `employeeNumber` bound yet, or `apps/master-data` briefly unreachable, means
+    "no result" or the last mirrored state, not a hard error. Nobody should see a broken page just because
+    they haven't been linked into master-data yet.
   - A read that's load-bearing for a business decision (e.g. computing who approves a request) should
     fail loudly instead — silently falling back to a stale local cache or a fabricated default route is
     a worse outcome than a rejected submission, because the person shown as "having approved" it may not
