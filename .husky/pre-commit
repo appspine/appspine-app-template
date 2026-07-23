@@ -1,3 +1,4 @@
+pnpm run check:secrets
 pnpm -C backend run check:enum-i18n
 pnpm -C backend run check:schema-docs
 pnpm -C backend run check:domain-events-schema-drift

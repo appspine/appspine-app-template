@@ -5,6 +5,7 @@
   "packageManager": "pnpm@11.4.0",
   "scripts": {
     "preinstall": "node scripts/check-registry-auth.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
     "dev": "dotenv -e .env -- concurrently -n back,front -c blue,green \"pnpm -C backend dev\" \"pnpm -C frontend dev\"",
     "dev:backend": "pnpm -C backend dev",
     "dev:frontend": "pnpm -C frontend dev",
