@@ -91,10 +91,9 @@ pnpm -C backend prisma:migrate   # applies the committed migration
 pnpm -C backend prisma:seed      # creates ADMIN + USER system roles and a seed admin account
 ```
 
-> **Note**: with the `.env.example` defaults the seeded admin (`SEED_USER_EMAIL`) gets the dev-only
-> `SEED_USER_PASSWORD`, so `AUTH_MODE=local` has a working ADMIN login immediately — change that password for
-> any shared environment. For `AUTH_MODE=oidc`, clear `SEED_USER_PASSWORD`: the IdP handles authentication and
-> the password-less seed user is only matched locally by email for RBAC grants.
+> **Note**: local auth is retired (dev_docs/framework/035) — the IdP handles authentication.
+> With the `.env.example` defaults, `SEED_USER_EMAIL` is pre-assigned ADMIN and has no password;
+> it is matched locally by email against the OIDC identity on first login.
 
 ### 7. Start the dev servers
 

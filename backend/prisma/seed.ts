@@ -2,9 +2,6 @@ import { SYSTEM_ADMIN_ROLE, SYSTEM_USER_ROLE } from "@appspine/auth";
 import { Permission, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
-const bcrypt = require("bcrypt") as {
-  hash(value: string, rounds: number): Promise<string>;
-};
 
 // FORK REQUIREMENT: the USER role starts with ZERO permissions. Until you add your
 // app's module grants here (e.g. [Permission.MY_MODULE_READ, ...]), every freshly
@@ -14,16 +11,6 @@ const bcrypt = require("bcrypt") as {
 const USER_DEFAULT_PERMISSIONS: Permission[] = [];
 
 async function main() {
-  // Mirrors main.ts's JWT_SECRET production guard: the committed .env.example
-  // default is publicly known, and seeding it would hand out a working ADMIN
-  // login (worse than a forgeable token — no crypto needed, just a login form).
-  // Checked before any DB writes so a production seed run stops cold.
-  if (process.env.NODE_ENV === "production" && process.env.SEED_USER_PASSWORD === "Admin-dev-only!") {
-    throw new Error(
-      "SEED_USER_PASSWORD is still the template's published dev default — refusing to seed an ADMIN account with it in production.",
-    );
-  }
-
   const adminRole = await prisma.role.upsert({
     where: { name: SYSTEM_ADMIN_ROLE },
     update: { displayName: "Administrator", isSystem: true },
@@ -46,19 +33,20 @@ async function main() {
 
   const email = process.env.SEED_USER_EMAIL;
   const name = process.env.SEED_USER_NAME;
-  const password = process.env.SEED_USER_PASSWORD;
 
   if (!email) {
     console.log("SEED_USER_EMAIL not set — skipping user seed.");
     return;
   }
 
-  const passwordHash = password ? await bcrypt.hash(password, 12) : null;
-
+  // AUTH_MODE=oidc only (dev_docs/framework/035): identity comes from the IdP, not a
+  // local password. This upsert exists so the seeded email already has ADMIN assigned
+  // before that person's first OIDC login, instead of relying on JIT provisioning's
+  // default USER role.
   const user = await prisma.user.upsert({
     where: { email },
-    update: passwordHash ? { name, password: passwordHash } : { name },
-    create: { email, name, password: passwordHash },
+    update: { name },
+    create: { email, name },
   });
   await prisma.userRole.upsert({
     where: { userId_roleId: { userId: user.id, roleId: adminRole.id } },
@@ -67,9 +55,6 @@ async function main() {
   });
 
   console.log(`Seed user ready: ${email} (ADMIN)`);
-  if (passwordHash) {
-    console.log(`Seed user password ready for ${email}`);
-  }
 }
 
 main()
