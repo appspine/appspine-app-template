@@ -1,6 +1,6 @@
 # Data Dictionary
 
-> Auto-generated from Prisma schema on 2026-07-18.
+> Auto-generated from Prisma schema on 2026-07-30.
 > Do not edit manually — run your app's schema:docs script to regenerate.
 
 ---
@@ -197,7 +197,7 @@
 
 ### User
 
-> System user account. Used for authentication in local-auth mode. In OIDC mode the password field is unused; identity is verified via JWKS. Contains password hash; not exposed via MCP tools. @internal
+> System user account. Identity is verified via the external IdP's JWKS (dev_docs/framework/035); this record only carries local RBAC grants. @internal
 
 **DB table:** `users`
 
@@ -205,8 +205,9 @@
 |-------|------|----------|--------|-------------|
 | `id` | String | ✓ | ✓ |  |
 | `email` | String | ✓ | ✓ | Login email, must be unique across the system. |
-| `password` | String |  |  |  |
+| `password` | String |  |  | Local auth is retired (dev_docs/framework/035) — this bcrypt hash is never read or written by new code. Kept nullable rather than dropped: deleting the column is a breaking migration across 9 apps for a nullable field that costs nothing to leave. Any pre-035 hash values are cleared by each app's Group D database reset, not by a data migration. |
 | `name` | String |  |  | Display name shown in UI; optional. |
+| `employeeNumber` | String |  | ✓ | Cross-app link key for looking up this person's canonical record in apps/org (Enterprise Master Data). Null for accounts with no corresponding org record (service accounts, contractors not yet onboarded in apps/org, etc.) — a null value must not be treated as an error, only as "no org context available for this account". |
 | `isActive` | Boolean | ✓ |  | Soft-disable without deleting — preserves audit history. |
 | `isServiceAccount` | Boolean | ✓ |  | Marks a dedicated machine/integration account (not a real person's login). Only service accounts may be bound as an API key's acting user — see the actingUserId policy on ApiKey. @internal |
 | `createdAt` | DateTime | ✓ |  |  |
