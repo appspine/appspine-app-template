@@ -13,11 +13,12 @@
   },
   "auth": {
     "signIn": "登入",
-    "signInDesc": "輸入您的電子郵件和密碼以繼續。",
-    "email": "電子郵件",
-    "password": "密碼",
-    "signingIn": "登入中...",
-    "passwordRequired": "密碼為必填欄位"
+    "signInDesc": "使用貴組織的身分識別提供者繼續。",
+    "signInWithKeycloak": "使用 Keycloak 登入",
+    "redirecting": "正在導向...",
+    "errorAccessDenied": "存取遭拒。如果您認為這是錯誤，請聯絡管理員。",
+    "errorOAuthCallback": "登入流程未能完成，請再試一次。",
+    "errorDefault": "登入失敗，請再試一次。"
   },
   "users": {
     "title": "使用者",

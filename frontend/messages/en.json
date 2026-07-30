@@ -13,11 +13,12 @@
   },
   "auth": {
     "signIn": "Sign in",
-    "signInDesc": "Enter your email and password to continue.",
-    "email": "Email",
-    "password": "Password",
-    "signingIn": "Signing in...",
-    "passwordRequired": "Password is required"
+    "signInDesc": "Continue with your organization's identity provider.",
+    "signInWithKeycloak": "Sign in with Keycloak",
+    "redirecting": "Redirecting...",
+    "errorAccessDenied": "Access was denied. Contact an administrator if you believe this is a mistake.",
+    "errorOAuthCallback": "Sign-in failed while completing the request. Please try again.",
+    "errorDefault": "Sign-in failed. Please try again."
   },
   "users": {
     "title": "Users",

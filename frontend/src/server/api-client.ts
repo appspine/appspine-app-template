@@ -1,7 +1,7 @@
-import { getAuthToken } from "./auth-cookie";
+import { auth } from "@/auth";
 
-// Server-only: reads the httpOnly auth cookie via next/headers (through getAuthToken),
-// so apiFetch must only be called from Server Components / Server Actions / Route
+// Server-only: reads the next-auth session via next/headers (through auth()), so
+// apiFetch must only be called from Server Components / Server Actions / Route
 // Handlers — never imported into a "use client" module.
 
 function readRequiredEnv(name: string): string {
@@ -38,7 +38,11 @@ export class ApiError extends Error {
 }
 
 export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
-  const token = await getAuthToken();
+  const session = await auth();
+  // A failed refresh (session.error) means this token is guaranteed to be rejected —
+  // send the request unauthenticated instead so callers see a normal 401, not a
+  // confusing "token present but invalid" failure.
+  const token = session?.error ? undefined : session?.accessToken;
   const res = await fetch(`${API_BASE_URL}${path}`, {
     ...init,
     headers: {
