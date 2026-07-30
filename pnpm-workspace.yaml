@@ -3,11 +3,11 @@ packages:
   - "frontend"
 
 overrides:
-  '@appspine/common': 0.2.0
+  '@appspine/common': 0.2.1
   # Keep @appspine package resolution on the published framework versions used by
   # this template to avoid duplicate NestJS class instances across peer packages.
   '@appspine/audit-log': 0.5.1
-  '@appspine/auth': 4.0.1
+  '@appspine/auth': 4.0.2
 
 # @appspine/* are private packages published by this same org, not public npm -
 # the supply-chain risk minimumReleaseAge guards against (freshly-published

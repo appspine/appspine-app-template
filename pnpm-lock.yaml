@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@appspine/common': 0.2.0
+  '@appspine/common': 0.2.1
   '@appspine/audit-log': 0.5.1
-  '@appspine/auth': 4.0.1
+  '@appspine/auth': 4.0.2
 
 importers:
 
@@ -30,31 +30,31 @@ importers:
     dependencies:
       '@appspine/audit-log':
         specifier: 0.5.1
-        version: 0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+        version: 0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/auth':
-        specifier: 4.0.1
-        version: 4.0.1(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
+        specifier: 4.0.2
+        version: 4.0.2(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
       '@appspine/common':
-        specifier: 0.2.0
-        version: 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: 0.2.1
+        version: 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/domain-events':
         specifier: ^1.0.0
-        version: 1.0.0(31f78711e5c81468972e9ac3b36072e5)
+        version: 1.0.0(38c8479b2e204cba81523d0a6eb564e5)
       '@appspine/health-check':
         specifier: ^0.1.2
         version: 0.1.2(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/terminus@11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/m2m-api-key':
-        specifier: ^3.0.0
-        version: 3.0.0(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: ^3.0.4
+        version: 3.0.4(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/mcp-server':
-        specifier: ^0.5.4
-        version: 0.5.4(65a96e03b3720c56d50e88dc7ceb0978)
+        specifier: ^0.5.8
+        version: 0.5.8(0886937e685b858dcadbd8c83cc200b9)
       '@appspine/metadata-schema':
-        specifier: ^0.2.9
-        version: 0.2.9(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: ^0.2.13
+        version: 0.2.13(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/rbac':
-        specifier: ^3.0.0
-        version: 3.0.0(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: ^3.0.4
+        version: 3.0.4(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common':
         specifier: ^11.0.5
         version: 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -114,11 +114,11 @@ importers:
   frontend:
     dependencies:
       '@appspine/frontend-shell':
-        specifier: ^0.7.0
-        version: 0.7.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+        specifier: ^0.8.0
+        version: 0.8.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/metadata-schema':
-        specifier: ^0.2.9
-        version: 0.2.9(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: ^0.2.13
+        version: 0.2.13(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@base-ui/react':
         specifier: ^1.6.0
         version: 1.6.0(@date-fns/tz@1.5.0)(@types/react@19.2.17)(date-fns@4.4.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -277,24 +277,24 @@ packages:
   '@appspine/audit-log@0.5.1':
     resolution: {integrity: sha512-mFCAmDzRPe57Pz+41P937bpdthLyvPLQKKnH19lAqqCoeWW3tqDNGlDUpr6tCTEq3W+mdHFV17n/oUqX9+sr8w==, tarball: https://npm.pkg.github.com/download/@appspine/audit-log/0.5.1/5eaa3473dbadb65b706120ffdd8ceaf26dd2a1cd}
     peerDependencies:
-      '@appspine/common': 0.2.0
+      '@appspine/common': 0.2.1
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
 
-  '@appspine/auth@4.0.1':
-    resolution: {integrity: sha512-lnmFdyVemkV3czVRHTqBJ82Yr2W3gfvkitBZb3zzDKdc2p5qtPL+X+hPA07NJEABj1ysK9dejtdin0WKVFYCjw==, tarball: https://npm.pkg.github.com/download/@appspine/auth/4.0.1/1feeb491e56506c1f7ebfa41c129784472d8e430}
+  '@appspine/auth@4.0.2':
+    resolution: {integrity: sha512-o0VJmfQ3HHvxEKX/df4DJKlwoGfwd++x7BAjQsMYJU2zKYXk1aOmWFDRd3ZPoLm2S21jJYCJtVWzw2H0fHW6Jg==, tarball: https://npm.pkg.github.com/download/@appspine/auth/4.0.2/3b94145731df2ec2daefa55c2a7bbaaa5832c06f}
     peerDependencies:
       '@appspine/audit-log': 0.5.1
-      '@appspine/common': 0.2.0
+      '@appspine/common': 0.2.1
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@nestjs/passport': ^11.0.5
       '@prisma/client': ^6.2.0
       zod: ^4.4.3
 
-  '@appspine/common@0.2.0':
-    resolution: {integrity: sha512-JuxXPTFFv4h9w8fSHwoY03D45K23gJ2ADO3QZMbNwtRYtkxYe5nboJdBxBHVTjZcxqwtWzFFu0m98+x6M2Os4Q==, tarball: https://npm.pkg.github.com/download/@appspine/common/0.2.0/9e4447bd3b0aab6f047893e3fe065b7b084f2e57}
+  '@appspine/common@0.2.1':
+    resolution: {integrity: sha512-gWpqQ6n7apPNR4HU7ndcbXwwcom+3SkyD3zLH6aEk1uoPItAexWP/Dtu3dQYfSeyE7r489lhoWF7qdBZZSSzvQ==, tarball: https://npm.pkg.github.com/download/@appspine/common/0.2.1/d2a3bad8cdf1f1a4d1c499ab1e7581a28a520714}
     peerDependencies:
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -305,16 +305,16 @@ packages:
   '@appspine/domain-events@1.0.0':
     resolution: {integrity: sha512-6uzdjwcLsIdAFmp6h++B8nht65vprRKx88XjLXKW5m5rXn+K+xLYoCztxvHqa3CsxiTlDCHPnVvyh14ZUGYZqQ==, tarball: https://npm.pkg.github.com/download/@appspine/domain-events/1.0.0/815d5d8b3800a0f7ff5d8a32033387893d1baa40}
     peerDependencies:
-      '@appspine/auth': 4.0.1
-      '@appspine/common': 0.2.0
+      '@appspine/auth': 4.0.2
+      '@appspine/common': 0.2.1
       '@appspine/m2m-api-key': ^3.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
       zod: ^4.4.3
 
-  '@appspine/frontend-shell@0.7.0':
-    resolution: {integrity: sha512-1lfmp5GTIphOtL6OuFSgwQcEwdE0e9i+a+ngOBVRNan/kjNBbyezoKbEUHhlb8vlEsxCEmoMMJYrjW+c3Po1bQ==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.7.0/2cf85bb205052d22e4bcf71e57137a484707d35e}
+  '@appspine/frontend-shell@0.8.0':
+    resolution: {integrity: sha512-q0z4Z8Rxdf41vp4gUBMlEgiq50A/syX13mxTPwUVekg5AfG6iiMiPcYGjevUGYPgFd17hwCKTmdRKVnVLlvE/A==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.8.0/b16065e2369fa168aaf38d01bfc0fb9b3dae980e}
     peerDependencies:
       class-variance-authority: ^0.7.1
       clsx: ^2.1.1
@@ -336,8 +336,8 @@ packages:
       '@nestjs/terminus': ^11.1.1
       '@prisma/client': ^6.2.0
 
-  '@appspine/m2m-api-key@3.0.0':
-    resolution: {integrity: sha512-LOz3nJlru9nU6KqUWw+dTI18rrJIgKTAK5NdK0intgcFJOK6x0s+anbdtA94wehlOU6/0R7de787EbQ2HFOokw==, tarball: https://npm.pkg.github.com/download/@appspine/m2m-api-key/3.0.0/47d042b2d6e82a322bb7f0aa9095212d050a36dd}
+  '@appspine/m2m-api-key@3.0.4':
+    resolution: {integrity: sha512-0hvwDDen0aM/yihKiDpHLLHCFvqykzDZ4UD9o8mM7XBi/nQsobCfjxsvxU/fgpMguqFa32AHoNJp2yqkp+9OyA==, tarball: https://npm.pkg.github.com/download/@appspine/m2m-api-key/3.0.4/211f708aad9c266642988f8b512b4a1d8f0c5b83}
     peerDependencies:
       '@appspine/audit-log': 0.5.1
       '@nestjs/common': ^11.0.5
@@ -345,23 +345,23 @@ packages:
       '@prisma/client': ^6.2.0
       zod: ^4.4.3
 
-  '@appspine/mcp-server@0.5.4':
-    resolution: {integrity: sha512-fA/+nDYUeHycXjG+u83lt5UQVcykgs3E5W0bKf3vkrkZsX/2SfcFmVRlTASklDiwDuwD817thh57CxhIxVoKiw==, tarball: https://npm.pkg.github.com/download/@appspine/mcp-server/0.5.4/fc6b1ec7d80b2154c5efcda62ec8c27096a79338}
+  '@appspine/mcp-server@0.5.8':
+    resolution: {integrity: sha512-f3pLIvBw6cwkG6z/h8TDpkHTIfWoX6dnYbFAteZcy1HCyeRaAHtSZUKsNSb+UG9BO7W+ObHxrYyBSPOtI9HuWA==, tarball: https://npm.pkg.github.com/download/@appspine/mcp-server/0.5.8/ad0daa6bb397ac2afa5592d49e75f74a45d8be97}
     peerDependencies:
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       express: ^5.0.0
       zod: ^4.4.3
 
-  '@appspine/metadata-schema@0.2.9':
-    resolution: {integrity: sha512-8yUwMpEkDpIM2/7uXT/1HlviAb895PK1RpbhKfUTv3gGYlfeoD3O7wZsFkypDCEBuUIUrThCcMpXZrcVeqv4yg==, tarball: https://npm.pkg.github.com/download/@appspine/metadata-schema/0.2.9/38dd825af23de38fa4f42e604f9eb23788bbe4f0}
+  '@appspine/metadata-schema@0.2.13':
+    resolution: {integrity: sha512-KGQ7Qls63Dv1CS0KkIxMzobrGnNA5I84vKSB1ooLlZ8bktsFV1wKy27RwTSVhcB2aBkDm4lK/UaCHWVKSxnDyQ==, tarball: https://npm.pkg.github.com/download/@appspine/metadata-schema/0.2.13/c06224d95e454bf47e6794c35a588344410a88a9}
     peerDependencies:
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
 
-  '@appspine/rbac@3.0.0':
-    resolution: {integrity: sha512-hmiLlG/nViVN64MP4bJvzFeRrQxC52s2XqyNtd41Z8O6ZwQJpvKpvo1I1Xw79BnznVKDewzTYByvODT5Tvt9Tw==, tarball: https://npm.pkg.github.com/download/@appspine/rbac/3.0.0/4b1846266e27d04ac1de7e0350647138787a83b2}
+  '@appspine/rbac@3.0.4':
+    resolution: {integrity: sha512-aybQa6BBZBeeuZDohYbzVbY2UToyvULq87SKi2HZXi7UH/tQBNm52JeeRl+ir9ogP/WUjxQyVzWlNguVY5ig7g==, tarball: https://npm.pkg.github.com/download/@appspine/rbac/3.0.4/4b1c94e533e42af745b6beedf37a5f7fd16ddac7}
     peerDependencies:
       '@appspine/audit-log': 0.5.1
       '@nestjs/common': ^11.0.5
@@ -4800,17 +4800,17 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))':
+  '@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))':
     dependencies:
-      '@appspine/common': 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/common': 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
 
-  '@appspine/auth@4.0.1(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)':
+  '@appspine/auth@4.0.2(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)':
     dependencies:
-      '@appspine/audit-log': 0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/common': 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/audit-log': 0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+      '@appspine/common': 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/passport': 11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
@@ -4825,7 +4825,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
+  '@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -4838,18 +4838,18 @@ snapshots:
       - pino-http
       - rxjs
 
-  '@appspine/domain-events@1.0.0(31f78711e5c81468972e9ac3b36072e5)':
+  '@appspine/domain-events@1.0.0(38c8479b2e204cba81523d0a6eb564e5)':
     dependencies:
-      '@appspine/auth': 4.0.1(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
-      '@appspine/common': 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/m2m-api-key': 3.0.0(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/auth': 4.0.2(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
+      '@appspine/common': 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/m2m-api-key': 3.0.4(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       reflect-metadata: 0.2.2
       zod: 4.4.3
 
-  '@appspine/frontend-shell@0.7.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
+  '@appspine/frontend-shell@0.8.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.2.9(@babel/core@7.29.7)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1
@@ -4865,7 +4865,7 @@ snapshots:
 
   '@appspine/health-check@0.1.2(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/terminus@11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:
-      '@appspine/common': 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/common': 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/terminus': 11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -4877,11 +4877,11 @@ snapshots:
       - rxjs
       - zod
 
-  '@appspine/m2m-api-key@3.0.0(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
+  '@appspine/m2m-api-key@3.0.4(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:
-      '@appspine/audit-log': 0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/auth': 4.0.1(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
-      '@appspine/common': 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/audit-log': 0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+      '@appspine/auth': 4.0.2(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
+      '@appspine/common': 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
@@ -4895,10 +4895,10 @@ snapshots:
       - rxjs
       - supports-color
 
-  '@appspine/mcp-server@0.5.4(65a96e03b3720c56d50e88dc7ceb0978)':
+  '@appspine/mcp-server@0.5.8(0886937e685b858dcadbd8c83cc200b9)':
     dependencies:
-      '@appspine/auth': 4.0.1(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
-      '@appspine/m2m-api-key': 3.0.0(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/auth': 4.0.2(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
+      '@appspine/m2m-api-key': 3.0.4(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@modelcontextprotocol/sdk': 1.29.0(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -4916,10 +4916,10 @@ snapshots:
       - rxjs
       - supports-color
 
-  '@appspine/metadata-schema@0.2.9(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
+  '@appspine/metadata-schema@0.2.13(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:
-      '@appspine/common': 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/m2m-api-key': 3.0.0(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/common': 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/m2m-api-key': 3.0.4(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
@@ -4934,11 +4934,11 @@ snapshots:
       - supports-color
       - zod
 
-  '@appspine/rbac@3.0.0(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
+  '@appspine/rbac@3.0.4(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:
-      '@appspine/audit-log': 0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/auth': 4.0.1(@appspine/audit-log@0.5.1(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
-      '@appspine/common': 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/audit-log': 0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+      '@appspine/auth': 4.0.2(@appspine/audit-log@0.5.1(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)))(@appspine/common@0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@nestjs/passport@11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0))(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
+      '@appspine/common': 0.2.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)

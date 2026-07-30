@@ -2,12 +2,12 @@
 // Automatically initializes a new business system forked from appspine-app-template.
 // Usage: node scripts/scaffold-init.mjs --name <kebab-case> --display-name "<Display Name>" [--description "<Description>"] [--db-port <port>] [--backend-port <port>] [--frontend-port <port>] [--dry-run]
 
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO_ROOT = path.resolve(__dirname, '..');
+const REPO_ROOT = path.resolve(__dirname, "..");
 
 function fail(message) {
   console.error(`Error: ${message}`);
@@ -35,43 +35,43 @@ function parseArgs(argv) {
     name: null,
     displayName: null,
     description: null,
-    dbPort: '23900',
-    backendPort: '3900',
-    frontendPort: '3901',
+    dbPort: "23900",
+    backendPort: "3900",
+    frontendPort: "3901",
     dryRun: false,
   };
 
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     switch (arg) {
-      case '--name':
+      case "--name":
         args.name = argv[++i];
         break;
-      case '--display-name':
+      case "--display-name":
         args.displayName = argv[++i];
         break;
-      case '--description':
+      case "--description":
         args.description = argv[++i];
         break;
-      case '--db-port':
+      case "--db-port":
         args.dbPort = argv[++i];
         break;
-      case '--backend-port':
+      case "--backend-port":
         args.backendPort = argv[++i];
         break;
-      case '--frontend-port':
+      case "--frontend-port":
         args.frontendPort = argv[++i];
         break;
-      case '--dry-run':
+      case "--dry-run":
         args.dryRun = true;
         break;
-      case '--help':
-      case '-h':
+      case "--help":
+      case "-h":
         printUsage();
         process.exit(0);
         break;
       default:
-        if (arg.startsWith('--')) fail(`Unknown flag: ${arg}`);
+        if (arg.startsWith("--")) fail(`Unknown flag: ${arg}`);
     }
   }
 
@@ -98,26 +98,26 @@ function validatePort(value, flagName) {
 }
 
 function validatePorts(args) {
-  validatePort(args.dbPort, '--db-port');
-  validatePort(args.backendPort, '--backend-port');
-  validatePort(args.frontendPort, '--frontend-port');
+  validatePort(args.dbPort, "--db-port");
+  validatePort(args.backendPort, "--backend-port");
+  validatePort(args.frontendPort, "--frontend-port");
 
   const ports = [args.dbPort, args.backendPort, args.frontendPort];
   if (new Set(ports).size !== ports.length) {
-    fail('--db-port, --backend-port, and --frontend-port must be distinct.');
+    fail("--db-port, --backend-port, and --frontend-port must be distinct.");
   }
 }
 
 // Reads a file, normalizing CRLF -> LF so replacement patterns can assume \n.
 // Returns the original EOL style so writeText can restore it.
 function readText(filePath) {
-  const raw = fs.readFileSync(filePath, 'utf8');
-  const eol = raw.includes('\r\n') ? '\r\n' : '\n';
-  return { content: eol === '\r\n' ? raw.replace(/\r\n/g, '\n') : raw, eol };
+  const raw = fs.readFileSync(filePath, "utf8");
+  const eol = raw.includes("\r\n") ? "\r\n" : "\n";
+  return { content: eol === "\r\n" ? raw.replace(/\r\n/g, "\n") : raw, eol };
 }
 
 function writeText(filePath, content, eol) {
-  fs.writeFileSync(filePath, eol === '\r\n' ? content.replace(/\n/g, '\r\n') : content);
+  fs.writeFileSync(filePath, eol === "\r\n" ? content.replace(/\n/g, "\r\n") : content);
 }
 
 // Applies a list of {pattern, replacement, expectedCount, description} rules to a file.
@@ -127,7 +127,7 @@ function replaceInFile(filePath, rules, dryRun = false) {
   let content = original;
   for (const { pattern, replacement, expectedCount, description } of rules) {
     const matches = content.match(pattern);
-    const count = matches ? (pattern.flags.includes('g') ? matches.length : 1) : 0;
+    const count = matches ? (pattern.flags.includes("g") ? matches.length : 1) : 0;
     if (count !== expectedCount) {
       fail(
         `${path.relative(REPO_ROOT, filePath)}: expected ${expectedCount} match(es) for ` +
@@ -147,202 +147,268 @@ function applyReplacements(ctx) {
   const { name, displayName, description, dbPort, backendPort, frontendPort, dryRun } = ctx;
 
   // 1. frontend/package.json
-  replaceInFile(path.join(REPO_ROOT, 'frontend', 'package.json'), [
-    {
-      pattern: /"name": "studio-admin"/,
-      replacement: `"name": "${name}"`,
-      expectedCount: 1,
-      description: 'frontend package name',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "frontend", "package.json"),
+    [
+      {
+        pattern: /"name": "studio-admin"/,
+        replacement: `"name": "${name}"`,
+        expectedCount: 1,
+        description: "frontend package name",
+      },
+    ],
+    dryRun,
+  );
 
   // 2. backend/package.json
-  replaceInFile(path.join(REPO_ROOT, 'backend', 'package.json'), [
-    {
-      pattern: /"name": "@app\/backend"/,
-      replacement: `"name": "@app/${name}"`,
-      expectedCount: 1,
-      description: 'backend package name',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "backend", "package.json"),
+    [
+      {
+        pattern: /"name": "@app\/backend"/,
+        replacement: `"name": "@app/${name}"`,
+        expectedCount: 1,
+        description: "backend package name",
+      },
+    ],
+    dryRun,
+  );
 
   // 3. .env.example
-  replaceInFile(path.join(REPO_ROOT, '.env.example'), [
-    {
-      pattern: /^APP_NAME=.+$/m,
-      replacement: `APP_NAME=${name}`,
-      expectedCount: 1,
-      description: 'APP_NAME env key',
-    },
-    {
-      pattern: /^DB_PORT=.+$/m,
-      replacement: `DB_PORT=${dbPort}`,
-      expectedCount: 1,
-      description: 'DB_PORT env key',
-    },
-    {
-      pattern: /^DATABASE_URL=postgresql:\/\/postgres:changeme@localhost:\d+\/app_db$/m,
-      replacement: `DATABASE_URL=postgresql://postgres:changeme@localhost:${dbPort}/app_db`,
-      expectedCount: 1,
-      description: 'DATABASE_URL env key',
-    },
-    {
-      pattern: /^CORS_ORIGINS=http:\/\/localhost:\d+$/m,
-      replacement: `CORS_ORIGINS=http://localhost:${frontendPort}`,
-      expectedCount: 1,
-      description: 'CORS_ORIGINS env key',
-    },
-    {
-      pattern: /^PORT=.+$/m,
-      replacement: `PORT=${backendPort}`,
-      expectedCount: 1,
-      description: 'PORT env key',
-    },
-    {
-      pattern: /^BACKEND_PORT=.+$/m,
-      replacement: `BACKEND_PORT=${backendPort}`,
-      expectedCount: 1,
-      description: 'BACKEND_PORT env key',
-    },
-    {
-      pattern: /^FRONTEND_PORT=.+$/m,
-      replacement: `FRONTEND_PORT=${frontendPort}`,
-      expectedCount: 1,
-      description: 'FRONTEND_PORT env key',
-    },
-    {
-      pattern: /^NEXT_PUBLIC_API_URL=http:\/\/localhost:\d+$/m,
-      replacement: `NEXT_PUBLIC_API_URL=http://localhost:${backendPort}`,
-      expectedCount: 1,
-      description: 'NEXT_PUBLIC_API_URL env key',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, ".env.example"),
+    [
+      {
+        pattern: /^APP_NAME=.+$/m,
+        replacement: `APP_NAME=${name}`,
+        expectedCount: 1,
+        description: "APP_NAME env key",
+      },
+      {
+        pattern: /^DB_PORT=.+$/m,
+        replacement: `DB_PORT=${dbPort}`,
+        expectedCount: 1,
+        description: "DB_PORT env key",
+      },
+      {
+        pattern: /^DATABASE_URL=postgresql:\/\/postgres:changeme@localhost:\d+\/app_db$/m,
+        replacement: `DATABASE_URL=postgresql://postgres:changeme@localhost:${dbPort}/app_db`,
+        expectedCount: 1,
+        description: "DATABASE_URL env key",
+      },
+      {
+        pattern: /^CORS_ORIGINS=http:\/\/localhost:\d+$/m,
+        replacement: `CORS_ORIGINS=http://localhost:${frontendPort}`,
+        expectedCount: 1,
+        description: "CORS_ORIGINS env key",
+      },
+      {
+        pattern: /^PORT=.+$/m,
+        replacement: `PORT=${backendPort}`,
+        expectedCount: 1,
+        description: "PORT env key",
+      },
+      {
+        pattern: /^BACKEND_PORT=.+$/m,
+        replacement: `BACKEND_PORT=${backendPort}`,
+        expectedCount: 1,
+        description: "BACKEND_PORT env key",
+      },
+      {
+        pattern: /^FRONTEND_PORT=.+$/m,
+        replacement: `FRONTEND_PORT=${frontendPort}`,
+        expectedCount: 1,
+        description: "FRONTEND_PORT env key",
+      },
+      {
+        pattern: /^NEXT_PUBLIC_API_URL=http:\/\/localhost:\d+$/m,
+        replacement: `NEXT_PUBLIC_API_URL=http://localhost:${backendPort}`,
+        expectedCount: 1,
+        description: "NEXT_PUBLIC_API_URL env key",
+      },
+    ],
+    dryRun,
+  );
 
   // 4. frontend/src/config/app-config.ts
-  replaceInFile(path.join(REPO_ROOT, 'frontend', 'src', 'config', 'app-config.ts'), [
-    {
-      pattern: /name: "Appspine App Template"/,
-      replacement: `name: "${displayName}"`,
-      expectedCount: 1,
-      description: 'APP_CONFIG name',
-    },
-    {
-      pattern: /copyright: `© \${currentYear}, Appspine App Template\.`/,
-      replacement: `copyright: \`© \${currentYear}, ${displayName}.\``,
-      expectedCount: 1,
-      description: 'APP_CONFIG copyright',
-    },
-    {
-      pattern: /title: "Appspine App Template"/,
-      replacement: `title: "${displayName}"`,
-      expectedCount: 1,
-      description: 'APP_CONFIG meta title',
-    },
-    {
-      pattern: /description:\s*\n?\s*"Appspine App Template is a fully customizable starter for business systems built with Next\.js 16, Tailwind CSS v4, and shadcn\/ui\."/,
-      replacement: `description:\n      "${description}"`,
-      expectedCount: 1,
-      description: 'APP_CONFIG meta description',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "frontend", "src", "config", "app-config.ts"),
+    [
+      {
+        pattern: /name: "Appspine App Template"/,
+        replacement: `name: "${displayName}"`,
+        expectedCount: 1,
+        description: "APP_CONFIG name",
+      },
+      {
+        pattern: /copyright: `© \${currentYear}, Appspine App Template\.`/,
+        replacement: `copyright: \`© \${currentYear}, ${displayName}.\``,
+        expectedCount: 1,
+        description: "APP_CONFIG copyright",
+      },
+      {
+        pattern: /title: "Appspine App Template"/,
+        replacement: `title: "${displayName}"`,
+        expectedCount: 1,
+        description: "APP_CONFIG meta title",
+      },
+      {
+        pattern:
+          /description:\s*\n?\s*"Appspine App Template is a fully customizable starter for business systems built with Next\.js 16, Tailwind CSS v4, and shadcn\/ui\."/,
+        replacement: `description:\n      "${description}"`,
+        expectedCount: 1,
+        description: "APP_CONFIG meta description",
+      },
+    ],
+    dryRun,
+  );
 
   // 4b. frontend/package.json dev port
-  replaceInFile(path.join(REPO_ROOT, 'frontend', 'package.json'), [
-    {
-      pattern: /"dev": "dotenv -e \.\.\/\.env -- next dev -p \d+"/,
-      replacement: `"dev": "dotenv -e ../.env -- next dev -p ${frontendPort}"`,
-      expectedCount: 1,
-      description: 'frontend dev server port',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "frontend", "package.json"),
+    [
+      {
+        pattern: /"dev": "dotenv -e \.\.\/\.env -- next dev -p \d+"/,
+        replacement: `"dev": "dotenv -e ../.env -- next dev -p ${frontendPort}"`,
+        expectedCount: 1,
+        description: "frontend dev server port",
+      },
+    ],
+    dryRun,
+  );
 
   // 5. README.md (template root README) — title plus every hardcoded port/URL in the prose,
   // so Quick Start stays correct without the manual fix-ups the fork checklist used to require.
-  replaceInFile(path.join(REPO_ROOT, 'README.md'), [
-    {
-      pattern: /^# appspine-app-template$/m,
-      replacement: `# ${name}`,
-      expectedCount: 1,
-      description: 'README title',
-    },
-    {
-      pattern: /Postgres will be available at `localhost:\d+`/,
-      replacement: `Postgres will be available at \`localhost:${dbPort}\``,
-      expectedCount: 1,
-      description: 'README Quick Start Postgres port',
-    },
-    {
-      pattern: /\| Backend \(NestJS\) \| http:\/\/localhost:\d+ \|/,
-      replacement: `| Backend (NestJS) | http://localhost:${backendPort} |`,
-      expectedCount: 1,
-      description: 'README dev server table backend URL',
-    },
-    {
-      pattern: /\| Frontend \(Next\.js\) \| http:\/\/localhost:\d+ \|/,
-      replacement: `| Frontend (Next.js) | http://localhost:${frontendPort} |`,
-      expectedCount: 1,
-      description: 'README dev server table frontend URL',
-    },
-    {
-      pattern: /curl http:\/\/localhost:\d+\/health/,
-      replacement: `curl http://localhost:${backendPort}/health`,
-      expectedCount: 1,
-      description: 'README health check curl URL',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "README.md"),
+    [
+      {
+        pattern: /^# appspine-app-template$/m,
+        replacement: `# ${name}`,
+        expectedCount: 1,
+        description: "README title",
+      },
+      {
+        pattern: /Postgres will be available at `localhost:\d+`/,
+        replacement: `Postgres will be available at \`localhost:${dbPort}\``,
+        expectedCount: 1,
+        description: "README Quick Start Postgres port",
+      },
+      {
+        pattern: /\| Backend \(NestJS\) \| http:\/\/localhost:\d+ \|/,
+        replacement: `| Backend (NestJS) | http://localhost:${backendPort} |`,
+        expectedCount: 1,
+        description: "README dev server table backend URL",
+      },
+      {
+        pattern: /\| Frontend \(Next\.js\) \| http:\/\/localhost:\d+ \|/,
+        replacement: `| Frontend (Next.js) | http://localhost:${frontendPort} |`,
+        expectedCount: 1,
+        description: "README dev server table frontend URL",
+      },
+      {
+        pattern: /curl http:\/\/localhost:\d+\/health/,
+        replacement: `curl http://localhost:${backendPort}/health`,
+        expectedCount: 1,
+        description: "README health check curl URL",
+      },
+    ],
+    dryRun,
+  );
 
   // 6. CLAUDE.md & AGENTS.md
-  replaceInFile(path.join(REPO_ROOT, 'CLAUDE.md'), [
-    {
-      pattern: /^# appspine-app-template — Agent Guide$/m,
-      replacement: `# ${name} — Agent Guide`,
-      expectedCount: 1,
-      description: 'CLAUDE title',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "CLAUDE.md"),
+    [
+      {
+        pattern: /^# appspine-app-template — Agent Guide$/m,
+        replacement: `# ${name} — Agent Guide`,
+        expectedCount: 1,
+        description: "CLAUDE title",
+      },
+    ],
+    dryRun,
+  );
 
-  replaceInFile(path.join(REPO_ROOT, 'AGENTS.md'), [
-    {
-      pattern: /^# appspine-app-template — Agent Guide$/m,
-      replacement: `# ${name} — Agent Guide`,
-      expectedCount: 1,
-      description: 'AGENTS title',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "AGENTS.md"),
+    [
+      {
+        pattern: /^# appspine-app-template — Agent Guide$/m,
+        replacement: `# ${name} — Agent Guide`,
+        expectedCount: 1,
+        description: "AGENTS title",
+      },
+    ],
+    dryRun,
+  );
+
+  // 7b. e2e/test-env.ts — Keycloak client fallback defaults (only used if
+  // E2E_KEYCLOAK_CLIENT_ID/_SECRET aren't set). dev-infra's own convention (dev-infra/README.md
+  // "Adding a 10th app") is client ID = app folder name, secret = `dev-secret-<client-id>` — so
+  // this is derivable at scaffold time for the common case of registering a new client on the
+  // shared dev Keycloak. Still verify manually if you registered a differently-named client.
+  replaceInFile(
+    path.join(REPO_ROOT, "e2e", "test-env.ts"),
+    [
+      {
+        pattern: /readOptionalEnv\("E2E_KEYCLOAK_CLIENT_ID", "template"\)/,
+        replacement: `readOptionalEnv("E2E_KEYCLOAK_CLIENT_ID", "${name}")`,
+        expectedCount: 1,
+        description: "E2E_KEYCLOAK_CLIENT_ID fallback",
+      },
+      {
+        pattern: /readOptionalEnv\("E2E_KEYCLOAK_CLIENT_SECRET", "dev-secret-template"\)/,
+        replacement: `readOptionalEnv("E2E_KEYCLOAK_CLIENT_SECRET", "dev-secret-${name}")`,
+        expectedCount: 1,
+        description: "E2E_KEYCLOAK_CLIENT_SECRET fallback",
+      },
+    ],
+    dryRun,
+  );
 
   // 7. docs/agent-guide.md
-  replaceInFile(path.join(REPO_ROOT, 'docs', 'agent-guide.md'), [
-    {
-      pattern: /^# appspine-app-template — Agent Guide$/m,
-      replacement: `# ${name} — Agent Guide`,
-      expectedCount: 1,
-      description: 'agent-guide title',
-    },
-    {
-      pattern: /## App Positioning\n\n[\s\S]*?\n\n---/,
-      replacement: `## App Positioning\n\n<!-- TODO(scaffold): Fill in the "App Positioning" description for ${name} (business domain, core module overview). -->\n\n---`,
-      expectedCount: 1,
-      description: 'agent-guide App Positioning placeholder',
-    },
-  ], dryRun);
+  replaceInFile(
+    path.join(REPO_ROOT, "docs", "agent-guide.md"),
+    [
+      {
+        pattern: /^# appspine-app-template — Agent Guide$/m,
+        replacement: `# ${name} — Agent Guide`,
+        expectedCount: 1,
+        description: "agent-guide title",
+      },
+      {
+        pattern: /## App Positioning\n\n[\s\S]*?\n\n---/,
+        replacement: `## App Positioning\n\n<!-- TODO(scaffold): Fill in the "App Positioning" description for ${name} (business domain, core module overview). -->\n\n---`,
+        expectedCount: 1,
+        description: "agent-guide App Positioning placeholder",
+      },
+    ],
+    dryRun,
+  );
 }
 
 function printChecklist(ctx) {
   console.log(`\n✅ App "${ctx.name}" initialized successfully!`);
-  console.log('\nNext Manual Steps:');
+  console.log("\nNext Manual Steps:");
   console.log('  1. Add your business models in "backend/prisma/schema/".');
   console.log('  2. Define the matching "Permission" enum values in "backend/prisma/schema/base.prisma".');
   console.log('  3. Fill in USER_DEFAULT_PERMISSIONS in "backend/prisma/seed.ts" — until you do,');
-  console.log('     freshly registered users get 403 on every permission-guarded endpoint.');
-  console.log('  4. Run backend prisma migration to apply changes to database:');
-  console.log('     pnpm -C backend prisma:migrate --name init-domain-models');
-  console.log('  5. Regenerate the data dictionary documentation:');
-  console.log('     pnpm -C backend schema:docs');
-  console.log('  6. Fill in the "App Positioning" description inside "docs/agent-guide.md" (business domain, core module overview).');
-  console.log('  7. Copy .env.example to .env and configure database parameters, ports, and');
-  console.log('     OIDC_JWKS_URL/OIDC_ISSUER/OIDC_AUDIENCE for the shared dev Keycloak (dev-infra/README.md).');
-  console.log('  8. Add a PACKAGES_READ_TOKEN Actions secret (PAT with read:packages) to the new GitHub repo,');
-  console.log('     or the E2E workflow fails on its first run.');
+  console.log("     freshly registered users get 403 on every permission-guarded endpoint.");
+  console.log("  4. Run backend prisma migration to apply changes to database:");
+  console.log("     pnpm -C backend prisma:migrate --name init-domain-models");
+  console.log("  5. Regenerate the data dictionary documentation:");
+  console.log("     pnpm -C backend schema:docs");
+  console.log(
+    '  6. Fill in the "App Positioning" description inside "docs/agent-guide.md" (business domain, core module overview).',
+  );
+  console.log("  7. Copy .env.example to .env and configure database parameters, ports, and");
+  console.log("     OIDC_JWKS_URL/OIDC_ISSUER/OIDC_AUDIENCE for the shared dev Keycloak (dev-infra/README.md).");
+  console.log("  7b. Also fill in AUTH_SECRET (npx auth secret), AUTH_KEYCLOAK_ID, AUTH_KEYCLOAK_SECRET, and");
+  console.log("      AUTH_KEYCLOAK_ISSUER for next-auth — these ship as placeholders and next-auth throws");
+  console.log('      MissingSecret on first login if left unset (README "Forking this template" step 4).');
+  console.log("  8. Add a PACKAGES_READ_TOKEN Actions secret (PAT with read:packages) to the new GitHub repo,");
+  console.log("     or the E2E workflow fails on its first run.");
   console.log('  9. Register the ports in the appspine workspace docs/agent-guide.md "Local Dev Ports" table:');
   console.log(`     | \`${ctx.name}\` | ${ctx.dbPort} | ${ctx.backendPort} | ${ctx.frontendPort} |`);
 }
@@ -368,20 +434,20 @@ function main() {
     dryRun: args.dryRun,
   };
 
-  console.log(`[${args.dryRun ? 'dry-run' : 'scaffold'}] Initializing "${ctx.name}"...`);
+  console.log(`[${args.dryRun ? "dry-run" : "scaffold"}] Initializing "${ctx.name}"...`);
   console.log(`  Display Name: ${ctx.displayName}`);
   console.log(`  Description: ${ctx.description}`);
   console.log(`  DB Port: ${ctx.dbPort}`);
   console.log(`  Backend Port: ${ctx.backendPort}`);
   console.log(`  Frontend Port: ${ctx.frontendPort}`);
-  console.log('');
+  console.log("");
 
   applyReplacements(ctx);
 
   if (!ctx.dryRun) {
     printChecklist(ctx);
   } else {
-    console.log('\n✅ Dry run validation passed successfully. No files were written.');
+    console.log("\n✅ Dry run validation passed successfully. No files were written.");
   }
 }
 

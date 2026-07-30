@@ -10,9 +10,9 @@ import { getPreference } from "@/server/server-actions";
 import { DashboardShellBridge } from "./_components/dashboard-shell-bridge";
 
 export default async function Layout({ children }: Readonly<{ children: ReactNode }>) {
-  // The auth cookie's mere presence was already checked by middleware.ts; this call
-  // additionally confirms the token itself is still valid (not expired/revoked) and
-  // supplies the user data every dashboard page needs (sidebar, ADMIN checks in T-305).
+  // There is no middleware (Next.js 16 + next-auth v5 beta bug — see dev_docs/framework/
+  // 035); this is the sole gate for every route under this layout. It also supplies the
+  // user data every dashboard page needs (sidebar, ADMIN checks in T-305).
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 

@@ -40,6 +40,12 @@ export const testEnv = {
   // old local `auth_token` cookie could.
   keycloak: {
     issuer: readOptionalEnv("E2E_KEYCLOAK_ISSUER", "http://localhost:8180/realms/appspine-dev"),
+    // FORK REQUIREMENT: "template" / "dev-secret-template" are this template's OWN live dev
+    // Keycloak client credentials (dev-infra/README.md's client table). A fork that doesn't
+    // set E2E_KEYCLOAK_CLIENT_ID/_SECRET silently mints tokens with aud:template instead of
+    // its own client — its backend (which correctly expects its own OIDC_AUDIENCE) then 401s
+    // with no obvious reason why. Change both to your fork's client ID / `dev-secret-<client-id>`
+    // (scripts/scaffold-init.mjs rewrites these automatically when you fork via that script).
     clientId: readOptionalEnv("E2E_KEYCLOAK_CLIENT_ID", "template"),
     clientSecret: readOptionalEnv("E2E_KEYCLOAK_CLIENT_SECRET", "dev-secret-template"),
   },

@@ -1,8 +1,8 @@
-import { auth } from "@/auth";
+import { getAccessToken } from "@/auth";
 
-// Server-only: reads the next-auth session via next/headers (through auth()), so
-// apiFetch must only be called from Server Components / Server Actions / Route
-// Handlers — never imported into a "use client" module.
+// Server-only: reads the Keycloak access token via next/headers (through
+// getAccessToken()), so apiFetch must only be called from Server Components / Server
+// Actions / Route Handlers — never imported into a "use client" module.
 
 function readRequiredEnv(name: string): string {
   const value = process.env[name];
@@ -38,11 +38,10 @@ export class ApiError extends Error {
 }
 
 export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
-  const session = await auth();
-  // A failed refresh (session.error) means this token is guaranteed to be rejected —
-  // send the request unauthenticated instead so callers see a normal 401, not a
-  // confusing "token present but invalid" failure.
-  const token = session?.error ? undefined : session?.accessToken;
+  // undefined here (no session, or a failed refresh) sends the request unauthenticated
+  // instead of a token guaranteed to be rejected, so callers see a normal 401 rather
+  // than a confusing "token present but invalid" failure.
+  const token = await getAccessToken();
   const res = await fetch(`${API_BASE_URL}${path}`, {
     ...init,
     headers: {

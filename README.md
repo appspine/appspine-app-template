@@ -11,7 +11,8 @@ for the framework plan and conventions this template follows. For agent/AI-assis
 - **Frontend** — [blank_shadcn_app](https://github.com/antonylu0826/blank_shadcn_app) (Next.js + Tailwind CSS + shadcn/ui),
   running on port 3901.
 - **Backend** — NestJS + Prisma, running on port 3900, with the following `@appspine/*` packages pre-wired:
-  - Auth: local (bcrypt + HS256 JWT) and OIDC (Keycloak) — controlled by `AUTH_MODE` env var
+  - Auth: OIDC-only (Keycloak) — local email/password auth is retired (dev_docs/framework/035); identity
+    comes from the external IdP, RBAC grants stay local
   - RBAC: role/permission management, `AdminGuard`, `PermissionGuard`, `RequirePermissions` decorator
   - M2M API Key: `ApiKeyGuard`, `JwtOrApiKeyGuard`, `ScopeGuard`, `@Scopes()` decorator, rate limiting
   - Audit Log: local `AuditLog` table writes via `AuditLogService`
@@ -60,8 +61,18 @@ Postgres will be available at `localhost:23900`. Data is persisted in the `db_da
 cp .env.example .env
 ```
 
-For local development the defaults work out of the box. Change `JWT_SECRET` before deploying to any shared
-environment.
+Most defaults work out of the box against the shared dev Keycloak (`dev-infra/README.md`), but `AUTH_SECRET`,
+`AUTH_KEYCLOAK_ID`, `AUTH_KEYCLOAK_SECRET`, and `OIDC_AUDIENCE` ship as literal placeholders (`<client-id>` /
+`<client-secret>` / `<generate with npx auth secret>`) — fill them in before `pnpm dev`:
+
+```bash
+npx auth secret   # prints a value for AUTH_SECRET
+```
+
+Set `OIDC_AUDIENCE` and `AUTH_KEYCLOAK_ID` to this app's client ID and `AUTH_KEYCLOAK_SECRET` to its client
+secret — for the shared dev Keycloak, register a client following `dev-infra/README.md` "Adding a 10th app"
+(client ID = this app's folder name, secret = `dev-secret-<client-id>` by dev-infra's own convention).
+Skipping any of these makes next-auth throw `MissingSecret` on your first login attempt.
 
 ### 4. Authenticate to GitHub Packages
 
@@ -148,12 +159,22 @@ See [docs/conventions.md](docs/conventions.md#standard-flow-for-adding-a-new-cru
 3. In the new repo's GitHub settings, add a `PACKAGES_READ_TOKEN` Actions secret (a PAT with
    `read:packages` scope) — the E2E workflow authenticates to GitHub Packages with it, and the very first
    PR's CI fails without it.
-4. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
+4. Register a Keycloak client for the fork and fill in the OIDC/next-auth env vars — this template's
+   `.env.example` ships them as literal placeholders, and skipping this makes next-auth throw
+   `MissingSecret` at your very first login attempt:
+   - Generate `AUTH_SECRET` with `npx auth secret`.
+   - Register a client (client ID = your app's folder name, secret = `dev-secret-<client-id>` on the
+     shared dev Keycloak) following `dev-infra/README.md` "Adding a 10th app", then set `OIDC_AUDIENCE`
+     and `AUTH_KEYCLOAK_ID` to the client ID and `AUTH_KEYCLOAK_SECRET` to its secret.
+   - Also update `e2e/test-env.ts`'s `E2E_KEYCLOAK_CLIENT_ID`/`E2E_KEYCLOAK_CLIENT_SECRET` fallback
+     defaults (see the `FORK REQUIREMENT` comment there) — `scripts/scaffold-init.mjs` rewrites these to
+     match your app's name automatically, but verify them if you registered a differently-named client.
+5. Add your own Prisma models to `backend/prisma/schema/` and define the matching `Permission` enum values
    in `backend/prisma/schema/base.prisma`.
-5. Fill in `USER_DEFAULT_PERMISSIONS` in `backend/prisma/seed.ts` with the grants a normal user needs
+6. Fill in `USER_DEFAULT_PERMISSIONS` in `backend/prisma/seed.ts` with the grants a normal user needs
    (then re-run `prisma:seed`). Until you do, a freshly registered user gets 403 on every
    permission-guarded endpoint — the app works for the seeded ADMIN only.
-6. Run `pnpm -C backend prisma:migrate --name init-domain-models` to generate a migration for your new
+7. Run `pnpm -C backend prisma:migrate --name init-domain-models` to generate a migration for your new
    schema (pass `--name` directly after the script name — inserting `--` first makes Prisma fall back to
    an interactive prompt).
 

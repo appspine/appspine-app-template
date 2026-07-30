@@ -15,9 +15,9 @@ export interface CurrentUser {
   permissions: string[];
 }
 
-// Returns null (rather than throwing) when the cookie holds an invalid/expired token —
-// middleware only checks that the cookie exists, not that it's still valid, so callers
-// (dashboard layouts) must handle this as "not actually authenticated".
+// Returns null (rather than throwing) when there's no session or the token is invalid/
+// expired — there is no middleware (Next.js 16 + next-auth v5 beta bug), so callers
+// (dashboard layouts) must handle this as "not actually authenticated" themselves.
 //
 // Wrapped in React's cache() so multiple layouts in the same request tree (e.g. the
 // dashboard layout's login check in T-304, plus the ADMIN-only layout's role check in

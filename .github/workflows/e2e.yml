@@ -76,6 +76,26 @@ jobs:
       - name: Run E2E typecheck
         run: pnpm -C e2e typecheck
 
+  # KNOWN GAP (dev_docs/framework/035): this job does not yet start a Keycloak service, so it
+  # cannot actually authenticate — every auth-dependent spec will fail with a connection error
+  # against E2E_KEYCLOAK_ISSUER's default (http://localhost:8180), not a clean pass. Local auth
+  # is retired; there is no in-process fallback the backend/frontend can authenticate against
+  # instead. What's still needed to close this gap:
+  #   1. A Keycloak service container in this job (image quay.io/keycloak/keycloak:26.0,
+  #      `start-dev --import-realm`, health-checked on the management port — see
+  #      dev-infra/docker-compose.yml in the appspine monorepo for the pattern this template's
+  #      own local dev setup already uses).
+  #   2. A realm-import JSON checked into THIS repo (not referenced from dev-infra, which lives
+  #      in a separate monorepo this template's own CI can't assume access to) defining: this
+  #      app's OIDC client (client ID/secret matching whatever OIDC_AUDIENCE/AUTH_KEYCLOAK_ID
+  #      this fork's .env.example carries), a couple of fixed test users, and matching
+  #      OIDC_JWKS_URL/OIDC_ISSUER/AUTH_KEYCLOAK_ISSUER overrides for the CI env.
+  #   3. Since every fork registers its own client ID (dev-infra/README.md "Adding a 10th app"),
+  #      that realm JSON is fork-specific, not something scaffold-init.mjs can stamp out
+  #      automatically today — building and validating one is future template work, not
+  #      something this pass could safely fabricate without a live CI run to verify against.
+  # Until then, this at least stops the job from claiming SEED_USER_PASSWORD/E2E_USER_PASSWORD/
+  # E2E_ADMIN_EMAIL (retired local-auth vars test-env.ts no longer reads) do anything real.
   e2e:
     needs:
       - detect
@@ -84,9 +104,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PACKAGES_READ_TOKEN }}
-      SEED_USER_PASSWORD: ${{ format('Admin-{0}!appspine', github.run_id) }}
-      E2E_USER_EMAIL: ${{ format('e2e-user-{0}@example.com', github.run_id) }}
-      E2E_USER_PASSWORD: ${{ format('User-{0}!appspine', github.run_id) }}
     steps:
       - uses: actions/checkout@v4
 
@@ -114,11 +131,9 @@ jobs:
       - name: Prepare database
         shell: bash
         run: |
-          ci_seed_password="$SEED_USER_PASSWORD"
           set -a
           source .env
           set +a
-          export SEED_USER_PASSWORD="$ci_seed_password"
           pnpm -C backend prisma:generate
           pnpm -C backend prisma:deploy
           pnpm -C backend prisma:seed
@@ -148,15 +163,16 @@ jobs:
       - name: Run E2E suite
         shell: bash
         run: |
-          ci_seed_password="$SEED_USER_PASSWORD"
           set -a
           source .env
           set +a
-          export SEED_USER_PASSWORD="$ci_seed_password"
           export E2E_API_URL="http://127.0.0.1:${BACKEND_PORT}"
           export E2E_BASE_URL="http://localhost:${FRONTEND_PORT}"
-          export E2E_ADMIN_EMAIL="${SEED_USER_EMAIL}"
-          export E2E_ADMIN_PASSWORD="$ci_seed_password"
+          # test-env.ts's own defaults (dev-admin/dev-admin-pass, dev-user/dev-user-pass,
+          # dev-user@appspine-dev.local, client "template"/"dev-secret-template") match this
+          # template's own local dev-infra Keycloak — see the KNOWN GAP comment on this job:
+          # nothing here starts that Keycloak, so auth-dependent specs currently fail on
+          # connection error, not a clean pass, until a CI Keycloak service is added.
           pnpm --dir e2e test
 
       - name: Upload Playwright report

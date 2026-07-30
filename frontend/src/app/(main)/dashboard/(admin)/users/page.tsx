@@ -1,22 +1,15 @@
 import Link from "next/link";
 
 import type { UserRoleOption, UserRow } from "@appspine/frontend-shell";
-import { CreateUserDialog, ListPagination, ListSearchForm, UsersTable } from "@appspine/frontend-shell";
+import { ListPagination, ListSearchForm, UsersTable } from "@appspine/frontend-shell";
 
 import { getTranslations } from "@/i18n/server";
 import type { PaginatedResult } from "@/server/api-client";
 import { apiFetch } from "@/server/api-client";
-import { isLocalAuthMode } from "@/server/auth-mode";
 import { getCurrentUser } from "@/server/current-user";
 import { buildListHref, buildSortHref, formatPageInfo, parseSortOrder } from "@/server/list-url";
 
-import {
-  createUserAction,
-  deleteUserAction,
-  setUserActiveAction,
-  setUserServiceAccountAction,
-  updateUserRolesAction,
-} from "./actions";
+import { deleteUserAction, setUserActiveAction, setUserServiceAccountAction, updateUserRolesAction } from "./actions";
 
 const PAGE_SIZE = 20;
 
@@ -44,7 +37,6 @@ export default async function UsersPage({
   ]);
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-  const showLocalAuthUi = isLocalAuthMode();
 
   const paginationInfoText = formatPageInfo(tUsers("pageInfo"), { page, totalPages, total });
 
@@ -52,7 +44,6 @@ export default async function UsersPage({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="font-bold text-2xl tracking-tight">{tUsers("title")}</h1>
-        {showLocalAuthUi && <CreateUserDialog roles={roles} createUserAction={createUserAction} />}
       </div>
 
       <ListSearchForm
