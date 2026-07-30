@@ -4,6 +4,5 @@ import { testEnv } from "../test-env";
 
 registerAuthSpec({
   baseURL: testEnv.baseURL,
-  apiURL: testEnv.apiURL,
-  authCookieName: testEnv.authCookieName,
+  jitUser: testEnv.jitUser,
 });

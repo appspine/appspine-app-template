@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@appspine/audit-log": "^0.5.1",
-    "@appspine/auth": "^3.0.0",
+    "@appspine/auth": "^4.0.1",
     "@appspine/common": "^0.2.0",
     "@appspine/domain-events": "^1.0.0",
     "@appspine/health-check": "^0.1.2",

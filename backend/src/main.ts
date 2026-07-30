@@ -14,16 +14,7 @@ async function bootstrap() {
     throw new Error("CORS_ORIGINS must be set (comma-separated origins, e.g. http://localhost:3901).");
   }
 
-  const authMode = process.env.AUTH_MODE ?? "local";
-  if (
-    process.env.NODE_ENV === "production" &&
-    authMode === "local" &&
-    (!process.env.JWT_SECRET || process.env.JWT_SECRET === "dev-secret")
-  ) {
-    throw new Error(
-      "JWT_SECRET is unset or still the dev default — refusing to start in production with AUTH_MODE=local.",
-    );
-  }
+  const authMode = process.env.AUTH_MODE ?? "oidc";
 
   const app = await NestFactory.create(AppModule, { bufferLogs: true });
 
