@@ -70,7 +70,7 @@ export default async function ApiKeysPage({
         sortOrder={sortOrder}
         LinkComponent={Link}
         buildSortHref={(field, order) => buildSortHref({ search }, field, order)}
-        t={(key) => tApiKeys(key as any)}
+        t={tApiKeys}
         setApiKeyActiveAction={setApiKeyActiveAction}
         deleteApiKeyAction={deleteApiKeyAction}
         updateApiKeyActingUserAction={updateApiKeyActingUserAction}

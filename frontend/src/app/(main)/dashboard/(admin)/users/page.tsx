@@ -60,7 +60,7 @@ export default async function UsersPage({
         sortOrder={sortOrder}
         LinkComponent={Link}
         buildSortHref={(field, order) => buildSortHref({ search }, field, order)}
-        t={(key) => tUsers(key as any)}
+        t={tUsers}
         setUserActiveAction={setUserActiveAction}
         setUserServiceAccountAction={setUserServiceAccountAction}
         updateUserRolesAction={updateUserRolesAction}

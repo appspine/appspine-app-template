@@ -81,7 +81,7 @@ export default async function RolesPage({
         sortOrder={sortOrder}
         LinkComponent={Link}
         buildSortHref={(field, order) => buildSortHref({ search }, field, order)}
-        t={(key) => t(key as any)}
+        t={t}
         renderEnumLabel={(kind, value) => enumLabel(tEnum, kind, value)}
         updateRoleAction={updateRoleAction}
         deleteRoleAction={deleteRoleAction}
