@@ -4,10 +4,13 @@ packages:
 
 overrides:
   '@appspine/common': 0.2.1
-  # Keep @appspine package resolution on the published framework versions used by
-  # this template to avoid duplicate NestJS class instances across peer packages.
-  '@appspine/audit-log': 0.5.1
   '@appspine/auth': 4.0.2
+  '@appspine/audit-log': 0.5.1
+  '@appspine/rbac': 3.0.4
+  '@appspine/health-check': 0.1.3
+  '@appspine/m2m-api-key': 3.0.4
+  '@appspine/mcp-server': 0.5.8
+  '@appspine/metadata-schema': 0.2.13
 
 # @appspine/* are private packages published by this same org, not public npm -
 # the supply-chain risk minimumReleaseAge guards against (freshly-published
