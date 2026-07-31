@@ -3,14 +3,14 @@ packages:
   - "frontend"
 
 overrides:
-  '@appspine/common': 0.2.1
-  '@appspine/auth': 4.0.2
-  '@appspine/audit-log': 0.5.1
-  '@appspine/rbac': 3.0.4
-  '@appspine/health-check': 0.1.3
-  '@appspine/m2m-api-key': 3.0.4
-  '@appspine/mcp-server': 0.5.8
-  '@appspine/metadata-schema': 0.2.13
+  '@appspine/common': 0.3.0
+  '@appspine/auth': 5.0.0
+  '@appspine/audit-log': 1.0.0
+  '@appspine/rbac': 4.0.0
+  '@appspine/health-check': 0.1.4
+  '@appspine/m2m-api-key': 4.0.0
+  '@appspine/mcp-server': 0.5.9
+  '@appspine/metadata-schema': 0.2.14
 
 # @appspine/* are private packages published by this same org, not public npm -
 # the supply-chain risk minimumReleaseAge guards against (freshly-published
