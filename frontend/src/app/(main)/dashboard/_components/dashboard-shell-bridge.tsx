@@ -11,7 +11,6 @@ import {
   DashboardShell,
   type Locale,
   LocaleSwitcher,
-  type NavGroup,
   type ShellLinkProps,
   ThemeSwitcher,
   useLocale,
@@ -70,7 +69,10 @@ export function DashboardShellBridge({
   );
 
   const isAdmin = user.roleNames.includes("ADMIN");
-  const navItems: readonly NavGroup[] = getSidebarItems(isAdmin);
+  // Not annotated as NavGroup (frontend-shell's widened `label: string` type) — this needs
+  // sidebar-items.ts's own NavGroup, whose label/title are typed against Messages["nav"]'s
+  // real keys, so tNav(...) below can type-check the translation keys.
+  const navItems = getSidebarItems(isAdmin);
 
   const translatedNavItems = React.useMemo(() => {
     return navItems.map((group) => ({

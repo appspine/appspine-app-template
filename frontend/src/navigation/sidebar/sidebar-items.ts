@@ -1,10 +1,14 @@
 import { KeyRound, LayoutDashboard, type LucideIcon, ShieldCheck, Users } from "lucide-react";
 
+import type { Messages } from "@/i18n/messages";
+
 export type NavBadge = "new" | "soon";
+
+type NavKey = keyof Messages["nav"] & string;
 
 export interface NavSubItem {
   id: string;
-  title: string;
+  title: NavKey;
   url: string;
   icon?: LucideIcon;
   badge?: NavBadge;
@@ -14,7 +18,7 @@ export interface NavSubItem {
 
 interface NavItemBase {
   id: string;
-  title: string;
+  title: NavKey;
   icon?: LucideIcon;
   badge?: NavBadge;
   disabled?: boolean;
@@ -34,7 +38,7 @@ export type NavMainItem = NavMainLinkItem | NavMainParentItem;
 
 export interface NavGroup {
   id: number;
-  label?: string;
+  label?: NavKey;
   items: NavMainItem[];
 }
 
