@@ -25,7 +25,7 @@
   "dependencies": {
     "@appspine/audit-log": "^1.0.0",
     "@appspine/auth": "^5.0.0",
-    "@appspine/common": "^0.3.0",
+    "@appspine/common": "^0.3.1",
     "@appspine/domain-events": "4.0.0",
     "@appspine/health-check": "^0.1.4",
     "@appspine/m2m-api-key": "^4.0.0",
