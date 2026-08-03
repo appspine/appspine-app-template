@@ -29,7 +29,7 @@
     "@appspine/domain-events": "4.0.0",
     "@appspine/health-check": "^0.1.4",
     "@appspine/m2m-api-key": "^4.0.0",
-    "@appspine/mcp-server": "0.6.0-mcp-2026-07-28.1",
+    "@appspine/mcp-server": "0.6.1",
     "@appspine/metadata-schema": "^0.2.14",
     "@appspine/rbac": "^4.0.0",
     "@nestjs/common": "^11.0.5",
