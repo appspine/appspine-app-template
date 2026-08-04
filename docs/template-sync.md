@@ -13,3 +13,4 @@ For upstream template updates, refer to the workspace guidance in `docs/agent-gu
 |---|---|---|
 | (example: 1f7b106) | (example: abc1234) | replayed DateTimePicker consumption |
 | (example: 6d89a4e) | N/A | Docs-only change, skipped |
+| `11fac402f78ee0b552878e84712ebdb1d678ff80` | `92b64f39939784df6a3267f378cae0a66de2cda7` | Bumped `@appspine/auth` to `^6.0.0` for OIDC authorized-party hardening |
