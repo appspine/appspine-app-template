@@ -4,7 +4,7 @@ packages:
 
 overrides:
   '@appspine/common': 0.3.0
-  '@appspine/auth': 5.0.0
+  '@appspine/auth': 6.0.0
   '@appspine/audit-log': 1.0.0
   '@appspine/rbac': 4.0.0
   '@appspine/health-check': 0.1.4
