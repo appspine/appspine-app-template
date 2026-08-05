@@ -35,4 +35,11 @@ conventions — plus the standard flow for adding a new CRUD module — live in
      This is one item on a larger list — see README.md's "Before you ship — documentation checklist"
      under "Forking this template" for the rest (API/MCP tools tables, data-dictionary regen, etc). -->
 
+## Shared notifications
+
+The scaffold includes the standard `Notification` schema and generic inbox controller backed by
+`@appspine/notification`, with `notifications:read/write` scopes and recipient-owned mutations. The
+dashboard uses `@appspine/frontend-shell/notification`; forks should keep notification writes synchronous
+with their triggering transaction and use stable idempotency keys for each producer.
+
 ---

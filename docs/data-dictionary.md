@@ -1,6 +1,6 @@
 # Data Dictionary
 
-> Auto-generated from Prisma schema on 2026-07-30.
+> Auto-generated from Prisma schema on 2026-08-05.
 > Do not edit manually — run your app's schema:docs script to regenerate.
 
 ---
@@ -155,6 +155,30 @@
 | `processedAt` | DateTime |  |  |  |
 | `createdAt` | DateTime | ✓ |  |  |
 
+### Notification
+
+**DB table:** `notifications`
+
+| Field | Type | Required | Unique | Description |
+|-------|------|----------|--------|-------------|
+| `id` | String | ✓ | ✓ |  |
+| `recipientUserId` | String | ✓ |  |  |
+| `idempotencyKey` | String | ✓ |  |  |
+| `type` | String | ✓ |  |  |
+| `category` | String |  |  |  |
+| `severity` | String | ✓ |  |  |
+| `title` | String | ✓ |  |  |
+| `body` | String |  |  |  |
+| `sourceApp` | String | ✓ |  |  |
+| `sourceEventId` | String |  |  |  |
+| `sourceEntityType` | String |  |  |  |
+| `sourceEntityId` | String |  |  |  |
+| `targetPath` | String |  |  |  |
+| `readAt` | DateTime |  |  |  |
+| `archivedAt` | DateTime |  |  |  |
+| `createdAt` | DateTime | ✓ |  |  |
+| `updatedAt` | DateTime | ✓ |  |  |
+
 ### Role
 
 > System role or custom role. ADMIN and USER are seeded system roles and cannot be deleted. Excluded from the API-key scope catalog by MetaService. @internal
@@ -205,7 +229,7 @@
 |-------|------|----------|--------|-------------|
 | `id` | String | ✓ | ✓ |  |
 | `email` | String | ✓ | ✓ | Login email, must be unique across the system. |
-| `password` | String |  |  | Local auth is retired (dev_docs/framework/035) — this bcrypt hash is never read or written by new code. Kept nullable rather than dropped: deleting the column is a breaking migration across 9 apps for a nullable field that costs nothing to leave. Any pre-035 hash values are cleared by each app's Group D database reset, not by a data migration. |
+| `password` | String |  |  | Local auth is retired (dev_docs/framework/035) — never read by any current code path (there is no local login/register endpoint). Optional, hashed by @appspine/auth's UsersController before UsersService.create() writes it (not written unhashed by any current code path) — retained for schema compatibility with a deliberately password-protected break-glass account; not used by the OIDC login flow. Kept nullable rather than dropped: deleting the column is a breaking migration across 9 apps for a nullable field that costs nothing to leave. Any pre-035 hash values are cleared by each app's Group D database reset, not by a data migration. |
 | `name` | String |  |  | Display name shown in UI; optional. |
 | `employeeNumber` | String |  | ✓ | Cross-app link key for looking up this person's canonical record in apps/org (Enterprise Master Data). Null for accounts with no corresponding org record (service accounts, contractors not yet onboarded in apps/org, etc.) — a null value must not be treated as an error, only as "no org context available for this account". |
 | `isActive` | Boolean | ✓ |  | Soft-disable without deleting — preserves audit history. |
