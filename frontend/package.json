@@ -14,12 +14,10 @@
     "generate:presets": "ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "biome check --write --no-errors-on-unmatched"
-    ]
+    "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]
   },
   "dependencies": {
-    "@appspine/frontend-shell": "^0.12.0",
+    "@appspine/frontend-shell": "^0.13.0",
     "@appspine/metadata-schema": "^0.2.13",
     "@base-ui/react": "^1.6.0",
     "@hookform/resolvers": "^5.4.0",

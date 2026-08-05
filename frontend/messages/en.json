@@ -160,5 +160,19 @@
     "users": "Users",
     "roles": "Roles",
     "apiKeys": "API Keys"
+  },
+  "notifications": {
+    "ariaLabel": "Notifications",
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "markAllReadError": "Unable to mark all notifications as read.",
+    "markReadError": "Unable to mark notification as read.",
+    "loading": "Loading notifications...",
+    "empty": "No notifications",
+    "error": "Unable to load notifications.",
+    "retry": "Retry",
+    "unread": "Unread",
+    "read": "Read",
+    "retrying": "Retrying..."
   }
 }

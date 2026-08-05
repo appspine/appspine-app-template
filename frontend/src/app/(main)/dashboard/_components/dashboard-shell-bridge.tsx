@@ -28,6 +28,7 @@ import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
 import { HeaderBreadcrumbs } from "./sidebar/header-breadcrumbs";
 import { LayoutControls } from "./sidebar/layout-controls";
+import { NotificationBell } from "./sidebar/notification-bell";
 import { SearchDialog } from "./sidebar/search-dialog";
 
 interface DashboardShellBridgeProps {
@@ -35,6 +36,7 @@ interface DashboardShellBridgeProps {
   readonly defaultOpen: boolean;
   readonly defaultSidebarVariant: "sidebar" | "floating" | "inset";
   readonly defaultSidebarCollapsible: "offcanvas" | "icon" | "none";
+  readonly initialUnreadCount: number;
   readonly children: ReactNode;
 }
 
@@ -51,6 +53,7 @@ export function DashboardShellBridge({
   defaultOpen,
   defaultSidebarVariant,
   defaultSidebarCollapsible,
+  initialUnreadCount,
   children,
 }: DashboardShellBridgeProps) {
   const pathname = usePathname();
@@ -143,6 +146,7 @@ export function DashboardShellBridge({
       }
       headerActions={
         <>
+          <NotificationBell initialUnreadCount={initialUnreadCount} />
           <LayoutControls />
           <LocaleSwitcher currentLocale={locale} onLocaleChange={handleLocaleChange} />
           <ThemeSwitcher themeMode={themeMode} onThemeModeChange={handleThemeModeChange} />

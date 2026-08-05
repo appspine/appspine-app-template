@@ -16,6 +16,7 @@
     "check:enum-i18n": "dotenv -e ../.env -- ts-node scripts/check-enum-i18n.ts",
     "check:schema-docs": "dotenv -e ../.env -- ts-node scripts/check-schema-docs.ts",
     "check:domain-events-schema-drift": "dotenv -e ../.env -- ts-node scripts/check-domain-events-schema-drift.ts",
+    "check:notification-schema-drift": "dotenv -e ../.env -- ts-node scripts/check-notification-schema-drift.ts",
     "check:domain-events-subscribers": "dotenv -e ../.env -- ts-node scripts/check-domain-events-subscribers.ts",
     "schema:docs": "dotenv -e ../.env -- ts-node scripts/gen-data-dictionary.ts"
   },
@@ -31,6 +32,7 @@
     "@appspine/m2m-api-key": "^4.0.0",
     "@appspine/mcp-server": "0.6.1",
     "@appspine/metadata-schema": "^0.2.14",
+    "@appspine/notification": "0.1.0",
     "@appspine/rbac": "^4.0.0",
     "@nestjs/common": "^11.0.5",
     "@nestjs/core": "^11.0.5",

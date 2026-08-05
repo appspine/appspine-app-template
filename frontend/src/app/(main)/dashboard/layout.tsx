@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
+import { notificationsApi } from "@/lib/notifications-api";
 import { SIDEBAR_COLLAPSIBLE_VALUES, SIDEBAR_VARIANT_VALUES } from "@/lib/preferences/layout";
 import { getCurrentUser } from "@/server/current-user";
 import { getPreference } from "@/server/server-actions";
@@ -18,9 +19,10 @@ export default async function Layout({ children }: Readonly<{ children: ReactNod
 
   const cookieStore = await cookies();
   const defaultOpen = cookieStore.get("sidebar_state")?.value !== "false";
-  const [variant, collapsible] = await Promise.all([
+  const [variant, collapsible, unread] = await Promise.all([
     getPreference("sidebar_variant", SIDEBAR_VARIANT_VALUES, "inset"),
     getPreference("sidebar_collapsible", SIDEBAR_COLLAPSIBLE_VALUES, "icon"),
+    notificationsApi.unreadCount().catch(() => ({ count: 0 })),
   ]);
 
   return (
@@ -29,6 +31,7 @@ export default async function Layout({ children }: Readonly<{ children: ReactNod
       defaultOpen={defaultOpen}
       defaultSidebarVariant={variant}
       defaultSidebarCollapsible={collapsible}
+      initialUnreadCount={unread.count}
     >
       {children}
     </DashboardShellBridge>

@@ -36,6 +36,7 @@ model User {
   userRoles UserRole[]
   /// API keys that act as this user for identity-bound writes.
   actingApiKeys ApiKey[] @relation("ApiKeyActingUser")
+  notifications Notification[] @relation("NotificationRecipient")
 
   @@map("users")
 }

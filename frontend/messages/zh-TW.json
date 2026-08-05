@@ -146,6 +146,20 @@
     "DomainEventDeliveryStatus.DEAD_LETTER": "\u6b7b\u4fe1",
     "DomainEventDeliveryStatus.IGNORED": "\u5df2\u5ffd\u7565"
   },
+  "notifications": {
+    "ariaLabel": "\u901a\u77e5",
+    "title": "\u901a\u77e5",
+    "markAllRead": "\u5168\u90e8\u6a19\u793a\u70ba\u5df2\u8b80",
+    "markAllReadError": "\u7121\u6cd5\u5c07\u6240\u6709\u901a\u77e5\u6a19\u793a\u70ba\u5df2\u8b80\u3002",
+    "markReadError": "\u7121\u6cd5\u5c07\u901a\u77e5\u6a19\u793a\u70ba\u5df2\u8b80\u3002",
+    "loading": "\u8f09\u5165\u901a\u77e5\u4e2d\u2026",
+    "empty": "\u76ee\u524d\u6c92\u6709\u901a\u77e5",
+    "error": "\u7121\u6cd5\u8f09\u5165\u901a\u77e5\u3002",
+    "retry": "\u91cd\u8a66",
+    "unread": "\u672a\u8b80",
+    "read": "\u5df2\u8b80",
+    "retrying": "\u91cd\u8a66\u4e2d\u2026"
+  },
   "nav": {
     "overview": "概覽",
     "dashboard": "控制台",
