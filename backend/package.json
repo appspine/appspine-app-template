@@ -8,6 +8,7 @@
     "start": "dotenv -e ../.env -- node dist/src/main",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "check": "biome check src",
+    "test": "vitest run",
     "prisma:generate": "dotenv -e ../.env -- prisma generate --schema prisma/schema",
     "prisma:migrate": "dotenv -e ../.env -- prisma migrate dev --schema prisma/schema",
     "prisma:deploy": "dotenv -e ../.env -- prisma migrate deploy --schema prisma/schema",
@@ -32,7 +33,7 @@
     "@appspine/m2m-api-key": "^4.0.0",
     "@appspine/mcp-server": "0.6.1",
     "@appspine/metadata-schema": "^0.2.14",
-    "@appspine/notification": "0.2.0",
+    "@appspine/notification": "0.2.1",
     "@appspine/rbac": "^4.0.0",
     "@nestjs/common": "^11.0.5",
     "@nestjs/core": "^11.0.5",
@@ -52,6 +53,7 @@
     "dotenv-cli": "^11.0.0",
     "prisma": "^6.2.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "^3.2.4"
   }
 }

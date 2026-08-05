@@ -19,14 +19,45 @@ for the framework plan and conventions this template follows. For agent/AI-assis
   - Health Check: `GET /health` (Terminus + Prisma ping)
   - Metadata Schema API: `GET /metadata/schema` (DMMF-derived, M2M API Key `metadata:read` scope)
   - MCP Server: `POST /mcp` (Streamable HTTP, M2M API Key auth, app registers its own tools via `@McpTool`)
+  - Notification: shared user inbox at `/notifications` (`NotificationsModule` backed by
+    `@appspine/notification`, recipient-owned mutations, `notifications:read`/`notifications:write`
+    scopes). Plumbing only — the template ships **no** producer; emitting notifications is the fork's
+    job (see [docs/agent-guide.md](docs/agent-guide.md#shared-notifications))
+  - Domain Events: transaction-bound outbox (`DomainEventsModule`, `domain_events` table) for derived
+    side effects with retry/dead-letter dispatch. Wired but the handler registry starts empty — see
+    [docs/domain-events.md](docs/domain-events.md)
 
 ## API
 
+### Guard chain
+
+The standard chain for a protected endpoint is `JwtOrApiKeyGuard` → `AdminGuard` **or**
+`PermissionGuard` → `ScopeGuard` (the last one constrains API-key callers only; JWT users are
+unaffected), with `@RequirePermissions(Permission.X)` naming the permission. See
+[docs/conventions.md](docs/conventions.md#api-design) for the full ordering rules.
+
+**Scope-only endpoints are the correct shape at the scaffold stage.** `PermissionGuard` is only usable
+once a `Permission` enum value exists that expresses "may use this part of the domain", and this
+template deliberately ships none: `backend/prisma/schema/base.prisma`'s `Permission` enum contains only
+the framework's own `USERS_*` / `API_KEYS_*` administration values, and `USER_DEFAULT_PERMISSIONS` in
+`backend/prisma/seed.ts` is empty. `backend/src/notifications/notifications.controller.ts` is the
+concrete example — it guards with `@UseGuards(JwtOrApiKeyGuard, ScopeGuard)` plus
+`@Scopes("notifications:read" | "notifications:write")` and no `PermissionGuard`, because the only
+permissions available to require today are user/API-key admin grants that no normal user holds. Adding
+one would 403 every non-admin out of their *own* inbox on a fresh fork. Ownership is still enforced —
+the recipient is resolved from the authenticated principal via `resolveActingUserId()`, never from
+client input.
+
+> **Forker note**: once you add your domain's `Permission` enum values (see "Forking this template"
+> step 5), revisit every scope-only endpoint — including the notification controller — and decide
+> whether it should now gain `PermissionGuard` + `@RequirePermissions(...)`. The forked apps do exactly
+> this: `apps/approve` guards its notification inbox with `Permission.APPROVAL_READ` and `apps/project`
+> with `Permission.PROJECT_READ`, each their app's "may see this domain at all" permission.
+
 <!-- TODO(scaffold): Document this app's own REST API surface here as you build it out — one table per
      domain area, grouped the way `docs/conventions.md`'s CRUD flow groups modules. Note any guard
-     requirements that differ from the standard `JwtOrApiKeyGuard` + `PermissionGuard` (+ `ScopeGuard`
-     for API-key callers) chain. See the wiki app's README (github.com/appspine/wiki) for a worked
-     example of this section once it's filled in. -->
+     requirements that differ from the standard chain described above. See the wiki app's README
+     (github.com/appspine/wiki) for a worked example of this section once it's filled in. -->
 
 ## MCP tools
 
@@ -183,6 +214,9 @@ See [docs/conventions.md](docs/conventions.md#standard-flow-for-adding-a-new-cru
    in the API-keys admin page's scope checkboxes. `scaffold-init.mjs` does not rewrite this scope per
    fork; leave it as-is. To emit notifications from your own modules, import `NotificationsModule` and
    inject the exported shared `NotificationService`. See `docs/agent-guide.md` → "Shared notifications".
+   Its controller is scope-guarded only (no `PermissionGuard`) for the reason explained in
+   [## API → Guard chain](#guard-chain) — once step 5's `Permission` enum values exist, revisit whether
+   it should require one.
 
 ### Before you ship — documentation checklist
 

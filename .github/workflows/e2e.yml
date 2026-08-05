@@ -73,6 +73,9 @@ jobs:
       - name: Check enum i18n coverage
         run: pnpm -C backend check:enum-i18n
 
+      - name: Run backend unit tests
+        run: pnpm -C backend test
+
       - name: Run E2E typecheck
         run: pnpm -C e2e typecheck
 

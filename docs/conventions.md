@@ -226,6 +226,13 @@ Every API error returns this shape:
 - **Guard chain order**: `JwtOrApiKeyGuard` (API Key takes priority, falls back to JWT) →
   `AdminGuard` or `PermissionGuard` (pick one per endpoint) → `ScopeGuard` (constrains API-key
   callers only; JWT users are unaffected).
+  - **Scope-only is valid before a domain `Permission` exists**: an endpoint may legitimately run
+    `JwtOrApiKeyGuard` → `ScopeGuard` with no permission guard when no `Permission` enum value yet
+    expresses "may use this domain" — the scaffold's notification inbox
+    (`backend/src/notifications/notifications.controller.ts`) is the shipped example, and requiring one
+    of the framework's `USERS_*`/`API_KEYS_*` admin permissions there would lock normal users out of
+    their own inbox. Revisit those endpoints once the fork defines its own `Permission` values; see
+    README's "## API → Guard chain".
   - **Scope action read/write classification**: for `resource:action` scopes, `action` values
     `read`/`list`/`get` are treated as read-only; every other action (`write`/`create`/`update`/
     `delete`) is treated as a write. If a tool declares multiple scopes mixing read and write
@@ -271,7 +278,9 @@ Every API error returns this shape:
   suite (login, RBAC blocking unauthorized routes, M2M API Key auth) + `tsc --noEmit`/lint +
   `/code-review` + manual browser verification. Add unit tests only for genuinely complex business
   logic (non-obvious calculations, state machines, permission logic) — there's no mandated overall
-  coverage number.
+  coverage number. Unit tests run on vitest (`pnpm -C backend test`, `backend/vitest.config.ts`,
+  `src/**/*.spec.ts`); the scaffold ships `src/notifications/*.spec.ts` as the worked example of the
+  lightweight mock-based shape these should take.
 - **Seeding data in an E2E spec by calling the backend directly** (bypassing UI forms for setup):
   hit the backend origin, not a frontend-relative path — most apps' frontend API clients are
   server-only (Server Actions/Route Handlers reading the httpOnly auth cookie via `next/headers`),
