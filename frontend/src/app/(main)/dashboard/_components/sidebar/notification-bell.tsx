@@ -41,7 +41,10 @@ export function NotificationBell({ initialUnreadCount }: { initialUnreadCount?: 
       loadRecent: listRecentNotificationsAction,
       markRead: markNotificationReadAction,
       markAllRead: markAllNotificationsReadAction,
-      resolveHref: (notification: NotificationSummary) => notification.targetPath ?? "/dashboard",
+      // Return null (not a generic fallback route) when a notification has no specific target:
+      // the shared bell renders a plain mark-read button for null and a navigable <a href> for a
+      // string. A "/dashboard" fallback would full-page-navigate on every targetless notification.
+      resolveHref: (notification: NotificationSummary): string | null => notification.targetPath ?? null,
     }),
     [],
   );

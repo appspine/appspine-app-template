@@ -177,6 +177,12 @@ See [docs/conventions.md](docs/conventions.md#standard-flow-for-adding-a-new-cru
 7. Run `pnpm -C backend prisma:migrate --name init-domain-models` to generate a migration for your new
    schema (pass `--name` directly after the script name — inserting `--` first makes Prisma fall back to
    an interactive prompt).
+8. **Notifications.** The template ships the shared notification inbox as plumbing only — no producer.
+   Its API scopes are `notifications:read` / `notifications:write` — table-derived, matching what
+   `@appspine/metadata-schema` auto-generates from `@@map("notifications")`, so they show up directly
+   in the API-keys admin page's scope checkboxes. `scaffold-init.mjs` does not rewrite this scope per
+   fork; leave it as-is. To emit notifications from your own modules, import `NotificationsModule` and
+   inject the exported shared `NotificationService`. See `docs/agent-guide.md` → "Shared notifications".
 
 ### Before you ship — documentation checklist
 

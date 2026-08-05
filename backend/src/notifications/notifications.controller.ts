@@ -13,7 +13,7 @@ export class NotificationsController {
   constructor(private readonly service: NotificationsService) {}
 
   @Get()
-  @Scopes("app-notifications:read")
+  @Scopes("notifications:read")
   findAll(
     @CurrentUser() user: TemplateUser,
     @Query(new ZodValidationPipe(paginationQuerySchema)) query: PaginationQuery,
@@ -22,25 +22,25 @@ export class NotificationsController {
   }
 
   @Get("unread-count")
-  @Scopes("app-notifications:read")
+  @Scopes("notifications:read")
   unreadCount(@CurrentUser() user: TemplateUser) {
     return this.service.getUnreadCount(resolveActingUserId(user));
   }
 
   @Post(":id/read")
-  @Scopes("app-notifications:write")
+  @Scopes("notifications:write")
   markRead(@Param("id") id: string, @CurrentUser() user: TemplateUser) {
     return this.service.markRead(id, resolveActingUserId(user));
   }
 
   @Post("mark-all-read")
-  @Scopes("app-notifications:write")
+  @Scopes("notifications:write")
   markAllRead(@CurrentUser() user: TemplateUser) {
     return this.service.markAllRead(resolveActingUserId(user));
   }
 
   @Post(":id/archive")
-  @Scopes("app-notifications:write")
+  @Scopes("notifications:write")
   archive(@Param("id") id: string, @CurrentUser() user: TemplateUser) {
     return this.service.archive(id, resolveActingUserId(user));
   }

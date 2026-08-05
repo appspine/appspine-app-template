@@ -38,8 +38,55 @@ conventions — plus the standard flow for adding a new CRUD module — live in
 ## Shared notifications
 
 The scaffold includes the standard `Notification` schema and generic inbox controller backed by
-`@appspine/notification`, with `app-notifications:read/write` scopes and recipient-owned mutations. The
-dashboard uses `@appspine/frontend-shell/notification`; forks should keep notification writes synchronous
-with their triggering transaction and use stable idempotency keys for each producer.
+`@appspine/notification`, with recipient-owned mutations. The dashboard uses
+`@appspine/frontend-shell/notification`; forks should keep notification writes synchronous with their
+triggering transaction and use stable idempotency keys for each producer. This is plumbing only — the
+template deliberately ships **no** notification producer, so writing one is the fork's first job.
+
+### Producing notifications from your own modules
+
+`NotificationsModule` exports the shared `NotificationService` (imported here under the local alias
+`SharedNotificationService`). A feature module that needs to emit notifications imports the module and
+injects the shared service directly — do **not** re-declare `SharedNotificationService` in your own
+module's `providers`:
+
+```ts
+// your-feature.module.ts
+@Module({
+  imports: [NotificationsModule],
+  providers: [YourFeatureService],
+})
+export class YourFeatureModule {}
+
+// your-feature.service.ts
+import { NotificationService as SharedNotificationService } from "@appspine/notification";
+
+@Injectable()
+export class YourFeatureService {
+  constructor(private readonly notifications: SharedNotificationService) {}
+
+  async doThing(tx: Prisma.TransactionClient) {
+    // Pass the caller's transaction so the notification commits with the business write.
+    await this.notifications.notify({ /* ... */ }, { tx });
+  }
+}
+```
+
+Re-providing `SharedNotificationService` in a consuming module is not *corrupting* — `PrismaModule` is
+`@Global()`, so the duplicate instance still resolves the same singleton `PrismaService` and behaves
+identically — but it constructs a second, redundant instance of a stateless service and bypasses the
+module boundary. Importing `NotificationsModule` is the intended pattern.
+
+### API scope naming
+
+The inbox controller guards its endpoints with `notifications:read` / `notifications:write` — the same
+table-derived name `MetaService.deriveScopes()` in `@appspine/metadata-schema` auto-generates from the
+`Notification` model's `@@map("notifications")`, and every other module in this template already uses
+this convention. Because it matches the catalog exactly, the API-keys admin page (which renders
+`meta.availableScopes` as checkboxes) can grant it directly — no wildcard `*` workaround needed. Do
+**not** rewrite this to an `<app-name>-` prefixed form; that was the previous convention
+(`approve-notifications:*`, `project-notifications:*`) and it could never be granted from the admin UI
+for exactly this reason. `scripts/scaffold-init.mjs` intentionally does not touch this scope string at
+fork time — it stays `notifications:*` regardless of `--name`.
 
 ---

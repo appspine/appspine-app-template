@@ -32,7 +32,7 @@
     "@appspine/m2m-api-key": "^4.0.0",
     "@appspine/mcp-server": "0.6.1",
     "@appspine/metadata-schema": "^0.2.14",
-    "@appspine/notification": "0.1.1",
+    "@appspine/notification": "0.2.0",
     "@appspine/rbac": "^4.0.0",
     "@nestjs/common": "^11.0.5",
     "@nestjs/core": "^11.0.5",

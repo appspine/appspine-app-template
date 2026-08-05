@@ -367,6 +367,12 @@ function applyReplacements(ctx) {
     dryRun,
   );
 
+  // Notification API scopes ("notifications:read/write") are intentionally NOT rewritten per
+  // fork: they're table-derived (matching @@map("notifications") and @appspine/metadata-schema's
+  // MetaService.deriveScopes(), which keys the API-key admin UI's grantable scope list off the
+  // Prisma db table name), the same convention every other module in this template already uses.
+  // An app-name prefix would just recreate the catalog mismatch this naming was changed to avoid.
+
   // 7. docs/agent-guide.md
   replaceInFile(
     path.join(REPO_ROOT, "docs", "agent-guide.md"),
@@ -378,8 +384,12 @@ function applyReplacements(ctx) {
         description: "agent-guide title",
       },
       {
-        pattern: /## App Positioning\n\n[\s\S]*?\n\n---/,
-        replacement: `## App Positioning\n\n<!-- TODO(scaffold): Fill in the "App Positioning" description for ${name} (business domain, core module overview). -->\n\n---`,
+        // Bounded by the NEXT "## " heading, not by the next "---" rule. The "---" nearest to
+        // App Positioning sits at the very end of the document, so an "up to ---" match swallowed
+        // every section in between (notably "## Shared notifications") and every fork silently
+        // lost that documentation.
+        pattern: /## App Positioning\n\n[\s\S]*?\n\n(?=## )/,
+        replacement: `## App Positioning\n\n<!-- TODO(scaffold): Fill in the "App Positioning" description for ${name} (business domain, core module overview). -->\n\n`,
         expectedCount: 1,
         description: "agent-guide App Positioning placeholder",
       },

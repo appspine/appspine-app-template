@@ -3,7 +3,7 @@ packages:
   - "frontend"
 
 overrides:
-  '@appspine/common': 0.3.0
+  '@appspine/common': 0.3.2
   '@appspine/auth': 6.0.1
   '@appspine/audit-log': 1.0.0
   '@appspine/rbac': 4.0.0
