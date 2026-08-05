@@ -13,7 +13,7 @@ For setting up the environment, local database, dependencies, and launching the 
 ## Shared Framework Packages
 
 The backend comes pre-integrated with several `@appspine/*` packages located in the upstream monorepo:
-- **Auth (`@appspine/auth`)**: Supports both local credentials (JWT HS256) and OpenID Connect (OIDC) through external identity providers (e.g., Keycloak).
+- **Auth (`@appspine/auth`)**: OIDC-only authentication through an external identity provider such as Keycloak; local email/password credentials are retired.
 - **RBAC (`@appspine/rbac`)**: Manages custom roles and permission mappings. Offers guards like `AdminGuard` and `PermissionGuard` to enforce access controls.
 - **M2M API Key (`@appspine/m2m-api-key`)**: Handles machine-to-machine client API keys, rate-limiting, and scoped endpoint access. API keys may optionally bind `actingUserId` for identity-bound writes, but only to dedicated service-account users (`User.isServiceAccount = true`); use `resolveActingUserId()` from `@appspine/auth` as the fail-closed identity resolver in write paths.
 - **Audit Log (`@appspine/audit-log`)**: Records key system events directly to the local database.
