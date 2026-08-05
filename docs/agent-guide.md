@@ -38,7 +38,7 @@ conventions — plus the standard flow for adding a new CRUD module — live in
 ## Shared notifications
 
 The scaffold includes the standard `Notification` schema and generic inbox controller backed by
-`@appspine/notification`, with `notifications:read/write` scopes and recipient-owned mutations. The
+`@appspine/notification`, with `app-notifications:read/write` scopes and recipient-owned mutations. The
 dashboard uses `@appspine/frontend-shell/notification`; forks should keep notification writes synchronous
 with their triggering transaction and use stable idempotency keys for each producer.
 

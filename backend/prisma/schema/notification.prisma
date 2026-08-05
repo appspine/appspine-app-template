@@ -19,7 +19,7 @@ model Notification {
   updatedAt          DateTime  @default(now()) @updatedAt @map("updated_at")
 
   @@unique([recipientUserId, idempotencyKey])
-  @@index([recipientUserId, readAt, archivedAt, createdAt])
+  @@index([recipientUserId, archivedAt, readAt, createdAt])
   @@index([sourceApp, sourceEntityType, sourceEntityId])
   @@map("notifications")
 }
