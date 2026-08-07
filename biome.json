@@ -39,6 +39,7 @@
       "!.next",
       "!dist",
       "!out",
+      "!backend/src/generated/**",
       "!frontend/src/components/ui"
     ]
   },

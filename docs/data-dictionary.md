@@ -1,6 +1,6 @@
 # Data Dictionary
 
-> Auto-generated from Prisma schema on 2026-08-05.
+> Auto-generated from Prisma schema on 2026-08-07.
 > Do not edit manually — run your app's schema:docs script to regenerate.
 
 ---
@@ -133,6 +133,15 @@
 | `after` | Json |  |  |  |
 | `changedFields` | String[] | ✓ |  |  |
 | `metadata` | Json |  |  | Free-form handler context, including audit metadata. |
+| `integrationCapabilityId` | String |  |  | Frozen capability and binding pin for externally delivered events. |
+| `integrationCapabilityVersion` | String |  |  |  |
+| `integrationCapabilityDigest` | String |  |  |  |
+| `integrationBindingId` | String |  |  |  |
+| `integrationBindingVersion` | String |  |  |  |
+| `integrationEnvelopeVersion` | String |  |  |  |
+| `integrationSourceApp` | String |  |  |  |
+| `integrationPayload` | Json |  |  |  |
+| `integrationPayloadDigest` | String |  |  |  |
 | `createdAt` | DateTime | ✓ |  |  |
 
 ### DomainEventDelivery
@@ -153,6 +162,26 @@
 | `lockedBy` | String |  |  |  |
 | `lastError` | String |  |  |  |
 | `processedAt` | DateTime |  |  |  |
+| `createdAt` | DateTime | ✓ |  |  |
+
+### IntegrationEventReceipt
+
+> Idempotent inbox record for an externally delivered integration event.
+
+**DB table:** `integration_event_receipts`
+
+| Field | Type | Required | Unique | Description |
+|-------|------|----------|--------|-------------|
+| `id` | String | ✓ | ✓ |  |
+| `sourceApp` | String | ✓ |  |  |
+| `eventId` | String | ✓ |  |  |
+| `capabilityId` | String | ✓ |  |  |
+| `capabilityVersion` | String | ✓ |  |  |
+| `capabilityDigest` | String | ✓ |  |  |
+| `bindingId` | String | ✓ |  |  |
+| `bindingVersion` | String | ✓ |  |  |
+| `payloadDigest` | String | ✓ |  |  |
+| `processedAt` | DateTime | ✓ |  |  |
 | `createdAt` | DateTime | ✓ |  |  |
 
 ### Notification

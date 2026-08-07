@@ -247,3 +247,27 @@ for usage examples see its test suite in the `appspine` workspace repo
 
 All of these are real, running code — reading their `backend/src/domain-events/` directories is
 often faster than re-deriving the pattern from this doc alone.
+
+## Cross-app integration contracts
+
+For a command, query, or externally delivered event, use the canonical contract and binding under
+`knowledge/contracts/` instead of inventing an app-local payload shape. Pin the exact capability
+SemVer and `sha256:` digest in the binding. The workspace contract CLI validates and indexes those
+files:
+
+```bash
+node scripts/contract-cli.mjs validate
+node scripts/contract-cli.mjs index --check
+node scripts/contract-cli.mjs sync-views --contract <binding-id>@<version> --target <app-repo> --apply
+node scripts/contract-cli.mjs generate-runtime --contract <binding-id>@<version> --target <app-repo> --apply
+```
+
+Build a contract-specific payload before `DomainEventsService.record()`. Pass the pinned capability,
+binding, source app, and payload through `integration`; the package freezes the payload and stores its
+canonical SHA-256 digest in the same transaction as the outbox row. Never put access tokens, webhook
+secrets, or environment-specific URLs in a contract or event payload.
+
+For external events, use `postDomainEventWebhookV2()` and `verifyDomainEventWebhookV2()`. Receivers
+verify the raw body and binding metadata before parsing JSON, then use `withIntegrationEventReceipt()`
+inside the same Prisma transaction as the business update and any local outbox write. Same-event
+replays with the same digest are acknowledged; digest mismatches fail closed.

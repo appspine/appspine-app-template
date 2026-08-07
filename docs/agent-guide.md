@@ -2,6 +2,10 @@
 
 Welcome to the development guide for the business systems built using the appspine template.
 
+For cross-app commands, queries, and events, pin the canonical capability and point-to-point binding
+by exact SemVer plus digest. Run the contract CLI validation and generated-artifact drift checks
+before committing; the integration workflow owns the workspace-level compatibility gate.
+
 ## Technology Stack
 
 This application consists of two main components:

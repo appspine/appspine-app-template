@@ -4,11 +4,11 @@ packages:
 
 overrides:
   '@appspine/common': 0.3.2
-  '@appspine/auth': 6.0.1
+  '@appspine/auth': 6.2.1
   '@appspine/audit-log': 1.0.0
   '@appspine/rbac': 4.0.0
   '@appspine/health-check': 0.1.4
-  '@appspine/m2m-api-key': 4.0.0
+  '@appspine/m2m-api-key': 4.0.5
   '@appspine/mcp-server': 0.6.1
   '@appspine/metadata-schema': 0.2.14
 
