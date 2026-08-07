@@ -12,6 +12,9 @@ on:
       - "pnpm-workspace.yaml"
       - "docker-compose.yml"
       - "pnpm-lock.yaml"
+      - "knowledge/contracts/**"
+      - "backend/src/generated/**"
+      - "scripts/check-generated-integration-contracts.mjs"
   push:
     branches:
       - main
@@ -25,6 +28,9 @@ on:
       - "pnpm-workspace.yaml"
       - "docker-compose.yml"
       - "pnpm-lock.yaml"
+      - "knowledge/contracts/**"
+      - "backend/src/generated/**"
+      - "scripts/check-generated-integration-contracts.mjs"
 
 jobs:
   detect:
@@ -63,6 +69,9 @@ jobs:
 
       - name: Generate Prisma client
         run: pnpm -C backend prisma:generate
+
+      - name: Check generated integration contracts
+        run: pnpm check:integration-contracts
 
       - name: Run workspace typecheck
         run: pnpm typecheck

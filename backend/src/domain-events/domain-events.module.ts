@@ -25,6 +25,7 @@ import { Module } from "@nestjs/common";
         batchSize: readPositiveInt("DOMAIN_EVENTS_BATCH_SIZE", DEFAULT_DISPATCHER_OPTIONS.batchSize),
         maxAttempts: readPositiveInt("DOMAIN_EVENTS_MAX_ATTEMPTS", DEFAULT_DISPATCHER_OPTIONS.maxAttempts),
         staleLockMs: readPositiveInt("DOMAIN_EVENTS_STALE_LOCK_MS", DEFAULT_DISPATCHER_OPTIONS.staleLockMs),
+        bindingEnabled: (bindingId) => isIntegrationBindingEnabled(bindingId),
       }),
     },
     DomainEventDispatcherService,
@@ -39,4 +40,14 @@ function readPositiveInt(name: string, fallback: number): number {
   if (!raw) return fallback;
   const parsed = Number.parseInt(raw, 10);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function isIntegrationBindingEnabled(bindingId: string): boolean {
+  const disabled = new Set(
+    (process.env.DOMAIN_EVENTS_DISABLED_BINDINGS ?? "")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean),
+  );
+  return !disabled.has("*") && !disabled.has(bindingId);
 }

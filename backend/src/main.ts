@@ -16,7 +16,7 @@ async function bootstrap() {
 
   const authMode = process.env.AUTH_MODE ?? "oidc";
 
-  const app = await NestFactory.create(AppModule, { bufferLogs: true });
+  const app = await NestFactory.create(AppModule, { bufferLogs: true, rawBody: true });
 
   app.useGlobalFilters(new GlobalExceptionFilter());
 

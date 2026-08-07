@@ -6,18 +6,65 @@ import { join, resolve } from 'node:path';
 const root = process.cwd();
 const refsRoot = resolve(root, 'knowledge', 'contracts');
 const runtimeRoot = resolve(root, 'backend', 'src', 'generated', 'integration-contracts');
-const refs = walk(refsRoot).filter((file) => file.endsWith(join('_generated', 'contract-ref.json')));
-for (const refPath of refs) {
-  const ref = JSON.parse(readFileSync(refPath, 'utf8'));
+const refs = walk(refsRoot)
+  .filter((file) => file.endsWith(join('_generated', 'contract-ref.json')))
+  .map((file) => JSON.parse(readFileSync(file, 'utf8')));
+const expectedDirectories = new Set();
+
+for (const ref of refs) {
   const safeId = ref.contract_id.replace(/[^a-zA-Z0-9_-]/gu, '_');
+  expectedDirectories.add(safeId);
   const directory = join(runtimeRoot, safeId);
-  const manifest = join(directory, 'manifest.ts');
-  const validators = join(directory, 'validators.ts');
-  if (!existsSync(manifest) || !existsSync(validators)) throw new Error(`missing generated runtime for ${ref.contract_id}@${ref.version}`);
-  if (!readFileSync(manifest, 'utf8').includes(ref.digest)) throw new Error(`manifest digest mismatch for ${ref.contract_id}@${ref.version}`);
-  if (/knowledge[\\/]/u.test(readFileSync(validators, 'utf8'))) throw new Error(`runtime validator reads knowledge/ for ${ref.contract_id}@${ref.version}`);
+  const schemaPath = walk(join(refsRoot, ref.contract_id, '_generated'))
+    .filter((file) => file.endsWith('.schema.json'))
+    .sort()[0];
+  if (!schemaPath) throw new Error(`missing canonical schema for ${ref.contract_id}@${ref.version}`);
+  const schema = JSON.parse(readFileSync(schemaPath, 'utf8'));
+  const expected = {
+    'manifest.ts': `export const integrationContractManifest = ${JSON.stringify({
+      contractId: ref.contract_id,
+      version: ref.version,
+      kind: ref.kind,
+      digest: ref.digest,
+      capabilityRef: ref.capability_ref,
+    }, null, 2)} as const;\n`,
+    'types.ts': `export type IntegrationContractPayload = ${typescriptType(schema)};\n`,
+    'validators.ts': `import { validateJsonSchema, type SchemaValidationIssue } from '@appspine/integration-contracts';\n\nconst integrationContractSchema = ${JSON.stringify(schema, null, 2)} as const;\n\nexport function validateIntegrationContractPayload(value: unknown): SchemaValidationIssue[] {\n  return validateJsonSchema(value, integrationContractSchema as never, { mode: 'strict' });\n}\n`,
+  };
+  for (const [name, content] of Object.entries(expected)) {
+    const target = join(directory, name);
+    if (!existsSync(target)) throw new Error(`missing generated runtime ${target}`);
+    if (readFileSync(target, 'utf8') !== content)
+      throw new Error(`stale generated runtime ${ref.contract_id}@${ref.version}: ${name}`);
+  }
 }
-console.log(`checked ${refs.length} generated integration contract runtime artifact(s)`);
+
+if (existsSync(runtimeRoot)) {
+  for (const entry of readdirSync(runtimeRoot, { withFileTypes: true })) {
+    if (entry.isDirectory() && !expectedDirectories.has(entry.name))
+      throw new Error(`stale generated runtime directory: ${entry.name}`);
+  }
+}
+console.log(`checked ${refs.length} deterministic generated integration contract runtime artifact(s)`);
+
+function typescriptType(schema) {
+  if (!schema || typeof schema !== 'object') return 'unknown';
+  if (schema.enum) return schema.enum.map((value) => JSON.stringify(value)).join(' | ');
+  if (schema.const !== undefined) return JSON.stringify(schema.const);
+  if (Array.isArray(schema.type)) return schema.type.map((type) => typescriptType({ ...schema, type })).join(' | ');
+  if (schema.type === 'object') {
+    const properties = Object.entries(schema.properties ?? {}).map(([key, child]) =>
+      `${JSON.stringify(key)}${(schema.required ?? []).includes(key) ? '' : '?'}: ${typescriptType(child)};`,
+    );
+    return `{ ${properties.join(' ')}${schema.additionalProperties === false ? '' : ' [key: string]: unknown;'} }`;
+  }
+  if (schema.type === 'array') return `Array<${typescriptType(schema.items ?? {})}>`;
+  if (schema.type === 'integer' || schema.type === 'number') return 'number';
+  if (schema.type === 'boolean' || schema.type === 'string' || schema.type === 'null') return schema.type;
+  if (schema.anyOf || schema.oneOf) return (schema.anyOf ?? schema.oneOf).map(typescriptType).join(' | ');
+  if (schema.allOf) return schema.allOf.map(typescriptType).join(' & ');
+  return 'unknown';
+}
 
 function walk(directory) {
   if (!existsSync(directory)) return [];
