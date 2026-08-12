@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// NOTE: This code/template corresponds verbatim with check-generated-integration-contracts.mjs in appspine-packages / app-template / forks. Changes here must be synchronized across repositories.
 
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
