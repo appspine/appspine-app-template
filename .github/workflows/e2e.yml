@@ -61,6 +61,8 @@ jobs:
           node-version: 22
           cache: pnpm
 
+      - name: Lint knowledge base
+        run: node scripts/lint-knowledge.js
       - name: Install workspace dependencies
         run: pnpm install --frozen-lockfile --trust-lockfile
 
