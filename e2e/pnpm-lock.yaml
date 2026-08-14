@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@appspine/e2e-kit':
-        specifier: ^1.0.1
-        version: 1.0.1(@playwright/test@1.61.1)
+        specifier: ^1.0.2
+        version: 1.0.2(@playwright/test@1.61.1)
       '@biomejs/biome':
         specifier: ^2.5.1
         version: 2.5.1
@@ -26,8 +26,8 @@ importers:
 
 packages:
 
-  '@appspine/e2e-kit@1.0.1':
-    resolution: {integrity: sha512-s9SrzhX9KEluNPgeTnHQUesqrWNZdiOAKoKrMTtG7FFASP7BG2cU7tngTz/Sdo13dCU8+W9v9MKtV0x9QagolQ==, tarball: https://npm.pkg.github.com/download/@appspine/e2e-kit/1.0.1/d766f96e8afad81e210f4b9352d31c5c86d59cd4}
+  '@appspine/e2e-kit@1.0.2':
+    resolution: {integrity: sha512-4pccQFsgRPVIhGFY8AEOCH2bO3Y7AY45zn6mcxdjztYv+v7B373FqdbkzzJWKDUX+zD8+AR/K8Zq49pjjkXFhw==, tarball: https://npm.pkg.github.com/download/@appspine/e2e-kit/1.0.2/9cf1fd118056730a00ecac25498e3c5b9e5292d6}
     peerDependencies:
       '@playwright/test': ^1.54.2
 
@@ -121,7 +121,7 @@ packages:
 
 snapshots:
 
-  '@appspine/e2e-kit@1.0.1(@playwright/test@1.61.1)':
+  '@appspine/e2e-kit@1.0.2(@playwright/test@1.61.1)':
     dependencies:
       '@playwright/test': 1.61.1
 

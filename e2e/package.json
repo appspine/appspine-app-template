@@ -8,7 +8,7 @@
     "check": "biome check ."
   },
   "devDependencies": {
-    "@appspine/e2e-kit": "^1.0.1",
+    "@appspine/e2e-kit": "^1.0.2",
     "@biomejs/biome": "^2.5.1",
     "@playwright/test": "^1.56.1",
     "@types/node": "^22.20.0",

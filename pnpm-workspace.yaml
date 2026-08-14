@@ -3,14 +3,18 @@ packages:
   - "frontend"
 
 overrides:
-  '@appspine/common': 0.3.2
-  '@appspine/auth': 6.2.1
-  '@appspine/audit-log': 1.0.0
-  '@appspine/rbac': 4.0.0
-  '@appspine/health-check': 0.1.4
-  '@appspine/m2m-api-key': 4.0.5
-  '@appspine/mcp-server': 0.6.1
-  '@appspine/metadata-schema': 0.2.14
+  '@appspine/common': 0.3.3
+  '@appspine/auth': 6.2.2
+  '@appspine/audit-log': 1.0.1
+  '@appspine/rbac': 4.0.7
+  '@appspine/health-check': 0.1.8
+  '@appspine/m2m-api-key': 4.0.7
+  '@appspine/mcp-server': 0.6.7
+  '@appspine/metadata-schema': 0.2.21
+  '@appspine/notification': 0.2.2
+  '@appspine/frontend-shell': 0.14.1
+  '@modelcontextprotocol/node>@hono/node-server': ^1.19.15
+  '@nestjs/platform-express>multer': ^2.2.0
 
 # @appspine/* are private packages published by this same org, not public npm -
 # the supply-chain risk minimumReleaseAge guards against (freshly-published
