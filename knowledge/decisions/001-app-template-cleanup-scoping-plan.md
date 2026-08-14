@@ -14,7 +14,7 @@ updated: 2026-08-14
 > 深度清理與驗證，執行結果見第 9 節。
 > 本文件**不是**深度程式碼稽核，只做了結構／版本／下游消費面的盤點，格式比照
 > `appspine-packages` 的
-> [048](../../../appspine-packages/knowledge/decisions/048-shared-packages-cleanup-scoping-plan.md)。
+> `appspine-packages/knowledge/decisions/048-shared-packages-cleanup-scoping-plan.md`。
 > 動機：使用者的套件／範本／業務 app 三層清理計畫，第一階段（套件層）已於 048 完成——盤點
 > 15 個套件、補測試、升級有漏洞的依賴、發布新版本。本文件是第二階段，換範本層
 > （`appspine-app-template`）。
@@ -31,7 +31,7 @@ updated: 2026-08-14
 
 `appspine` 先前已有兩輪全庫規模的清理（029、036，橫向涵蓋套件與全部業務 app）。這次使用者
 明確要求「分層次來」：套件層（`appspine-packages`）已於
-[048](../../../appspine-packages/knowledge/decisions/048-shared-packages-cleanup-scoping-plan.md)
+`appspine-packages/knowledge/decisions/048-shared-packages-cleanup-scoping-plan.md`
 完成盤點與深度清理（15 個套件、521 tests 全綠、`pnpm audit` 從 20 個漏洞清到 0）。本文件是
 第二階段——範本層（`appspine-app-template`）的範圍界定與盤點交接，目的是把範本目前的結構
 現況、對套件層新版本的落後程度、下游 8 個業務 app 的偏離狀況整理清楚，交給 codex 做實際的
