@@ -4,3 +4,8 @@ dist
 *.log
 .env
 .env.*
+.git
+.github
+e2e
+knowledge
+docs

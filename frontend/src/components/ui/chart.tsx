@@ -81,6 +81,13 @@ function ChartContainer({
   )
 }
 
+// Values here are developer-authored chart config today, so there's no live injection — but this
+// interpolates straight into a <style> block via dangerouslySetInnerHTML, and would become
+// CSS-injectable the moment a fork lets end-users set chart colors (a saved-view color picker, a
+// per-tenant brand color). Reject anything that isn't a recognizable color value rather than
+// waiting for that to happen.
+const SAFE_COLOR_VALUE = /^#[0-9a-f]{3,8}$|^(hsl|rgb)a?\([\d\s.,%/-]+\)$|^var\(--[\w-]+\)$/i
+
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(
     ([, config]) => config.theme ?? config.color
@@ -102,7 +109,7 @@ ${colorConfig
     const color =
       itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ??
       itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
+    return color && SAFE_COLOR_VALUE.test(color) ? `  --color-${key}: ${color};` : null
   })
   .join("\n")}
 }

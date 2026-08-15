@@ -19,6 +19,7 @@
     "check:domain-events-schema-drift": "dotenv -e ../.env -- ts-node scripts/check-domain-events-schema-drift.ts",
     "check:notification-schema-drift": "dotenv -e ../.env -- ts-node scripts/check-notification-schema-drift.ts",
     "check:domain-events-subscribers": "dotenv -e ../.env -- ts-node scripts/check-domain-events-subscribers.ts",
+    "check:scope-guard-coverage": "ts-node scripts/check-scope-guard-coverage.ts",
     "schema:docs": "dotenv -e ../.env -- ts-node scripts/gen-data-dictionary.ts"
   },
   "prisma": {
@@ -42,6 +43,8 @@
     "@nestjs/platform-express": "^11.0.5",
     "@nestjs/terminus": "^11.1.1",
     "@prisma/client": "^6.2.0",
+    "helmet": "^8.1.0",
+    "nestjs-pino": "^4.3.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "zod": "^4.4.3"

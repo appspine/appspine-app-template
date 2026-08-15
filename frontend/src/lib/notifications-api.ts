@@ -19,6 +19,6 @@ export const notificationsApi = {
   list: (query?: { page?: number; limit?: number }) =>
     apiFetch<PaginatedResult<TemplateNotification>>(`/notifications${toQueryString(query)}`),
   unreadCount: () => apiFetch<{ count: number }>("/notifications/unread-count"),
-  markRead: (id: string) => apiFetch<void>(`/notifications/${id}/read`, { method: "POST" }),
+  markRead: (id: string) => apiFetch<void>(`/notifications/${encodeURIComponent(id)}/read`, { method: "POST" }),
   markAllRead: () => apiFetch<void>("/notifications/mark-all-read", { method: "POST" }),
 };

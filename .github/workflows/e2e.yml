@@ -84,6 +84,9 @@ jobs:
       - name: Check enum i18n coverage
         run: pnpm -C backend check:enum-i18n
 
+      - name: Check ScopeGuard @Scopes() coverage
+        run: pnpm -C backend check:scope-guard-coverage
+
       - name: Run backend unit tests
         run: pnpm -C backend test
 
@@ -207,7 +210,10 @@ jobs:
           pnpm --dir e2e test
 
       - name: Upload Playwright report
-        if: always()
+        # Only on failure: e2e/test-results holds Playwright traces, which can include captured
+        # Authorization headers from network activity. Uploading on every green run would make
+        # that downloadable by anyone with repo read access for no diagnostic benefit.
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report

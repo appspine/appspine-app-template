@@ -5,6 +5,7 @@ pnpm -C backend run check:schema-docs
 pnpm -C backend run check:domain-events-schema-drift
 pnpm -C backend run check:notification-schema-drift
 pnpm -C backend run check:domain-events-subscribers
+pnpm -C backend run check:scope-guard-coverage
 pnpm typecheck
 cd frontend
 npm run generate:presets

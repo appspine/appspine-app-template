@@ -2,6 +2,7 @@
 // Automatically initializes a new business system forked from appspine-app-template.
 // Usage: node scripts/scaffold-init.mjs --name <kebab-case> --display-name "<Display Name>" [--description "<Description>"] [--db-port <port>] [--backend-port <port>] [--frontend-port <port>] [--dry-run]
 
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -87,6 +88,15 @@ function validateName(name) {
   }
 }
 
+function validateDisplayText(value, flagName) {
+  if (!/^[\w\s.,'()&-]{1,80}$/.test(value)) {
+    fail(
+      `${flagName} contains characters outside the allowed set (letters, numbers, spaces, ` +
+        `.,'()&-, max 80 chars): "${value}"`,
+    );
+  }
+}
+
 function validatePort(value, flagName) {
   if (!/^\d+$/.test(value)) {
     fail(`${flagName} must be a numeric TCP port.`);
@@ -145,6 +155,9 @@ function replaceInFile(filePath, rules, dryRun = false) {
 
 function applyReplacements(ctx) {
   const { name, displayName, description, dbPort, backendPort, frontendPort, dryRun } = ctx;
+  // Generated fresh per fork so every downstream app gets its own dev-database credential
+  // instead of inheriting the template's literal placeholder.
+  const dbPassword = crypto.randomBytes(16).toString("hex");
 
   // 1. frontend/package.json
   replaceInFile(
@@ -191,8 +204,14 @@ function applyReplacements(ctx) {
         description: "DB_PORT env key",
       },
       {
-        pattern: /^DATABASE_URL=postgresql:\/\/postgres:changeme@localhost:\d+\/app_db$/m,
-        replacement: `DATABASE_URL=postgresql://postgres:changeme@localhost:${dbPort}/app_db`,
+        pattern: /^POSTGRES_PASSWORD='<set-a-strong-password>'$/m,
+        replacement: `POSTGRES_PASSWORD='${dbPassword}'`,
+        expectedCount: 1,
+        description: "POSTGRES_PASSWORD env key",
+      },
+      {
+        pattern: /^DATABASE_URL='postgresql:\/\/postgres:<set-a-strong-password>@localhost:\d+\/app_db'$/m,
+        replacement: `DATABASE_URL='postgresql://postgres:${dbPassword}@localhost:${dbPort}/app_db'`,
         expectedCount: 1,
         description: "DATABASE_URL env key",
       },
@@ -432,6 +451,8 @@ function main() {
   }
 
   validateName(args.name);
+  validateDisplayText(args.displayName, "--display-name");
+  if (args.description) validateDisplayText(args.description, "--description");
   validatePorts(args);
 
   const ctx = {

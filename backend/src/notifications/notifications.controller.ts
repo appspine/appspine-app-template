@@ -9,6 +9,12 @@ type TemplateUser = JwtUser | ApiKeyUser;
 
 @Controller("notifications")
 @UseGuards(JwtOrApiKeyGuard, ScopeGuard)
+// Deny-by-default baseline: ScopeGuard allows any caller through when no @Scopes() is reachable
+// for a route at all. Handler-level @Scopes() below overrides this (same precedence as
+// Reflector.getAllAndOverride), so this only matters as a safety net for a future method that
+// forgets its own @Scopes() — it then requires the strictest scope in this controller rather than
+// none.
+@Scopes("notifications:write")
 export class NotificationsController {
   constructor(private readonly service: NotificationsService) {}
 

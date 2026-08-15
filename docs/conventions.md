@@ -285,10 +285,13 @@ Every API error returns this shape:
   hit the backend origin, not a frontend-relative path — most apps' frontend API clients are
   server-only (Server Actions/Route Handlers reading the httpOnly auth cookie via `next/headers`),
   so there is no browser-exposed REST proxy to call at all, and per "No global `/api` prefix"
-  above the real routes mount at root anyway. Authenticate by reading the `auth_token` cookie from
-  `adminContext.cookies()` and sending its value as `Authorization: Bearer <value>` — that cookie's
-  value is the same JWT the backend's `JwtStrategy` expects as a Bearer header (it does not accept
-  the cookie itself).
+  above the real routes mount at root anyway. Local cookie auth is retired (dev_docs/framework/035):
+  next-auth's session cookie is an encrypted JWE, not the Keycloak access token the backend accepts,
+  so it can't be read out of the browser context to use as a Bearer value. Instead mint a token
+  directly against Keycloak's password grant (`testEnv.keycloak.issuer` +
+  `/protocol/openid-connect/token`, `grant_type: "password"`, `client_id`/`client_secret` from
+  `testEnv.keycloak`) and send it as `Authorization: Bearer <access_token>` — see the `token()`
+  helper in `e2e/specs/notification-contract.spec.ts` for the working example.
 
 ## Frontend Component Conventions
 

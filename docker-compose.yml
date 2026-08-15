@@ -3,10 +3,14 @@ services:
     image: postgres:17-alpine
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      # No fallback on purpose: a default password would ship as the real password
+      # in every fork that never edits it.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set (see .env.example)}
       POSTGRES_DB: app_db
     ports:
-      - "${DB_PORT:-23900}:5432"
+      # Loopback-only: an unqualified "PORT:5432" binds 0.0.0.0 and exposes the dev
+      # database to everything on the local network.
+      - "127.0.0.1:${DB_PORT:-23900}:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
     healthcheck:

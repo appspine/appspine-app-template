@@ -1,6 +1,9 @@
 import { GlobalExceptionFilter } from "@appspine/common";
 import { Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
+import type { NestExpressApplication } from "@nestjs/platform-express";
+import helmet from "helmet";
+import { Logger as PinoLogger } from "nestjs-pino";
 
 import { AppModule } from "./app.module";
 
@@ -16,9 +19,19 @@ async function bootstrap() {
 
   const authMode = process.env.AUTH_MODE ?? "oidc";
 
-  const app = await NestFactory.create(AppModule, { bufferLogs: true, rawBody: true });
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, { bufferLogs: true, rawBody: true });
+
+  // Without this, `bufferLogs: true` flushes into Nest's default console logger and every
+  // application-level Logger call (including GlobalExceptionFilter's error path) bypasses
+  // pino — and therefore bypasses LoggingModule's redaction config.
+  app.useLogger(app.get(PinoLogger));
 
   app.useGlobalFilters(new GlobalExceptionFilter());
+
+  // Baseline security response headers. This is a JSON API with no browser-rendered
+  // views, so CSP/COEP defaults are harmless; the frontend sets its own (next.config.mjs).
+  app.use(helmet());
+  app.disable("x-powered-by");
 
   app.enableCors({
     origin: corsOrigins,

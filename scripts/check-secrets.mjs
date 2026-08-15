@@ -23,6 +23,24 @@ const PATTERNS = [
   ["GitHub token", /\bgh[pousr]_[A-Za-z0-9]{36,}\b/g],
   ["Slack token", /\bxox[baprs]-[A-Za-z0-9-]{10,}\b/g],
   ["Private key block", /-----BEGIN (?:RSA |EC |OPENSSH |DSA |PGP )?PRIVATE KEY-----/g],
+  ["Discovery push token", /\bdisc_push_[0-9a-f]{20,}\b/g],
+  // Catches *_SECRET=/*_TOKEN= assignments whose value looks like a real generated credential
+  // rather than a placeholder — added after an audit found AUTH_SECRET, AUTH_KEYCLOAK_SECRET, and
+  // DISCOVERY_PUSH_TOKEN values in a local .env matching none of the patterns above. Excludes
+  // values starting with "<" (this repo's placeholder convention, e.g. "<set-a-strong-password>")
+  // and the "dev-secret-<client>" convention used for the shared ephemeral dev Keycloak realm.
+  [
+    "high-entropy *_SECRET/*_TOKEN value",
+    /\b[A-Z][A-Z0-9_]*_(?:SECRET|TOKEN)=(?!['"]?<)(?!['"]?dev-secret-)['"]?[A-Za-z0-9+/=_-]{16,}\b/g,
+  ],
+];
+
+// Paths that must never be staged at all, regardless of content — untracked-by-convention files
+// that hold live local secrets (see .gitignore). Checked against the staged file list, not diff
+// content, so `git add -f` can't bypass this the way it can bypass the content patterns above.
+const BLOCKED_PATHS = [
+  [/(^|\/)\.env$/, ".env (local secrets — never commit; .env.example is the tracked template)"],
+  [/\.auth\/.*\.json$/, "e2e/.auth/*.json (live auth session state)"],
 ];
 
 // Escape hatch for confirmed false positives (e.g. a doc example like
@@ -40,6 +58,31 @@ function getStagedDiff() {
     console.error("check-secrets: failed to read staged diff:", error.message);
     process.exit(1);
   }
+}
+
+function getStagedFiles() {
+  try {
+    return execFileSync("git", ["diff", "--cached", "--name-only", "--diff-filter=ACM"], {
+      encoding: "utf8",
+    })
+      .split("\n")
+      .filter(Boolean);
+  } catch (error) {
+    console.error("check-secrets: failed to read staged file list:", error.message);
+    process.exit(1);
+  }
+}
+
+function scanBlockedPaths(files) {
+  const findings = [];
+  for (const file of files) {
+    for (const [pattern, description] of BLOCKED_PATHS) {
+      if (pattern.test(file)) {
+        findings.push({ file, description });
+      }
+    }
+  }
+  return findings;
 }
 
 function scan(diff) {
@@ -73,6 +116,17 @@ function scan(diff) {
   }
 
   return findings;
+}
+
+const blockedPathFindings = scanBlockedPaths(getStagedFiles());
+
+if (blockedPathFindings.length > 0) {
+  console.error("\ncheck-secrets: staged file(s) that must never be committed:\n");
+  for (const f of blockedPathFindings) {
+    console.error(`  ${f.file}  [${f.description}]`);
+  }
+  console.error("\nUnstage this file (git restore --staged <file>) — it holds local-only secrets.\n");
+  process.exit(1);
 }
 
 const findings = scan(getStagedDiff());
