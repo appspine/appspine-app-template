@@ -1,3 +1,5 @@
+import { createRequireAdminPage } from "@appspine/frontend-shell/server";
+
 import { getCurrentUser } from "./current-user";
 
 // Layouts only run their authorization check on page navigations. A Server Action is invoked
@@ -11,3 +13,5 @@ export async function requireAdmin() {
   }
   return user;
 }
+
+export const requireAdminPage = createRequireAdminPage(getCurrentUser);

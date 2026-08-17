@@ -42,11 +42,14 @@ export interface NavGroup {
   items: NavMainItem[];
 }
 
-// Administration items are ADMIN-only — appspine-app-template/frontend/src/app/(main)/dashboard/(admin)/layout.tsx
-// already blocks direct navigation, but hiding the entries too avoids showing
-// non-admins links they can't use.
-export function getSidebarItems(isAdmin: boolean): NavGroup[] {
-  const groups: NavGroup[] = [
+export const ADMIN_MODAL_ITEMS = [
+  { id: "users", title: "users", url: "/dashboard/users", icon: Users },
+  { id: "roles", title: "roles", url: "/dashboard/roles", icon: ShieldCheck },
+  { id: "api-keys", title: "apiKeys", url: "/dashboard/api-keys", icon: KeyRound },
+] as const satisfies readonly NavSubItem[];
+
+export function getSidebarItems(_isAdmin: boolean): NavGroup[] {
+  return [
     {
       id: 1,
       label: "overview",
@@ -60,18 +63,4 @@ export function getSidebarItems(isAdmin: boolean): NavGroup[] {
       ],
     },
   ];
-
-  if (isAdmin) {
-    groups.push({
-      id: 2,
-      label: "administration",
-      items: [
-        { id: "users", title: "users", url: "/dashboard/users", icon: Users },
-        { id: "roles", title: "roles", url: "/dashboard/roles", icon: ShieldCheck },
-        { id: "api-keys", title: "apiKeys", url: "/dashboard/api-keys", icon: KeyRound },
-      ],
-    });
-  }
-
-  return groups;
 }

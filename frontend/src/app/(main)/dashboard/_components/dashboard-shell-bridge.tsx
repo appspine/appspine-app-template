@@ -4,23 +4,23 @@ import type { ReactNode } from "react";
 import * as React from "react";
 import { startTransition } from "react";
 
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 import {
   DashboardShell,
   type Locale,
   LocaleSwitcher,
-  type ShellLinkProps,
   ThemeSwitcher,
   useLocale,
   useTranslations,
 } from "@appspine/frontend-shell";
+import { Settings2 } from "lucide-react";
 import { useShallow } from "zustand/react/shallow";
 
+import { AppLink } from "@/components/app-link";
 import { APP_CONFIG } from "@/config/app-config";
 import { persistPreference } from "@/lib/preferences/preferences-storage";
-import { getSidebarItems } from "@/navigation/sidebar/sidebar-items";
+import { ADMIN_MODAL_ITEMS, getSidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { logout } from "@/server/auth-actions";
 import type { CurrentUser } from "@/server/current-user";
 import { setLocaleAction } from "@/server/locale-action";
@@ -38,14 +38,7 @@ interface DashboardShellBridgeProps {
   readonly defaultSidebarCollapsible: "offcanvas" | "icon" | "none";
   readonly initialUnreadCount: number;
   readonly children: ReactNode;
-}
-
-function AppLink({ href, className, target, rel, children }: ShellLinkProps) {
-  return (
-    <Link prefetch={false} href={href} className={className} target={target} rel={rel}>
-      {children}
-    </Link>
-  );
+  readonly modal?: ReactNode;
 }
 
 export function DashboardShellBridge({
@@ -55,6 +48,7 @@ export function DashboardShellBridge({
   defaultSidebarCollapsible,
   initialUnreadCount,
   children,
+  modal,
 }: DashboardShellBridgeProps) {
   const pathname = usePathname();
   const router = useRouter();
@@ -135,6 +129,16 @@ export function DashboardShellBridge({
       onSignOut={handleSignOut}
       accountLabel={tCommon("account")}
       signOutLabel={tCommon("logOut")}
+      adminMenu={
+        isAdmin
+          ? {
+              label: tNav("administration"),
+              url: ADMIN_MODAL_ITEMS[0].url,
+              icon: Settings2,
+              LinkComponent: AppLink,
+            }
+          : undefined
+      }
       defaultOpen={defaultOpen}
       sidebarVariant={effectiveSidebarVariant}
       sidebarCollapsible={effectiveSidebarCollapsible}
@@ -154,6 +158,7 @@ export function DashboardShellBridge({
       }
     >
       {children}
+      {modal}
     </DashboardShell>
   );
 }

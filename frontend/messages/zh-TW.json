@@ -6,10 +6,18 @@
     "next": "下一頁",
     "create": "建立",
     "cancel": "取消",
+    "close": "關閉",
     "save": "儲存",
     "delete": "刪除",
     "account": "帳號",
     "logOut": "登出"
+  },
+  "adminModal": {
+    "description": "瀏覽系統管理設定並管理所選區段。",
+    "loading": "載入中",
+    "errorTitle": "無法載入此區段",
+    "errorDescription": "載入系統管理區段時發生問題。請再試一次，或從導覽選擇其他區段。",
+    "retry": "再試一次"
   },
   "auth": {
     "signIn": "登入",

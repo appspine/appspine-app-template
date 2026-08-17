@@ -6,10 +6,18 @@
     "next": "Next",
     "create": "Create",
     "cancel": "Cancel",
+    "close": "Close",
     "save": "Save",
     "delete": "Delete",
     "account": "Account",
     "logOut": "Log out"
+  },
+  "adminModal": {
+    "description": "Navigate administration settings and manage the selected section.",
+    "loading": "Loading",
+    "errorTitle": "Unable to load this section",
+    "errorDescription": "Something went wrong while loading this administration section. Try again or choose another section from the navigation.",
+    "retry": "Try again"
   },
   "auth": {
     "signIn": "Sign in",
