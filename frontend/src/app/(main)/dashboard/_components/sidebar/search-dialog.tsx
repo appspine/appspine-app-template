@@ -18,7 +18,7 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import type { NavGroup, NavMainItem } from "@/navigation/sidebar/sidebar-items";
-import { getSidebarItems } from "@/navigation/sidebar/sidebar-items";
+import { ADMIN_MODAL_ITEMS, getSidebarItems } from "@/navigation/sidebar/sidebar-items";
 
 type SearchItem = {
   id: string;
@@ -28,6 +28,12 @@ type SearchItem = {
   icon?: NavMainItem["icon"];
   disabled?: boolean;
   newTab?: boolean;
+};
+
+const ADMIN_SEARCH_GROUP: NavGroup = {
+  id: -1,
+  label: "administration",
+  items: [...ADMIN_MODAL_ITEMS],
 };
 
 function getSubItemGroup(groupLabels: Set<string>, groupLabel: string | undefined, itemTitle: string) {
@@ -81,7 +87,10 @@ export function SearchDialog({ isAdmin }: { isAdmin: boolean }) {
   const [query, setQuery] = React.useState("");
   const router = useRouter();
 
-  const searchItems = React.useMemo(() => buildSearchItems(getSidebarItems(isAdmin)), [isAdmin]);
+  const searchItems = React.useMemo(
+    () => buildSearchItems([...getSidebarItems(isAdmin), ...(isAdmin ? [ADMIN_SEARCH_GROUP] : [])]),
+    [isAdmin],
+  );
   const recommendations = React.useMemo(() => getAvailableItems(searchItems), [searchItems]);
 
   React.useEffect(() => {

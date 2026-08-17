@@ -8,28 +8,8 @@ export interface AppLinkProps extends ShellLinkProps {
   readonly replace?: boolean;
 }
 
-export function AppLink({
-  href,
-  className,
-  target,
-  rel,
-  replace = false,
-  "aria-current": ariaCurrent,
-  children,
-}: AppLinkProps) {
-  return (
-    <Link
-      prefetch={false}
-      href={href}
-      replace={replace}
-      className={className}
-      target={target}
-      rel={rel}
-      aria-current={ariaCurrent}
-    >
-      {children}
-    </Link>
-  );
+export function AppLink({ href, replace = false, ...props }: AppLinkProps) {
+  return <Link prefetch={false} href={href} replace={replace} {...props} />;
 }
 
 export function AppModalLink(props: ShellLinkProps) {
