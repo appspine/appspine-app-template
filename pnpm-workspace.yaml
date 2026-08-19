@@ -3,28 +3,28 @@ packages:
   - "frontend"
 
 overrides:
-  '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-  '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz
-  '@appspine/plugin-cli': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz
-  '@appspine/plugin-testkit': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz
-  '@appspine/preset-standard': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz
-  '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz
-  '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz
-  '@appspine/health-check': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz
-  '@appspine/identity-core': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz
-  '@appspine/rbac': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz
-  '@appspine/oidc-auth': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz
-  '@appspine/auth': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz
-  '@appspine/m2m-api-key': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz
-  '@appspine/metadata-schema': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz
-  '@appspine/notification': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz
-  '@appspine/domain-events': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz
-  '@appspine/mcp-server': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz
-  '@appspine/oidc-delegation': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-delegation-0.4.0.tgz
-  '@appspine/master-data-client': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-master-data-client-0.2.0.tgz
-  '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz
-  '@appspine/e2e-kit': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-e2e-kit-1.0.2.tgz
-  '@appspine/integration-contracts': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
+  '@appspine/plugin-api': 1.1.0
+  '@appspine/plugin-host-nest': 2.0.0
+  '@appspine/plugin-cli': 2.0.0
+  '@appspine/plugin-testkit': 2.0.0
+  '@appspine/preset-standard': 2.0.0
+  '@appspine/common': 0.3.4
+  '@appspine/audit-log': 1.1.0
+  '@appspine/health-check': 1.0.0
+  '@appspine/identity-core': 2.0.0
+  '@appspine/rbac': 5.0.0
+  '@appspine/oidc-auth': 2.0.0
+  '@appspine/auth': 7.0.0
+  '@appspine/m2m-api-key': 6.0.0
+  '@appspine/metadata-schema': 1.0.0
+  '@appspine/notification': 1.0.0
+  '@appspine/domain-events': 9.0.0
+  '@appspine/mcp-server': 1.0.0
+  '@appspine/oidc-delegation': 0.4.0
+  '@appspine/master-data-client': 0.2.0
+  '@appspine/frontend-shell': 0.17.0
+  '@appspine/e2e-kit': 1.0.2
+  '@appspine/integration-contracts': 0.4.0
 
 allowBuilds:
   '@biomejs/biome': true

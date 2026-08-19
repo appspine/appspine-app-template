@@ -5,99 +5,99 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-  '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz
-  '@appspine/plugin-cli': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz
-  '@appspine/plugin-testkit': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz
-  '@appspine/preset-standard': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz
-  '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz
-  '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz
-  '@appspine/health-check': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz
-  '@appspine/identity-core': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz
-  '@appspine/rbac': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz
-  '@appspine/oidc-auth': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz
-  '@appspine/auth': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz
-  '@appspine/m2m-api-key': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz
-  '@appspine/metadata-schema': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz
-  '@appspine/notification': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz
-  '@appspine/domain-events': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz
-  '@appspine/mcp-server': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz
-  '@appspine/oidc-delegation': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-delegation-0.4.0.tgz
-  '@appspine/master-data-client': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-master-data-client-0.2.0.tgz
-  '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz
-  '@appspine/e2e-kit': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-e2e-kit-1.0.2.tgz
-  '@appspine/integration-contracts': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
+  '@appspine/plugin-api': 1.1.0
+  '@appspine/plugin-host-nest': 2.0.0
+  '@appspine/plugin-cli': 2.0.0
+  '@appspine/plugin-testkit': 2.0.0
+  '@appspine/preset-standard': 2.0.0
+  '@appspine/common': 0.3.4
+  '@appspine/audit-log': 1.1.0
+  '@appspine/health-check': 1.0.0
+  '@appspine/identity-core': 2.0.0
+  '@appspine/rbac': 5.0.0
+  '@appspine/oidc-auth': 2.0.0
+  '@appspine/auth': 7.0.0
+  '@appspine/m2m-api-key': 6.0.0
+  '@appspine/metadata-schema': 1.0.0
+  '@appspine/notification': 1.0.0
+  '@appspine/domain-events': 9.0.0
+  '@appspine/mcp-server': 1.0.0
+  '@appspine/oidc-delegation': 0.4.0
+  '@appspine/master-data-client': 0.2.0
+  '@appspine/frontend-shell': 0.17.0
+  '@appspine/e2e-kit': 1.0.2
+  '@appspine/integration-contracts': 0.4.0
 
 importers:
 
   .:
     devDependencies:
       '@appspine/audit-log':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+        specifier: 1.1.0
+        version: 1.1.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/auth':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz(dd64277dd7380702a60dee4ce9513abb)
+        specifier: 7.0.0
+        version: 7.0.0(@appspine/identity-core@2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc))(@appspine/oidc-auth@2.0.0(98069eaea30ce94bb4cadfc72314026e))(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@appspine/rbac@5.0.0(d828e99d9513331e1e7a84c9ef1c6e63))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
       '@appspine/common':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: 0.3.4
+        version: 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/domain-events':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)
+        specifier: 9.0.0
+        version: 9.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/e2e-kit':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-e2e-kit-1.0.2.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-e2e-kit-1.0.2.tgz(@playwright/test@1.62.1)
+        specifier: 1.0.2
+        version: 1.0.2(@playwright/test@1.62.1)
       '@appspine/frontend-shell':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+        specifier: 0.17.0
+        version: 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/health-check':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz(44e0ca5c02107ba8d8a839bff5a22240)
+        specifier: 1.0.0
+        version: 1.0.0(abae7f51ae91a94a7bc633bd8957f52e)
       '@appspine/identity-core':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)
+        specifier: 2.0.0
+        version: 2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/integration-contracts':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
+        specifier: 0.4.0
+        version: 0.4.0
       '@appspine/m2m-api-key':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz(ee7daeb3a8d47c6c418c423bd02b8529)
+        specifier: 6.0.0
+        version: 6.0.0(9559d870345aba5f4cbaed2739615a75)
       '@appspine/master-data-client':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-master-data-client-0.2.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-master-data-client-0.2.0.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))
+        specifier: 0.2.0
+        version: 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))
       '@appspine/mcp-server':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz(@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
+        specifier: 1.0.0
+        version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
       '@appspine/metadata-schema':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz(@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: 1.0.0
+        version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/notification':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)
+        specifier: 1.0.0
+        version: 1.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/oidc-auth':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(b5251aeed31ad6adf0b7ae82451d6645)
+        specifier: 2.0.0
+        version: 2.0.0(98069eaea30ce94bb4cadfc72314026e)
       '@appspine/oidc-delegation':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-delegation-0.4.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-delegation-0.4.0.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)
+        specifier: 0.4.0
+        version: 0.4.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)
       '@appspine/plugin-api':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+        specifier: 1.1.0
+        version: 1.1.0
       '@appspine/plugin-cli':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@appspine/plugin-host-nest':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@appspine/plugin-testkit':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@appspine/preset-standard':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@appspine/rbac':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(e58fd28d27641bd7e29b98353e511670)
+        specifier: 5.0.0
+        version: 5.0.0(d828e99d9513331e1e7a84c9ef1c6e63)
       '@biomejs/biome':
         specifier: 2.5.1
         version: 2.5.1
@@ -114,53 +114,53 @@ importers:
   backend:
     dependencies:
       '@appspine/audit-log':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+        specifier: 1.1.0
+        version: 1.1.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/auth':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz(50f37bdf7189aed413c8028a83d2f60f)
+        specifier: 7.0.0
+        version: 7.0.0(@appspine/identity-core@2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc))(@appspine/oidc-auth@2.0.0(98069eaea30ce94bb4cadfc72314026e))(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@appspine/rbac@5.0.0(d828e99d9513331e1e7a84c9ef1c6e63))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
       '@appspine/common':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: 0.3.4
+        version: 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/domain-events':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz(ec98a6567d562b6a2b7db325a2fade85)
+        specifier: 9.0.0
+        version: 9.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/health-check':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz(eec445faf583f9457c1b45ccf56d986d)
+        specifier: 1.0.0
+        version: 1.0.0(abae7f51ae91a94a7bc633bd8957f52e)
       '@appspine/identity-core':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(ec98a6567d562b6a2b7db325a2fade85)
+        specifier: 2.0.0
+        version: 2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/integration-contracts':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
+        specifier: 0.4.0
+        version: 0.4.0
       '@appspine/m2m-api-key':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz(579d610e85f44818fc2b6e1c0b56f944)
+        specifier: 6.0.0
+        version: 6.0.0(9559d870345aba5f4cbaed2739615a75)
       '@appspine/mcp-server':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz(@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
+        specifier: 1.0.0
+        version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
       '@appspine/metadata-schema':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz(@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: 1.0.0
+        version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/notification':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz(ec98a6567d562b6a2b7db325a2fade85)
+        specifier: 1.0.0
+        version: 1.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/oidc-auth':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(de385beaf4f11ce2d42bdaada7608b0b)
+        specifier: 2.0.0
+        version: 2.0.0(98069eaea30ce94bb4cadfc72314026e)
       '@appspine/plugin-api':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+        specifier: 1.1.0
+        version: 1.1.0
       '@appspine/plugin-host-nest':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@appspine/preset-standard':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@appspine/rbac':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(01fd69d3d69b140f28d1ba6c6dce2918)
+        specifier: 5.0.0
+        version: 5.0.0(d828e99d9513331e1e7a84c9ef1c6e63)
       '@nestjs/common':
         specifier: ^11.0.5
         version: 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -196,11 +196,11 @@ importers:
         version: 4.4.3
     devDependencies:
       '@appspine/plugin-cli':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@appspine/plugin-testkit':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@nestjs/cli':
         specifier: ^10.4.5
         version: 10.4.9
@@ -235,32 +235,32 @@ importers:
   frontend:
     dependencies:
       '@appspine/domain-events':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)
+        specifier: 9.0.0
+        version: 9.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/frontend-shell':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+        specifier: 0.17.0
+        version: 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/health-check':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz(44e0ca5c02107ba8d8a839bff5a22240)
+        specifier: 1.0.0
+        version: 1.0.0(abae7f51ae91a94a7bc633bd8957f52e)
       '@appspine/identity-core':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)
+        specifier: 2.0.0
+        version: 2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/m2m-api-key':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz(fd609d37ddae5cde2ab8bf4319fdc199)
+        specifier: 6.0.0
+        version: 6.0.0(9559d870345aba5f4cbaed2739615a75)
       '@appspine/metadata-schema':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz(@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+        specifier: 1.0.0
+        version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/notification':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)
+        specifier: 1.0.0
+        version: 1.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
       '@appspine/oidc-auth':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(b5251aeed31ad6adf0b7ae82451d6645)
+        specifier: 2.0.0
+        version: 2.0.0(98069eaea30ce94bb4cadfc72314026e)
       '@appspine/rbac':
-        specifier: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz
-        version: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(e58fd28d27641bd7e29b98353e511670)
+        specifier: 5.0.0
+        version: 5.0.0(d828e99d9513331e1e7a84c9ef1c6e63)
       '@base-ui/react':
         specifier: ^1.6.0
         version: 1.6.0(@date-fns/tz@1.5.0)(@types/react@19.2.17)(date-fns@4.4.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -391,31 +391,28 @@ packages:
     resolution: {integrity: sha512-I5wviiIqiFwar9Pdk30Lujk8FczEEc18i22A5c6Z9lbmhPQdTroDnEQdsfXjy404wPe8H62s0I15o4pmMGfTYQ==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
 
-  '@appspine/audit-log@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz':
-    resolution: {integrity: sha512-5eNer03rYDeKo2vUP7yRn6wWFTQ9VBL49YcU8pXO7JF/C3cHWD4rQq6mPW2D4b0CsLTA2pMRQ5cw5tTr7G6ACQ==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz}
-    version: 1.1.0
+  '@appspine/audit-log@1.1.0':
+    resolution: {integrity: sha512-KqjaY8ua/1W1jimB9iqV/k9Dgw4oXACeINbg0KwbLEJxeZzaQ+q6jTDrBbyc5pLHvi9wFAsGe51bvDxv5ImTrQ==, tarball: https://npm.pkg.github.com/download/@appspine/audit-log/1.1.0/f86945922afecc8aa8e89fb2ac6e3e0a7fb0f8c4}
     peerDependencies:
-      '@appspine/common': ^0.3.4
+      '@appspine/common': 0.3.4
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
 
-  '@appspine/auth@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz':
-    resolution: {integrity: sha512-1xjrgdd09+QTTY3Ty/vvPVztp16jf9N2SSvLfjNMyVpcapt5h4KuaRaciYJ2KX5DZZiyPzZy400Pi7OSoiiAyw==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz}
-    version: 7.0.0
+  '@appspine/auth@7.0.0':
+    resolution: {integrity: sha512-hfIwpc3qA6I5jCsaDaFLdpmEMHA+d2fTA8cwYQosljnLFwLh2fmqt8hhkKjqADO5XZvHXjOXMsqNDdqrNqh21A==, tarball: https://npm.pkg.github.com/download/@appspine/auth/7.0.0/ea25241a32f50ab67b0cbc9abc2aeeb27a921b28}
     peerDependencies:
-      '@appspine/identity-core': ^2.0.0
-      '@appspine/oidc-auth': ^2.0.0
-      '@appspine/plugin-host-nest': ^2.0.0
-      '@appspine/rbac': ^5.0.0
+      '@appspine/identity-core': 2.0.0
+      '@appspine/oidc-auth': 2.0.0
+      '@appspine/plugin-host-nest': 2.0.0
+      '@appspine/rbac': 5.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
       zod: ^4.4.3
 
-  '@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz':
-    resolution: {integrity: sha512-MBCpNw6DHhT4Wq0Q3Ao0fIMFb0I+LKpfY5Mkzpw3NT5jNiTKJqzsgb1xnX1nSZz5hFOPl44Nl31N0KF2y8W1ag==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz}
-    version: 0.3.4
+  '@appspine/common@0.3.4':
+    resolution: {integrity: sha512-uOjT1IW2MEQJ0buDrKhE49NZ5xAFVn6WHt87dAi3oHLSdiCDA0SvgYtcXe/7pQ9J3jQowCCvieUU467oEW+SNQ==, tarball: https://npm.pkg.github.com/download/@appspine/common/0.3.4/e70ffc630729be67191f9f27c74f0eaa9c9d7857}
     peerDependencies:
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -423,13 +420,12 @@ packages:
       express: ^5.0.0
       zod: ^4.4.3
 
-  '@appspine/domain-events@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz':
-    resolution: {integrity: sha512-iumsAu5ImK7onvzb2fPshV4u7R1oKFYebxRwbmiF+42pV2xFrUUViZp/LdghyhOeiAi9bEhWOCe/krmfHE72PA==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz}
-    version: 9.0.0
+  '@appspine/domain-events@9.0.0':
+    resolution: {integrity: sha512-GYuIdReD/9LPzbAHadkNn5AhUZ81eOVEupWRgGKZwPQmIiGQeGeafSsxdYpHS2kIJpnJbr2Cb67nCBCBFwixsA==, tarball: https://npm.pkg.github.com/download/@appspine/domain-events/9.0.0/53569fd0dd6ea947ead75949167152706f9d6c7a}
     peerDependencies:
-      '@appspine/common': ^0.3.4
-      '@appspine/frontend-shell': ^0.16.4
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/common': 0.3.4
+      '@appspine/frontend-shell': 0.17.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
@@ -447,14 +443,13 @@ packages:
       react-dom:
         optional: true
 
-  '@appspine/e2e-kit@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-e2e-kit-1.0.2.tgz':
-    resolution: {integrity: sha512-Ek8ycaLAmYrZwzX73lD5YMl6PUWFApFB18qTq5ma2rGaDkKknjyzPmfaD38ZqNiTl/7AMtrpNaflSEOO6WqoWA==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-e2e-kit-1.0.2.tgz}
-    version: 1.0.2
+  '@appspine/e2e-kit@1.0.2':
+    resolution: {integrity: sha512-4pccQFsgRPVIhGFY8AEOCH2bO3Y7AY45zn6mcxdjztYv+v7B373FqdbkzzJWKDUX+zD8+AR/K8Zq49pjjkXFhw==, tarball: https://npm.pkg.github.com/download/@appspine/e2e-kit/1.0.2/9cf1fd118056730a00ecac25498e3c5b9e5292d6}
     peerDependencies:
       '@playwright/test': ^1.54.2
 
-  '@appspine/frontend-shell@0.16.4':
-    resolution: {integrity: sha512-ABuvxao6J9HwSX9DxmN+RIESu4I7OfvpcTk9wz5hhe6xQK6UIcE5YHQdw/pZuuggRG7MSnMaT8C7nzpAaS/yVA==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.16.4/74aa6e4f19a6b95b3defc0d6f665e86431f1eb5b}
+  '@appspine/frontend-shell@0.17.0':
+    resolution: {integrity: sha512-EUWuCBc8klDR67P//9w831rdpxqr4h9LowQ5KSFQdHlDvWGvp7W2pm23ZjiL153N/f9SBNq6sw9iEiskAz6UIg==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/0.17.0/40d8bbd37944177fb5ac048e3b6faa747f2b63da}
     peerDependencies:
       class-variance-authority: ^0.7.1
       clsx: ^2.1.1
@@ -468,28 +463,11 @@ packages:
       tailwind-merge: ^3.6.0
       tailwindcss: ^4.1.5
 
-  '@appspine/frontend-shell@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz':
-    resolution: {integrity: sha512-kgoLHMdxos8jTvgTq3lxmwxJ4gyCc+yMXsyq871BhT1m/LYQtAxFT8Et+a6FsyifY0EeLTMwXYc8Snjpsp2npQ==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz}
-    version: 0.16.4
+  '@appspine/health-check@1.0.0':
+    resolution: {integrity: sha512-pjGK7+TY9G4SGHSJ42ohpRXGXqeth6uL9YE5VQClTWia6lHZvUrvAV5ZGlpD9Jho4ikdnr1/KDxCN7pisaQCxw==, tarball: https://npm.pkg.github.com/download/@appspine/health-check/1.0.0/128646ccc52abd3c98ef94a09e8c734e0f489467}
     peerDependencies:
-      class-variance-authority: ^0.7.1
-      clsx: ^2.1.1
-      date-fns: ^4.4.0
-      lucide-react: ^1.22.0
-      next: ^16.2.9
-      radix-ui: ^1.6.0
-      react: ^19.2.7
-      react-day-picker: ^10.0.1
-      react-dom: ^19.2.7
-      tailwind-merge: ^3.6.0
-      tailwindcss: ^4.1.5
-
-  '@appspine/health-check@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz':
-    resolution: {integrity: sha512-sxwu12gIDwS9B76rXZDfg9H2qb596iaxJgMYHUhL3XuPl4DqpTcHcH27+YBTVxQtWUvxNEaTpAEu5yDTpBEocA==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz}
-    version: 1.0.0
-    peerDependencies:
-      '@appspine/frontend-shell': ^0.16.4
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/frontend-shell': 0.17.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@nestjs/terminus': ^11.1.1
@@ -504,14 +482,13 @@ packages:
       react-dom:
         optional: true
 
-  '@appspine/identity-core@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz':
-    resolution: {integrity: sha512-ADgfwIUtSG/UpR4algD6tLLAwCZNIT+vmdlpmcSYx9XE8LD+ETVdeLGhIfI2yZDKc+0uDsw573KiCxciwvyzdg==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz}
-    version: 2.0.0
+  '@appspine/identity-core@2.0.0':
+    resolution: {integrity: sha512-8Hm8CbQkGVAuXOPtgzlR3UJQeN+7GZn3cbz+otpDaqQu6xGtdiOwpKj022ILOxrMfumOaEXuiUfs0VLrw6zskg==, tarball: https://npm.pkg.github.com/download/@appspine/identity-core/2.0.0/a0876e8c9616d0b6af5721976dcf3744a90885e2}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@appspine/common': ^0.3.4
-      '@appspine/frontend-shell': ^0.16.4
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/common': 0.3.4
+      '@appspine/frontend-shell': 0.17.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
@@ -529,19 +506,17 @@ packages:
       react-dom:
         optional: true
 
-  '@appspine/integration-contracts@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz':
-    resolution: {integrity: sha512-kYlygZ65bYnVNq19sScl6K8HxQ2mhqmnOgdsphXQtShtYfVL8lSJsR4q7CXsczZJuBGU0ZE0HMs0RkT0S8FD2Q==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz}
-    version: 0.4.0
+  '@appspine/integration-contracts@0.4.0':
+    resolution: {integrity: sha512-nPFu22EQbF/fUiITCGGogdpO2EF40kwUE9eXyF0NJc7miqKZpchc5CD3wxVGnAN4QtzujyQ9VrjVPfKkXsDnkw==, tarball: https://npm.pkg.github.com/download/@appspine/integration-contracts/0.4.0/02765e762910cdb0ab06609145d267cda2ba7c36}
 
-  '@appspine/m2m-api-key@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz':
-    resolution: {integrity: sha512-XWEpxTHMLexR+5Ex2gJjkjUbmS0AgLSX+gwEPfP3hoID5OtghSfVtA6DJ8BN76d8D4z9tfxBaIX8fiZfm90mZg==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz}
-    version: 6.0.0
+  '@appspine/m2m-api-key@6.0.0':
+    resolution: {integrity: sha512-xa+Pjwj1ij7VfCXh9BGGRsHqlolxwmW9I588uCHb8wkCM5KdlaEp0+x1CWk00Fb+9+hRVY5ntaLa1hOkaiKgpw==, tarball: https://npm.pkg.github.com/download/@appspine/m2m-api-key/6.0.0/51633e52436433f4900dfefaa610fa5cec4ea31f}
     peerDependencies:
-      '@appspine/audit-log': ^1.1.0
-      '@appspine/common': ^0.3.4
-      '@appspine/frontend-shell': ^0.16.4
-      '@appspine/plugin-host-nest': ^2.0.0
-      '@appspine/rbac': ^5.0.0
+      '@appspine/audit-log': 1.1.0
+      '@appspine/common': 0.3.4
+      '@appspine/frontend-shell': 0.17.0
+      '@appspine/plugin-host-nest': 2.0.0
+      '@appspine/rbac': 5.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
@@ -563,39 +538,35 @@ packages:
       react-dom:
         optional: true
 
-  '@appspine/master-data-client@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-master-data-client-0.2.0.tgz':
-    resolution: {integrity: sha512-AMd3InWdTpaDeFViOK12CQau+Z3qAVmSOoeDwbiCGEFQTfqqCur93v4wIdwEl1FuUogLvomFV7oomm5fxBE6Dg==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-master-data-client-0.2.0.tgz}
-    version: 0.2.0
+  '@appspine/master-data-client@0.2.0':
+    resolution: {integrity: sha512-mExoh5gAEJZNFih0QS1juvcHah2SOb1M3f/oL39qR2Vm8p+uNo40EVaIyVu3aBNDXo7YLchi7jgWJdBz9pFlVQ==, tarball: https://npm.pkg.github.com/download/@appspine/master-data-client/0.2.0/71d672d96fb1918c7d3403b5ad11ed031d078d8f}
     peerDependencies:
       '@nestjs/common': ^11.0.5
 
-  '@appspine/mcp-server@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz':
-    resolution: {integrity: sha512-1np8l2Om6g/1HdelMjC8UqkLPzNLSK84TyKFpxjGZNa7qbiUUX9bZL46dOQIFdSLGYwGfbuo3SNrOH86WUBpfg==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz}
-    version: 1.0.0
+  '@appspine/mcp-server@1.0.0':
+    resolution: {integrity: sha512-rHagSVJXEoyw/a1D5zQHBfOH2yHkthp5+etZOjy3Nt7sypPYyvOoxESbHYBACEn2p8tQIC2pGPqgMPgvQFRHFg==, tarball: https://npm.pkg.github.com/download/@appspine/mcp-server/1.0.0/75d36f9ece08953cd017f69b7dd791d12252f21c}
     peerDependencies:
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
       express: ^5.0.0
       zod: ^4.4.3
 
-  '@appspine/metadata-schema@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz':
-    resolution: {integrity: sha512-qW0L+i5QNRAK2McdocHEd+R+XMj2yuCh6DRkAgbkD3/w2E3x5KNutqBTxblwVsK0LmiTT135I1urxBajHSQxwg==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz}
-    version: 1.0.0
+  '@appspine/metadata-schema@1.0.0':
+    resolution: {integrity: sha512-HtosdldyIkagsrDFYjrvABp5ODHsPsfHnj6Up+gGkBzJdtvbXVDjJAHK+R3mw8MQitsQyV6++apqQjS3RdHnwQ==, tarball: https://npm.pkg.github.com/download/@appspine/metadata-schema/1.0.0/b0b630955a7f9b0d3012ecb56e21bebcf2425023}
     peerDependencies:
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
 
-  '@appspine/notification@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz':
-    resolution: {integrity: sha512-Ab9fT3BNQVr85h3EmVmhzhHk/Up2xvVfnyb/f5RT08KajBWOcaInoz/W7Z+ZenUbXoDCAI9CuJnkvTL7w4hJ+g==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz}
-    version: 1.0.0
+  '@appspine/notification@1.0.0':
+    resolution: {integrity: sha512-GU9nzd82hJwJhptbTNzkgFQT573mdNqZyLIxxDHs+oyPfehoHrRJEucV2+HdugNrhXX6MfY7cn7YQorEJQ7NaA==, tarball: https://npm.pkg.github.com/download/@appspine/notification/1.0.0/0724086c79c084497d6f7fa9f069fd3a366fe090}
     peerDependencies:
-      '@appspine/common': ^0.3.4
-      '@appspine/frontend-shell': ^0.16.4
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/common': 0.3.4
+      '@appspine/frontend-shell': 0.17.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
@@ -613,14 +584,13 @@ packages:
       react-dom:
         optional: true
 
-  '@appspine/oidc-auth@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz':
-    resolution: {integrity: sha512-wDxB4XnjOOkpLsxc9ROxLrDahUNHLmLvJMMcSlKnD7JNIBBdKp5DWpLK14LMsKFfaKJUS91gz4IdPOptfg8NYA==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz}
-    version: 2.0.0
+  '@appspine/oidc-auth@2.0.0':
+    resolution: {integrity: sha512-KBlvV3Ow0Tx7PoQPyLDeRj3+cM9XJl1Dqp41+ZqhM3ZX4CBKLeW4QDaELjCByWUg+Zc7S4P1umJuaM9TS0pJLg==, tarball: https://npm.pkg.github.com/download/@appspine/oidc-auth/2.0.0/7d70de123b98c7e2b9b043cf13d780e6976f0ca1}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@appspine/common': ^0.3.4
-      '@appspine/frontend-shell': ^0.16.4
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/common': 0.3.4
+      '@appspine/frontend-shell': 0.17.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@nestjs/passport': ^11.0.5
@@ -636,58 +606,51 @@ packages:
       react-dom:
         optional: true
 
-  '@appspine/oidc-delegation@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-delegation-0.4.0.tgz':
-    resolution: {integrity: sha512-UbDzWif/Go3nH2KF6AzRJhqk0PpAhy9txycYTf0yTIHw2VexG4hYADLVGReeami+tFr73STT1a/qxRbYHKQdwA==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-delegation-0.4.0.tgz}
-    version: 0.4.0
+  '@appspine/oidc-delegation@0.4.0':
+    resolution: {integrity: sha512-K4RPcuLhE4cGJrReN8gh2iSxFoO4/O3AF74DPqtvjYiebF92DsWxstf+XyMN/KoiJEKwP9svjjIjAqAs7bmyZw==, tarball: https://npm.pkg.github.com/download/@appspine/oidc-delegation/0.4.0/a82c48131a9b43892e7e1cddbb29c404d80882f4}
     peerDependencies:
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
 
-  '@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz':
-    resolution: {integrity: sha512-gD4K/GSH3WV0B59mnPhCUYPFQxcQv4fF3Em5rDADcS+Ndv2h8J3o0572JgIM+5FutiZq7QSaclDdHPgATf4q1A==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz}
-    version: 1.1.0
+  '@appspine/plugin-api@1.1.0':
+    resolution: {integrity: sha512-WpThGgTOzo1TLdPqbY92DHHrrjDr4S2x5TKPS9mJCnIyBOr2U6tN8siYlVtajfFwunsR9kCdoNZWKgU1Sh+6YQ==, tarball: https://npm.pkg.github.com/download/@appspine/plugin-api/1.1.0/e36ca6e77e709bf514a8f61edbaa44a4319de972}
     engines: {node: '>=22.0.0'}
 
-  '@appspine/plugin-cli@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz':
-    resolution: {integrity: sha512-iTkPKRS4IwMcRGI3elSdGUwqnMZyjyIj7mYeAEDbylP73x7U8X51rZq3DO5D4nB9LDT3kQKf2RpPtRdX90wL/w==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz}
-    version: 2.0.0
+  '@appspine/plugin-cli@2.0.0':
+    resolution: {integrity: sha512-T/UrbHcIMV4XBe6LpSu1vLQ0jRr8RIlJpgN5p56JevEiNkyzcZeMFAtmlJ1zWF75uSMNxmU6Qdn4PTGZtNghzg==, tarball: https://npm.pkg.github.com/download/@appspine/plugin-cli/2.0.0/2727de6ba9d33b619d2fda47cbcd1b28c387f93f}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
-      '@appspine/plugin-api': ^1.1.0
+      '@appspine/plugin-api': 1.1.0
 
-  '@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz':
-    resolution: {integrity: sha512-507GETTlGh5h0bof2vgB1MLHDR9ef6v6s8ykHS0SzNWbK4pKL81qW72kAcxjpuTtJnArTMrof8MdTmmZ93o7jg==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz}
-    version: 2.0.0
+  '@appspine/plugin-host-nest@2.0.0':
+    resolution: {integrity: sha512-63aEqexo8+OMYHO/sKVkByYnS3yA3ZmYrQgZGQq0qjIbd1RcBZC8MLofZUGHnRY9P4AliagP4VG0g+4myHZssw==, tarball: https://npm.pkg.github.com/download/@appspine/plugin-host-nest/2.0.0/c29bea8a3b4b6744fd91dc179ca44cb2a2cb6b6a}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@appspine/plugin-api': ^1.1.0
+      '@appspine/plugin-api': 1.1.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       rxjs: ^7.8.1
 
-  '@appspine/plugin-testkit@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz':
-    resolution: {integrity: sha512-glE8nlI5rQ0uHyiYJYCyy/zkD0ySmqW9KzAmcsI1UDSbjh1bcOeHPadhQafDnK7fj3s+mXhdOIM1qsNgtiSDQA==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz}
-    version: 2.0.0
+  '@appspine/plugin-testkit@2.0.0':
+    resolution: {integrity: sha512-iT4MxuirPkkQKEuy6djafuvv+YbfXwnQn5TuSundYLY+O6tm67GOT4M7909H3Xw6v9DjqHceovsE2GkeRykAlQ==, tarball: https://npm.pkg.github.com/download/@appspine/plugin-testkit/2.0.0/f20e8c954b1ed61bb29967efdf0271c2fbfd63ca}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@appspine/plugin-api': ^1.1.0
+      '@appspine/plugin-api': 1.1.0
 
-  '@appspine/preset-standard@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz':
-    resolution: {integrity: sha512-oFAWYIxzxaCk/1aUKMNr6pSiN8JsKVVRUYuYdlCCMDgeGeZ93FTMA8f8wLkKfR8skm93Ez271Akub7+7nDZj3A==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz}
-    version: 2.0.0
+  '@appspine/preset-standard@2.0.0':
+    resolution: {integrity: sha512-znJwFuB0g9qbt0WJ4sArApj70f6movxZvHtVuLqygfWxyDj5dFD7Ve/lG20IESwOgudtw2uNrqn1DjpqsOmjVQ==, tarball: https://npm.pkg.github.com/download/@appspine/preset-standard/2.0.0/ecb814984e8e6d96230798993b729adacbb4a064}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@appspine/plugin-api': ^1.1.0
+      '@appspine/plugin-api': 1.1.0
 
-  '@appspine/rbac@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz':
-    resolution: {integrity: sha512-DlQ0CtoY6X3aA/7QlLggeaLXSKyKl/6fBTJaeFb7VQVTN5KRkoQKKG13BlpmotVPblFJFzPcFyiz6hKTTVLFZg==, tarball: file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz}
-    version: 5.0.0
+  '@appspine/rbac@5.0.0':
+    resolution: {integrity: sha512-UuFMReSlhvhqMLBTEJoBltjiI6GRbd/a+sRw3UxT6dXMs39mXOp0D64HjayE2N5xC0fS1M5XlLiqyVmh1SKJ+w==, tarball: https://npm.pkg.github.com/download/@appspine/rbac/5.0.0/4050e12c7ad2e3aaba412637f615cf3b93361671}
     peerDependencies:
-      '@appspine/audit-log': ^1.1.0
-      '@appspine/common': ^0.3.4
-      '@appspine/frontend-shell': ^0.16.4
-      '@appspine/plugin-host-nest': ^2.0.0
+      '@appspine/audit-log': 1.1.0
+      '@appspine/common': 0.3.4
+      '@appspine/frontend-shell': 0.17.0
+      '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
@@ -4682,37 +4645,26 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@appspine/audit-log@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))':
+  '@appspine/audit-log@1.1.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
 
-  '@appspine/auth@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz(50f37bdf7189aed413c8028a83d2f60f)':
+  '@appspine/auth@7.0.0(@appspine/identity-core@2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc))(@appspine/oidc-auth@2.0.0(98069eaea30ce94bb4cadfc72314026e))(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@appspine/rbac@5.0.0(d828e99d9513331e1e7a84c9ef1c6e63))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)':
     dependencies:
-      '@appspine/identity-core': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(ec98a6567d562b6a2b7db325a2fade85)
-      '@appspine/oidc-auth': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(de385beaf4f11ce2d42bdaada7608b0b)
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@appspine/rbac': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(01fd69d3d69b140f28d1ba6c6dce2918)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-
-  '@appspine/auth@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-auth-7.0.0.tgz(dd64277dd7380702a60dee4ce9513abb)':
-    dependencies:
-      '@appspine/identity-core': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(169321ab1b250ef4823c74346f5d85dc)
-      '@appspine/oidc-auth': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(6892c209fdaacdcc7ece50fa9e701fa0)
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@appspine/rbac': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(0663197412ae5ef98d77144601c91ae3)
+      '@appspine/identity-core': 2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
+      '@appspine/oidc-auth': 2.0.0(98069eaea30ce94bb4cadfc72314026e)
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/rbac': 5.0.0(d828e99d9513331e1e7a84c9ef1c6e63)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       zod: 4.4.3
 
-  '@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
+  '@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -4725,60 +4677,28 @@ snapshots:
       - pino-http
       - rxjs
 
-  '@appspine/domain-events@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)':
+  '@appspine/domain-events@9.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/integration-contracts': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/integration-contracts': 0.4.0
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       reflect-metadata: 0.2.2
       zod: 4.4.3
     optionalDependencies:
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/frontend-shell': 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@appspine/domain-events@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz(ec98a6567d562b6a2b7db325a2fade85)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/integration-contracts': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      reflect-metadata: 0.2.2
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/e2e-kit@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-e2e-kit-1.0.2.tgz(@playwright/test@1.62.1)':
+  '@appspine/e2e-kit@1.0.2(@playwright/test@1.62.1)':
     dependencies:
       '@playwright/test': 1.62.1
 
-  '@appspine/frontend-shell@0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
-    dependencies:
-      class-variance-authority: 0.7.1
-      clsx: 2.1.1
-      date-fns: 4.4.0
-      lucide-react: 1.23.0(react@19.2.7)
-      next: 16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      radix-ui: 1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      react: 19.2.7
-      react-day-picker: 10.0.1(@types/react@19.2.17)(react@19.2.7)
-      react-dom: 19.2.7(react@19.2.7)
-      tailwind-merge: 3.6.0
-      tailwindcss: 4.3.2
-    optional: true
-
-  '@appspine/frontend-shell@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
+  '@appspine/frontend-shell@0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1
@@ -4792,17 +4712,17 @@ snapshots:
       tailwind-merge: 3.6.0
       tailwindcss: 4.3.2
 
-  '@appspine/health-check@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz(44e0ca5c02107ba8d8a839bff5a22240)':
+  '@appspine/health-check@1.0.0(abae7f51ae91a94a7bc633bd8957f52e)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/terminus': 11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
     optionalDependencies:
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/frontend-shell': 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
     transitivePeerDependencies:
@@ -4812,133 +4732,49 @@ snapshots:
       - rxjs
       - zod
 
-  '@appspine/health-check@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz(eec445faf583f9457c1b45ccf56d986d)':
+  '@appspine/identity-core@2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/terminus': 11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-    optionalDependencies:
-      '@appspine/frontend-shell': 0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-    transitivePeerDependencies:
-      - express
-      - pino
-      - pino-http
-      - rxjs
-      - zod
-
-  '@appspine/identity-core@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(169321ab1b250ef4823c74346f5d85dc)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       zod: 4.4.3
     optionalDependencies:
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/frontend-shell': 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@appspine/identity-core@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)':
+  '@appspine/integration-contracts@0.4.0': {}
+
+  '@appspine/m2m-api-key@6.0.0(9559d870345aba5f4cbaed2739615a75)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       zod: 4.4.3
     optionalDependencies:
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/audit-log': 1.1.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+      '@appspine/frontend-shell': 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/rbac': 5.0.0(d828e99d9513331e1e7a84c9ef1c6e63)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@appspine/identity-core@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz(ec98a6567d562b6a2b7db325a2fade85)':
+  '@appspine/master-data-client@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/integration-contracts@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-integration-contracts-0.4.0.tgz': {}
-
-  '@appspine/m2m-api-key@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz(579d610e85f44818fc2b6e1c0b56f944)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      '@appspine/rbac': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(01fd69d3d69b140f28d1ba6c6dce2918)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/m2m-api-key@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz(ee7daeb3a8d47c6c418c423bd02b8529)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      '@appspine/rbac': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(0663197412ae5ef98d77144601c91ae3)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/m2m-api-key@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz(fd609d37ddae5cde2ab8bf4319fdc199)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      '@appspine/rbac': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(e58fd28d27641bd7e29b98353e511670)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/master-data-client@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-master-data-client-0.2.0.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))':
-    dependencies:
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+      '@appspine/plugin-api': 1.1.0
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
 
-  '@appspine/mcp-server@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-mcp-server-1.0.0.tgz(@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)':
+  '@appspine/mcp-server@1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)':
     dependencies:
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@modelcontextprotocol/node': 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.2)
       '@modelcontextprotocol/server': 2.0.0
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -4948,11 +4784,11 @@ snapshots:
       hono: 4.13.2
       zod: 4.4.3
 
-  '@appspine/metadata-schema@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz(@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
+  '@appspine/metadata-schema@1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
@@ -4963,41 +4799,26 @@ snapshots:
       - rxjs
       - zod
 
-  '@appspine/notification@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz(df8d844ae3c6ad8ff2eb9462326d22c9)':
+  '@appspine/notification@1.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       zod: 4.4.3
     optionalDependencies:
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/frontend-shell': 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@appspine/notification@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz(ec98a6567d562b6a2b7db325a2fade85)':
+  '@appspine/oidc-auth@2.0.0(98069eaea30ce94bb4cadfc72314026e)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/oidc-auth@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(6892c209fdaacdcc7ece50fa9e701fa0)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/passport': 11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
@@ -5010,133 +4831,55 @@ snapshots:
       passport-jwt: 4.0.1
       zod: 4.4.3
     optionalDependencies:
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/frontend-shell': 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
     transitivePeerDependencies:
       - supports-color
 
-  '@appspine/oidc-auth@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(b5251aeed31ad6adf0b7ae82451d6645)':
+  '@appspine/oidc-delegation@0.4.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/passport': 11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      '@types/passport': 1.0.17
-      '@types/passport-jwt': 4.0.1
-      jsonwebtoken: 9.0.3
-      jwks-rsa: 3.2.2
-      passport: 0.7.0
-      passport-jwt: 4.0.1
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@appspine/oidc-auth@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz(de385beaf4f11ce2d42bdaada7608b0b)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/passport': 11.0.5(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      '@types/passport': 1.0.17
-      '@types/passport-jwt': 4.0.1
-      jsonwebtoken: 9.0.3
-      jwks-rsa: 3.2.2
-      passport: 0.7.0
-      passport-jwt: 4.0.1
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@appspine/oidc-delegation@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-delegation-0.4.0.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)':
-    dependencies:
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+      '@appspine/plugin-api': 1.1.0
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
 
-  '@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz':
+  '@appspine/plugin-api@1.1.0':
     dependencies:
       ajv: 8.20.0
       semver: 7.8.5
 
-  '@appspine/plugin-cli@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-cli-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)':
+  '@appspine/plugin-cli@2.0.0(@appspine/plugin-api@1.1.0)':
     dependencies:
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+      '@appspine/plugin-api': 1.1.0
       ajv: 8.20.0
 
-  '@appspine/plugin-host-nest@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)':
+  '@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)':
     dependencies:
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+      '@appspine/plugin-api': 1.1.0
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       rxjs: 7.8.2
 
-  '@appspine/plugin-testkit@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-testkit-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)':
+  '@appspine/plugin-testkit@2.0.0(@appspine/plugin-api@1.1.0)':
     dependencies:
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+      '@appspine/plugin-api': 1.1.0
 
-  '@appspine/preset-standard@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-preset-standard-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)':
+  '@appspine/preset-standard@2.0.0(@appspine/plugin-api@1.1.0)':
     dependencies:
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
+      '@appspine/plugin-api': 1.1.0
 
-  '@appspine/rbac@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(01fd69d3d69b140f28d1ba6c6dce2918)':
+  '@appspine/rbac@5.0.0(d828e99d9513331e1e7a84c9ef1c6e63)':
     dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/plugin-api': 1.1.0
+      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       zod: 4.4.3
     optionalDependencies:
-      '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 0.16.4(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/rbac@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(0663197412ae5ef98d77144601c91ae3)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      lucide-react: 1.23.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-
-  '@appspine/rbac@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz(e58fd28d27641bd7e29b98353e511670)':
-    dependencies:
-      '@appspine/common': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
-      '@appspine/plugin-api': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz
-      '@appspine/plugin-host-nest': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-host-nest-2.0.0.tgz(@appspine/plugin-api@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-plugin-api-1.1.0.tgz)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-audit-log-1.1.0.tgz(@appspine/common@file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-common-0.3.4.tgz(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+      '@appspine/audit-log': 1.1.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+      '@appspine/frontend-shell': 0.17.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
