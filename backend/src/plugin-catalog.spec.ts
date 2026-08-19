@@ -1,14 +1,11 @@
-import { GUARDS_METADATA } from "@nestjs/common/constants";
-import { describe, expect, it } from "vitest";
 import { PluginCatalogController } from "@appspine/health-check";
 import { InteractiveAuthGuard, SystemAdminGuard } from "@appspine/plugin-host-nest";
+import { GUARDS_METADATA } from "@nestjs/common/constants";
+import { describe, expect, it } from "vitest";
 
 describe("Plugin Catalog Admin Page & Security (PL3-10 Remediation)", () => {
   it("protects PluginCatalogController with InteractiveAuthGuard and SystemAdminGuard", () => {
-    const guards = Reflect.getMetadata(
-      GUARDS_METADATA,
-      PluginCatalogController,
-    ) as unknown[];
+    const guards = Reflect.getMetadata(GUARDS_METADATA, PluginCatalogController) as unknown[];
 
     expect(guards).toBeDefined();
     expect(guards).toContain(InteractiveAuthGuard);

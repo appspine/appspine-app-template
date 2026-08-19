@@ -19,15 +19,15 @@
     ]
   },
   "dependencies": {
-    "@appspine/domain-events": "^8.0.0",
-    "@appspine/frontend-shell": "^0.16.3",
-    "@appspine/health-check": "^0.1.9",
-    "@appspine/identity-core": "^1.0.0",
-    "@appspine/m2m-api-key": "^5.0.0",
-    "@appspine/metadata-schema": "0.2.21",
-    "@appspine/notification": "^0.2.2",
-    "@appspine/oidc-auth": "^1.0.0",
-    "@appspine/rbac": "^4.0.8",
+    "@appspine/domain-events": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-domain-events-9.0.0.tgz",
+    "@appspine/frontend-shell": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-frontend-shell-0.16.4.tgz",
+    "@appspine/health-check": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-health-check-1.0.0.tgz",
+    "@appspine/identity-core": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-identity-core-2.0.0.tgz",
+    "@appspine/m2m-api-key": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-m2m-api-key-6.0.0.tgz",
+    "@appspine/metadata-schema": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-metadata-schema-1.0.0.tgz",
+    "@appspine/notification": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-notification-1.0.0.tgz",
+    "@appspine/oidc-auth": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-oidc-auth-2.0.0.tgz",
+    "@appspine/rbac": "file:C:/Users/ANTHON~1.MAX/AppData/Local/Temp/appspine-pl503-tarballs-1787159271846/appspine-rbac-5.0.0.tgz",
     "@base-ui/react": "^1.6.0",
     "@hookform/resolvers": "^5.4.0",
     "@shadcn/react": "^0.1.0",
@@ -58,20 +58,13 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.1",
-    "@tailwindcss/postcss": "^4.3.1",
-    "@types/node": "^22.20.0",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "babel-plugin-react-compiler": "^1.0.0",
+    "@biomejs/biome": "2.5.1",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "dotenv-cli": "^11.0.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
-    "postcss": "^8.5.16",
-    "shadcn": "^4.18.0",
     "tailwindcss": "^4.1.5",
     "ts-node": "^10.9.2",
-    "tw-animate-css": "^1.4.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.7.3"
   }
 }

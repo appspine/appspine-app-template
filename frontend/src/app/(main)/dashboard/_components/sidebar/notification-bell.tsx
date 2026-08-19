@@ -2,7 +2,12 @@
 import { useMemo } from "react";
 
 import { useTranslations } from "@appspine/frontend-shell";
-import { type NotificationDataSource, type NotificationLabels, type NotificationSummary, NotificationBell as SharedNotificationBell } from '@appspine/notification/frontend';
+import {
+  type NotificationDataSource,
+  type NotificationLabels,
+  type NotificationSummary,
+  NotificationBell as SharedNotificationBell,
+} from "@appspine/notification/frontend";
 
 import {
   getUnreadCountAction,

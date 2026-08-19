@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 import type { RoleRow } from "@appspine/frontend-shell";
-import { ListPagination, ListSearchForm } from '@appspine/frontend-shell';
-import { CreateRoleDialog, RolesTable } from '@appspine/rbac/frontend';
+import { ListPagination, ListSearchForm } from "@appspine/frontend-shell";
 import type { SchemaMeta } from "@appspine/metadata-schema";
+import { CreateRoleDialog, RolesTable } from "@appspine/rbac/frontend";
 
 import { getTranslations } from "@/i18n/server";
 import { enumLabel } from "@/lib/i18n/enum-label";

@@ -2,9 +2,10 @@ import { Test } from "@nestjs/testing";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 /**
- * Both wirings must compose. That is the whole promise of the dual mode (051 PL2-09): rolling back
- * from plugin mode is an environment variable and a restart, with no migration and no second
- * deployment — which is only true if the legacy path still resolves every provider.
+ * Both wirings must compose. That is the whole promise of the dual mode (051 PL2-09 & PL5-03):
+ * in Phase 5, Plugin Mode is default (`APPSPINE_PLUGIN_MODE !== "0"`), while rolling back to
+ * legacy is `APPSPINE_PLUGIN_MODE=0` and a restart — which is only true if both paths still
+ * resolve every provider.
  *
  * `compile()` builds the dependency graph without calling `onModuleInit`, so this runs with no
  * database. What it proves is exactly what a DI mistake breaks: a missing provider, a duplicate
@@ -37,7 +38,7 @@ describe("AppModule composes in both modes", () => {
     vi.resetModules();
   });
 
-  it("resolves every provider with the legacy hand-wired capabilities", async () => {
+  it("resolves every provider with the legacy escape hatch (APPSPINE_PLUGIN_MODE=0)", async () => {
     const moduleRef = await compileWith(false);
     expect(moduleRef).toBeDefined();
     await moduleRef.close();
@@ -51,12 +52,10 @@ describe("AppModule composes in both modes", () => {
     await moduleRef.close();
   });
 
-  it("defaults to legacy, so upgrading the packages is not the same step as switching modes", async () => {
+  it("defaults to plugin mode when APPSPINE_PLUGIN_MODE is not set", async () => {
     vi.resetModules();
     const previous = { ...process.env };
     Object.assign(process.env, ENV);
-    process.env.APPSPINE_PLUGIN_MODE = undefined;
-    // biome-ignore lint/performance/noDelete: the test is about the variable being absent.
     delete process.env.APPSPINE_PLUGIN_MODE;
 
     try {

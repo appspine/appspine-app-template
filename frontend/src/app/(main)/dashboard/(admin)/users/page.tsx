@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import type { UserRoleOption, UserRow } from "@appspine/frontend-shell";
-import { ListPagination, ListSearchForm } from '@appspine/frontend-shell';
-import { UsersTable } from '@appspine/identity-core/frontend';
+import { ListPagination, ListSearchForm } from "@appspine/frontend-shell";
+import { UsersTable } from "@appspine/identity-core/frontend";
 
 import { getTranslations } from "@/i18n/server";
 import type { PaginatedResult } from "@/server/api-client";

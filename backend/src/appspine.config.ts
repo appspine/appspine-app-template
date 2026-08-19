@@ -32,7 +32,6 @@ export const appspineConfig = defineAppspineConfig({
    */
   hostCapabilities: {
     "appspine.prisma": true,
-    "appspine.rbac-policy": true,
   },
 
   runtime: {

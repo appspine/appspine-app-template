@@ -53,23 +53,21 @@ const LEGACY_CAPABILITIES = [
  *
  * `createAppspineModule` resolves the inventory before Nest sees anything: engine ranges,
  * conflicts, cardinality, required capabilities, duplicate routes and the registration order are
- * all settled at composition time, so a misconfiguration fails at boot with a diagnostic rather
+ * all settled at composition time, so a misconfigured App fails at boot with a diagnostic rather
  * than at the first request with a missing provider.
  *
- * `MetaModule` and `McpModule` stay hand-wired in both modes: they migrate in Phase 4 and have no
- * manifest yet. Listing them here rather than hiding the difference is the point — the App shows
- * exactly which capabilities the host owns today.
+ * With the complete preset-standard in Phase 4 (PL4-10) and Phase 5 (PL5-03), all standard
+ * capability plugins are composed by the host without any hand-wiring.
  */
 function pluginMode(): NonNullable<ModuleMetadata["imports"]> {
-  return [createAppspineModule(appspineConfig), RbacModule, ApiKeysModule, MetaModule, McpModule];
+  return [createAppspineModule(appspineConfig)];
 }
 
 /**
- * `APPSPINE_PLUGIN_MODE=1` composes through the plugin host; anything else keeps the legacy
- * wiring. Default is legacy on purpose: the switch is opt-in per deployment, so an App upgrades
- * the packages first and changes how it composes them second, one reversible step at a time.
+ * Plugin mode is now the DEFAULT in Phase 5 (`APPSPINE_PLUGIN_MODE !== "0"`).
+ * Setting `APPSPINE_PLUGIN_MODE=0` serves as the legacy escape hatch during the transition window.
  */
-const usePluginMode = process.env.APPSPINE_PLUGIN_MODE === "1";
+const usePluginMode = process.env.APPSPINE_PLUGIN_MODE !== "0";
 
 @Module({
   imports: [...APP_OWNED, ...(usePluginMode ? pluginMode() : LEGACY_CAPABILITIES)],
