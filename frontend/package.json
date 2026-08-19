@@ -21,6 +21,7 @@
   "dependencies": {
     "@appspine/domain-events": "^8.0.0",
     "@appspine/frontend-shell": "^0.16.3",
+    "@appspine/health-check": "^0.1.9",
     "@appspine/identity-core": "^1.0.0",
     "@appspine/m2m-api-key": "^5.0.0",
     "@appspine/metadata-schema": "0.2.21",
