@@ -2,8 +2,8 @@ import { type PaginationQuery, paginationQuerySchema, ZodValidationPipe } from "
 import { ScopeGuard, Scopes } from "@appspine/m2m-api-key";
 import {
   type ApiKeyUser,
-  CurrentUser,
   AppspineAuthGuard,
+  CurrentUser,
   type JwtUser,
   resolveActingUserId,
 } from "@appspine/plugin-host-nest";
