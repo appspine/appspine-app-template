@@ -1,0 +1,14 @@
+/// External OIDC identity, owned by @appspine/oidc-auth.
+/// The stable external key is (issuer, subject), never email.
+model OidcIdentity {
+  id        String   @id @default(cuid())
+  issuer    String
+  subject   String
+  userId    String   @map("user_id")
+  linkedFromLegacyEmail Boolean @default(false) @map("linked_from_legacy_email")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([issuer, subject])
+  @@index([userId])
+  @@map("oidc_identities")
+}

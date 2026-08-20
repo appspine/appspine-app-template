@@ -1,5 +1,6 @@
-import { LoginButton, mapAuthErrorKey } from "@appspine/oidc-auth/frontend";
+import { mapAuthErrorKey } from "@appspine/oidc-auth/frontend";
 
+import { LoginButton } from "@/components/auth/login-button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getTranslations } from "@/i18n/server";
 import { login } from "@/server/auth-actions";
