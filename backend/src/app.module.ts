@@ -1,9 +1,8 @@
 import { LoggingModule, PrismaModule } from "@appspine/common";
 import { DomainEventsAdminModule } from "@appspine/domain-events/admin";
-import { createAppspineModule } from "@appspine/plugin-host-nest";
 import { Module } from "@nestjs/common";
 
-import { appspineConfig } from "./appspine.config";
+import { AppspinePlatformModule } from "./appspine.module";
 import { DomainEventsModule } from "./domain-events/domain-events.module";
 import { NotificationsModule } from "./notifications/notifications.module";
 
@@ -33,6 +32,6 @@ const APP_OWNED = [
  * capability plugins are composed by the host without any hand-wiring.
  */
 @Module({
-  imports: [...APP_OWNED, createAppspineModule(appspineConfig)],
+  imports: [...APP_OWNED, AppspinePlatformModule],
 })
 export class AppModule {}

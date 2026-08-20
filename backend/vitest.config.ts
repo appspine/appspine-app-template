@@ -11,6 +11,7 @@ export default defineConfig({
       AUTH_MODE: "oidc",
       OIDC_ISSUER: "http://localhost:8180/realms/appspine-dev",
       OIDC_AUDIENCE: "template",
+      OIDC_JWKS_URL: "http://localhost:8180/realms/appspine-dev/protocol/openid-connect/certs",
       JWT_SECRET: "unit-test-only-not-a-real-secret",
     },
   },
