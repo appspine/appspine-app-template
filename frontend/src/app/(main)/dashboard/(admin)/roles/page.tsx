@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import type { RoleRow } from "@appspine/frontend-shell";
 import { ListPagination, ListSearchForm } from "@appspine/frontend-shell";
 import type { SchemaMeta } from "@appspine/metadata-schema";
+import type { RoleRow } from "@appspine/rbac/frontend";
 import { CreateRoleDialog, RolesTable } from "@appspine/rbac/frontend";
 
 import { getTranslations } from "@/i18n/server";

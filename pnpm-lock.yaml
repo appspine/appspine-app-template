@@ -16,7 +16,6 @@ overrides:
   '@appspine/identity-core': 2.0.0
   '@appspine/rbac': 5.0.0
   '@appspine/oidc-auth': 2.0.0
-  '@appspine/auth': 7.0.0
   '@appspine/m2m-api-key': 6.0.0
   '@appspine/metadata-schema': 1.0.0
   '@appspine/notification': 1.0.0
@@ -35,9 +34,6 @@ importers:
       '@appspine/audit-log':
         specifier: 1.1.0
         version: 1.1.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/auth':
-        specifier: 7.0.0
-        version: 7.0.0(@appspine/identity-core@2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc))(@appspine/oidc-auth@2.0.0(98069eaea30ce94bb4cadfc72314026e))(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@appspine/rbac@5.0.0(d828e99d9513331e1e7a84c9ef1c6e63))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
       '@appspine/common':
         specifier: 0.3.4
         version: 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
@@ -116,9 +112,6 @@ importers:
       '@appspine/audit-log':
         specifier: 1.1.0
         version: 1.1.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/auth':
-        specifier: 7.0.0
-        version: 7.0.0(@appspine/identity-core@2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc))(@appspine/oidc-auth@2.0.0(98069eaea30ce94bb4cadfc72314026e))(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@appspine/rbac@5.0.0(d828e99d9513331e1e7a84c9ef1c6e63))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)
       '@appspine/common':
         specifier: 0.3.4
         version: 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
@@ -398,18 +391,6 @@ packages:
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
-
-  '@appspine/auth@7.0.0':
-    resolution: {integrity: sha512-hfIwpc3qA6I5jCsaDaFLdpmEMHA+d2fTA8cwYQosljnLFwLh2fmqt8hhkKjqADO5XZvHXjOXMsqNDdqrNqh21A==, tarball: https://npm.pkg.github.com/download/@appspine/auth/7.0.0/ea25241a32f50ab67b0cbc9abc2aeeb27a921b28}
-    peerDependencies:
-      '@appspine/identity-core': 2.0.0
-      '@appspine/oidc-auth': 2.0.0
-      '@appspine/plugin-host-nest': 2.0.0
-      '@appspine/rbac': 5.0.0
-      '@nestjs/common': ^11.0.5
-      '@nestjs/core': ^11.0.5
-      '@prisma/client': ^6.2.0
-      zod: ^4.4.3
 
   '@appspine/common@0.3.4':
     resolution: {integrity: sha512-uOjT1IW2MEQJ0buDrKhE49NZ5xAFVn6WHt87dAi3oHLSdiCDA0SvgYtcXe/7pQ9J3jQowCCvieUU467oEW+SNQ==, tarball: https://npm.pkg.github.com/download/@appspine/common/0.3.4/e70ffc630729be67191f9f27c74f0eaa9c9d7857}
@@ -4652,17 +4633,6 @@ snapshots:
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-
-  '@appspine/auth@7.0.0(@appspine/identity-core@2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc))(@appspine/oidc-auth@2.0.0(98069eaea30ce94bb4cadfc72314026e))(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@appspine/rbac@5.0.0(d828e99d9513331e1e7a84c9ef1c6e63))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(zod@4.4.3)':
-    dependencies:
-      '@appspine/identity-core': 2.0.0(064d6ed3cb8ec8afdbfa7cb81e1ae2fc)
-      '@appspine/oidc-auth': 2.0.0(98069eaea30ce94bb4cadfc72314026e)
-      '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
-      '@appspine/rbac': 5.0.0(d828e99d9513331e1e7a84c9ef1c6e63)
-      '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
 
   '@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)':
     dependencies:

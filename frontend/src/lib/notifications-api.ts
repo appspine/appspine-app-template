@@ -1,4 +1,4 @@
-import type { NotificationSeverity } from "@appspine/frontend-shell/notification";
+import type { NotificationSeverity } from "@appspine/notification/frontend";
 
 import { apiFetch, type PaginatedResult, toQueryString } from "@/server/api-client";
 

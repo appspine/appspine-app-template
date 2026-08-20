@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import type { ApiKeyRoleOption, ApiKeyRow, ServiceAccountOption } from "@appspine/frontend-shell";
 import { ListPagination, ListSearchForm } from "@appspine/frontend-shell";
+import type { ApiKeyRoleOption, ApiKeyRow, ServiceAccountOption } from "@appspine/m2m-api-key/frontend";
 import { ApiKeysTable, CreateApiKeyDialog } from "@appspine/m2m-api-key/frontend";
 import type { SchemaMeta } from "@appspine/metadata-schema";
 

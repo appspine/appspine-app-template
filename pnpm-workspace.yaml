@@ -14,7 +14,6 @@ overrides:
   '@appspine/identity-core': 2.0.0
   '@appspine/rbac': 5.0.0
   '@appspine/oidc-auth': 2.0.0
-  '@appspine/auth': 7.0.0
   '@appspine/m2m-api-key': 6.0.0
   '@appspine/metadata-schema': 1.0.0
   '@appspine/notification': 1.0.0

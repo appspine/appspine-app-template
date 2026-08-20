@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import type { UserRoleOption, UserRow } from "@appspine/frontend-shell";
 import { ListPagination, ListSearchForm } from "@appspine/frontend-shell";
+import type { UserRoleOption, UserRow } from "@appspine/identity-core/frontend";
 import { UsersTable } from "@appspine/identity-core/frontend";
 
 import { getTranslations } from "@/i18n/server";

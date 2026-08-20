@@ -1,6 +1,12 @@
-import { type ApiKeyUser, CurrentUser, type JwtUser, resolveActingUserId } from "@appspine/auth";
 import { type PaginationQuery, paginationQuerySchema, ZodValidationPipe } from "@appspine/common";
-import { JwtOrApiKeyGuard, ScopeGuard, Scopes } from "@appspine/m2m-api-key";
+import { ScopeGuard, Scopes } from "@appspine/m2m-api-key";
+import {
+  type ApiKeyUser,
+  CurrentUser,
+  AppspineAuthGuard as JwtOrApiKeyGuard,
+  type JwtUser,
+  resolveActingUserId,
+} from "@appspine/plugin-host-nest";
 import { Controller, Get, Param, Post, Query, UseGuards } from "@nestjs/common";
 
 import { NotificationsService } from "./notifications.service";

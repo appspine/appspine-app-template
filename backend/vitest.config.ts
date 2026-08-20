@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     environment: "node",
     include: ["src/**/*.spec.ts"],
-    // Dummy, non-secret values — files under test transitively import @appspine/auth, which
+    // Dummy, non-secret values — files under test transitively import @appspine/oidc-auth, which
     // fails loud when its auth env vars are unset. Unit tests never sign or verify a real
     // token, so real secrets aren't needed here.
     env: {
