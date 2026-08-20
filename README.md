@@ -3,7 +3,7 @@
 Combined frontend (Next.js + shadcn/ui) + backend (NestJS + Prisma) starting point for new appspine business
 systems. Use GitHub's "Use this template" to create a new business system repo from this one.
 
-See the appspine workspace `CLAUDE.md` and [001-app-framework-plan.md](https://github.com/appspine/appspine-workspace/blob/main/knowledge/decisions/001-app-framework-plan.md) / [002-app-dev-conventions.md](https://github.com/appspine/appspine-workspace/blob/main/knowledge/topics/002-app-dev-conventions.md)
+See the appspine workspace `CLAUDE.md` and [001-app-framework-plan.md](https://github.com/appspine/appspine-workspace/blob/main/specs/decisions/001-app-framework-plan.md) / [002-app-dev-conventions.md](https://github.com/appspine/appspine-workspace/blob/main/specs/topics/002-app-dev-conventions.md)
 for the framework plan and conventions this template follows. For agent/AI-assisted development, see [docs/agent-guide.md](docs/agent-guide.md).
 
 ## What's included
@@ -11,7 +11,7 @@ for the framework plan and conventions this template follows. For agent/AI-assis
 - **Frontend** — [blank_shadcn_app](https://github.com/antonylu0826/blank_shadcn_app) (Next.js + Tailwind CSS + shadcn/ui),
   running on port 3901.
 - **Backend** — NestJS + Prisma, running on port 3900, with the following `@appspine/*` packages pre-wired:
-  - Auth: OIDC-only (Keycloak) — local email/password auth is retired (https://github.com/appspine/appspine-workspace/blob/main/knowledge/decisions/035-oidc-only-auth-plan.md); identity
+  - Auth: OIDC-only (Keycloak) — local email/password auth is retired (https://github.com/appspine/appspine-workspace/blob/main/specs/decisions/035-oidc-only-auth-plan.md); identity
     comes from the external IdP, RBAC grants stay local
   - RBAC: role/permission management, `AdminGuard`, `PermissionGuard`, `RequirePermissions` decorator
   - Plugin host auth: `AppspineAuthGuard` composes the configured authentication strategies
@@ -134,7 +134,7 @@ pnpm -C backend prisma:migrate   # applies the committed migration
 pnpm -C backend prisma:seed      # creates ADMIN + USER system roles and a seed admin account
 ```
 
-> **Note**: local auth is retired (https://github.com/appspine/appspine-workspace/blob/main/knowledge/decisions/035-oidc-only-auth-plan.md) — the IdP handles authentication.
+> **Note**: local auth is retired (https://github.com/appspine/appspine-workspace/blob/main/specs/decisions/035-oidc-only-auth-plan.md) — the IdP handles authentication.
 > With the `.env.example` defaults, `SEED_USER_EMAIL` is pre-assigned ADMIN and has no password;
 > it is matched locally by email against the OIDC identity on first login.
 
