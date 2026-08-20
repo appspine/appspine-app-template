@@ -1,6 +1,6 @@
 // User/Role/RolePermission/UserRole/ApiKey/AuditLog all come from @appspine/*
 // package Prisma fragments (user.prisma/role.prisma/api-key.prisma/audit-log.prisma
-// in this folder — copied from @appspine/auth, @appspine/rbac, @appspine/m2m-api-key,
+// in this folder — copied from @appspine/identity-core, @appspine/rbac, @appspine/m2m-api-key,
 // @appspine/audit-log respectively at scaffold time, then independently editable).
 //
 // `Permission` is the one piece NOT shipped by any package — the permission catalog

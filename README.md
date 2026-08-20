@@ -14,7 +14,8 @@ for the framework plan and conventions this template follows. For agent/AI-assis
   - Auth: OIDC-only (Keycloak) — local email/password auth is retired (https://github.com/appspine/appspine-workspace/blob/main/knowledge/decisions/035-oidc-only-auth-plan.md); identity
     comes from the external IdP, RBAC grants stay local
   - RBAC: role/permission management, `AdminGuard`, `PermissionGuard`, `RequirePermissions` decorator
-  - M2M API Key: `ApiKeyGuard`, `JwtOrApiKeyGuard`, `ScopeGuard`, `@Scopes()` decorator, rate limiting
+  - Plugin host auth: `AppspineAuthGuard` composes the configured authentication strategies
+  - M2M API Key: `ApiKeyGuard`, `ScopeGuard`, `@Scopes()` decorator, rate limiting
   - Audit Log: local `AuditLog` table writes via `AuditLogService`
   - Health Check: `GET /health` (Terminus + Prisma ping)
   - Metadata Schema API: `GET /metadata/schema` (DMMF-derived, M2M API Key `metadata:read` scope)
@@ -31,7 +32,7 @@ for the framework plan and conventions this template follows. For agent/AI-assis
 
 ### Guard chain
 
-The standard chain for a protected endpoint is `JwtOrApiKeyGuard` → `AdminGuard` **or**
+The standard chain for a protected endpoint is `AppspineAuthGuard` → `AdminGuard` **or**
 `PermissionGuard` → `ScopeGuard` (the last one constrains API-key callers only; JWT users are
 unaffected), with `@RequirePermissions(Permission.X)` naming the permission. See
 [docs/conventions.md](docs/conventions.md#api-design) for the full ordering rules.
@@ -41,7 +42,7 @@ once a `Permission` enum value exists that expresses "may use this part of the d
 template deliberately ships none: `backend/prisma/schema/base.prisma`'s `Permission` enum contains only
 the framework's own `USERS_*` / `API_KEYS_*` administration values, and `USER_DEFAULT_PERMISSIONS` in
 `backend/prisma/seed.ts` is empty. `backend/src/notifications/notifications.controller.ts` is the
-concrete example — it guards with `@UseGuards(JwtOrApiKeyGuard, ScopeGuard)` plus
+concrete example — it guards with `@UseGuards(AppspineAuthGuard, ScopeGuard)` plus
 `@Scopes("notifications:read" | "notifications:write")` and no `PermissionGuard`, because the only
 permissions available to require today are user/API-key admin grants that no normal user holds. Adding
 one would 403 every non-admin out of their *own* inbox on a fresh fork. Ownership is still enforced —

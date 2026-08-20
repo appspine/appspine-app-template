@@ -9,7 +9,7 @@ model User {
   email     String   @unique
   /// Local auth is retired (dev_docs/framework/035) — never read by any current code
   /// path (there is no local login/register endpoint). Optional, hashed by
-  /// @appspine/auth's UsersController before UsersService.create() writes it (not
+  /// @appspine/identity-core's UsersController before UsersService.create() writes it (not
   /// written unhashed by any current code path) — retained for schema compatibility
   /// with a deliberately password-protected break-glass account; not used by the OIDC
   /// login flow. Kept nullable rather than dropped: deleting the column is a breaking

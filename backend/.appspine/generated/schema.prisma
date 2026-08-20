@@ -4,7 +4,7 @@
 // regenerate. This file is a schema, not a migration: nothing here has been applied to any
 // database, and installing or enabling a plugin never will (051 拆解 §2.3).
 //
-// sourceDigest: sha256:bb8069daa0cc787e9f080c8fae6c55ff8143f9a23e0c3840dee5fa2903dc08e7
+// sourceDigest: sha256:c4f5ee97f8ed8b13ac39fd33eb922b426c4639314358bd206f2b274bbe55bb8b
 // schemaDigest: sha256:ef040a5aca42a858a565b4cc801d2f634ede8d5ee20c04bd0f5587961d06fb78
 //
 // The datasource and generator blocks stay in the App’s own schema: they are deployment

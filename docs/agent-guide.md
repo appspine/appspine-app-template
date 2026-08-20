@@ -17,9 +17,10 @@ For setting up the environment, local database, dependencies, and launching the 
 ## Shared Framework Packages
 
 The backend comes pre-integrated with several `@appspine/*` packages located in the upstream monorepo:
-- **Auth (`@appspine/auth`)**: OIDC-only authentication through an external identity provider such as Keycloak; local email/password credentials are retired.
+- **Identity Core (`@appspine/identity-core`)**: Provides provider-neutral users, principals, and identity synchronization contracts.
+- **OIDC Auth (`@appspine/oidc-auth`)**: Validates access tokens from an external identity provider such as Keycloak; local email/password credentials are retired.
 - **RBAC (`@appspine/rbac`)**: Manages custom roles and permission mappings. Offers guards like `AdminGuard` and `PermissionGuard` to enforce access controls.
-- **M2M API Key (`@appspine/m2m-api-key`)**: Handles machine-to-machine client API keys, rate-limiting, and scoped endpoint access. API keys may optionally bind `actingUserId` for identity-bound writes, but only to dedicated service-account users (`User.isServiceAccount = true`); use `resolveActingUserId()` from `@appspine/auth` as the fail-closed identity resolver in write paths.
+- **M2M API Key (`@appspine/m2m-api-key`)**: Handles machine-to-machine client API keys, rate-limiting, and scoped endpoint access. API keys may optionally bind `actingUserId` for identity-bound writes, but only to dedicated service-account users (`User.isServiceAccount = true`); use `resolveActingUserId()` from `@appspine/plugin-host-nest` as the fail-closed identity resolver in write paths.
 - **Audit Log (`@appspine/audit-log`)**: Records key system events directly to the local database.
 - **Health Check (`@appspine/health-check`)**: Exposes system health checks at `GET /health` with DB connection pinging.
 - **Metadata Schema (`@appspine/metadata-schema`)**: Generates model-driven schema descriptions from Prisma DMMF, exposed at `GET /metadata/schema`.

@@ -11,19 +11,19 @@ overrides:
   '@appspine/plugin-testkit': 2.0.0
   '@appspine/preset-standard': 2.0.0
   '@appspine/common': 0.3.4
-  '@appspine/audit-log': 2.0.0-canary.0
-  '@appspine/health-check': 1.0.2-canary.0
-  '@appspine/identity-core': 2.0.2-canary.0
-  '@appspine/rbac': 6.0.0-canary.0
-  '@appspine/oidc-auth': 2.0.2-canary.0
-  '@appspine/m2m-api-key': 7.0.0-canary.0
+  '@appspine/audit-log': 2.0.0
+  '@appspine/health-check': 2.0.0
+  '@appspine/identity-core': 3.0.0
+  '@appspine/rbac': 6.0.0
+  '@appspine/oidc-auth': 3.0.0
+  '@appspine/m2m-api-key': 7.0.0
   '@appspine/metadata-schema': 1.0.0
-  '@appspine/notification': 1.0.2-canary.0
-  '@appspine/domain-events': 10.0.0-canary.0
-  '@appspine/mcp-server': 2.0.0-canary.0
+  '@appspine/notification': 2.0.0
+  '@appspine/domain-events': 10.0.0
+  '@appspine/mcp-server': 2.0.0
   '@appspine/oidc-delegation': 0.4.0
   '@appspine/master-data-client': 0.2.0
-  '@appspine/frontend-shell': 1.0.0-canary.0
+  '@appspine/frontend-shell': 1.0.0
   '@appspine/e2e-kit': 1.0.2
   '@appspine/integration-contracts': 0.4.0
 
@@ -34,47 +34,47 @@ importers:
   .:
     devDependencies:
       '@appspine/audit-log':
-        specifier: 2.0.0-canary.0
-        version: 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common':
         specifier: 0.3.4
         version: 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/domain-events':
-        specifier: 10.0.0-canary.0
-        version: 10.0.0-canary.0(2b90f3e090026612a9bd0d8cef36477c)
+        specifier: 10.0.0
+        version: 10.0.0(4055318252aa330214f3a3753263c13d)
       '@appspine/e2e-kit':
         specifier: 1.0.2
         version: 1.0.2(@playwright/test@1.62.1)
       '@appspine/frontend-shell':
-        specifier: 1.0.0-canary.0
-        version: 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
+        specifier: 1.0.0
+        version: 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/health-check':
-        specifier: 1.0.2-canary.0
-        version: 1.0.2-canary.0(6956941afd06443abba091ce63737a7c)
+        specifier: 2.0.0
+        version: 2.0.0(b73e0184a5cf2646ed88a1c90b2d1ff7)
       '@appspine/identity-core':
-        specifier: 2.0.2-canary.0
-        version: 2.0.2-canary.0(2b90f3e090026612a9bd0d8cef36477c)
+        specifier: 3.0.0
+        version: 3.0.0(4055318252aa330214f3a3753263c13d)
       '@appspine/integration-contracts':
         specifier: 0.4.0
         version: 0.4.0
       '@appspine/m2m-api-key':
-        specifier: 7.0.0-canary.0
-        version: 7.0.0-canary.0(08d495b4b212a19f111e30a9fce2cc2f)
+        specifier: 7.0.0
+        version: 7.0.0(e284479fde9a7cb645095997c3e1cb59)
       '@appspine/master-data-client':
         specifier: 0.2.0
         version: 0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))
       '@appspine/mcp-server':
-        specifier: 2.0.0-canary.0
-        version: 2.0.0-canary.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
       '@appspine/metadata-schema':
         specifier: 1.0.0
         version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/notification':
-        specifier: 1.0.2-canary.0
-        version: 1.0.2-canary.0(2b90f3e090026612a9bd0d8cef36477c)
+        specifier: 2.0.0
+        version: 2.0.0(4055318252aa330214f3a3753263c13d)
       '@appspine/oidc-auth':
-        specifier: 2.0.2-canary.0
-        version: 2.0.2-canary.0(27ccf499ec155b2938a547df4f60a93c)
+        specifier: 3.0.0
+        version: 3.0.0(42a2c1496e3ab4c88324967d43be31c9)
       '@appspine/oidc-delegation':
         specifier: 0.4.0
         version: 0.4.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)
@@ -94,8 +94,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@appspine/rbac':
-        specifier: 6.0.0-canary.0
-        version: 6.0.0-canary.0(18a111df4cee7456f0f4a366ab4b6c85)
+        specifier: 6.0.0
+        version: 6.0.0(37b42bdfc525abcfab1100c070af9bf7)
       '@biomejs/biome':
         specifier: 2.5.1
         version: 2.5.1
@@ -112,38 +112,38 @@ importers:
   backend:
     dependencies:
       '@appspine/audit-log':
-        specifier: 2.0.0-canary.0
-        version: 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common':
         specifier: 0.3.4
         version: 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/domain-events':
-        specifier: 10.0.0-canary.0
-        version: 10.0.0-canary.0(eb28eef053c6ac6028e2e0364b9fff30)
+        specifier: 10.0.0
+        version: 10.0.0(ae85bf128c3fc56bbd6a49f1ae4c5806)
       '@appspine/health-check':
-        specifier: 1.0.2-canary.0
-        version: 1.0.2-canary.0(b63fa8de680d9812190050a305e97597)
+        specifier: 2.0.0
+        version: 2.0.0(471ac24398e202640ee6e4ee074eb5b3)
       '@appspine/identity-core':
-        specifier: 2.0.2-canary.0
-        version: 2.0.2-canary.0(eb28eef053c6ac6028e2e0364b9fff30)
+        specifier: 3.0.0
+        version: 3.0.0(ae85bf128c3fc56bbd6a49f1ae4c5806)
       '@appspine/integration-contracts':
         specifier: 0.4.0
         version: 0.4.0
       '@appspine/m2m-api-key':
-        specifier: 7.0.0-canary.0
-        version: 7.0.0-canary.0(1c3f614e708313915300883df719b4c4)
+        specifier: 7.0.0
+        version: 7.0.0(c48807d0636cb844a5732b5b4092da37)
       '@appspine/mcp-server':
-        specifier: 2.0.0-canary.0
-        version: 2.0.0-canary.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
+        specifier: 2.0.0
+        version: 2.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)
       '@appspine/metadata-schema':
         specifier: 1.0.0
         version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/notification':
-        specifier: 1.0.2-canary.0
-        version: 1.0.2-canary.0(eb28eef053c6ac6028e2e0364b9fff30)
+        specifier: 2.0.0
+        version: 2.0.0(ae85bf128c3fc56bbd6a49f1ae4c5806)
       '@appspine/oidc-auth':
-        specifier: 2.0.2-canary.0
-        version: 2.0.2-canary.0(d97a1ea5d92fdf3e860586880a7baae2)
+        specifier: 3.0.0
+        version: 3.0.0(74db59f832a0be437094741629ca9996)
       '@appspine/plugin-api':
         specifier: 1.1.0
         version: 1.1.0
@@ -154,8 +154,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(@appspine/plugin-api@1.1.0)
       '@appspine/rbac':
-        specifier: 6.0.0-canary.0
-        version: 6.0.0-canary.0(df400b4520256f314b7180f347ddba91)
+        specifier: 6.0.0
+        version: 6.0.0(262f3ddccfbcba4731a7554d0a0d4927)
       '@nestjs/common':
         specifier: ^11.0.5
         version: 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -230,32 +230,32 @@ importers:
   frontend:
     dependencies:
       '@appspine/domain-events':
-        specifier: 10.0.0-canary.0
-        version: 10.0.0-canary.0(f5799131fb9161da12dea99f262f56df)
+        specifier: 10.0.0
+        version: 10.0.0(75e6c157da22c3074494a71b6b509144)
       '@appspine/frontend-shell':
-        specifier: 1.0.0-canary.0
-        version: 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
+        specifier: 1.0.0
+        version: 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/health-check':
-        specifier: 1.0.2-canary.0
-        version: 1.0.2-canary.0(d3ff54dc8a9e28f06553a3944aabc2f0)
+        specifier: 2.0.0
+        version: 2.0.0(ffc3a874586587181d81ee96f404fcb4)
       '@appspine/identity-core':
-        specifier: 2.0.2-canary.0
-        version: 2.0.2-canary.0(f5799131fb9161da12dea99f262f56df)
+        specifier: 3.0.0
+        version: 3.0.0(75e6c157da22c3074494a71b6b509144)
       '@appspine/m2m-api-key':
-        specifier: 7.0.0-canary.0
-        version: 7.0.0-canary.0(a19438661a07d3ec6c202de4c7886448)
+        specifier: 7.0.0
+        version: 7.0.0(ce418639ec3001287b5c224a13cd5cce)
       '@appspine/metadata-schema':
         specifier: 1.0.0
         version: 1.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/notification':
-        specifier: 1.0.2-canary.0
-        version: 1.0.2-canary.0(f5799131fb9161da12dea99f262f56df)
+        specifier: 2.0.0
+        version: 2.0.0(75e6c157da22c3074494a71b6b509144)
       '@appspine/oidc-auth':
-        specifier: 2.0.2-canary.0
-        version: 2.0.2-canary.0(153ab0822d017666eee1e5c9905c2c5b)
+        specifier: 3.0.0
+        version: 3.0.0(ed8c579e0b5eb31be74ebc1202869df1)
       '@appspine/rbac':
-        specifier: 6.0.0-canary.0
-        version: 6.0.0-canary.0(f2db9b478659c31a18674c46cd343cdc)
+        specifier: 6.0.0
+        version: 6.0.0(9a78ab9f399ec669cc0c954d87a6b34d)
       '@base-ui/react':
         specifier: ^1.6.0
         version: 1.6.0(@date-fns/tz@1.5.0)(@types/react@19.2.17)(date-fns@4.4.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -402,8 +402,8 @@ packages:
     resolution: {integrity: sha512-I5wviiIqiFwar9Pdk30Lujk8FczEEc18i22A5c6Z9lbmhPQdTroDnEQdsfXjy404wPe8H62s0I15o4pmMGfTYQ==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
 
-  '@appspine/audit-log@2.0.0-canary.0':
-    resolution: {integrity: sha512-sfgN6H90uBMLvH81/Suymg1772ugqNAq88IOrrqDUe9HH6W/U/lF/xLA6o4YYuS5ZLHmEAtgVU/xYJqH5CphAQ==, tarball: https://npm.pkg.github.com/download/@appspine/audit-log/2.0.0-canary.0/a3fd1ea4801061b32dddd7a8b1486993d7b3e8ef}
+  '@appspine/audit-log@2.0.0':
+    resolution: {integrity: sha512-3Enk2gLPi7fGxyja6kvLTgX07vhaVTMhV/sKgMMAOwQaKt5P206npibLfa30fZHoEoqmeV9WCk1mDtbyky1QeA==, tarball: https://npm.pkg.github.com/download/@appspine/audit-log/2.0.0/ea63e144aad775dc7ab2593b8a3f07f5327a7d59}
     peerDependencies:
       '@appspine/common': 0.3.4
       '@nestjs/common': ^11.0.5
@@ -419,11 +419,11 @@ packages:
       express: ^5.0.0
       zod: ^4.4.3
 
-  '@appspine/domain-events@10.0.0-canary.0':
-    resolution: {integrity: sha512-3TpfO+7fUYXyvCQ9ptBmUhonNJAccM3Ix1mc4xO6tj7PIMBNXawXAKslH/05KBZ0KVXGW8ay23v8Z93qTQ+dLA==, tarball: https://npm.pkg.github.com/download/@appspine/domain-events/10.0.0-canary.0/bccfb86a8eb83ed53f5d966e59d2f4f9ef928b80}
+  '@appspine/domain-events@10.0.0':
+    resolution: {integrity: sha512-oGnU24ZqVttjA+CcAzbCt68ZgmfeCzf/jQy3I/e2qnmGIwPSoCp6AZNpf74D85To7FhraGrk26oRjCI6d+3qVg==, tarball: https://npm.pkg.github.com/download/@appspine/domain-events/10.0.0/f783ce27d0f9f0633ab135f761596fd2241a611d}
     peerDependencies:
       '@appspine/common': 0.3.4
-      '@appspine/frontend-shell': 1.0.0-canary.0
+      '@appspine/frontend-shell': 1.0.0
       '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -432,23 +432,14 @@ packages:
       react: ^19.0.0
       react-dom: ^19.0.0
       zod: ^4.4.3
-    peerDependenciesMeta:
-      '@appspine/frontend-shell':
-        optional: true
-      lucide-react:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   '@appspine/e2e-kit@1.0.2':
     resolution: {integrity: sha512-4pccQFsgRPVIhGFY8AEOCH2bO3Y7AY45zn6mcxdjztYv+v7B373FqdbkzzJWKDUX+zD8+AR/K8Zq49pjjkXFhw==, tarball: https://npm.pkg.github.com/download/@appspine/e2e-kit/1.0.2/9cf1fd118056730a00ecac25498e3c5b9e5292d6}
     peerDependencies:
       '@playwright/test': ^1.54.2
 
-  '@appspine/frontend-shell@1.0.0-canary.0':
-    resolution: {integrity: sha512-tMIoL40sgUShihsqhckp00K8zTEczLY4L2pxukyTZ1wia6EtePlKA5AI2iqZIikvkH9IsbUdTayZOyRCf5BdlQ==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/1.0.0-canary.0/86a490c10ae12fac69a3e214c64c42137a06a4aa}
+  '@appspine/frontend-shell@1.0.0':
+    resolution: {integrity: sha512-H50IGudv2ulpNJPkGnB+gGkY3vOGR/+jc2l4XC2tBgDrSrrqUu8prT9DJ+V2BgNnWuRW7rszq/a1r8HXNR2gGQ==, tarball: https://npm.pkg.github.com/download/@appspine/frontend-shell/1.0.0/7a771fd4c640e7e9c8262904db13ed17c0ceb137}
     peerDependencies:
       class-variance-authority: ^0.7.1
       clsx: ^2.1.1
@@ -462,10 +453,10 @@ packages:
       tailwind-merge: ^3.6.0
       tailwindcss: ^4.1.5
 
-  '@appspine/health-check@1.0.2-canary.0':
-    resolution: {integrity: sha512-nPxijpvv1EDaqmIQaM6ujutfZGtZ4Z7vzLdlI9/HJS1PY7bX1locOvo70SEMDq9Jr9etuZlvS0wF7j2q5kWFOw==, tarball: https://npm.pkg.github.com/download/@appspine/health-check/1.0.2-canary.0/3b07655002025cbdb4f581b22b3689f0cc401f54}
+  '@appspine/health-check@2.0.0':
+    resolution: {integrity: sha512-t21eMMEIufVvEpYCenZ3YyZ1hLSIu6lGByUbFjMvZzMu/lqSMph4iHmJFUwe50LV7LIr+AOSZwDkvtHjbXsS0A==, tarball: https://npm.pkg.github.com/download/@appspine/health-check/2.0.0/fd67c2dd5f97d65136d3f3e660326cf0d9115413}
     peerDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0
+      '@appspine/frontend-shell': 1.0.0
       '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -473,20 +464,13 @@ packages:
       '@prisma/client': ^6.2.0
       react: ^19.2.7
       react-dom: ^19.2.7
-    peerDependenciesMeta:
-      '@appspine/frontend-shell':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
-  '@appspine/identity-core@2.0.2-canary.0':
-    resolution: {integrity: sha512-RubNz10I33sXldTxeNwdnfSb2507Qi8BqAWKe5cwAFNiU8TJnpWNRoynrNpaY4BYMyT9suC8VWfieT9MvNSnIg==, tarball: https://npm.pkg.github.com/download/@appspine/identity-core/2.0.2-canary.0/582b4dab408501a94f659ee3b42e31a89c0172e5}
+  '@appspine/identity-core@3.0.0':
+    resolution: {integrity: sha512-xpXS7EqfVJgXaj2TbpRdG9HsGuehUjfsdny6D5BMTgQODrzHMSoKJcbHEVB/8SIX+A0rnZbTqKX2t9RgYxqxsw==, tarball: https://npm.pkg.github.com/download/@appspine/identity-core/3.0.0/d9365c4f0b74c8ea03a452975392f676f022623c}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       '@appspine/common': 0.3.4
-      '@appspine/frontend-shell': 1.0.0-canary.0
+      '@appspine/frontend-shell': 1.0.0
       '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -495,27 +479,18 @@ packages:
       react: ^19.0.0
       react-dom: ^19.0.0
       zod: ^4.4.3
-    peerDependenciesMeta:
-      '@appspine/frontend-shell':
-        optional: true
-      lucide-react:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   '@appspine/integration-contracts@0.4.0':
     resolution: {integrity: sha512-nPFu22EQbF/fUiITCGGogdpO2EF40kwUE9eXyF0NJc7miqKZpchc5CD3wxVGnAN4QtzujyQ9VrjVPfKkXsDnkw==, tarball: https://npm.pkg.github.com/download/@appspine/integration-contracts/0.4.0/02765e762910cdb0ab06609145d267cda2ba7c36}
 
-  '@appspine/m2m-api-key@7.0.0-canary.0':
-    resolution: {integrity: sha512-GXe+BegL8uJAZrtxnJ1sY5Nqz1cKhiKYEPENCLoRmhH2TPDTNGdrPvkVxhfS3+WIbEjOc4MzUZnYnr+IovGxzA==, tarball: https://npm.pkg.github.com/download/@appspine/m2m-api-key/7.0.0-canary.0/f5fc89d1ed93d73527a1e93ccb53d2e26b3888ca}
+  '@appspine/m2m-api-key@7.0.0':
+    resolution: {integrity: sha512-sfGoARlyNxuo9hFRxVH4DVarHjSplQK3SGRzx+ow9yHNWhsXhfTxiWhXcbFXPAEXMyqw2xly5lyxz2B1WveYKg==, tarball: https://npm.pkg.github.com/download/@appspine/m2m-api-key/7.0.0/23391f793455aca4df2698daf7b5192e121fec27}
     peerDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0
+      '@appspine/audit-log': 2.0.0
       '@appspine/common': 0.3.4
-      '@appspine/frontend-shell': 1.0.0-canary.0
+      '@appspine/frontend-shell': 1.0.0
       '@appspine/plugin-host-nest': 2.0.0
-      '@appspine/rbac': 6.0.0-canary.0
+      '@appspine/rbac': 6.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
@@ -523,27 +498,14 @@ packages:
       react: ^19.0.0
       react-dom: ^19.0.0
       zod: ^4.4.3
-    peerDependenciesMeta:
-      '@appspine/audit-log':
-        optional: true
-      '@appspine/frontend-shell':
-        optional: true
-      '@appspine/rbac':
-        optional: true
-      lucide-react:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   '@appspine/master-data-client@0.2.0':
     resolution: {integrity: sha512-mExoh5gAEJZNFih0QS1juvcHah2SOb1M3f/oL39qR2Vm8p+uNo40EVaIyVu3aBNDXo7YLchi7jgWJdBz9pFlVQ==, tarball: https://npm.pkg.github.com/download/@appspine/master-data-client/0.2.0/71d672d96fb1918c7d3403b5ad11ed031d078d8f}
     peerDependencies:
       '@nestjs/common': ^11.0.5
 
-  '@appspine/mcp-server@2.0.0-canary.0':
-    resolution: {integrity: sha512-3xW5j1KhuLy0t++5SFZb7e34/L5H+47F8JHnWqzV3zswCF5qY6JXxmWyyHkzsY9zEKjuN3q9o/Of88yN+159iQ==, tarball: https://npm.pkg.github.com/download/@appspine/mcp-server/2.0.0-canary.0/a87af62d7ccb22b9293d6e0f3889c9b5d277f7eb}
+  '@appspine/mcp-server@2.0.0':
+    resolution: {integrity: sha512-4McZIpeCN5aua2IknDzjphCjbNGjU3md8t+UtkhljnhGVU9w/HByK+F9a5EPBsY+ZsR5IP3mkWcHmi3WigVOMw==, tarball: https://npm.pkg.github.com/download/@appspine/mcp-server/2.0.0/3cf95271f4f1acda5cff3111ace499c06122627f}
     peerDependencies:
       '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
@@ -560,11 +522,11 @@ packages:
       '@nestjs/core': ^11.0.5
       '@prisma/client': ^6.2.0
 
-  '@appspine/notification@1.0.2-canary.0':
-    resolution: {integrity: sha512-pKdUeJ0ry41XIhzDI0T1EvP22/aIs5ubJKH7q1H5baQEWoKnfANbiFiHzkrlzLaDbA65YfPzxWK6E4NCAFDxVQ==, tarball: https://npm.pkg.github.com/download/@appspine/notification/1.0.2-canary.0/d487fc97539eabb53c01ea837bd97501834111f6}
+  '@appspine/notification@2.0.0':
+    resolution: {integrity: sha512-tGNgLfOO+3pjw8OKBFp/s1p/ynmm3xlHsefPi0ZQCwA7k3dneFpYYbiePIiZHMmXLkawTKAJwJqRMHbBaYyiSw==, tarball: https://npm.pkg.github.com/download/@appspine/notification/2.0.0/6cf90092dbfa9878f058fc23cbd1e4cf2406d15b}
     peerDependencies:
       '@appspine/common': 0.3.4
-      '@appspine/frontend-shell': 1.0.0-canary.0
+      '@appspine/frontend-shell': 1.0.0
       '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -573,22 +535,13 @@ packages:
       react: ^19.0.0
       react-dom: ^19.0.0
       zod: ^4.4.3
-    peerDependenciesMeta:
-      '@appspine/frontend-shell':
-        optional: true
-      lucide-react:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
-  '@appspine/oidc-auth@2.0.2-canary.0':
-    resolution: {integrity: sha512-qOEvBnzY2aX2LfwSbIxrJqJCMUuDAXVO3FMaNGvNjGjdzqN/OQlB9+PWYbqzc7A1nIF/gTgUTmS5Uloz4gBC+g==, tarball: https://npm.pkg.github.com/download/@appspine/oidc-auth/2.0.2-canary.0/59fb03d4f8bf30f55b93348f271d078f319a66f0}
+  '@appspine/oidc-auth@3.0.0':
+    resolution: {integrity: sha512-qrzeL0Vf92Uy2mDpU7enjGPA3VR0xXFnwy7UpFZO/7TGRCyKsUt3tXXVLxj98R5w5vxJy8x3O7xmvVOJ7udNxA==, tarball: https://npm.pkg.github.com/download/@appspine/oidc-auth/3.0.0/54b18bc2829a96e8c6897c4b974ab6ac78318a1e}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       '@appspine/common': 0.3.4
-      '@appspine/frontend-shell': 1.0.0-canary.0
+      '@appspine/frontend-shell': 1.0.0
       '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -597,13 +550,6 @@ packages:
       react: ^19.0.0
       react-dom: ^19.0.0
       zod: ^4.4.3
-    peerDependenciesMeta:
-      '@appspine/frontend-shell':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   '@appspine/oidc-delegation@0.4.0':
     resolution: {integrity: sha512-K4RPcuLhE4cGJrReN8gh2iSxFoO4/O3AF74DPqtvjYiebF92DsWxstf+XyMN/KoiJEKwP9svjjIjAqAs7bmyZw==, tarball: https://npm.pkg.github.com/download/@appspine/oidc-delegation/0.4.0/a82c48131a9b43892e7e1cddbb29c404d80882f4}
@@ -643,12 +589,12 @@ packages:
     peerDependencies:
       '@appspine/plugin-api': 1.1.0
 
-  '@appspine/rbac@6.0.0-canary.0':
-    resolution: {integrity: sha512-Uj2DGhDERyroWcnl3ST2J7ZtVkCUNLoViepyMtOWmHO3E5mQ2uuJqQRqvQcURhZe1UATVW9P85wE+8Bu1e0/Ow==, tarball: https://npm.pkg.github.com/download/@appspine/rbac/6.0.0-canary.0/37c5eea8ade480f273c91c01cc00fdbc81a8c8e8}
+  '@appspine/rbac@6.0.0':
+    resolution: {integrity: sha512-Me1MoQHRJ16bOhLorSZPjnLJb+uMD02hDAa7Zwf+13BfRGdpHGmudGfVZIB2/QpkEjnTy535UMg8B1Pc/lsS4w==, tarball: https://npm.pkg.github.com/download/@appspine/rbac/6.0.0/1b8ccf127b658c28ed507bfbde8ba23a46a30066}
     peerDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0
+      '@appspine/audit-log': 2.0.0
       '@appspine/common': 0.3.4
-      '@appspine/frontend-shell': 1.0.0-canary.0
+      '@appspine/frontend-shell': 1.0.0
       '@appspine/plugin-host-nest': 2.0.0
       '@nestjs/common': ^11.0.5
       '@nestjs/core': ^11.0.5
@@ -657,17 +603,6 @@ packages:
       react: ^19.0.0
       react-dom: ^19.0.0
       zod: ^4.4.3
-    peerDependenciesMeta:
-      '@appspine/audit-log':
-        optional: true
-      '@appspine/frontend-shell':
-        optional: true
-      lucide-react:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   '@auth/core@0.41.3':
     resolution: {integrity: sha512-sJ3JMHHkXMD3aOjopv7mOBTO1Ocw4b0fAEXJBz6k7YHLpYQI6C40jCUPc5fNvUKxXRXNE1/sRISA15UrwWJBTw==}
@@ -5481,7 +5416,7 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@appspine/audit-log@2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))':
+  '@appspine/audit-log@2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
       '@appspine/plugin-api': 1.1.0
@@ -5502,62 +5437,59 @@ snapshots:
       - pino-http
       - rxjs
 
-  '@appspine/domain-events@10.0.0-canary.0(2b90f3e090026612a9bd0d8cef36477c)':
+  '@appspine/domain-events@10.0.0(4055318252aa330214f3a3753263c13d)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/integration-contracts': 0.4.0
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      reflect-metadata: 0.2.2
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      reflect-metadata: 0.2.2
+      zod: 4.4.3
 
-  '@appspine/domain-events@10.0.0-canary.0(eb28eef053c6ac6028e2e0364b9fff30)':
+  '@appspine/domain-events@10.0.0(75e6c157da22c3074494a71b6b509144)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/integration-contracts': 0.4.0
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      reflect-metadata: 0.2.2
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      reflect-metadata: 0.2.2
+      zod: 4.4.3
 
-  '@appspine/domain-events@10.0.0-canary.0(f5799131fb9161da12dea99f262f56df)':
+  '@appspine/domain-events@10.0.0(ae85bf128c3fc56bbd6a49f1ae4c5806)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/integration-contracts': 0.4.0
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      reflect-metadata: 0.2.2
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      reflect-metadata: 0.2.2
+      zod: 4.4.3
 
   '@appspine/e2e-kit@1.0.2(@playwright/test@1.62.1)':
     dependencies:
       '@playwright/test': 1.62.1
 
-  '@appspine/frontend-shell@1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
+  '@appspine/frontend-shell@1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)':
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1
@@ -5571,22 +5503,7 @@ snapshots:
       tailwind-merge: 3.6.0
       tailwindcss: 4.3.2
 
-  '@appspine/frontend-shell@1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)':
-    dependencies:
-      class-variance-authority: 0.7.1
-      clsx: 2.1.1
-      date-fns: 4.4.0
-      lucide-react: 1.23.0(react@19.2.7)
-      next: 16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      radix-ui: 1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      react: 19.2.7
-      react-day-picker: 10.0.1(@types/react@19.2.17)(react@19.2.7)
-      react-dom: 19.2.7(react@19.2.7)
-      tailwind-merge: 3.6.0
-      tailwindcss: 4.3.3
-    optional: true
-
-  '@appspine/frontend-shell@1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)':
+  '@appspine/frontend-shell@1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)':
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1
@@ -5600,17 +5517,30 @@ snapshots:
       tailwind-merge: 3.6.0
       tailwindcss: 4.3.3
 
-  '@appspine/health-check@1.0.2-canary.0(6956941afd06443abba091ce63737a7c)':
+  '@appspine/frontend-shell@1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)':
+    dependencies:
+      class-variance-authority: 0.7.1
+      clsx: 2.1.1
+      date-fns: 4.4.0
+      lucide-react: 1.23.0(react@19.2.7)
+      next: 16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      radix-ui: 1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react: 19.2.7
+      react-day-picker: 10.0.1(@types/react@19.2.17)(react@19.2.7)
+      react-dom: 19.2.7(react@19.2.7)
+      tailwind-merge: 3.6.0
+      tailwindcss: 4.3.3
+
+  '@appspine/health-check@2.0.0(471ac24398e202640ee6e4ee074eb5b3)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/terminus': 11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
     transitivePeerDependencies:
@@ -5620,17 +5550,16 @@ snapshots:
       - rxjs
       - zod
 
-  '@appspine/health-check@1.0.2-canary.0(b63fa8de680d9812190050a305e97597)':
+  '@appspine/health-check@2.0.0(b73e0184a5cf2646ed88a1c90b2d1ff7)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/terminus': 11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
     transitivePeerDependencies:
@@ -5640,17 +5569,16 @@ snapshots:
       - rxjs
       - zod
 
-  '@appspine/health-check@1.0.2-canary.0(d3ff54dc8a9e28f06553a3944aabc2f0)':
+  '@appspine/health-check@2.0.0(ffc3a874586587181d81ee96f404fcb4)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/terminus': 11.1.1(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
     transitivePeerDependencies:
@@ -5660,110 +5588,104 @@ snapshots:
       - rxjs
       - zod
 
-  '@appspine/identity-core@2.0.2-canary.0(2b90f3e090026612a9bd0d8cef36477c)':
+  '@appspine/identity-core@3.0.0(4055318252aa330214f3a3753263c13d)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/identity-core@2.0.2-canary.0(eb28eef053c6ac6028e2e0364b9fff30)':
+  '@appspine/identity-core@3.0.0(75e6c157da22c3074494a71b6b509144)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/identity-core@2.0.2-canary.0(f5799131fb9161da12dea99f262f56df)':
+  '@appspine/identity-core@3.0.0(ae85bf128c3fc56bbd6a49f1ae4c5806)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
   '@appspine/integration-contracts@0.4.0': {}
 
-  '@appspine/m2m-api-key@7.0.0-canary.0(08d495b4b212a19f111e30a9fce2cc2f)':
+  '@appspine/m2m-api-key@7.0.0(c48807d0636cb844a5732b5b4092da37)':
     dependencies:
+      '@appspine/audit-log': 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/rbac': 6.0.0(262f3ddccfbcba4731a7554d0a0d4927)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
-      '@appspine/rbac': 6.0.0-canary.0(18a111df4cee7456f0f4a366ab4b6c85)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/m2m-api-key@7.0.0-canary.0(1c3f614e708313915300883df719b4c4)':
+  '@appspine/m2m-api-key@7.0.0(ce418639ec3001287b5c224a13cd5cce)':
     dependencies:
+      '@appspine/audit-log': 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/rbac': 6.0.0(9a78ab9f399ec669cc0c954d87a6b34d)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
-      '@appspine/rbac': 6.0.0-canary.0(df400b4520256f314b7180f347ddba91)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/m2m-api-key@7.0.0-canary.0(a19438661a07d3ec6c202de4c7886448)':
+  '@appspine/m2m-api-key@7.0.0(e284479fde9a7cb645095997c3e1cb59)':
     dependencies:
+      '@appspine/audit-log': 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
+      '@appspine/rbac': 6.0.0(37b42bdfc525abcfab1100c070af9bf7)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
-      '@appspine/rbac': 6.0.0-canary.0(f2db9b478659c31a18674c46cd343cdc)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
   '@appspine/master-data-client@0.2.0(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))':
     dependencies:
       '@appspine/plugin-api': 1.1.0
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
 
-  '@appspine/mcp-server@2.0.0-canary.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)':
+  '@appspine/mcp-server@2.0.0(@appspine/plugin-host-nest@2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(zod@4.4.3)':
     dependencies:
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
@@ -5791,54 +5713,52 @@ snapshots:
       - rxjs
       - zod
 
-  '@appspine/notification@1.0.2-canary.0(2b90f3e090026612a9bd0d8cef36477c)':
+  '@appspine/notification@2.0.0(4055318252aa330214f3a3753263c13d)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/notification@1.0.2-canary.0(eb28eef053c6ac6028e2e0364b9fff30)':
+  '@appspine/notification@2.0.0(75e6c157da22c3074494a71b6b509144)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/notification@1.0.2-canary.0(f5799131fb9161da12dea99f262f56df)':
+  '@appspine/notification@2.0.0(ae85bf128c3fc56bbd6a49f1ae4c5806)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/oidc-auth@2.0.2-canary.0(153ab0822d017666eee1e5c9905c2c5b)':
+  '@appspine/oidc-auth@3.0.0(42a2c1496e3ab4c88324967d43be31c9)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -5851,17 +5771,16 @@ snapshots:
       jwks-rsa: 3.2.2
       passport: 0.7.0
       passport-jwt: 4.0.1
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
-  '@appspine/oidc-auth@2.0.2-canary.0(27ccf499ec155b2938a547df4f60a93c)':
+  '@appspine/oidc-auth@3.0.0(74db59f832a0be437094741629ca9996)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -5874,17 +5793,16 @@ snapshots:
       jwks-rsa: 3.2.2
       passport: 0.7.0
       passport-jwt: 4.0.1
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
-  '@appspine/oidc-auth@2.0.2-canary.0(d97a1ea5d92fdf3e860586880a7baae2)':
+  '@appspine/oidc-auth@3.0.0(ed8c579e0b5eb31be74ebc1202869df1)':
     dependencies:
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -5897,11 +5815,9 @@ snapshots:
       jwks-rsa: 3.2.2
       passport: 0.7.0
       passport-jwt: 4.0.1
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -5936,53 +5852,50 @@ snapshots:
     dependencies:
       '@appspine/plugin-api': 1.1.0
 
-  '@appspine/rbac@6.0.0-canary.0(18a111df4cee7456f0f4a366ab4b6c85)':
+  '@appspine/rbac@6.0.0(262f3ddccfbcba4731a7554d0a0d4927)':
     dependencies:
+      '@appspine/audit-log': 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/rbac@6.0.0-canary.0(df400b4520256f314b7180f347ddba91)':
+  '@appspine/rbac@6.0.0(37b42bdfc525abcfab1100c070af9bf7)':
     dependencies:
+      '@appspine/audit-log': 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
-  '@appspine/rbac@6.0.0-canary.0(f2db9b478659c31a18674c46cd343cdc)':
+  '@appspine/rbac@6.0.0(9a78ab9f399ec669cc0c954d87a6b34d)':
     dependencies:
+      '@appspine/audit-log': 2.0.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
       '@appspine/common': 0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3)
+      '@appspine/frontend-shell': 1.0.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       '@appspine/plugin-api': 1.1.0
       '@appspine/plugin-host-nest': 2.0.0(@appspine/plugin-api@1.1.0)(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(rxjs@7.8.2)
       '@nestjs/common': 11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.27(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.27)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/client': 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      zod: 4.4.3
-    optionalDependencies:
-      '@appspine/audit-log': 2.0.0-canary.0(@appspine/common@0.3.4(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))(express@5.2.1)(pino-http@11.0.0)(pino@10.3.1)(rxjs@7.8.2)(zod@4.4.3))(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.27)(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
-      '@appspine/frontend-shell': 1.0.0-canary.0(class-variance-authority@0.7.1)(clsx@2.1.1)(date-fns@4.4.0)(lucide-react@1.23.0(react@19.2.7))(next@16.3.1(@babel/core@7.29.7)(@playwright/test@1.62.1)(@types/node@22.20.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(radix-ui@1.6.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-day-picker@10.0.1(@types/react@19.2.17)(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       lucide-react: 1.23.0(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
+      zod: 4.4.3
 
   '@auth/core@0.41.3':
     dependencies:

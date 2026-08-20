@@ -4,7 +4,7 @@
     "tool": "@appspine/plugin-cli",
     "version": "2.0.0"
   },
-  "sourceDigest": "sha256:bb8069daa0cc787e9f080c8fae6c55ff8143f9a23e0c3840dee5fa2903dc08e7",
+  "sourceDigest": "sha256:c4f5ee97f8ed8b13ac39fd33eb922b426c4639314358bd206f2b274bbe55bb8b",
   "planDigest": "sha256:a72f49fc6cdcc98bf8741f48e0e95f604caf385b1f6998c5632f00a3c0d7769f",
   "desired": [
     {

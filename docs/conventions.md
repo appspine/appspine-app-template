@@ -149,9 +149,9 @@ an **opt-in pattern**, not something every module needs:
   business write it describes — that's the one rule that isn't negotiable.
 - Handlers run at-least-once; **key any external side effect off the event's id** so re-running a
   handler after a retry or stale-lock reclaim is safe.
-- Simple outbound POST webhooks should call `postDomainEventWebhook()` from
-  `@appspine/domain-events`; do not duplicate redaction, HMAC signing, timeout, or response-drain
-  helpers in app code.
+- External outbound webhooks should call `postDomainEventWebhookV2()` from
+  `@appspine/domain-events` with frozen integration metadata and a named signing key. If an App
+  must temporarily preserve a private v1-shaped receiver contract, it owns that adapter locally.
 - Event type constants are `as const` objects, never free-form strings — a typo silently breaks a
   subscription match.
 - **File layout**: event constants in `backend/src/domain-events/events.ts`, one handler class per
@@ -223,11 +223,11 @@ Every API error returns this shape:
 - **Controller convention**: `@Controller(prefix)` + a class-level `@UseGuards(...)` + Zod-based DTO
   validation (`ZodValidationPipe`). Don't stack extra guards on individual methods unless that method
   genuinely needs stricter access than the class default.
-- **Guard chain order**: `JwtOrApiKeyGuard` (API Key takes priority, falls back to JWT) →
+- **Guard chain order**: `AppspineAuthGuard` (API Key takes priority, falls back to JWT) →
   `AdminGuard` or `PermissionGuard` (pick one per endpoint) → `ScopeGuard` (constrains API-key
   callers only; JWT users are unaffected).
   - **Scope-only is valid before a domain `Permission` exists**: an endpoint may legitimately run
-    `JwtOrApiKeyGuard` → `ScopeGuard` with no permission guard when no `Permission` enum value yet
+    `AppspineAuthGuard` → `ScopeGuard` with no permission guard when no `Permission` enum value yet
     expresses "may use this domain" — the scaffold's notification inbox
     (`backend/src/notifications/notifications.controller.ts`) is the shipped example, and requiring one
     of the framework's `USERS_*`/`API_KEYS_*` admin permissions there would lock normal users out of
