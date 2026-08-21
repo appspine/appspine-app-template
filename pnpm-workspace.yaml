@@ -11,13 +11,13 @@ overrides:
   '@appspine/common': 0.3.4
   '@appspine/audit-log': 2.0.0
   '@appspine/health-check': 2.0.0
-  '@appspine/identity-core': 3.0.0
-  '@appspine/rbac': 6.0.0
-  '@appspine/oidc-auth': 3.0.0
-  '@appspine/m2m-api-key': 7.0.0
+  '@appspine/identity-core': 3.0.2
+  '@appspine/rbac': 6.0.2
+  '@appspine/oidc-auth': 3.0.1
+  '@appspine/m2m-api-key': 7.0.1
   '@appspine/metadata-schema': 1.0.0
-  '@appspine/notification': 2.0.0
-  '@appspine/domain-events': 10.0.0
+  '@appspine/notification': 2.0.1
+  '@appspine/domain-events': 10.0.1
   '@appspine/mcp-server': 2.0.0
   '@appspine/oidc-delegation': 0.4.0
   '@appspine/master-data-client': 0.2.0

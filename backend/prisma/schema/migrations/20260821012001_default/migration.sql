@@ -1,0 +1,5 @@
+-- RenameIndex
+ALTER INDEX "notifications_recipient_user_id_archived_at_read_at_created_at_" RENAME TO "notifications_recipient_user_id_archived_at_read_at_created_idx";
+
+-- RenameIndex
+ALTER INDEX "notifications_source_app_source_entity_type_source_entity_id_id" RENAME TO "notifications_source_app_source_entity_type_source_entity_i_idx";

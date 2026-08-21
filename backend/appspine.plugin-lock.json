@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "resolutionDigest": "sha256:5175d0e2b9412c8bed7c1f4cb475320aa0bc8feaeedb1fdfb28f8dbc8d5835fc",
+  "resolutionDigest": "sha256:639f030104e711df92af45064aef1968cdeeec648184147747f2bd01a9e79e60",
   "order": [
     "audit-log",
     "health-check",
@@ -86,8 +86,8 @@
     },
     {
       "name": "@appspine/domain-events",
-      "version": "10.0.0",
-      "digest": "sha256:70fb474dc46adc632f536904b5f1223372e656d2b17158f0ec40a6b2aed0b781",
+      "version": "10.0.1",
+      "digest": "sha256:627f4eb4e315416f2d017bb9037861c31f87e4242ef5dcfb43e5bd51a432816c",
       "manifestDigest": "sha256:f70821cd15ffeaeb979df52d09f9994fb292f1ab71556465ef370e7638ebf68d",
       "schemaDigest": "sha256:9c007fb569beb870e2b6d1e41e0a4e187e8ed6bb7c05e0599c748ce7b83fa351",
       "permissionDigest": null
@@ -102,16 +102,16 @@
     },
     {
       "name": "@appspine/identity-core",
-      "version": "3.0.0",
-      "digest": "sha256:fe1b5197fad77468e813c48fdb5cd4d305b2279ff4cc437de1dfbc7041a35304",
+      "version": "3.0.2",
+      "digest": "sha256:aa2d9731cf81fa98203fe29c2dee675890a3a9fb4537c76fd9fb5a7e235b54f0",
       "manifestDigest": "sha256:33f5c627c883161e147f5c97dc8146ddf181797c17aa6746a15084d4d562eda3",
       "schemaDigest": "sha256:b47f2c095a634912f8fc2520c5d679b55599d1076e00295be0eb0efa2479530d",
       "permissionDigest": null
     },
     {
       "name": "@appspine/m2m-api-key",
-      "version": "7.0.0",
-      "digest": "sha256:83d139ff63b11f51beb0e1e370226e2a1c2304eb80074b8619658be5f301386c",
+      "version": "7.0.1",
+      "digest": "sha256:8c7aa703e91309a3505ab191e7527ffe449e0bfee47887b338b29a8783b87f61",
       "manifestDigest": "sha256:68ba042d9c587f641388de95333610368ca8b36b2cfecb527d7911b77d344604",
       "schemaDigest": "sha256:e35d38ae46d2a8700bc78623dd2acfbb395c7cc60ec0bee1805d2694dedb6bb1",
       "permissionDigest": null
@@ -134,24 +134,24 @@
     },
     {
       "name": "@appspine/notification",
-      "version": "2.0.0",
-      "digest": "sha256:5f78613b7c5c7bb502997315c58056a0b9cc963124892c7dda0e00ee9a02d7ed",
+      "version": "2.0.1",
+      "digest": "sha256:a329d8c8481973420ceaa99e701f8b66b06ab6055de8654cb2466e142cce0f47",
       "manifestDigest": "sha256:f36a73bea425f83621907bbeb40988724a7277c37778c7921ec38c0f7cc7958b",
       "schemaDigest": "sha256:4b54a9a0b53089bcc33a08afd99c3a7507a3119930e95072ccab83e0d5e0dedf",
       "permissionDigest": null
     },
     {
       "name": "@appspine/oidc-auth",
-      "version": "3.0.0",
-      "digest": "sha256:5d0f8c23fafed73fa9bef1168f6fba9e1bda9e9965863275ce77cde649aed904",
+      "version": "3.0.1",
+      "digest": "sha256:b75c2d44886f56617d95af48139e63a587c65803f42474290024da8839a6cde1",
       "manifestDigest": "sha256:908a4b4210d0fcac5e25991cb4ed0d327afd004e665f3aed014ae4d8f18d9d40",
       "schemaDigest": "sha256:7f0cf0f5f74e87021cd49c654856223b0a1df7518cb53cac5a848cf9039dc45e",
       "permissionDigest": null
     },
     {
       "name": "@appspine/rbac",
-      "version": "6.0.0",
-      "digest": "sha256:5f91b6ff1b6f7aacb9fc0c5e4861b3938de96e2aecc510dc3db0033a179a9568",
+      "version": "6.0.2",
+      "digest": "sha256:43a142d8c1043eeeaa13e3e27be6fd413b7839222e5af3d4f4b7d9030032ec0c",
       "manifestDigest": "sha256:bbb0b9bf90284ebf4b09eebe6466b4d820b57a93cd731d15a36088ae0121c980",
       "schemaDigest": "sha256:bcecd51f14428efcbb36fa3ee65971459228741b0cfbb940f2883e2b3379cb5e",
       "permissionDigest": null
@@ -440,35 +440,35 @@
   "artifacts": [
     {
       "path": ".appspine/generated/backend/composition.ts",
-      "digest": "sha256:9ab964fbda927a59cdb773d016429b31be8ba932786744f3d888f12632129cf3"
+      "digest": "sha256:d7406ada0bab9287a98a3a96d3d89570c0d5cb6e9643ffd9681670764ae4c06d"
     },
     {
       "path": ".appspine/generated/catalog.json",
-      "digest": "sha256:eae3c0be6c1b3d58c2a1af018e599336985ed92a85281c1950da363e5d4f3047"
+      "digest": "sha256:10a37881b5f2ae769f86aab6b8d0e9bb0caac16dce06175d2053f5704a6d0439"
     },
     {
       "path": ".appspine/generated/frontend/admin-routes.ts",
-      "digest": "sha256:b2ad835589c91c1078d9b85652421a0bd964df06fe827e31397f25c124c823f4"
+      "digest": "sha256:aa2c504a18ef72bf1f32cb7ea81a6e0853e86a9808ec95dec9287ac02b1e4a7d"
     },
     {
       "path": ".appspine/generated/frontend/i18n.ts",
-      "digest": "sha256:c00fe9ad46b2713064728c66e832eadf0f7eef30732b0d3d8718acb7ba506bd7"
+      "digest": "sha256:350889826b368654364c6bd138242c9103d1a8a2150c6cf25919405fd51c9b1c"
     },
     {
       "path": ".appspine/generated/frontend/navigation.ts",
-      "digest": "sha256:a8de518652ecd83fcd65b1df472524ca1f19345b7f95d168b77afdb2fdfc8a20"
+      "digest": "sha256:dae8023e8c1caf67329a5fd389c21727021885decdf5604b992e86dacc37b654"
     },
     {
       "path": ".appspine/generated/frontend/slots.tsx",
-      "digest": "sha256:e8b1112dc499ed48d479d29c5388f5138c45a11aba8d234bf38e45385ea4f0b9"
+      "digest": "sha256:f54f6f73247358c16b1e1edbf7cafa0b58be9ac39dc22fac4b079355cd8a011e"
     },
     {
       "path": ".appspine/generated/permissions.json",
-      "digest": "sha256:59ec11e715567905cf9204da583032494c8b08cf5038e9d58dfbfdfe6d68c319"
+      "digest": "sha256:5188f77b191b6d418f15bd0674ab40dd05ab55216dc0fd0e5f7d9099ba241e05"
     },
     {
       "path": ".appspine/generated/schema.prisma",
-      "digest": "sha256:7f787faa7e316e376e996327e97ab2fa062c211b721b4bb53539b3656ce32fd1"
+      "digest": "sha256:015542d3c62ea7bb09f2da39049b1b2d6dd39a93e87e09718f32196ba38545c9"
     }
   ],
   "note": "Generated by @appspine/plugin-cli. Review this file as a diff; run `appspine build` to update it. Package resolution and integrity live in pnpm-lock.yaml, not here."
