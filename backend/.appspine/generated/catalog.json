@@ -1,0 +1,374 @@
+{
+  "schemaVersion": "appspine.catalog/v1",
+  "generatedBy": {
+    "tool": "@appspine/plugin-cli",
+    "version": "2.0.0"
+  },
+  "sourceDigest": "sha256:c4f5ee97f8ed8b13ac39fd33eb922b426c4639314358bd206f2b274bbe55bb8b",
+  "resolutionDigest": "sha256:5175d0e2b9412c8bed7c1f4cb475320aa0bc8feaeedb1fdfb28f8dbc8d5835fc",
+  "order": [
+    "audit-log",
+    "health-check",
+    "identity-core",
+    "rbac",
+    "m2m-api-key",
+    "notification",
+    "oidc-auth",
+    "domain-events",
+    "mcp-server",
+    "metadata-schema"
+  ],
+  "presets": [
+    {
+      "package": "@appspine/preset-standard",
+      "version": "2.0.0",
+      "id": "standard",
+      "contributes": [
+        "audit-log",
+        "domain-events",
+        "health-check",
+        "identity-core",
+        "m2m-api-key",
+        "mcp-server",
+        "metadata-schema",
+        "notification",
+        "oidc-auth",
+        "rbac"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "key": "audit-log",
+      "pluginId": "audit-log",
+      "instanceId": "default",
+      "packageName": "@appspine/audit-log",
+      "packageVersion": "2.0.0",
+      "digest": "sha256:ed158ff408b22d8373cccac078870d5556acece50839125228fc0ae783252b6e",
+      "manifestDigest": "sha256:5115b3aa2779201fe54b3c40c5a75600284cbef512b0545ac8b728b6bdf15ba2",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.audit-sink"
+      ],
+      "requires": [
+        "appspine.prisma"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [],
+      "providerTokens": [
+        "appspine.audit-sink"
+      ],
+      "prismaModels": [
+        "AuditLog"
+      ],
+      "healthIndicatorId": null
+    },
+    {
+      "key": "domain-events",
+      "pluginId": "domain-events",
+      "instanceId": "default",
+      "packageName": "@appspine/domain-events",
+      "packageVersion": "10.0.0",
+      "digest": "sha256:70fb474dc46adc632f536904b5f1223372e656d2b17158f0ec40a6b2aed0b781",
+      "manifestDigest": "sha256:f70821cd15ffeaeb979df52d09f9994fb292f1ab71556465ef370e7638ebf68d",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.domain-events"
+      ],
+      "requires": [
+        "appspine.prisma",
+        "appspine.principal-context"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [
+        "domain-events"
+      ],
+      "providerTokens": [
+        "appspine.domain-events"
+      ],
+      "prismaModels": [
+        "DomainEvent",
+        "DomainEventDelivery",
+        "IntegrationEventReceipt"
+      ],
+      "healthIndicatorId": "domain-events"
+    },
+    {
+      "key": "health-check",
+      "pluginId": "health-check",
+      "instanceId": "default",
+      "packageName": "@appspine/health-check",
+      "packageVersion": "2.0.0",
+      "digest": "sha256:ba80ef29e2a7ce74def004eb166512488ecce9c26d873a0fc73574081a00b66d",
+      "manifestDigest": "sha256:a652494d35145f74a1968190d08e35ebb8069110f5810d5f172ccda14bc10317",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.health-indicator"
+      ],
+      "requires": [
+        "appspine.prisma"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [
+        "admin/plugins",
+        "health"
+      ],
+      "providerTokens": [],
+      "prismaModels": [],
+      "healthIndicatorId": "health-check"
+    },
+    {
+      "key": "identity-core",
+      "pluginId": "identity-core",
+      "instanceId": "default",
+      "packageName": "@appspine/identity-core",
+      "packageVersion": "3.0.0",
+      "digest": "sha256:fe1b5197fad77468e813c48fdb5cd4d305b2279ff4cc437de1dfbc7041a35304",
+      "manifestDigest": "sha256:33f5c627c883161e147f5c97dc8146ddf181797c17aa6746a15084d4d562eda3",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.identity-store"
+      ],
+      "requires": [
+        "appspine.prisma",
+        "appspine.principal-context"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [
+        "users"
+      ],
+      "providerTokens": [
+        "appspine.identity-store"
+      ],
+      "prismaModels": [
+        "User"
+      ],
+      "healthIndicatorId": null
+    },
+    {
+      "key": "m2m-api-key",
+      "pluginId": "m2m-api-key",
+      "instanceId": "default",
+      "packageName": "@appspine/m2m-api-key",
+      "packageVersion": "7.0.0",
+      "digest": "sha256:83d139ff63b11f51beb0e1e370226e2a1c2304eb80074b8619658be5f301386c",
+      "manifestDigest": "sha256:68ba042d9c587f641388de95333610368ca8b36b2cfecb527d7911b77d344604",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.machine-auth-provider",
+        "appspine.scope-matcher"
+      ],
+      "requires": [
+        "appspine.identity-store",
+        "appspine.prisma",
+        "appspine.principal-context",
+        "appspine.authentication-strategy-registry"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [
+        "api-keys"
+      ],
+      "providerTokens": [
+        "appspine.scope-matcher"
+      ],
+      "prismaModels": [
+        "ApiKey"
+      ],
+      "healthIndicatorId": null
+    },
+    {
+      "key": "mcp-server",
+      "pluginId": "mcp-server",
+      "instanceId": "default",
+      "packageName": "@appspine/mcp-server",
+      "packageVersion": "2.0.0",
+      "digest": "sha256:283a1025f01cae83ce3c7d769ca54ab3e9a7ae5cc63583178aab83fc96b5561b",
+      "manifestDigest": "sha256:010c5bb0748cee308cd23650be5c2c6a8e56aed23bb9c33e67ae80c66ff08d51",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.mcp-tools"
+      ],
+      "requires": [
+        "appspine.principal-context"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [
+        "mcp"
+      ],
+      "providerTokens": [
+        "appspine.mcp-tools"
+      ],
+      "prismaModels": [],
+      "healthIndicatorId": "mcp-server"
+    },
+    {
+      "key": "metadata-schema",
+      "pluginId": "metadata-schema",
+      "instanceId": "default",
+      "packageName": "@appspine/metadata-schema",
+      "packageVersion": "1.0.0",
+      "digest": "sha256:52f280c6ebf2f9c06e6b158bf84fc3df46822e5a6e3f877261f9c5161a01b038",
+      "manifestDigest": "sha256:94e5a760a2308dfc0055961b3052f644edf9dadda61917dda1a50cc5b32d616b",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.metadata-schema"
+      ],
+      "requires": [
+        "appspine.prisma"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [
+        "metadata"
+      ],
+      "providerTokens": [
+        "appspine.metadata-schema"
+      ],
+      "prismaModels": [],
+      "healthIndicatorId": null
+    },
+    {
+      "key": "notification",
+      "pluginId": "notification",
+      "instanceId": "default",
+      "packageName": "@appspine/notification",
+      "packageVersion": "2.0.0",
+      "digest": "sha256:5f78613b7c5c7bb502997315c58056a0b9cc963124892c7dda0e00ee9a02d7ed",
+      "manifestDigest": "sha256:f36a73bea425f83621907bbeb40988724a7277c37778c7921ec38c0f7cc7958b",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.notification-inbox"
+      ],
+      "requires": [
+        "appspine.prisma",
+        "appspine.principal-context"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [],
+      "providerTokens": [
+        "appspine.notification-inbox"
+      ],
+      "prismaModels": [
+        "Notification"
+      ],
+      "healthIndicatorId": "notification"
+    },
+    {
+      "key": "oidc-auth",
+      "pluginId": "oidc-auth",
+      "instanceId": "default",
+      "packageName": "@appspine/oidc-auth",
+      "packageVersion": "3.0.0",
+      "digest": "sha256:5d0f8c23fafed73fa9bef1168f6fba9e1bda9e9965863275ce77cde649aed904",
+      "manifestDigest": "sha256:908a4b4210d0fcac5e25991cb4ed0d327afd004e665f3aed014ae4d8f18d9d40",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.delegated-identity-verifier",
+        "appspine.interactive-auth-provider"
+      ],
+      "requires": [
+        "appspine.identity-store",
+        "appspine.authentication-strategy-registry",
+        "appspine.principal-context",
+        "appspine.prisma",
+        "appspine.audit-sink"
+      ],
+      "unresolvedOptional": [],
+      "configRef": "oidc",
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [
+        {
+          "key": "OIDC_AUDIENCE",
+          "required": true,
+          "secret": false
+        },
+        {
+          "key": "OIDC_ISSUER",
+          "required": true,
+          "secret": false
+        },
+        {
+          "key": "OIDC_JWKS_URL",
+          "required": true,
+          "secret": false
+        }
+      ],
+      "routes": [
+        "auth"
+      ],
+      "providerTokens": [],
+      "prismaModels": [
+        "OidcIdentity"
+      ],
+      "healthIndicatorId": null
+    },
+    {
+      "key": "rbac",
+      "pluginId": "rbac",
+      "instanceId": "default",
+      "packageName": "@appspine/rbac",
+      "packageVersion": "6.0.0",
+      "digest": "sha256:5f91b6ff1b6f7aacb9fc0c5e4861b3938de96e2aecc510dc3db0033a179a9568",
+      "manifestDigest": "sha256:bbb0b9bf90284ebf4b09eebe6466b4d820b57a93cd731d15a36088ae0121c980",
+      "status": "enabled",
+      "required": true,
+      "provides": [
+        "appspine.rbac-policy"
+      ],
+      "requires": [
+        "appspine.identity-store",
+        "appspine.prisma",
+        "appspine.principal-context"
+      ],
+      "unresolvedOptional": [],
+      "configRef": null,
+      "fromPreset": "@appspine/preset-standard",
+      "environment": [],
+      "routes": [
+        "roles"
+      ],
+      "providerTokens": [
+        "appspine.rbac-policy"
+      ],
+      "prismaModels": [
+        "Role",
+        "RolePermission",
+        "UserRole"
+      ],
+      "healthIndicatorId": null
+    }
+  ],
+  "note": "Generated by @appspine/plugin-cli. Do not edit; run `appspine build`."
+}

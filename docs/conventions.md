@@ -112,7 +112,7 @@ must be recoverable to actually use it, while an M2M key never is.
 
 ## Discovery Service Catalog Push
 
-Source: `dev_docs/023-external-interconnect-agent-team-plan.md` §2.1 (workspace root), T-9700.
+Source: `specs/023-external-interconnect-agent-team-plan.md` §2.1 (workspace root), T-9700.
 To let external integrators (n8n, AI agents) find this app through the 023 discovery service,
 set three env vars in `.env`/`.env.example` — `@appspine/mcp-server`'s `DiscoveryPushService`
 pushes the catalog automatically on boot, no other code needed:
@@ -133,8 +133,8 @@ which is the cadence 023 §2.1 calls for.
 
 ## Domain Events
 
-Source: `dev_docs/026-domain-events-approve-plan.md`, `dev_docs/028-domain-events-standardization-plan.md`,
-and `dev_docs/future_plans/Z20-domain-events-outbox.md` (workspace root). `@appspine/domain-events`
+Source: `specs/026-domain-events-approve-plan.md`, `specs/028-domain-events-standardization-plan.md`,
+and `specs/future_plans/Z20-domain-events-outbox.md` (workspace root). `@appspine/domain-events`
 is already wired into this template (`backend/src/domain-events/domain-events.module.ts`, imported
 into `AppModule`, plus `DomainEventsAdminModule.forRoot(DomainEventsModule)` exposing
 `GET /domain-events/catalog` and the rest of the admin API) but the handler registry starts empty
@@ -149,9 +149,9 @@ an **opt-in pattern**, not something every module needs:
   business write it describes — that's the one rule that isn't negotiable.
 - Handlers run at-least-once; **key any external side effect off the event's id** so re-running a
   handler after a retry or stale-lock reclaim is safe.
-- Simple outbound POST webhooks should call `postDomainEventWebhook()` from
-  `@appspine/domain-events`; do not duplicate redaction, HMAC signing, timeout, or response-drain
-  helpers in app code.
+- External outbound webhooks should call `postDomainEventWebhookV2()` from
+  `@appspine/domain-events` with frozen integration metadata and a named signing key. If an App
+  must temporarily preserve a private v1-shaped receiver contract, it owns that adapter locally.
 - Event type constants are `as const` objects, never free-form strings — a typo silently breaks a
   subscription match.
 - **File layout**: event constants in `backend/src/domain-events/events.ts`, one handler class per
@@ -164,7 +164,7 @@ an **opt-in pattern**, not something every module needs:
   and shows up in the admin catalog view. The one exception is admin-configured routing (e.g.
   approve's webhook-subscription table) resolved via `registerPrefix()` — that handler is
   deliberately left undecorated, marked with `// @domain-events-undecorated: <reason>` at the top
-  of the file. See `dev_docs/future_plans/Z20-domain-events-outbox.md` §8.
+  of the file. See `specs/future_plans/Z20-domain-events-outbox.md` §8.
 - **`check:domain-events-subscribers`** (`backend/scripts/`, wired into `.husky/pre-commit`):
   grep-level check that no file besides `domain-events.module.ts` calls `registry.on(` directly,
   and every `handlers/*.handler.ts` has either the decorator or the exemption marker.
@@ -223,11 +223,11 @@ Every API error returns this shape:
 - **Controller convention**: `@Controller(prefix)` + a class-level `@UseGuards(...)` + Zod-based DTO
   validation (`ZodValidationPipe`). Don't stack extra guards on individual methods unless that method
   genuinely needs stricter access than the class default.
-- **Guard chain order**: `JwtOrApiKeyGuard` (API Key takes priority, falls back to JWT) →
+- **Guard chain order**: `AppspineAuthGuard` (API Key takes priority, falls back to JWT) →
   `AdminGuard` or `PermissionGuard` (pick one per endpoint) → `ScopeGuard` (constrains API-key
   callers only; JWT users are unaffected).
   - **Scope-only is valid before a domain `Permission` exists**: an endpoint may legitimately run
-    `JwtOrApiKeyGuard` → `ScopeGuard` with no permission guard when no `Permission` enum value yet
+    `AppspineAuthGuard` → `ScopeGuard` with no permission guard when no `Permission` enum value yet
     expresses "may use this domain" — the scaffold's notification inbox
     (`backend/src/notifications/notifications.controller.ts`) is the shipped example, and requiring one
     of the framework's `USERS_*`/`API_KEYS_*` admin permissions there would lock normal users out of
@@ -285,7 +285,7 @@ Every API error returns this shape:
   hit the backend origin, not a frontend-relative path — most apps' frontend API clients are
   server-only (Server Actions/Route Handlers reading the httpOnly auth cookie via `next/headers`),
   so there is no browser-exposed REST proxy to call at all, and per "No global `/api` prefix"
-  above the real routes mount at root anyway. Local cookie auth is retired (dev_docs/framework/035):
+  above the real routes mount at root anyway. Local cookie auth is retired (specs/framework/035):
   next-auth's session cookie is an encrypted JWE, not the Keycloak access token the backend accepts,
   so it can't be read out of the browser context to use as a Bearer value. Instead mint a token
   directly against Keycloak's password grant (`testEnv.keycloak.issuer` +
@@ -323,7 +323,7 @@ Every API error returns this shape:
   list search/pagination pattern, an app-shell-level piece), scan that list first and use what's
   there instead of writing a local version "for now." `DateTimePicker`/`DateRangePicker` diverged
   into five different per-repo copies — with the same bug needing five separate fixes — before
-  being collapsed into `frontend-shell` (see `dev_docs/019-shared-date-picker-package-plan.md` in
+  being collapsed into `frontend-shell` (see `specs/019-shared-date-picker-package-plan.md` in
   the appspine monorepo) precisely because nobody checked first.
 - **Custom component placement & when to extract**: reusable non-shadcn components live under
   `frontend/src/components/` (flat — no need for further subfolders). Extract a piece of markup
@@ -334,7 +334,7 @@ Every API error returns this shape:
   shared package when it meets both (a) it's genuinely framework-level (auth/nav/theme chrome, not
   business-domain UI) and (b) it carries no app-specific business logic or copy. When unsure, keep
   it local — promoting too early saddles a component only one app ever needed with ongoing
-  published-package versioning overhead (same caution as `dev_docs/003`'s shared-package reuse
+  published-package versioning overhead (same caution as `specs/003`'s shared-package reuse
   plan in the appspine workspace).
 
 ## Standard Flow for Adding a New CRUD Module

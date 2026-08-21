@@ -1,6 +1,12 @@
-import { type ApiKeyUser, CurrentUser, type JwtUser, resolveActingUserId } from "@appspine/auth";
 import { type PaginationQuery, paginationQuerySchema, ZodValidationPipe } from "@appspine/common";
-import { JwtOrApiKeyGuard, ScopeGuard, Scopes } from "@appspine/m2m-api-key";
+import { ScopeGuard, Scopes } from "@appspine/m2m-api-key";
+import {
+  type ApiKeyUser,
+  AppspineAuthGuard,
+  CurrentUser,
+  type JwtUser,
+  resolveActingUserId,
+} from "@appspine/plugin-host-nest";
 import { Controller, Get, Param, Post, Query, UseGuards } from "@nestjs/common";
 
 import { NotificationsService } from "./notifications.service";
@@ -8,7 +14,7 @@ import { NotificationsService } from "./notifications.service";
 type TemplateUser = JwtUser | ApiKeyUser;
 
 @Controller("notifications")
-@UseGuards(JwtOrApiKeyGuard, ScopeGuard)
+@UseGuards(AppspineAuthGuard, ScopeGuard)
 // Deny-by-default baseline: ScopeGuard allows any caller through when no @Scopes() is reachable
 // for a route at all. Handler-level @Scopes() below overrides this (same precedence as
 // Reflector.getAllAndOverride), so this only matters as a safety net for a future method that

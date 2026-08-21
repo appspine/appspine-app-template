@@ -1,4 +1,4 @@
-// Requires @appspine/auth's user.prisma fragment (for the UserRole relation) and
+// Requires @appspine/identity-core's user.prisma fragment (for the UserRole relation) and
 // @appspine/m2m-api-key's api-key.prisma fragment (for the Role.apiKeys relation)
 // to also be present in this app's prisma/schema/ folder. Also requires the
 // consuming app to declare its own `enum Permission` (RolePermission.permission) —

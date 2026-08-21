@@ -3,27 +3,32 @@ packages:
   - "frontend"
 
 overrides:
-  '@appspine/common': 0.3.3
-  '@appspine/auth': 6.2.2
-  '@appspine/audit-log': 1.0.1
-  '@appspine/rbac': 4.0.7
-  '@appspine/health-check': 0.1.8
-  '@appspine/m2m-api-key': 4.0.7
-  '@appspine/mcp-server': 0.6.7
-  '@appspine/metadata-schema': 0.2.21
-  '@appspine/notification': 0.2.2
-  '@appspine/frontend-shell': 0.16.3
-  '@modelcontextprotocol/node>@hono/node-server': ^1.19.15
-  '@nestjs/platform-express>multer': ^2.2.0
+  '@appspine/plugin-api': 1.1.0
+  '@appspine/plugin-host-nest': 2.0.0
+  '@appspine/plugin-cli': 2.0.0
+  '@appspine/plugin-testkit': 2.0.0
+  '@appspine/preset-standard': 2.0.0
+  '@appspine/common': 0.3.4
+  '@appspine/audit-log': 2.0.0
+  '@appspine/health-check': 2.0.0
+  '@appspine/identity-core': 3.0.0
+  '@appspine/rbac': 6.0.0
+  '@appspine/oidc-auth': 3.0.0
+  '@appspine/m2m-api-key': 7.0.0
+  '@appspine/metadata-schema': 1.0.0
+  '@appspine/notification': 2.0.0
+  '@appspine/domain-events': 10.0.0
+  '@appspine/mcp-server': 2.0.0
+  '@appspine/oidc-delegation': 0.4.0
+  '@appspine/master-data-client': 0.2.0
+  '@appspine/frontend-shell': 1.0.0
+  '@appspine/e2e-kit': 1.0.2
+  '@appspine/integration-contracts': 0.4.0
 
-# @appspine/* are private packages published by this same org, not public npm -
-# the supply-chain risk minimumReleaseAge guards against (freshly-published
-# malicious packages) doesn't apply here, and the pnpm 11 default (24h) blocks
-# CI right after any release. Scoped to @appspine/* only — the public dependency
-# graph (next, react, prisma, ...) keeps the 24h quarantine.
-minimumReleaseAge: 1440
-minimumReleaseAgeExclude:
-  - '@appspine/*'
+packageExtensions:
+  '@hookform/resolvers@5.4.0':
+    peerDependencies:
+      zod: '>=3.25.0'
 
 allowBuilds:
   '@biomejs/biome': true

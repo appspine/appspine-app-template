@@ -1,4 +1,4 @@
-import type { ApiKeyUser, JwtUser } from "@appspine/auth";
+import type { ApiKeyUser, JwtUser } from "@appspine/plugin-host-nest";
 import { describe, expect, it, vi } from "vitest";
 
 import { NotificationsController } from "./notifications.controller";

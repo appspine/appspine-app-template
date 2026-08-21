@@ -38,6 +38,14 @@ async function bootstrap() {
     credentials: true,
   });
 
+  // Without this, Nest never wires OS termination signals to lifecycle hooks —
+  // OnApplicationShutdown implementations (including AppspinePluginHost's
+  // required reverse-order plugin shutdown, and any capability's own resource
+  // cleanup such as ChatGateway's socket server close) silently never run on a
+  // real SIGTERM/SIGINT, even though they do run under NestJS's test module
+  // `.close()`, which is why compile-only tests never caught this.
+  app.enableShutdownHooks();
+
   const port = process.env.PORT ?? 3000;
   await app.listen(port);
   Logger.log(`Backend running on :${port} [AUTH_MODE=${authMode}]`, "Bootstrap");

@@ -91,7 +91,7 @@ it), and (b) must not be silently lost if it fails once (needs retry/dead-letter
      DomainEventSubscriber,
      type DomainEventHandler,
      type DomainEventRecord,
-     postDomainEventWebhook,
+     postDomainEventWebhookV2,
    } from "@appspine/domain-events";
    // backend/src/domain-events/handlers/invoice-webhook.handler.ts
    import { DomainEventSubscriber, type DomainEventHandler, type DomainEventRecord } from "@appspine/domain-events";
@@ -106,9 +106,10 @@ it), and (b) must not be silently lost if it fails once (needs retry/dead-letter
    export class InvoiceWebhookHandler implements DomainEventHandler {
      readonly key = "invoice-webhook";
      async handle({ event }: { event: DomainEventRecord }) {
-       await postDomainEventWebhook({
+       await postDomainEventWebhookV2({
          event,
          url: process.env.INVOICE_WEBHOOK_URL!,
+         keyId: process.env.INVOICE_WEBHOOK_KEY_ID!,
          secret: process.env.INVOICE_WEBHOOK_SECRET!,
        });
      }
@@ -203,8 +204,8 @@ transient failure can call the same handler for the same delivery more than once
 be safe to re-run — key any external side effect (a webhook POST, a row you upsert) off the
 event's `id`, the same way `apps/approve`'s `audit-record` handler upserts on `sourceEventId`.
 
-For simple outbound POST webhooks, call `postDomainEventWebhook()` from `@appspine/domain-events`
-instead of copying redaction, HMAC signing, timeout, and response-draining helpers into the app.
+For external outbound webhooks, call `postDomainEventWebhookV2()` from `@appspine/domain-events`.
+The event must carry frozen integration metadata and the sender must provide a named signing key.
 
 ## Schema: documented pattern, not an injected fragment
 

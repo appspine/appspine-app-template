@@ -7,7 +7,7 @@ import {
   type NotificationLabels,
   type NotificationSummary,
   NotificationBell as SharedNotificationBell,
-} from "@appspine/frontend-shell/notification";
+} from "@appspine/notification/frontend";
 
 import {
   getUnreadCountAction,

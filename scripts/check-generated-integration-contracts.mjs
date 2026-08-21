@@ -5,7 +5,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 const root = process.cwd();
-const refsRoot = resolve(root, 'knowledge', 'contracts');
+const refsRoot = resolve(root, 'specs', 'contracts');
 const runtimeRoot = resolve(root, 'backend', 'src', 'generated', 'integration-contracts');
 const refs = walk(refsRoot)
   .filter((file) => file.endsWith(join('_generated', 'contract-ref.json')))

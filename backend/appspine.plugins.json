@@ -1,0 +1,5 @@
+{
+  "schemaVersion": "appspine.plugins/v1",
+  "presets": ["@appspine/preset-standard"],
+  "plugins": []
+}
